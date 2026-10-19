@@ -11,8 +11,10 @@ import re
 from typing import Dict, List, Optional, Any
 import openpyxl
 
-WORKSPACE_ROOT = pathlib.Path(__file__).resolve().parent.parent
-EXCEL_PATH = WORKSPACE_ROOT / "JM_Dishes_Mapping_Expanded_SuperAdmin.xlsx"
+APP_DIR = pathlib.Path(__file__).resolve().parent
+LOCAL_EXCEL_PATH = APP_DIR / "JM_Dishes_Mapping_Expanded_SuperAdmin.xlsx"
+PARENT_EXCEL_PATH = APP_DIR.parent / "JM_Dishes_Mapping_Expanded_SuperAdmin.xlsx"
+EXCEL_PATH = LOCAL_EXCEL_PATH if LOCAL_EXCEL_PATH.exists() else PARENT_EXCEL_PATH
 
 # Grounded ICMR-NIN (Hyderabad) & NIN Dietary Guidelines for Indians values per 100g cooked
 # Format:
