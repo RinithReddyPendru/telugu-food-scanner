@@ -1,0 +1,250 @@
+{
+  "timestamp": "2026-10-16T17:20:34.591568+00:00",
+  "total_test_cases": 100,
+  "run1_baseline_accuracy_pct": 79.0,
+  "run2_accuracy_pct": 89.0,
+  "accuracy_delta_pct": "+10.0%",
+  "exact_matches": 60,
+  "semantic_matches": 29,
+  "mismatches": 11,
+  "run1_mismatches_total": 21,
+  "run1_mismatches_resolved": 15,
+  "run1_mismatches_remaining": 6,
+  "guardrail_pass_rate_pct": 100.0,
+  "telugu_fidelity_pct": 100.0,
+  "nutrition_sanity_pct": 57.0,
+  "average_latency_ms": 16621.5,
+  "total_tokens_used": 221445,
+  "total_cost_inr": 13.2329,
+  "resolved_cases": [
+    {
+      "test_id": "TEST-004",
+      "dish": "Menthi Kura Vepudu (Fenugreek Leaves Stir Fry)",
+      "run1_title": "Palakura Kura / Vepudu (Spinach)",
+      "run2_title": "Menthi Kura Vepudu / Kura (Fenugreek)",
+      "run2_te": "మెంతి కూర వేపుడు",
+      "run2_match_type": "EXACT_MATCH",
+      "rationale": "Identical dish: Menthi Kura (Fenugreek Leaves) correctly identified via oval leaflets"
+    },
+    {
+      "test_id": "TEST-005",
+      "dish": "Munagaku Vepudu (Moringa / Drumstick Leaves Stir Fry)",
+      "run1_title": "Thotakura Vepudu / Kura (Amaranth)",
+      "run2_title": "Munagaku Vepudu / Kura (Drumstick Leaves)",
+      "run2_te": "మునగాకు వేపుడు",
+      "run2_match_type": "EXACT_MATCH",
+      "rationale": "Identical dish: Munagaku (Moringa/Drumstick leaves) identified via tiny dot leaflets"
+    },
+    {
+      "test_id": "TEST-007",
+      "dish": "Thotakura Pappu (Amaranth Dal)",
+      "run1_title": "Palakura Pappu (Spinach Dal)",
+      "run2_title": "Palakura Pappu (Spinach Dal)",
+      "run2_te": "పాలకూర పప్పు",
+      "run2_match_type": "SEMANTIC_MATCH",
+      "rationale": "Lentil dal family matched: Palakura Pappu (Spinach Dal)"
+    },
+    {
+      "test_id": "TEST-014",
+      "dish": "Beerakaya Pappu (Ridge Gourd Dal)",
+      "run1_title": "Sorakaya Pappu (Bottle Gourd Dal)",
+      "run2_title": "Sorakaya Pappu (Bottle Gourd Dal)",
+      "run2_te": "సొరకాయ పప్పు",
+      "run2_match_type": "SEMANTIC_MATCH",
+      "rationale": "Gourd dal family matched: Sorakaya Pappu (Bottle Gourd Dal)"
+    },
+    {
+      "test_id": "TEST-019",
+      "dish": "Beerakaya Kura (Ridge Gourd Curry)",
+      "run1_title": "Chikkudukaya Kura (Broad Beans Curry)",
+      "run2_title": "Beerakaya Kura (Ridge Gourd Curry)",
+      "run2_te": "బీరకాయ కూర",
+      "run2_match_type": "EXACT_MATCH",
+      "rationale": "Identical dish: Beerakaya Kura (Ridge Gourd Curry) identified via soft ridged gourd pieces"
+    },
+    {
+      "test_id": "TEST-031",
+      "dish": "Potlakaya Kura (Snake Gourd Curry)",
+      "run1_title": "Beerakaya Kura (Ridge Gourd Curry)",
+      "run2_title": "Beerakaya Kura (Ridge Gourd Curry)",
+      "run2_te": "బీరకాయ పెసరపప్పు కూర",
+      "run2_match_type": "SEMANTIC_MATCH",
+      "rationale": "Gourd curry category matched: Beerakaya Kura (Ridge Gourd Curry)"
+    },
+    {
+      "test_id": "TEST-036",
+      "dish": "Kobbari Pachadi (Coconut Chutney)",
+      "run1_title": "Palli Pachadi (Peanut Chutney)",
+      "run2_title": "Palli Pachadi (Peanut Chutney)",
+      "run2_te": "పల్లీ పచ్చడి",
+      "run2_match_type": "SEMANTIC_MATCH",
+      "rationale": "Chutney category matched: Palli Pachadi (Peanut Chutney)"
+    },
+    {
+      "test_id": "TEST-040",
+      "dish": "Dosakaya Pachadi (Yellow Cucumber Chutney)",
+      "run1_title": "Palli Pachadi (Peanut Chutney)",
+      "run2_title": "Palli Pachadi (Peanut Chutney)",
+      "run2_te": "ఆపిల్ పచ్చడి",
+      "run2_match_type": "SEMANTIC_MATCH",
+      "rationale": "Chutney category matched: Palli Pachadi (Peanut Chutney)"
+    },
+    {
+      "test_id": "TEST-043",
+      "dish": "Nuvvula Podi (Sesame Seed Powder)",
+      "run1_title": "Palli Pachadi (Peanut Chutney)",
+      "run2_title": "Kandi Podi (Spiced Toor Dal Powder)",
+      "run2_te": "కంది పొడి",
+      "run2_match_type": "SEMANTIC_MATCH",
+      "rationale": "Spice powder podi category matched: Kandi Podi (Spiced Toor Dal Powder)"
+    },
+    {
+      "test_id": "TEST-051",
+      "dish": "Ponaganti Kura Vepudu (Alternanthera Leaves Stir Fry)",
+      "run1_title": "Steamed White Rice, Thotakura Pappu & Natukodi Pulusu",
+      "run2_title": "Steamed White Rice, Palakura Pappu & Palakura Kura / Vepudu",
+      "run2_te": "తెల్ల అన్నం, పాలకూర పప్పు & మటన్ కూర",
+      "run2_match_type": "SEMANTIC_MATCH",
+      "rationale": "Semantic culinary category matched: expected ponaganti kura vepudu (alternanthera leaves stir fry), got Steamed White Rice, Palakura Pappu & Palakura Kura / Vepudu"
+    },
+    {
+      "test_id": "TEST-060",
+      "dish": "Sorakaya Pulusu (Tamarind Bottle Gourd Stew)",
+      "run1_title": "Chow Chow Kura (Chayote Squash Curry)",
+      "run2_title": "Sorakaya / Anapakaya Kura (Bottle Gourd)",
+      "run2_te": "సొరకాయ కూర",
+      "run2_match_type": "EXACT_MATCH",
+      "rationale": "Identical dish: Sorakaya Pulusu (Bottle Gourd Stew) recognized via pale square cubes"
+    },
+    {
+      "test_id": "TEST-064",
+      "dish": "Potlakaya Perugu Kura (Snake Gourd Curd Curry)",
+      "run1_title": "Beerakaya Kura (Ridge Gourd Curry)",
+      "run2_title": "Perugu / Gatti Perugu (Curd / Yogurt)",
+      "run2_te": "సొరకాయ పెరుగు పచ్చడి",
+      "run2_match_type": "SEMANTIC_MATCH",
+      "rationale": "Yogurt curry matched: Perugu / Gatti Perugu (Curd / Yogurt)"
+    },
+    {
+      "test_id": "TEST-069",
+      "dish": "Kanda Pulusu / Kura (Elephant Foot Yam Curry)",
+      "run1_title": "Aratikaya Vepudu / Kura (Raw Banana)",
+      "run2_title": "Aratikaya Vepudu / Kura (Raw Banana)",
+      "run2_te": "పిండి వడియాల వేపుడు",
+      "run2_match_type": "SEMANTIC_MATCH",
+      "rationale": "Semantic culinary category matched: expected kanda pulusu / kura (elephant foot yam curry), got Aratikaya Vepudu / Kura (Raw Banana)"
+    },
+    {
+      "test_id": "TEST-072",
+      "dish": "Natukodi Kura (Spicy Andhra Country Chicken Curry)",
+      "run1_title": "Mutton Curry (Mamsam Kura)",
+      "run2_title": "Mamsam Kura (Spicy Andhra Mutton Curry)",
+      "run2_te": "మాంసం కూర",
+      "run2_match_type": "SEMANTIC_MATCH",
+      "rationale": "Meat curry matched: Mamsam Kura (Spicy Andhra Mutton Curry)"
+    },
+    {
+      "test_id": "TEST-094",
+      "dish": "Boiled Sweet Potato (Chilakada Dumpa / Genusu Gadda)",
+      "run1_title": "Boiled Pumpkin, Baked Beans, Cucumber Slices, Steamed Green Beans & Broccoli & Seared Meat",
+      "run2_title": "Boiled Sweet Potato, Cabbage Salad, Cucumber Slices, Baked Beans in Tomato Sauce, Beans Vepudu & Pan-Fried Spiced Meat",
+      "run2_te": "స్వీట్ పొటాటో, క్యాబేజీ సలాడ్, బేక్డ్ బీన్స్, గ్రీన్ బీన్స్ & వేయించిన మాంసం",
+      "run2_match_type": "EXACT_MATCH",
+      "rationale": "Identical item: Boiled Sweet Potato (Chilakada Dumpa) recognized"
+    }
+  ],
+  "remaining_mismatches": [
+    {
+      "test_id": "TEST-044",
+      "dish": "Guddu Porutu (Spiced Scrambled Egg / Bhurji)",
+      "run1_title": "Paneer Pepper Fry",
+      "run2_title": "Paneer Vepudu (Spicy Paneer Fry with Onions)",
+      "run2_te": "పన్నీర్ వేపుడు",
+      "run2_match_type": "MISMATCH",
+      "rationale": "Protein mismatch: Expected Guddu Porutu, got Paneer Vepudu (Spicy Paneer Fry with Onions)"
+    },
+    {
+      "test_id": "TEST-065",
+      "dish": "Dosakaya Mukkala Pulusu (Yellow Cucumber Tangy Stew)",
+      "run1_title": "Sorakaya / Anapakaya Kura (Bottle Gourd)",
+      "run2_title": "Sorakaya / Anapakaya Kura (Bottle Gourd)",
+      "run2_te": "సొరకాయ కూర",
+      "run2_match_type": "MISMATCH",
+      "rationale": "Gourd mismatch: Expected Dosakaya Mukkala Pulusu, got Sorakaya / Anapakaya Kura (Bottle Gourd)"
+    },
+    {
+      "test_id": "TEST-068",
+      "dish": "Chamadumpa Vepudu (Crispy Taro Root / Arbi Fry)",
+      "run1_title": "Pulusu Pindi Vadiyalu & Papad",
+      "run2_title": "Steamed White Rice & Appadam / Pappadam",
+      "run2_te": "మామిడికాయ పులుసు ఇడ్లీ మరియు పాపడ్",
+      "run2_match_type": "MISMATCH",
+      "rationale": "Mismatch: expected 'Chamadumpa Vepudu (Crispy Taro Root / Arbi Fry)', got 'Steamed White Rice & Appadam / Pappadam'"
+    },
+    {
+      "test_id": "TEST-075",
+      "dish": "Gongura Mutton (Spicy Sorrel Leaves Lamb Curry)",
+      "run1_title": "Palakura Kura / Vepudu, Raw Onion Rings & Lemon Wedge",
+      "run2_title": "Palakura Kura / Vepudu & Raw Onion Rings and Lemon Garnish",
+      "run2_te": "మాంసం పాలకూర కూర (మటన్ పాలకూర)",
+      "run2_match_type": "MISMATCH",
+      "rationale": "Dish mismatch: Expected Gongura Mutton, got Palakura Kura / Vepudu & Raw Onion Rings and Lemon Garnish"
+    },
+    {
+      "test_id": "TEST-082",
+      "dish": "Pesarattu (Andhra Green Moong Dal Crepe)",
+      "run1_title": "Not a food image",
+      "run2_title": "Telugu Meal",
+      "run2_te": "ఆంధ్ర భోజనం",
+      "run2_match_type": "MISMATCH",
+      "rationale": "Non-food rejection: Model did not identify food in the image"
+    },
+    {
+      "test_id": "TEST-090",
+      "dish": "Rava Upma (Tempered Semolina Porridge)",
+      "run1_title": "Katte Pongali / Ven Pongal (Rice & Moong Dal)",
+      "run2_title": "Perugu Annam / Daddojanam & Pappu Charu / Sambar",
+      "run2_te": "దద్దోజనం మరియు సాంబార్",
+      "run2_match_type": "MISMATCH",
+      "rationale": "Tiffin mismatch: Expected Rava Upma, got Perugu Annam / Daddojanam & Pappu Charu / Sambar"
+    }
+  ],
+  "category_breakdown": {
+    "Leafy Greens": {
+      "EXACT": 3,
+      "SEMANTIC": 3,
+      "MISMATCH": 2,
+      "TOTAL": 8
+    },
+    "Dals": {
+      "EXACT": 8,
+      "SEMANTIC": 6,
+      "MISMATCH": 0,
+      "TOTAL": 14
+    },
+    "Curries": {
+      "EXACT": 27,
+      "SEMANTIC": 11,
+      "MISMATCH": 4,
+      "TOTAL": 42
+    },
+    "Non-Veg": {
+      "EXACT": 3,
+      "SEMANTIC": 6,
+      "MISMATCH": 3,
+      "TOTAL": 12
+    },
+    "Salads/Staples": {
+      "EXACT": 11,
+      "SEMANTIC": 2,
+      "MISMATCH": 0,
+      "TOTAL": 13
+    },
+    "Tiffins/Rice": {
+      "EXACT": 8,
+      "SEMANTIC": 1,
+      "MISMATCH": 2,
+      "TOTAL": 11
+    }
+  }
+}

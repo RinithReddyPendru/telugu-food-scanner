@@ -1,0 +1,2022 @@
+[
+  {
+    "test_id": "TEST-001",
+    "filename": "001_Thotakura_Vepudu.jpg",
+    "image_path": "C:/Users/rinit/.gemini/antigravity/playground/shadow-ionosphere/telugu-food-scanner/tests/benchmark_100/images/001_Thotakura_Vepudu.jpg",
+    "expected_dish_name": "Thotakura Vepudu (Amaranth Leaves Stir Fry)",
+    "expected_dish_te": "తోటకూర వేపుడు",
+    "expected_cluster": "Leafy Green Curries",
+    "macro_category": "Leafy Greens",
+    "is_raw_salad": false,
+    "expected_cal_min": 60,
+    "expected_cal_max": 150,
+    "expected_protein_min": 2.3,
+    "expected_protein_max": 6.0,
+    "key_ingredients": [
+      "thotakura",
+      "amaranth",
+      "vepudu",
+      "leafy"
+    ]
+  },
+  {
+    "test_id": "TEST-002",
+    "filename": "002_Palakura_Vepudu.jpg",
+    "image_path": "C:/Users/rinit/.gemini/antigravity/playground/shadow-ionosphere/telugu-food-scanner/tests/benchmark_100/images/002_Palakura_Vepudu.jpg",
+    "expected_dish_name": "Palakura Vepudu / Kura (Spinach Stir Fry)",
+    "expected_dish_te": "పాలకూర వేపుడు / కూర",
+    "expected_cluster": "Leafy Green Curries",
+    "macro_category": "Leafy Greens",
+    "is_raw_salad": false,
+    "expected_cal_min": 55,
+    "expected_cal_max": 140,
+    "expected_protein_min": 1.9,
+    "expected_protein_max": 4.9,
+    "key_ingredients": [
+      "palakura",
+      "spinach",
+      "vepudu",
+      "kura"
+    ]
+  },
+  {
+    "test_id": "TEST-003",
+    "filename": "003_Gongura_Pulusu.jpg",
+    "image_path": "C:/Users/rinit/.gemini/antigravity/playground/shadow-ionosphere/telugu-food-scanner/tests/benchmark_100/images/003_Gongura_Pulusu.jpg",
+    "expected_dish_name": "Gongura Pulusu / Kura (Sorrel Leaves Stew)",
+    "expected_dish_te": "గోంగూర పులుసు / కూర",
+    "expected_cluster": "Leafy Green Curries",
+    "macro_category": "Leafy Greens",
+    "is_raw_salad": false,
+    "expected_cal_min": 70,
+    "expected_cal_max": 175,
+    "expected_protein_min": 1.6,
+    "expected_protein_max": 4.0,
+    "key_ingredients": [
+      "gongura",
+      "sorrel",
+      "pulusu",
+      "leaves"
+    ]
+  },
+  {
+    "test_id": "TEST-004",
+    "filename": "004_Menthi_Kura_Vepudu.jpg",
+    "image_path": "C:/Users/rinit/.gemini/antigravity/playground/shadow-ionosphere/telugu-food-scanner/tests/benchmark_100/images/004_Menthi_Kura_Vepudu.jpg",
+    "expected_dish_name": "Menthi Kura Vepudu (Fenugreek Leaves Stir Fry)",
+    "expected_dish_te": "మెంతికూర వేపుడు",
+    "expected_cluster": "Leafy Green Curries",
+    "macro_category": "Leafy Greens",
+    "is_raw_salad": false,
+    "expected_cal_min": 60,
+    "expected_cal_max": 155,
+    "expected_protein_min": 2.7,
+    "expected_protein_max": 6.9,
+    "key_ingredients": [
+      "menthi",
+      "fenugreek",
+      "vepudu",
+      "menthikura"
+    ]
+  },
+  {
+    "test_id": "TEST-005",
+    "filename": "005_Munagaku_Vepudu.jpg",
+    "image_path": "C:/Users/rinit/.gemini/antigravity/playground/shadow-ionosphere/telugu-food-scanner/tests/benchmark_100/images/005_Munagaku_Vepudu.jpg",
+    "expected_dish_name": "Munagaku Vepudu (Moringa / Drumstick Leaves Stir Fry)",
+    "expected_dish_te": "మునగాకు వేపుడు",
+    "expected_cluster": "Leafy Green Curries",
+    "macro_category": "Leafy Greens",
+    "is_raw_salad": false,
+    "expected_cal_min": 75,
+    "expected_cal_max": 150,
+    "expected_protein_min": 4.0,
+    "expected_protein_max": 8.7,
+    "key_ingredients": [
+      "munagaku",
+      "moringa",
+      "drumstick leaves",
+      "vepudu"
+    ]
+  },
+  {
+    "test_id": "TEST-006",
+    "filename": "006_Palakura_Pappu.jpg",
+    "image_path": "C:/Users/rinit/.gemini/antigravity/playground/shadow-ionosphere/telugu-food-scanner/tests/benchmark_100/images/006_Palakura_Pappu.jpg",
+    "expected_dish_name": "Palakura Pappu (Spinach Dal)",
+    "expected_dish_te": "పాలకూర పప్పు",
+    "expected_cluster": "Dals & Pappu",
+    "macro_category": "Dals",
+    "is_raw_salad": false,
+    "expected_cal_min": 75,
+    "expected_cal_max": 240,
+    "expected_protein_min": 4.2,
+    "expected_protein_max": 13.4,
+    "key_ingredients": [
+      "palakura",
+      "spinach",
+      "pappu",
+      "dal",
+      "toor dal"
+    ]
+  },
+  {
+    "test_id": "TEST-007",
+    "filename": "007_Thotakura_Pappu.jpg",
+    "image_path": "C:/Users/rinit/.gemini/antigravity/playground/shadow-ionosphere/telugu-food-scanner/tests/benchmark_100/images/007_Thotakura_Pappu.jpg",
+    "expected_dish_name": "Thotakura Pappu (Amaranth Dal)",
+    "expected_dish_te": "తోటకూర పప్పు",
+    "expected_cluster": "Dals & Pappu",
+    "macro_category": "Dals",
+    "is_raw_salad": false,
+    "expected_cal_min": 80,
+    "expected_cal_max": 245,
+    "expected_protein_min": 4.4,
+    "expected_protein_max": 14.3,
+    "key_ingredients": [
+      "thotakura",
+      "amaranth",
+      "pappu",
+      "dal"
+    ]
+  },
+  {
+    "test_id": "TEST-008",
+    "filename": "008_Gongura_Pappu.jpg",
+    "image_path": "C:/Users/rinit/.gemini/antigravity/playground/shadow-ionosphere/telugu-food-scanner/tests/benchmark_100/images/008_Gongura_Pappu.jpg",
+    "expected_dish_name": "Gongura Pappu (Andhra Sorrel Leaves Dal)",
+    "expected_dish_te": "గోంగూర పప్పు",
+    "expected_cluster": "Dals & Pappu",
+    "macro_category": "Dals",
+    "is_raw_salad": false,
+    "expected_cal_min": 80,
+    "expected_cal_max": 255,
+    "expected_protein_min": 4.2,
+    "expected_protein_max": 13.6,
+    "key_ingredients": [
+      "gongura",
+      "sorrel",
+      "pappu",
+      "andhra dal"
+    ]
+  },
+  {
+    "test_id": "TEST-009",
+    "filename": "009_Menthi_Kura_Pappu.jpg",
+    "image_path": "C:/Users/rinit/.gemini/antigravity/playground/shadow-ionosphere/telugu-food-scanner/tests/benchmark_100/images/009_Menthi_Kura_Pappu.jpg",
+    "expected_dish_name": "Menthi Kura Pappu (Fenugreek Leaves Dal)",
+    "expected_dish_te": "మెంతికూర పప్పు",
+    "expected_cluster": "Dals & Pappu",
+    "macro_category": "Dals",
+    "is_raw_salad": false,
+    "expected_cal_min": 80,
+    "expected_cal_max": 245,
+    "expected_protein_min": 4.5,
+    "expected_protein_max": 14.5,
+    "key_ingredients": [
+      "menthi",
+      "fenugreek",
+      "pappu",
+      "dal"
+    ]
+  },
+  {
+    "test_id": "TEST-010",
+    "filename": "010_Chukkakura_Pappu.jpg",
+    "image_path": "C:/Users/rinit/.gemini/antigravity/playground/shadow-ionosphere/telugu-food-scanner/tests/benchmark_100/images/010_Chukkakura_Pappu.jpg",
+    "expected_dish_name": "Chukkakura Pappu (Green Sorrel Dal)",
+    "expected_dish_te": "చుక్కకూర పప్పు",
+    "expected_cluster": "Dals & Pappu",
+    "macro_category": "Dals",
+    "is_raw_salad": false,
+    "expected_cal_min": 75,
+    "expected_cal_max": 240,
+    "expected_protein_min": 4.1,
+    "expected_protein_max": 13.2,
+    "key_ingredients": [
+      "chukkakura",
+      "green sorrel",
+      "pappu",
+      "dal"
+    ]
+  },
+  {
+    "test_id": "TEST-011",
+    "filename": "011_Dosakaya_Pappu.jpg",
+    "image_path": "C:/Users/rinit/.gemini/antigravity/playground/shadow-ionosphere/telugu-food-scanner/tests/benchmark_100/images/011_Dosakaya_Pappu.jpg",
+    "expected_dish_name": "Dosakaya Pappu (Yellow Cucumber Dal)",
+    "expected_dish_te": "దోసకాయ పప్పు",
+    "expected_cluster": "Dals & Pappu",
+    "macro_category": "Dals",
+    "is_raw_salad": false,
+    "expected_cal_min": 75,
+    "expected_cal_max": 230,
+    "expected_protein_min": 3.8,
+    "expected_protein_max": 12.4,
+    "key_ingredients": [
+      "dosakaya",
+      "yellow cucumber",
+      "pappu",
+      "dal"
+    ]
+  },
+  {
+    "test_id": "TEST-012",
+    "filename": "012_Sorakaya_Pappu.jpg",
+    "image_path": "C:/Users/rinit/.gemini/antigravity/playground/shadow-ionosphere/telugu-food-scanner/tests/benchmark_100/images/012_Sorakaya_Pappu.jpg",
+    "expected_dish_name": "Sorakaya Pappu (Bottle Gourd Dal)",
+    "expected_dish_te": "సొరకాయ పప్పు",
+    "expected_cluster": "Dals & Pappu",
+    "macro_category": "Dals",
+    "is_raw_salad": false,
+    "expected_cal_min": 70,
+    "expected_cal_max": 220,
+    "expected_protein_min": 3.6,
+    "expected_protein_max": 11.8,
+    "key_ingredients": [
+      "sorakaya",
+      "bottle gourd",
+      "pappu",
+      "dal"
+    ]
+  },
+  {
+    "test_id": "TEST-013",
+    "filename": "013_Mamidikaya_Pappu.jpg",
+    "image_path": "C:/Users/rinit/.gemini/antigravity/playground/shadow-ionosphere/telugu-food-scanner/tests/benchmark_100/images/013_Mamidikaya_Pappu.jpg",
+    "expected_dish_name": "Mamidikaya Pappu (Raw Mango Dal)",
+    "expected_dish_te": "మామిడికాయ పప్పు",
+    "expected_cluster": "Dals & Pappu",
+    "macro_category": "Dals",
+    "is_raw_salad": false,
+    "expected_cal_min": 80,
+    "expected_cal_max": 245,
+    "expected_protein_min": 3.9,
+    "expected_protein_max": 12.6,
+    "key_ingredients": [
+      "mamidikaya",
+      "raw mango",
+      "mango",
+      "pappu",
+      "dal"
+    ]
+  },
+  {
+    "test_id": "TEST-014",
+    "filename": "014_Beerakaya_Pappu.jpg",
+    "image_path": "C:/Users/rinit/.gemini/antigravity/playground/shadow-ionosphere/telugu-food-scanner/tests/benchmark_100/images/014_Beerakaya_Pappu.jpg",
+    "expected_dish_name": "Beerakaya Pappu (Ridge Gourd Dal)",
+    "expected_dish_te": "బీరకాయ పప్పు",
+    "expected_cluster": "Dals & Pappu",
+    "macro_category": "Dals",
+    "is_raw_salad": false,
+    "expected_cal_min": 70,
+    "expected_cal_max": 225,
+    "expected_protein_min": 3.7,
+    "expected_protein_max": 12.0,
+    "key_ingredients": [
+      "beerakaya",
+      "ridge gourd",
+      "pappu",
+      "dal"
+    ]
+  },
+  {
+    "test_id": "TEST-015",
+    "filename": "015_Gutti_Vankaya_Kura.jpg",
+    "image_path": "C:/Users/rinit/.gemini/antigravity/playground/shadow-ionosphere/telugu-food-scanner/tests/benchmark_100/images/015_Gutti_Vankaya_Kura.jpg",
+    "expected_dish_name": "Gutti Vankaya Kura (Stuffed Brinjal Curry)",
+    "expected_dish_te": "గుత్తి వంకాయ కూర",
+    "expected_cluster": "Vegetable Curries",
+    "macro_category": "Curries",
+    "is_raw_salad": false,
+    "expected_cal_min": 95,
+    "expected_cal_max": 300,
+    "expected_protein_min": 2.5,
+    "expected_protein_max": 8.0,
+    "key_ingredients": [
+      "vankaya",
+      "gutti vankaya",
+      "brinjal",
+      "eggplant"
+    ]
+  },
+  {
+    "test_id": "TEST-016",
+    "filename": "016_Bendakaya_Vepudu.jpg",
+    "image_path": "C:/Users/rinit/.gemini/antigravity/playground/shadow-ionosphere/telugu-food-scanner/tests/benchmark_100/images/016_Bendakaya_Vepudu.jpg",
+    "expected_dish_name": "Bendakaya Vepudu (Okra / Ladies Finger Fry)",
+    "expected_dish_te": "బెండకాయ వేపుడు",
+    "expected_cluster": "Vegetable Curries",
+    "macro_category": "Curries",
+    "is_raw_salad": false,
+    "expected_cal_min": 75,
+    "expected_cal_max": 195,
+    "expected_protein_min": 1.6,
+    "expected_protein_max": 4.4,
+    "key_ingredients": [
+      "bendakaya",
+      "okra",
+      "ladies finger",
+      "vepudu"
+    ]
+  },
+  {
+    "test_id": "TEST-017",
+    "filename": "017_Bangaladumpa_Aloo_Vepudu.jpg",
+    "image_path": "C:/Users/rinit/.gemini/antigravity/playground/shadow-ionosphere/telugu-food-scanner/tests/benchmark_100/images/017_Bangaladumpa_Aloo_Vepudu.jpg",
+    "expected_dish_name": "Bangaladumpa Vepudu (Spiced Potato Fry)",
+    "expected_dish_te": "బంగాళాదుంప వేపుడు",
+    "expected_cluster": "Vegetable Curries",
+    "macro_category": "Curries",
+    "is_raw_salad": false,
+    "expected_cal_min": 90,
+    "expected_cal_max": 255,
+    "expected_protein_min": 1.4,
+    "expected_protein_max": 4.3,
+    "key_ingredients": [
+      "bangaladumpa",
+      "aloo",
+      "potato",
+      "vepudu"
+    ]
+  },
+  {
+    "test_id": "TEST-018",
+    "filename": "018_Dondakaya_Vepudu.jpg",
+    "image_path": "C:/Users/rinit/.gemini/antigravity/playground/shadow-ionosphere/telugu-food-scanner/tests/benchmark_100/images/018_Dondakaya_Vepudu.jpg",
+    "expected_dish_name": "Dondakaya Vepudu (Ivy Gourd Stir Fry)",
+    "expected_dish_te": "దొండకాయ వేపుడు",
+    "expected_cluster": "Vegetable Curries",
+    "macro_category": "Curries",
+    "is_raw_salad": false,
+    "expected_cal_min": 70,
+    "expected_cal_max": 185,
+    "expected_protein_min": 1.4,
+    "expected_protein_max": 3.8,
+    "key_ingredients": [
+      "dondakaya",
+      "ivy gourd",
+      "tindora",
+      "vepudu"
+    ]
+  },
+  {
+    "test_id": "TEST-019",
+    "filename": "019_Beerakaya_Kura.jpg",
+    "image_path": "C:/Users/rinit/.gemini/antigravity/playground/shadow-ionosphere/telugu-food-scanner/tests/benchmark_100/images/019_Beerakaya_Kura.jpg",
+    "expected_dish_name": "Beerakaya Kura (Ridge Gourd Curry)",
+    "expected_dish_te": "బీరకాయ కూర",
+    "expected_cluster": "Vegetable Curries",
+    "macro_category": "Curries",
+    "is_raw_salad": false,
+    "expected_cal_min": 50,
+    "expected_cal_max": 145,
+    "expected_protein_min": 1.2,
+    "expected_protein_max": 3.5,
+    "key_ingredients": [
+      "beerakaya",
+      "ridge gourd",
+      "kura",
+      "curry"
+    ]
+  },
+  {
+    "test_id": "TEST-020",
+    "filename": "020_Sorakaya_Kura.jpg",
+    "image_path": "C:/Users/rinit/.gemini/antigravity/playground/shadow-ionosphere/telugu-food-scanner/tests/benchmark_100/images/020_Sorakaya_Kura.jpg",
+    "expected_dish_name": "Sorakaya / Anapakaya Kura (Bottle Gourd Curry)",
+    "expected_dish_te": "సొరకాయ కూర",
+    "expected_cluster": "Vegetable Curries",
+    "macro_category": "Curries",
+    "is_raw_salad": false,
+    "expected_cal_min": 50,
+    "expected_cal_max": 150,
+    "expected_protein_min": 1.0,
+    "expected_protein_max": 3.4,
+    "key_ingredients": [
+      "sorakaya",
+      "anapakaya",
+      "bottle gourd",
+      "kura"
+    ]
+  },
+  {
+    "test_id": "TEST-021",
+    "filename": "021_Kakarakaya_Vepudu.jpg",
+    "image_path": "C:/Users/rinit/.gemini/antigravity/playground/shadow-ionosphere/telugu-food-scanner/tests/benchmark_100/images/021_Kakarakaya_Vepudu.jpg",
+    "expected_dish_name": "Kakarakaya Vepudu (Bitter Gourd Stir Fry)",
+    "expected_dish_te": "కాకరకాయ వేపుడు",
+    "expected_cluster": "Vegetable Curries",
+    "macro_category": "Curries",
+    "is_raw_salad": false,
+    "expected_cal_min": 75,
+    "expected_cal_max": 190,
+    "expected_protein_min": 1.6,
+    "expected_protein_max": 4.2,
+    "key_ingredients": [
+      "kakarakaya",
+      "bitter gourd",
+      "karela",
+      "vepudu"
+    ]
+  },
+  {
+    "test_id": "TEST-022",
+    "filename": "022_Cabbage_Vepudu.jpg",
+    "image_path": "C:/Users/rinit/.gemini/antigravity/playground/shadow-ionosphere/telugu-food-scanner/tests/benchmark_100/images/022_Cabbage_Vepudu.jpg",
+    "expected_dish_name": "Cabbage Vepudu (Cabbage Stir Fry)",
+    "expected_dish_te": "క్యాబేజీ వేపుడు",
+    "expected_cluster": "Vegetable Curries",
+    "macro_category": "Curries",
+    "is_raw_salad": false,
+    "expected_cal_min": 55,
+    "expected_cal_max": 145,
+    "expected_protein_min": 1.4,
+    "expected_protein_max": 3.8,
+    "key_ingredients": [
+      "cabbage",
+      "vepudu",
+      "senagapappu",
+      "stir fry"
+    ]
+  },
+  {
+    "test_id": "TEST-023",
+    "filename": "023_Cauliflower_Kura.jpg",
+    "image_path": "C:/Users/rinit/.gemini/antigravity/playground/shadow-ionosphere/telugu-food-scanner/tests/benchmark_100/images/023_Cauliflower_Kura.jpg",
+    "expected_dish_name": "Cauliflower Kura (Cauliflower Curry)",
+    "expected_dish_te": "కాలిఫ్లవర్ కూర",
+    "expected_cluster": "Vegetable Curries",
+    "macro_category": "Curries",
+    "is_raw_salad": false,
+    "expected_cal_min": 60,
+    "expected_cal_max": 175,
+    "expected_protein_min": 1.6,
+    "expected_protein_max": 4.7,
+    "key_ingredients": [
+      "cauliflower",
+      "gobi",
+      "kura",
+      "curry"
+    ]
+  },
+  {
+    "test_id": "TEST-024",
+    "filename": "024_Beans_Vepudu.jpg",
+    "image_path": "C:/Users/rinit/.gemini/antigravity/playground/shadow-ionosphere/telugu-food-scanner/tests/benchmark_100/images/024_Beans_Vepudu.jpg",
+    "expected_dish_name": "Beans Vepudu (French Beans Stir Fry)",
+    "expected_dish_te": "బీన్స్ వేపుడు",
+    "expected_cluster": "Vegetable Curries",
+    "macro_category": "Curries",
+    "is_raw_salad": false,
+    "expected_cal_min": 55,
+    "expected_cal_max": 155,
+    "expected_protein_min": 1.7,
+    "expected_protein_max": 4.7,
+    "key_ingredients": [
+      "beans",
+      "french beans",
+      "vepudu",
+      "poriyal"
+    ]
+  },
+  {
+    "test_id": "TEST-025",
+    "filename": "025_Chikkudukaya_Kura.jpg",
+    "image_path": "C:/Users/rinit/.gemini/antigravity/playground/shadow-ionosphere/telugu-food-scanner/tests/benchmark_100/images/025_Chikkudukaya_Kura.jpg",
+    "expected_dish_name": "Chikkudukaya Kura (Broad Beans Curry)",
+    "expected_dish_te": "చిక్కుడుకాయ కూర",
+    "expected_cluster": "Vegetable Curries",
+    "macro_category": "Curries",
+    "is_raw_salad": false,
+    "expected_cal_min": 70,
+    "expected_cal_max": 200,
+    "expected_protein_min": 2.9,
+    "expected_protein_max": 8.8,
+    "key_ingredients": [
+      "chikkudukaya",
+      "broad beans",
+      "country beans",
+      "kura"
+    ]
+  },
+  {
+    "test_id": "TEST-026",
+    "filename": "026_Goruchikkudu_Kura.jpg",
+    "image_path": "C:/Users/rinit/.gemini/antigravity/playground/shadow-ionosphere/telugu-food-scanner/tests/benchmark_100/images/026_Goruchikkudu_Kura.jpg",
+    "expected_dish_name": "Goruchikkudu Kura (Cluster Beans Curry)",
+    "expected_dish_te": "గోరుచిక్కుడు కూర",
+    "expected_cluster": "Vegetable Curries",
+    "macro_category": "Curries",
+    "is_raw_salad": false,
+    "expected_cal_min": 65,
+    "expected_cal_max": 170,
+    "expected_protein_min": 2.2,
+    "expected_protein_max": 6.2,
+    "key_ingredients": [
+      "goruchikkudu",
+      "cluster beans",
+      "gavar",
+      "kura"
+    ]
+  },
+  {
+    "test_id": "TEST-027",
+    "filename": "027_Dosakaya_Mukkala_Pulusu.jpg",
+    "image_path": "C:/Users/rinit/.gemini/antigravity/playground/shadow-ionosphere/telugu-food-scanner/tests/benchmark_100/images/027_Dosakaya_Mukkala_Pulusu.jpg",
+    "expected_dish_name": "Dosakaya Mukkala Pulusu (Yellow Cucumber Stew)",
+    "expected_dish_te": "దోసకాయ ముక్కల పులుసు",
+    "expected_cluster": "Vegetable Curries",
+    "macro_category": "Curries",
+    "is_raw_salad": false,
+    "expected_cal_min": 50,
+    "expected_cal_max": 155,
+    "expected_protein_min": 1.0,
+    "expected_protein_max": 3.1,
+    "key_ingredients": [
+      "dosakaya",
+      "yellow cucumber",
+      "pulusu",
+      "mukkala pulusu"
+    ]
+  },
+  {
+    "test_id": "TEST-028",
+    "filename": "028_Munakkaya_Pulusu.jpg",
+    "image_path": "C:/Users/rinit/.gemini/antigravity/playground/shadow-ionosphere/telugu-food-scanner/tests/benchmark_100/images/028_Munakkaya_Pulusu.jpg",
+    "expected_dish_name": "Munakkaya Pulusu / Kura (Drumstick Stew)",
+    "expected_dish_te": "మునక్కాయ పులుసు / కూర",
+    "expected_cluster": "Vegetable Curries",
+    "macro_category": "Curries",
+    "is_raw_salad": false,
+    "expected_cal_min": 60,
+    "expected_cal_max": 180,
+    "expected_protein_min": 1.7,
+    "expected_protein_max": 5.5,
+    "key_ingredients": [
+      "munakkaya",
+      "mulakkada",
+      "drumstick",
+      "pulusu"
+    ]
+  },
+  {
+    "test_id": "TEST-029",
+    "filename": "029_Aratikaya_Vepudu.jpg",
+    "image_path": "C:/Users/rinit/.gemini/antigravity/playground/shadow-ionosphere/telugu-food-scanner/tests/benchmark_100/images/029_Aratikaya_Vepudu.jpg",
+    "expected_dish_name": "Aratikaya Vepudu (Raw Plantain Fry)",
+    "expected_dish_te": "అరటికాయ వేపుడు",
+    "expected_cluster": "Vegetable Curries",
+    "macro_category": "Curries",
+    "is_raw_salad": false,
+    "expected_cal_min": 85,
+    "expected_cal_max": 230,
+    "expected_protein_min": 1.2,
+    "expected_protein_max": 3.5,
+    "key_ingredients": [
+      "aratikaya",
+      "raw banana",
+      "plantain",
+      "vepudu"
+    ]
+  },
+  {
+    "test_id": "TEST-030",
+    "filename": "030_Chamadumpa_Pulusu.jpg",
+    "image_path": "C:/Users/rinit/.gemini/antigravity/playground/shadow-ionosphere/telugu-food-scanner/tests/benchmark_100/images/030_Chamadumpa_Pulusu.jpg",
+    "expected_dish_name": "Chamadumpa Pulusu (Colocasia / Taro Root Stew)",
+    "expected_dish_te": "చామదుంప పులుసు",
+    "expected_cluster": "Vegetable Curries",
+    "macro_category": "Curries",
+    "is_raw_salad": false,
+    "expected_cal_min": 90,
+    "expected_cal_max": 260,
+    "expected_protein_min": 1.7,
+    "expected_protein_max": 5.1,
+    "key_ingredients": [
+      "chamadumpa",
+      "colocasia",
+      "arbi",
+      "pulusu"
+    ]
+  },
+  {
+    "test_id": "TEST-031",
+    "filename": "031_Potlakaya_Kura.jpg",
+    "image_path": "C:/Users/rinit/.gemini/antigravity/playground/shadow-ionosphere/telugu-food-scanner/tests/benchmark_100/images/031_Potlakaya_Kura.jpg",
+    "expected_dish_name": "Potlakaya Kura (Snake Gourd Curry)",
+    "expected_dish_te": "పొట్లకాయ కూర",
+    "expected_cluster": "Vegetable Curries",
+    "macro_category": "Curries",
+    "is_raw_salad": false,
+    "expected_cal_min": 55,
+    "expected_cal_max": 155,
+    "expected_protein_min": 1.6,
+    "expected_protein_max": 4.9,
+    "key_ingredients": [
+      "potlakaya",
+      "snake gourd",
+      "kura"
+    ]
+  },
+  {
+    "test_id": "TEST-032",
+    "filename": "032_Meal_Maker_Soya_Chunks_Kura.jpg",
+    "image_path": "C:/Users/rinit/.gemini/antigravity/playground/shadow-ionosphere/telugu-food-scanner/tests/benchmark_100/images/032_Meal_Maker_Soya_Chunks_Kura.jpg",
+    "expected_dish_name": "Meal Maker Kura (Soya Chunks Curry)",
+    "expected_dish_te": "మీల్ మేకర్ కూర",
+    "expected_cluster": "Vegetable Curries",
+    "macro_category": "Curries",
+    "is_raw_salad": false,
+    "expected_cal_min": 100,
+    "expected_cal_max": 310,
+    "expected_protein_min": 9.6,
+    "expected_protein_max": 31.1,
+    "key_ingredients": [
+      "meal maker",
+      "soya chunks",
+      "soya curry",
+      "protein"
+    ]
+  },
+  {
+    "test_id": "TEST-033",
+    "filename": "033_Senagala_Kura.jpg",
+    "image_path": "C:/Users/rinit/.gemini/antigravity/playground/shadow-ionosphere/telugu-food-scanner/tests/benchmark_100/images/033_Senagala_Kura.jpg",
+    "expected_dish_name": "Senagala Kura (Black Chickpea Curry)",
+    "expected_dish_te": "శనగల కూర",
+    "expected_cluster": "Vegetable Curries",
+    "macro_category": "Curries",
+    "is_raw_salad": false,
+    "expected_cal_min": 105,
+    "expected_cal_max": 320,
+    "expected_protein_min": 5.1,
+    "expected_protein_max": 16.4,
+    "key_ingredients": [
+      "senagalu",
+      "chana",
+      "black chickpeas",
+      "kura"
+    ]
+  },
+  {
+    "test_id": "TEST-034",
+    "filename": "034_Majjiga_Pulusu.jpg",
+    "image_path": "C:/Users/rinit/.gemini/antigravity/playground/shadow-ionosphere/telugu-food-scanner/tests/benchmark_100/images/034_Majjiga_Pulusu.jpg",
+    "expected_dish_name": "Majjiga Pulusu / Majjiga Charu (Seasoned Buttermilk Stew)",
+    "expected_dish_te": "మజ్జిగ పులుసు",
+    "expected_cluster": "Vegetable Curries",
+    "macro_category": "Curries",
+    "is_raw_salad": false,
+    "expected_cal_min": 45,
+    "expected_cal_max": 140,
+    "expected_protein_min": 1.8,
+    "expected_protein_max": 5.9,
+    "key_ingredients": [
+      "majjiga",
+      "buttermilk",
+      "kadhi",
+      "pulusu",
+      "charu"
+    ]
+  },
+  {
+    "test_id": "TEST-035",
+    "filename": "035_Palli_Pachadi.jpg",
+    "image_path": "C:/Users/rinit/.gemini/antigravity/playground/shadow-ionosphere/telugu-food-scanner/tests/benchmark_100/images/035_Palli_Pachadi.jpg",
+    "expected_dish_name": "Palli Pachadi (Peanut / Groundnut Chutney)",
+    "expected_dish_te": "పల్లీ పచ్చడి",
+    "expected_cluster": "Chutneys & Podis",
+    "macro_category": "Curries",
+    "is_raw_salad": false,
+    "expected_cal_min": 65,
+    "expected_cal_max": 335,
+    "expected_protein_min": 2.5,
+    "expected_protein_max": 13.7,
+    "key_ingredients": [
+      "palli",
+      "peanut",
+      "groundnut",
+      "pachadi",
+      "chutney"
+    ]
+  },
+  {
+    "test_id": "TEST-036",
+    "filename": "036_Kobbari_Pachadi.jpg",
+    "image_path": "C:/Users/rinit/.gemini/antigravity/playground/shadow-ionosphere/telugu-food-scanner/tests/benchmark_100/images/036_Kobbari_Pachadi.jpg",
+    "expected_dish_name": "Kobbari Pachadi (Coconut Chutney)",
+    "expected_dish_te": "కొబ్బరి పచ్చడి",
+    "expected_cluster": "Chutneys & Podis",
+    "macro_category": "Curries",
+    "is_raw_salad": false,
+    "expected_cal_min": 60,
+    "expected_cal_max": 315,
+    "expected_protein_min": 0.9,
+    "expected_protein_max": 4.8,
+    "key_ingredients": [
+      "kobbari",
+      "coconut",
+      "pachadi",
+      "chutney"
+    ]
+  },
+  {
+    "test_id": "TEST-037",
+    "filename": "037_Allam_Pachadi.jpg",
+    "image_path": "C:/Users/rinit/.gemini/antigravity/playground/shadow-ionosphere/telugu-food-scanner/tests/benchmark_100/images/037_Allam_Pachadi.jpg",
+    "expected_dish_name": "Allam Pachadi (Ginger Chutney)",
+    "expected_dish_te": "అల్లం పచ్చడి",
+    "expected_cluster": "Chutneys & Podis",
+    "macro_category": "Curries",
+    "is_raw_salad": false,
+    "expected_cal_min": 35,
+    "expected_cal_max": 240,
+    "expected_protein_min": 0.4,
+    "expected_protein_max": 3.1,
+    "key_ingredients": [
+      "allam",
+      "ginger",
+      "pachadi",
+      "jaggery chutney"
+    ]
+  },
+  {
+    "test_id": "TEST-038",
+    "filename": "038_Tomato_Pachadi.jpg",
+    "image_path": "C:/Users/rinit/.gemini/antigravity/playground/shadow-ionosphere/telugu-food-scanner/tests/benchmark_100/images/038_Tomato_Pachadi.jpg",
+    "expected_dish_name": "Tomato Pachadi (Roti Pachadi)",
+    "expected_dish_te": "టమాటా పచ్చడి",
+    "expected_cluster": "Chutneys & Podis",
+    "macro_category": "Curries",
+    "is_raw_salad": false,
+    "expected_cal_min": 30,
+    "expected_cal_max": 155,
+    "expected_protein_min": 0.6,
+    "expected_protein_max": 3.4,
+    "key_ingredients": [
+      "tomato",
+      "tamata",
+      "pachadi",
+      "roti pachadi"
+    ]
+  },
+  {
+    "test_id": "TEST-039",
+    "filename": "039_Gongura_Pachadi.jpg",
+    "image_path": "C:/Users/rinit/.gemini/antigravity/playground/shadow-ionosphere/telugu-food-scanner/tests/benchmark_100/images/039_Gongura_Pachadi.jpg",
+    "expected_dish_name": "Gongura Pachadi (Spicy Sorrel Leaves Chutney)",
+    "expected_dish_te": "గోంగూర పచ్చడి",
+    "expected_cluster": "Chutneys & Podis",
+    "macro_category": "Curries",
+    "is_raw_salad": false,
+    "expected_cal_min": 40,
+    "expected_cal_max": 210,
+    "expected_protein_min": 0.8,
+    "expected_protein_max": 4.3,
+    "key_ingredients": [
+      "gongura",
+      "sorrel",
+      "pachadi",
+      "andhra pickle"
+    ]
+  },
+  {
+    "test_id": "TEST-040",
+    "filename": "040_Dosakaya_Pachadi.jpg",
+    "image_path": "C:/Users/rinit/.gemini/antigravity/playground/shadow-ionosphere/telugu-food-scanner/tests/benchmark_100/images/040_Dosakaya_Pachadi.jpg",
+    "expected_dish_name": "Dosakaya Pachadi (Yellow Cucumber Chutney)",
+    "expected_dish_te": "దోసకాయ పచ్చడి",
+    "expected_cluster": "Chutneys & Podis",
+    "macro_category": "Curries",
+    "is_raw_salad": false,
+    "expected_cal_min": 30,
+    "expected_cal_max": 165,
+    "expected_protein_min": 0.8,
+    "expected_protein_max": 4.5,
+    "key_ingredients": [
+      "dosakaya",
+      "cucumber",
+      "pachadi",
+      "chutney"
+    ]
+  },
+  {
+    "test_id": "TEST-041",
+    "filename": "041_Kandi_Podi.jpg",
+    "image_path": "C:/Users/rinit/.gemini/antigravity/playground/shadow-ionosphere/telugu-food-scanner/tests/benchmark_100/images/041_Kandi_Podi.jpg",
+    "expected_dish_name": "Kandi Podi (Gunpowder / Spiced Dal Powder)",
+    "expected_dish_te": "కంది పొడి",
+    "expected_cluster": "Chutneys & Podis",
+    "macro_category": "Curries",
+    "is_raw_salad": false,
+    "expected_cal_min": 50,
+    "expected_cal_max": 495,
+    "expected_protein_min": 2.8,
+    "expected_protein_max": 30.0,
+    "key_ingredients": [
+      "kandi podi",
+      "dal powder",
+      "gunpowder",
+      "toor dal powder"
+    ]
+  },
+  {
+    "test_id": "TEST-042",
+    "filename": "042_Karivepaku_Podi.jpg",
+    "image_path": "C:/Users/rinit/.gemini/antigravity/playground/shadow-ionosphere/telugu-food-scanner/tests/benchmark_100/images/042_Karivepaku_Podi.jpg",
+    "expected_dish_name": "Karivepaku Podi (Curry Leaves Powder)",
+    "expected_dish_te": "కరివేపాకు పొడి",
+    "expected_cluster": "Chutneys & Podis",
+    "macro_category": "Curries",
+    "is_raw_salad": false,
+    "expected_cal_min": 45,
+    "expected_cal_max": 460,
+    "expected_protein_min": 2.2,
+    "expected_protein_max": 23.5,
+    "key_ingredients": [
+      "karivepaku",
+      "curry leaves",
+      "podi",
+      "powder"
+    ]
+  },
+  {
+    "test_id": "TEST-043",
+    "filename": "043_Nuvvula_Podi.jpg",
+    "image_path": "C:/Users/rinit/.gemini/antigravity/playground/shadow-ionosphere/telugu-food-scanner/tests/benchmark_100/images/043_Nuvvula_Podi.jpg",
+    "expected_dish_name": "Nuvvula Podi (Sesame Seed Powder)",
+    "expected_dish_te": "నువ్వుల పొడి",
+    "expected_cluster": "Chutneys & Podis",
+    "macro_category": "Curries",
+    "is_raw_salad": false,
+    "expected_cal_min": 65,
+    "expected_cal_max": 700,
+    "expected_protein_min": 2.5,
+    "expected_protein_max": 26.9,
+    "key_ingredients": [
+      "nuvvulu",
+      "sesame",
+      "til",
+      "podi"
+    ]
+  },
+  {
+    "test_id": "TEST-044",
+    "filename": "044_Guddu_Porutu_Egg_Bhurji.jpg",
+    "image_path": "C:/Users/rinit/.gemini/antigravity/playground/shadow-ionosphere/telugu-food-scanner/tests/benchmark_100/images/044_Guddu_Porutu_Egg_Bhurji.jpg",
+    "expected_dish_name": "Guddu Porutu (Spiced Scrambled Egg / Bhurji)",
+    "expected_dish_te": "గుడ్డు పొరుటు / ఎగ్ బుర్జీ",
+    "expected_cluster": "Eggs, Meat & Fish",
+    "macro_category": "Non-Veg",
+    "is_raw_salad": false,
+    "expected_cal_min": 115,
+    "expected_cal_max": 285,
+    "expected_protein_min": 7.0,
+    "expected_protein_max": 18.1,
+    "key_ingredients": [
+      "guddu",
+      "egg",
+      "bhurji",
+      "scramble",
+      "porutu"
+    ]
+  },
+  {
+    "test_id": "TEST-045",
+    "filename": "045_Natukodi_Pulusu.jpg",
+    "image_path": "C:/Users/rinit/.gemini/antigravity/playground/shadow-ionosphere/telugu-food-scanner/tests/benchmark_100/images/045_Natukodi_Pulusu.jpg",
+    "expected_dish_name": "Natukodi Pulusu (Country Chicken Curry)",
+    "expected_dish_te": "నాటుకోడి పులుసు",
+    "expected_cluster": "Eggs, Meat & Fish",
+    "macro_category": "Non-Veg",
+    "is_raw_salad": false,
+    "expected_cal_min": 105,
+    "expected_cal_max": 375,
+    "expected_protein_min": 11.8,
+    "expected_protein_max": 43.3,
+    "key_ingredients": [
+      "natukodi",
+      "chicken",
+      "country chicken",
+      "pulusu"
+    ]
+  },
+  {
+    "test_id": "TEST-046",
+    "filename": "046_Gongura_Chicken.jpg",
+    "image_path": "C:/Users/rinit/.gemini/antigravity/playground/shadow-ionosphere/telugu-food-scanner/tests/benchmark_100/images/046_Gongura_Chicken.jpg",
+    "expected_dish_name": "Gongura Chicken (Chicken with Sorrel Leaves)",
+    "expected_dish_te": "గోంగూర చికెన్",
+    "expected_cluster": "Eggs, Meat & Fish",
+    "macro_category": "Non-Veg",
+    "is_raw_salad": false,
+    "expected_cal_min": 115,
+    "expected_cal_max": 385,
+    "expected_protein_min": 10.7,
+    "expected_protein_max": 36.7,
+    "key_ingredients": [
+      "gongura chicken",
+      "sorrel chicken",
+      "kodi kura",
+      "chicken"
+    ]
+  },
+  {
+    "test_id": "TEST-047",
+    "filename": "047_Endu_Chepalu_Kura.jpg",
+    "image_path": "C:/Users/rinit/.gemini/antigravity/playground/shadow-ionosphere/telugu-food-scanner/tests/benchmark_100/images/047_Endu_Chepalu_Kura.jpg",
+    "expected_dish_name": "Endu Chepalu Kura (Dry Fish Curry)",
+    "expected_dish_te": "ఎండు చేపల కూర",
+    "expected_cluster": "Eggs, Meat & Fish",
+    "macro_category": "Non-Veg",
+    "is_raw_salad": false,
+    "expected_cal_min": 125,
+    "expected_cal_max": 310,
+    "expected_protein_min": 16.1,
+    "expected_protein_max": 41.7,
+    "key_ingredients": [
+      "endu chepalu",
+      "dry fish",
+      "fish curry",
+      "chepa"
+    ]
+  },
+  {
+    "test_id": "TEST-048",
+    "filename": "048_Ragi_Laddu.jpg",
+    "image_path": "C:/Users/rinit/.gemini/antigravity/playground/shadow-ionosphere/telugu-food-scanner/tests/benchmark_100/images/048_Ragi_Laddu.jpg",
+    "expected_dish_name": "Ragi Laddu (Finger Millet & Jaggery Sweet)",
+    "expected_dish_te": "రాగి లడ్డూ",
+    "expected_cluster": "Snacks & Sweets",
+    "macro_category": "Salads/Staples",
+    "is_raw_salad": false,
+    "expected_cal_min": 120,
+    "expected_cal_max": 565,
+    "expected_protein_min": 2.3,
+    "expected_protein_max": 10.9,
+    "key_ingredients": [
+      "ragi",
+      "laddu",
+      "finger millet",
+      "jaggery"
+    ]
+  },
+  {
+    "test_id": "TEST-049",
+    "filename": "049_Guggillu.jpg",
+    "image_path": "C:/Users/rinit/.gemini/antigravity/playground/shadow-ionosphere/telugu-food-scanner/tests/benchmark_100/images/049_Guggillu.jpg",
+    "expected_dish_name": "Guggillu (Seasoned Boiled Pulses / Sundal)",
+    "expected_dish_te": "గుగ్గిళ్ళు",
+    "expected_cluster": "Snacks & Sweets",
+    "macro_category": "Salads/Staples",
+    "is_raw_salad": false,
+    "expected_cal_min": 100,
+    "expected_cal_max": 245,
+    "expected_protein_min": 5.7,
+    "expected_protein_max": 14.8,
+    "key_ingredients": [
+      "guggillu",
+      "sundal",
+      "boiled chickpeas",
+      "tempered"
+    ]
+  },
+  {
+    "test_id": "TEST-050",
+    "filename": "050_Coconut_Water.jpg",
+    "image_path": "C:/Users/rinit/.gemini/antigravity/playground/shadow-ionosphere/telugu-food-scanner/tests/benchmark_100/images/050_Coconut_Water.jpg",
+    "expected_dish_name": "Coconut Water (Kobbari Bondam)",
+    "expected_dish_te": "కొబ్బరి బొండం",
+    "expected_cluster": "Fruits & Salads",
+    "macro_category": "Salads/Staples",
+    "is_raw_salad": false,
+    "expected_cal_min": 10,
+    "expected_cal_max": 65,
+    "expected_protein_min": 0.5,
+    "expected_protein_max": 2.4,
+    "key_ingredients": [
+      "coconut water",
+      "kobbari bondam",
+      "tender coconut",
+      "hydrating"
+    ]
+  },
+  {
+    "test_id": "TEST-051",
+    "filename": "051_Ponaganti_Kura_Vepudu.jpg",
+    "image_path": "C:/Users/rinit/.gemini/antigravity/playground/shadow-ionosphere/telugu-food-scanner/tests/benchmark_100/images/051_Ponaganti_Kura_Vepudu.jpg",
+    "expected_dish_name": "Ponaganti Kura Vepudu (Alternanthera Leaves Stir Fry)",
+    "expected_dish_te": "పొన్నగంటి కూర వేపుడు",
+    "expected_cluster": "Leafy Green Curries",
+    "macro_category": "Leafy Greens",
+    "is_raw_salad": false,
+    "expected_cal_min": 60,
+    "expected_cal_max": 150,
+    "expected_protein_min": 2.5,
+    "expected_protein_max": 6.4,
+    "key_ingredients": [
+      "ponnaganti",
+      "ponaganti",
+      "alternanthera",
+      "vepudu",
+      "leafy green"
+    ]
+  },
+  {
+    "test_id": "TEST-052",
+    "filename": "052_Bachali_Kura_Pulusu.jpg",
+    "image_path": "C:/Users/rinit/.gemini/antigravity/playground/shadow-ionosphere/telugu-food-scanner/tests/benchmark_100/images/052_Bachali_Kura_Pulusu.jpg",
+    "expected_dish_name": "Bachali Kura Pulusu (Malabar Spinach Stew)",
+    "expected_dish_te": "బచ్చలికూర పులుసు",
+    "expected_cluster": "Leafy Green Curries",
+    "macro_category": "Leafy Greens",
+    "is_raw_salad": false,
+    "expected_cal_min": 55,
+    "expected_cal_max": 145,
+    "expected_protein_min": 1.6,
+    "expected_protein_max": 4.4,
+    "key_ingredients": [
+      "bachali",
+      "malabar spinach",
+      "pulusu",
+      "leafy"
+    ]
+  },
+  {
+    "test_id": "TEST-053",
+    "filename": "053_Chukkakura_Kura.jpg",
+    "image_path": "C:/Users/rinit/.gemini/antigravity/playground/shadow-ionosphere/telugu-food-scanner/tests/benchmark_100/images/053_Chukkakura_Kura.jpg",
+    "expected_dish_name": "Chukkakura Kura (Green Sorrel Leaves Curry)",
+    "expected_dish_te": "చుక్కకూర కూర",
+    "expected_cluster": "Leafy Green Curries",
+    "macro_category": "Leafy Greens",
+    "is_raw_salad": false,
+    "expected_cal_min": 55,
+    "expected_cal_max": 145,
+    "expected_protein_min": 1.7,
+    "expected_protein_max": 4.4,
+    "key_ingredients": [
+      "chukkakura",
+      "green sorrel",
+      "khatta palak",
+      "kura"
+    ]
+  },
+  {
+    "test_id": "TEST-054",
+    "filename": "054_Bachali_Kura_Pappu.jpg",
+    "image_path": "C:/Users/rinit/.gemini/antigravity/playground/shadow-ionosphere/telugu-food-scanner/tests/benchmark_100/images/054_Bachali_Kura_Pappu.jpg",
+    "expected_dish_name": "Bachali Kura Pappu (Malabar Spinach Dal)",
+    "expected_dish_te": "బచ్చలికూర పప్పు",
+    "expected_cluster": "Dals & Pappu",
+    "macro_category": "Dals",
+    "is_raw_salad": false,
+    "expected_cal_min": 75,
+    "expected_cal_max": 235,
+    "expected_protein_min": 4.0,
+    "expected_protein_max": 13.0,
+    "key_ingredients": [
+      "bachali",
+      "malabar spinach",
+      "pappu",
+      "dal"
+    ]
+  },
+  {
+    "test_id": "TEST-055",
+    "filename": "055_Munagaku_Pappu.jpg",
+    "image_path": "C:/Users/rinit/.gemini/antigravity/playground/shadow-ionosphere/telugu-food-scanner/tests/benchmark_100/images/055_Munagaku_Pappu.jpg",
+    "expected_dish_name": "Munagaku Pappu (Moringa / Drumstick Leaves Dal)",
+    "expected_dish_te": "మునగాకు పప్పు",
+    "expected_cluster": "Dals & Pappu",
+    "macro_category": "Dals",
+    "is_raw_salad": false,
+    "expected_cal_min": 85,
+    "expected_cal_max": 260,
+    "expected_protein_min": 4.9,
+    "expected_protein_max": 16.0,
+    "key_ingredients": [
+      "munagaku",
+      "moringa",
+      "drumstick leaves",
+      "pappu",
+      "dal"
+    ]
+  },
+  {
+    "test_id": "TEST-056",
+    "filename": "056_Ponaganti_Kura_Pappu.jpg",
+    "image_path": "C:/Users/rinit/.gemini/antigravity/playground/shadow-ionosphere/telugu-food-scanner/tests/benchmark_100/images/056_Ponaganti_Kura_Pappu.jpg",
+    "expected_dish_name": "Ponaganti Kura Pappu (Alternanthera Dal)",
+    "expected_dish_te": "పొన్నగంటి కూర పప్పు",
+    "expected_cluster": "Dals & Pappu",
+    "macro_category": "Dals",
+    "is_raw_salad": false,
+    "expected_cal_min": 80,
+    "expected_cal_max": 245,
+    "expected_protein_min": 4.3,
+    "expected_protein_max": 13.9,
+    "key_ingredients": [
+      "ponnaganti",
+      "ponaganti",
+      "pappu",
+      "dal"
+    ]
+  },
+  {
+    "test_id": "TEST-057",
+    "filename": "057_Sorakaya_Anapakaya_Pappu.jpg",
+    "image_path": "C:/Users/rinit/.gemini/antigravity/playground/shadow-ionosphere/telugu-food-scanner/tests/benchmark_100/images/057_Sorakaya_Anapakaya_Pappu.jpg",
+    "expected_dish_name": "Sorakaya Anapakaya Pappu (Bottle Gourd Lentil Dal)",
+    "expected_dish_te": "సొరకాయ / ఆనపకాయ పప్పు",
+    "expected_cluster": "Dals & Pappu",
+    "macro_category": "Dals",
+    "is_raw_salad": false,
+    "expected_cal_min": 70,
+    "expected_cal_max": 220,
+    "expected_protein_min": 3.6,
+    "expected_protein_max": 11.8,
+    "key_ingredients": [
+      "sorakaya",
+      "anapakaya",
+      "bottle gourd",
+      "pappu",
+      "dal"
+    ]
+  },
+  {
+    "test_id": "TEST-058",
+    "filename": "058_Munakkaya_Pappu.jpg",
+    "image_path": "C:/Users/rinit/.gemini/antigravity/playground/shadow-ionosphere/telugu-food-scanner/tests/benchmark_100/images/058_Munakkaya_Pappu.jpg",
+    "expected_dish_name": "Munakkaya Pappu (Drumstick Dal)",
+    "expected_dish_te": "మునక్కాయ పప్పు",
+    "expected_cluster": "Dals & Pappu",
+    "macro_category": "Dals",
+    "is_raw_salad": false,
+    "expected_cal_min": 75,
+    "expected_cal_max": 235,
+    "expected_protein_min": 4.0,
+    "expected_protein_max": 12.8,
+    "key_ingredients": [
+      "munakkaya",
+      "drumstick",
+      "pappu",
+      "dal"
+    ]
+  },
+  {
+    "test_id": "TEST-059",
+    "filename": "059_Bangaladumpa_Aloo_Kurma.jpg",
+    "image_path": "C:/Users/rinit/.gemini/antigravity/playground/shadow-ionosphere/telugu-food-scanner/tests/benchmark_100/images/059_Bangaladumpa_Aloo_Kurma.jpg",
+    "expected_dish_name": "Bangaladumpa Aloo Kurma (Potato Gravy Curry)",
+    "expected_dish_te": "బంగాళాదుంప కుర్మా",
+    "expected_cluster": "Vegetable Curries",
+    "macro_category": "Curries",
+    "is_raw_salad": false,
+    "expected_cal_min": 80,
+    "expected_cal_max": 250,
+    "expected_protein_min": 1.7,
+    "expected_protein_max": 5.5,
+    "key_ingredients": [
+      "bangaladumpa",
+      "aloo",
+      "kurma",
+      "potato curry",
+      "gravy"
+    ]
+  },
+  {
+    "test_id": "TEST-060",
+    "filename": "060_Sorakaya_Pulusu.jpg",
+    "image_path": "C:/Users/rinit/.gemini/antigravity/playground/shadow-ionosphere/telugu-food-scanner/tests/benchmark_100/images/060_Sorakaya_Pulusu.jpg",
+    "expected_dish_name": "Sorakaya Pulusu (Tamarind Bottle Gourd Stew)",
+    "expected_dish_te": "సొరకాయ పులుసు",
+    "expected_cluster": "Vegetable Curries",
+    "macro_category": "Curries",
+    "is_raw_salad": false,
+    "expected_cal_min": 45,
+    "expected_cal_max": 145,
+    "expected_protein_min": 1.0,
+    "expected_protein_max": 3.1,
+    "key_ingredients": [
+      "sorakaya",
+      "anapakaya",
+      "pulusu",
+      "tamarind stew"
+    ]
+  },
+  {
+    "test_id": "TEST-061",
+    "filename": "061_Kakarakaya_Bellam_Pulusu.jpg",
+    "image_path": "C:/Users/rinit/.gemini/antigravity/playground/shadow-ionosphere/telugu-food-scanner/tests/benchmark_100/images/061_Kakarakaya_Bellam_Pulusu.jpg",
+    "expected_dish_name": "Kakarakaya Bellam Pulusu (Sweet & Sour Bitter Gourd Stew)",
+    "expected_dish_te": "కాకరకాయ బెల్లం పులుసు",
+    "expected_cluster": "Vegetable Curries",
+    "macro_category": "Curries",
+    "is_raw_salad": false,
+    "expected_cal_min": 65,
+    "expected_cal_max": 195,
+    "expected_protein_min": 1.4,
+    "expected_protein_max": 4.1,
+    "key_ingredients": [
+      "kakarakaya",
+      "bellam",
+      "bitter gourd",
+      "pulusu",
+      "jaggery"
+    ]
+  },
+  {
+    "test_id": "TEST-062",
+    "filename": "062_Cauliflower_Gobi_Kura.jpg",
+    "image_path": "C:/Users/rinit/.gemini/antigravity/playground/shadow-ionosphere/telugu-food-scanner/tests/benchmark_100/images/062_Cauliflower_Gobi_Kura.jpg",
+    "expected_dish_name": "Cauliflower Gobi Tomato Kura (Cauliflower Tomato Curry)",
+    "expected_dish_te": "కాలిఫ్లవర్ టమాటా కూర",
+    "expected_cluster": "Vegetable Curries",
+    "macro_category": "Curries",
+    "is_raw_salad": false,
+    "expected_cal_min": 60,
+    "expected_cal_max": 175,
+    "expected_protein_min": 1.6,
+    "expected_protein_max": 4.7,
+    "key_ingredients": [
+      "cauliflower",
+      "gobi",
+      "tomato",
+      "kura"
+    ]
+  },
+  {
+    "test_id": "TEST-063",
+    "filename": "063_Goruchikkudu_Vepudu.jpg",
+    "image_path": "C:/Users/rinit/.gemini/antigravity/playground/shadow-ionosphere/telugu-food-scanner/tests/benchmark_100/images/063_Goruchikkudu_Vepudu.jpg",
+    "expected_dish_name": "Goruchikkudu Vepudu (Cluster Beans Stir Fry)",
+    "expected_dish_te": "గోరుచిక్కుడు వేపుడు",
+    "expected_cluster": "Vegetable Curries",
+    "macro_category": "Curries",
+    "is_raw_salad": false,
+    "expected_cal_min": 65,
+    "expected_cal_max": 170,
+    "expected_protein_min": 2.2,
+    "expected_protein_max": 6.2,
+    "key_ingredients": [
+      "goruchikkudu",
+      "cluster beans",
+      "vepudu",
+      "stir fry"
+    ]
+  },
+  {
+    "test_id": "TEST-064",
+    "filename": "064_Potlakaya_Perugu_Kura.jpg",
+    "image_path": "C:/Users/rinit/.gemini/antigravity/playground/shadow-ionosphere/telugu-food-scanner/tests/benchmark_100/images/064_Potlakaya_Perugu_Kura.jpg",
+    "expected_dish_name": "Potlakaya Perugu Kura (Snake Gourd Curd Curry)",
+    "expected_dish_te": "పొట్లకాయ పెరుగు కూర",
+    "expected_cluster": "Vegetable Curries",
+    "macro_category": "Curries",
+    "is_raw_salad": false,
+    "expected_cal_min": 55,
+    "expected_cal_max": 155,
+    "expected_protein_min": 1.6,
+    "expected_protein_max": 4.9,
+    "key_ingredients": [
+      "potlakaya",
+      "snake gourd",
+      "perugu",
+      "curd curry"
+    ]
+  },
+  {
+    "test_id": "TEST-065",
+    "filename": "065_Dosakaya_Mukkala_Pulusu.jpg",
+    "image_path": "C:/Users/rinit/.gemini/antigravity/playground/shadow-ionosphere/telugu-food-scanner/tests/benchmark_100/images/065_Dosakaya_Mukkala_Pulusu.jpg",
+    "expected_dish_name": "Dosakaya Mukkala Pulusu (Yellow Cucumber Tangy Stew)",
+    "expected_dish_te": "దోసకాయ ముక్కల పులుసు",
+    "expected_cluster": "Vegetable Curries",
+    "macro_category": "Curries",
+    "is_raw_salad": false,
+    "expected_cal_min": 50,
+    "expected_cal_max": 155,
+    "expected_protein_min": 1.0,
+    "expected_protein_max": 3.1,
+    "key_ingredients": [
+      "dosakaya",
+      "yellow cucumber",
+      "mukkala pulusu"
+    ]
+  },
+  {
+    "test_id": "TEST-066",
+    "filename": "066_Beetroot_Vepudu.jpg",
+    "image_path": "C:/Users/rinit/.gemini/antigravity/playground/shadow-ionosphere/telugu-food-scanner/tests/benchmark_100/images/066_Beetroot_Vepudu.jpg",
+    "expected_dish_name": "Beetroot Vepudu (Beetroot Stir Fry)",
+    "expected_dish_te": "బీట్‌రూట్ వేపుడు",
+    "expected_cluster": "Vegetable Curries",
+    "macro_category": "Curries",
+    "is_raw_salad": false,
+    "expected_cal_min": 60,
+    "expected_cal_max": 170,
+    "expected_protein_min": 1.4,
+    "expected_protein_max": 3.8,
+    "key_ingredients": [
+      "beetroot",
+      "vepudu",
+      "poriyal",
+      "stir fry"
+    ]
+  },
+  {
+    "test_id": "TEST-067",
+    "filename": "067_Aratikaya_Kura.jpg",
+    "image_path": "C:/Users/rinit/.gemini/antigravity/playground/shadow-ionosphere/telugu-food-scanner/tests/benchmark_100/images/067_Aratikaya_Kura.jpg",
+    "expected_dish_name": "Aratikaya Kura (Raw Plantain Mustard Curry / Ava Pettina Kura)",
+    "expected_dish_te": "అరటికాయ కూర",
+    "expected_cluster": "Vegetable Curries",
+    "macro_category": "Curries",
+    "is_raw_salad": false,
+    "expected_cal_min": 80,
+    "expected_cal_max": 240,
+    "expected_protein_min": 1.3,
+    "expected_protein_max": 3.9,
+    "key_ingredients": [
+      "aratikaya",
+      "raw plantain",
+      "kura",
+      "banana curry"
+    ]
+  },
+  {
+    "test_id": "TEST-068",
+    "filename": "068_Chamadumpa_Vepudu.jpg",
+    "image_path": "C:/Users/rinit/.gemini/antigravity/playground/shadow-ionosphere/telugu-food-scanner/tests/benchmark_100/images/068_Chamadumpa_Vepudu.jpg",
+    "expected_dish_name": "Chamadumpa Vepudu (Crispy Taro Root / Arbi Fry)",
+    "expected_dish_te": "చామదుంప వేపుడు",
+    "expected_cluster": "Vegetable Curries",
+    "macro_category": "Curries",
+    "is_raw_salad": false,
+    "expected_cal_min": 90,
+    "expected_cal_max": 250,
+    "expected_protein_min": 1.4,
+    "expected_protein_max": 4.0,
+    "key_ingredients": [
+      "chamadumpa",
+      "arbi",
+      "colocasia",
+      "vepudu",
+      "fry"
+    ]
+  },
+  {
+    "test_id": "TEST-069",
+    "filename": "069_Kanda_Kura_Pulusu.jpg",
+    "image_path": "C:/Users/rinit/.gemini/antigravity/playground/shadow-ionosphere/telugu-food-scanner/tests/benchmark_100/images/069_Kanda_Kura_Pulusu.jpg",
+    "expected_dish_name": "Kanda Pulusu / Kura (Elephant Foot Yam Curry)",
+    "expected_dish_te": "కంద కూర / పులుసు",
+    "expected_cluster": "Vegetable Curries",
+    "macro_category": "Curries",
+    "is_raw_salad": false,
+    "expected_cal_min": 85,
+    "expected_cal_max": 240,
+    "expected_protein_min": 1.4,
+    "expected_protein_max": 4.3,
+    "key_ingredients": [
+      "kanda",
+      "suran",
+      "elephant foot yam",
+      "pulusu",
+      "kura"
+    ]
+  },
+  {
+    "test_id": "TEST-070",
+    "filename": "070_Bobbarlu_Alasandalu_Kura.jpg",
+    "image_path": "C:/Users/rinit/.gemini/antigravity/playground/shadow-ionosphere/telugu-food-scanner/tests/benchmark_100/images/070_Bobbarlu_Alasandalu_Kura.jpg",
+    "expected_dish_name": "Bobbarlu / Alasandalu Kura (Cowpea / Black Eyed Peas Curry)",
+    "expected_dish_te": "బొబ్బర్లు / అలసందల కూర",
+    "expected_cluster": "Vegetable Curries",
+    "macro_category": "Curries",
+    "is_raw_salad": false,
+    "expected_cal_min": 95,
+    "expected_cal_max": 295,
+    "expected_protein_min": 5.3,
+    "expected_protein_max": 17.0,
+    "key_ingredients": [
+      "bobbarlu",
+      "alasandalu",
+      "cowpeas",
+      "lobia",
+      "kura"
+    ]
+  },
+  {
+    "test_id": "TEST-071",
+    "filename": "071_Munagaku_Podi.jpg",
+    "image_path": "C:/Users/rinit/.gemini/antigravity/playground/shadow-ionosphere/telugu-food-scanner/tests/benchmark_100/images/071_Munagaku_Podi.jpg",
+    "expected_dish_name": "Munagaku Podi (Moringa / Drumstick Leaf Spice Powder)",
+    "expected_dish_te": "మునగాకు పొడి",
+    "expected_cluster": "Chutneys & Podis",
+    "macro_category": "Curries",
+    "is_raw_salad": false,
+    "expected_cal_min": 45,
+    "expected_cal_max": 455,
+    "expected_protein_min": 2.9,
+    "expected_protein_max": 31.5,
+    "key_ingredients": [
+      "munagaku podi",
+      "moringa powder",
+      "drumstick leaf podi"
+    ]
+  },
+  {
+    "test_id": "TEST-072",
+    "filename": "072_Natukodi_Kura.jpg",
+    "image_path": "C:/Users/rinit/.gemini/antigravity/playground/shadow-ionosphere/telugu-food-scanner/tests/benchmark_100/images/072_Natukodi_Kura.jpg",
+    "expected_dish_name": "Natukodi Kura (Spicy Andhra Country Chicken Curry)",
+    "expected_dish_te": "నాటుకోడి కూర",
+    "expected_cluster": "Eggs, Meat & Fish",
+    "macro_category": "Non-Veg",
+    "is_raw_salad": false,
+    "expected_cal_min": 105,
+    "expected_cal_max": 375,
+    "expected_protein_min": 11.8,
+    "expected_protein_max": 43.3,
+    "key_ingredients": [
+      "natukodi",
+      "country chicken",
+      "kodi kura",
+      "spicy chicken"
+    ]
+  },
+  {
+    "test_id": "TEST-073",
+    "filename": "073_Chicken_Liver_Fry.jpg",
+    "image_path": "C:/Users/rinit/.gemini/antigravity/playground/shadow-ionosphere/telugu-food-scanner/tests/benchmark_100/images/073_Chicken_Liver_Fry.jpg",
+    "expected_dish_name": "Chicken Liver Fry (Kodi Liver Vepudu)",
+    "expected_dish_te": "చికెన్ లివర్ వేపుడు",
+    "expected_cluster": "Eggs, Meat & Fish",
+    "macro_category": "Non-Veg",
+    "is_raw_salad": false,
+    "expected_cal_min": 120,
+    "expected_cal_max": 300,
+    "expected_protein_min": 13.4,
+    "expected_protein_max": 34.6,
+    "key_ingredients": [
+      "chicken liver",
+      "kodi liver",
+      "liver fry",
+      "vepudu"
+    ]
+  },
+  {
+    "test_id": "TEST-074",
+    "filename": "074_Mutton_Liver_Kaleji_Fry.jpg",
+    "image_path": "C:/Users/rinit/.gemini/antigravity/playground/shadow-ionosphere/telugu-food-scanner/tests/benchmark_100/images/074_Mutton_Liver_Kaleji_Fry.jpg",
+    "expected_dish_name": "Mutton Liver Fry (Kaleji Vepudu)",
+    "expected_dish_te": "మటన్ లివర్ / కలేజీ వేపుడు",
+    "expected_cluster": "Eggs, Meat & Fish",
+    "macro_category": "Non-Veg",
+    "is_raw_salad": false,
+    "expected_cal_min": 130,
+    "expected_cal_max": 320,
+    "expected_protein_min": 13.8,
+    "expected_protein_max": 35.6,
+    "key_ingredients": [
+      "mutton liver",
+      "kaleji",
+      "liver fry",
+      "vepudu"
+    ]
+  },
+  {
+    "test_id": "TEST-075",
+    "filename": "075_Gongura_Mutton.jpg",
+    "image_path": "C:/Users/rinit/.gemini/antigravity/playground/shadow-ionosphere/telugu-food-scanner/tests/benchmark_100/images/075_Gongura_Mutton.jpg",
+    "expected_dish_name": "Gongura Mutton (Spicy Sorrel Leaves Lamb Curry)",
+    "expected_dish_te": "గోంగూర మటన్",
+    "expected_cluster": "Eggs, Meat & Fish",
+    "macro_category": "Non-Veg",
+    "is_raw_salad": false,
+    "expected_cal_min": 135,
+    "expected_cal_max": 440,
+    "expected_protein_min": 10.9,
+    "expected_protein_max": 37.6,
+    "key_ingredients": [
+      "gongura mutton",
+      "gongura mamsam",
+      "mutton",
+      "sorrel mutton"
+    ]
+  },
+  {
+    "test_id": "TEST-076",
+    "filename": "076_Endu_Royyalu_Kura.jpg",
+    "image_path": "C:/Users/rinit/.gemini/antigravity/playground/shadow-ionosphere/telugu-food-scanner/tests/benchmark_100/images/076_Endu_Royyalu_Kura.jpg",
+    "expected_dish_name": "Endu Royyalu Kura (Dried Prawns Curry / Royyala Iguru)",
+    "expected_dish_te": "ఎండు రొయ్యల కూర",
+    "expected_cluster": "Eggs, Meat & Fish",
+    "macro_category": "Non-Veg",
+    "is_raw_salad": false,
+    "expected_cal_min": 120,
+    "expected_cal_max": 300,
+    "expected_protein_min": 15.3,
+    "expected_protein_max": 39.6,
+    "key_ingredients": [
+      "endu royyalu",
+      "dry prawns",
+      "prawns",
+      "shrimp curry",
+      "kura"
+    ]
+  },
+  {
+    "test_id": "TEST-077",
+    "filename": "077_Balamrutham.jpg",
+    "image_path": "C:/Users/rinit/.gemini/antigravity/playground/shadow-ionosphere/telugu-food-scanner/tests/benchmark_100/images/077_Balamrutham.jpg",
+    "expected_dish_name": "Balamrutham (Nutrient-Dense Anganwadi THR Weaning Porridge)",
+    "expected_dish_te": "బాలామృతం (అంగన్‌వాడీ)",
+    "expected_cluster": "Snacks & Sweets",
+    "macro_category": "Salads/Staples",
+    "is_raw_salad": false,
+    "expected_cal_min": 270,
+    "expected_cal_max": 555,
+    "expected_protein_min": 7.4,
+    "expected_protein_max": 16.0,
+    "key_ingredients": [
+      "balamrutham",
+      "anganwadi",
+      "thr",
+      "fortified flour",
+      "porridge"
+    ]
+  },
+  {
+    "test_id": "TEST-078",
+    "filename": "078_Palli_Chikki.jpg",
+    "image_path": "C:/Users/rinit/.gemini/antigravity/playground/shadow-ionosphere/telugu-food-scanner/tests/benchmark_100/images/078_Palli_Chikki.jpg",
+    "expected_dish_name": "Palli Chikki (Peanut & Jaggery Brittle)",
+    "expected_dish_te": "పల్లీ చిక్కీ / పల్లీ పట్టీ",
+    "expected_cluster": "Snacks & Sweets",
+    "macro_category": "Salads/Staples",
+    "is_raw_salad": false,
+    "expected_cal_min": 125,
+    "expected_cal_max": 660,
+    "expected_protein_min": 3.8,
+    "expected_protein_max": 20.4,
+    "key_ingredients": [
+      "palli chikki",
+      "peanut brittle",
+      "palli patti",
+      "jaggery"
+    ]
+  },
+  {
+    "test_id": "TEST-079",
+    "filename": "079_Dry_Fruit_Laddu.jpg",
+    "image_path": "C:/Users/rinit/.gemini/antigravity/playground/shadow-ionosphere/telugu-food-scanner/tests/benchmark_100/images/079_Dry_Fruit_Laddu.jpg",
+    "expected_dish_name": "Dry Fruit Laddu (Dates & Nuts Energy Laddu)",
+    "expected_dish_te": "డ్రై ఫ్రూట్ లడ్డూ",
+    "expected_cluster": "Snacks & Sweets",
+    "macro_category": "Salads/Staples",
+    "is_raw_salad": false,
+    "expected_cal_min": 120,
+    "expected_cal_max": 630,
+    "expected_protein_min": 2.9,
+    "expected_protein_max": 15.7,
+    "key_ingredients": [
+      "dry fruit laddu",
+      "dates",
+      "nuts",
+      "healthy sweet",
+      "laddu"
+    ]
+  },
+  {
+    "test_id": "TEST-080",
+    "filename": "080_Boiled_Sweet_Corn.jpg",
+    "image_path": "C:/Users/rinit/.gemini/antigravity/playground/shadow-ionosphere/telugu-food-scanner/tests/benchmark_100/images/080_Boiled_Sweet_Corn.jpg",
+    "expected_dish_name": "Boiled Sweet Corn (Mokkajonna Kanki)",
+    "expected_dish_te": "ఉడకబెట్టిన మొక్కజొన్న",
+    "expected_cluster": "Snacks & Sweets",
+    "macro_category": "Salads/Staples",
+    "is_raw_salad": false,
+    "expected_cal_min": 60,
+    "expected_cal_max": 160,
+    "expected_protein_min": 2.2,
+    "expected_protein_max": 5.9,
+    "key_ingredients": [
+      "sweet corn",
+      "mokkajonna",
+      "corn on the cob",
+      "boiled corn"
+    ]
+  },
+  {
+    "test_id": "TEST-081",
+    "filename": "081_Hyderabadi_Chicken_Biryani.jpg",
+    "image_path": "C:/Users/rinit/.gemini/antigravity/playground/shadow-ionosphere/telugu-food-scanner/tests/benchmark_100/images/081_Hyderabadi_Chicken_Biryani.jpg",
+    "expected_dish_name": "Hyderabadi Chicken Biryani (Spicy Dum Biryani)",
+    "expected_dish_te": "హైదరాబాదీ చికెన్ బిర్యానీ",
+    "expected_cluster": "Eggs, Meat & Fish",
+    "macro_category": "Non-Veg",
+    "is_raw_salad": false,
+    "expected_cal_min": 120,
+    "expected_cal_max": 710,
+    "expected_protein_min": 6.8,
+    "expected_protein_max": 40.8,
+    "key_ingredients": [
+      "biryani",
+      "chicken biryani",
+      "dum biryani",
+      "basmati rice",
+      "kodi pulao"
+    ]
+  },
+  {
+    "test_id": "TEST-082",
+    "filename": "082_Pesarattu.jpg",
+    "image_path": "C:/Users/rinit/.gemini/antigravity/playground/shadow-ionosphere/telugu-food-scanner/tests/benchmark_100/images/082_Pesarattu.jpg",
+    "expected_dish_name": "Pesarattu (Andhra Green Moong Dal Crepe)",
+    "expected_dish_te": "పెసరట్టు",
+    "expected_cluster": "Tiffins & Breads",
+    "macro_category": "Tiffins/Rice",
+    "is_raw_salad": false,
+    "expected_cal_min": 120,
+    "expected_cal_max": 375,
+    "expected_protein_min": 6.1,
+    "expected_protein_max": 19.7,
+    "key_ingredients": [
+      "pesarattu",
+      "moong dal dosa",
+      "green gram crepe",
+      "allam pachadi"
+    ]
+  },
+  {
+    "test_id": "TEST-083",
+    "filename": "083_Ragi_Sangati.jpg",
+    "image_path": "C:/Users/rinit/.gemini/antigravity/playground/shadow-ionosphere/telugu-food-scanner/tests/benchmark_100/images/083_Ragi_Sangati.jpg",
+    "expected_dish_name": "Ragi Sangati (Rayalaseema Finger Millet Ball)",
+    "expected_dish_te": "రాగి సంగటి / రాగి ముద్ద",
+    "expected_cluster": "Rice & Millet Dishes",
+    "macro_category": "Tiffins/Rice",
+    "is_raw_salad": false,
+    "expected_cal_min": 90,
+    "expected_cal_max": 375,
+    "expected_protein_min": 2.3,
+    "expected_protein_max": 10.1,
+    "key_ingredients": [
+      "ragi sangati",
+      "ragi mudda",
+      "finger millet ball",
+      "ragi"
+    ]
+  },
+  {
+    "test_id": "TEST-084",
+    "filename": "084_Pulihora.jpg",
+    "image_path": "C:/Users/rinit/.gemini/antigravity/playground/shadow-ionosphere/telugu-food-scanner/tests/benchmark_100/images/084_Pulihora.jpg",
+    "expected_dish_name": "Pulihora (Andhra Tamarind Spiced Rice)",
+    "expected_dish_te": "చింతపండు పులిహోర",
+    "expected_cluster": "Rice & Millet Dishes",
+    "macro_category": "Tiffins/Rice",
+    "is_raw_salad": false,
+    "expected_cal_min": 115,
+    "expected_cal_max": 480,
+    "expected_protein_min": 2.7,
+    "expected_protein_max": 11.5,
+    "key_ingredients": [
+      "pulihora",
+      "tamarind rice",
+      "chintapandu",
+      "sesame",
+      "peanuts"
+    ]
+  },
+  {
+    "test_id": "TEST-085",
+    "filename": "085_Perugu_Annam.jpg",
+    "image_path": "C:/Users/rinit/.gemini/antigravity/playground/shadow-ionosphere/telugu-food-scanner/tests/benchmark_100/images/085_Perugu_Annam.jpg",
+    "expected_dish_name": "Perugu Annam (Tempered Curd Rice / Daddojanam)",
+    "expected_dish_te": "పెరుగు అన్నం / దద్దోజనం",
+    "expected_cluster": "Rice & Millet Dishes",
+    "macro_category": "Tiffins/Rice",
+    "is_raw_salad": false,
+    "expected_cal_min": 75,
+    "expected_cal_max": 315,
+    "expected_protein_min": 2.3,
+    "expected_protein_max": 9.8,
+    "key_ingredients": [
+      "perugu annam",
+      "curd rice",
+      "daddojanam",
+      "yogurt rice"
+    ]
+  },
+  {
+    "test_id": "TEST-086",
+    "filename": "086_Steamed_Rice_with_Pappu.jpg",
+    "image_path": "C:/Users/rinit/.gemini/antigravity/playground/shadow-ionosphere/telugu-food-scanner/tests/benchmark_100/images/086_Steamed_Rice_with_Pappu.jpg",
+    "expected_dish_name": "Steamed White Rice with Pappu (Vandi Annam & Dal)",
+    "expected_dish_te": "తెల్ల అన్నం & పప్పు",
+    "expected_cluster": "Rice & Millet Dishes",
+    "macro_category": "Tiffins/Rice",
+    "is_raw_salad": false,
+    "expected_cal_min": 85,
+    "expected_cal_max": 430,
+    "expected_protein_min": 3.1,
+    "expected_protein_max": 16.8,
+    "key_ingredients": [
+      "steamed rice",
+      "white rice",
+      "annam",
+      "mudda pappu",
+      "dal"
+    ]
+  },
+  {
+    "test_id": "TEST-087",
+    "filename": "087_Plain_Dosa_with_Chutney.jpg",
+    "image_path": "C:/Users/rinit/.gemini/antigravity/playground/shadow-ionosphere/telugu-food-scanner/tests/benchmark_100/images/087_Plain_Dosa_with_Chutney.jpg",
+    "expected_dish_name": "Plain Dosa with Chutney (Crispy Fermented Rice Crepe)",
+    "expected_dish_te": "దోస & చట్నీ",
+    "expected_cluster": "Tiffins & Breads",
+    "macro_category": "Tiffins/Rice",
+    "is_raw_salad": false,
+    "expected_cal_min": 125,
+    "expected_cal_max": 395,
+    "expected_protein_min": 3.4,
+    "expected_protein_max": 10.9,
+    "key_ingredients": [
+      "dosa",
+      "plain dosa",
+      "chutney",
+      "breakfast crepe"
+    ]
+  },
+  {
+    "test_id": "TEST-088",
+    "filename": "088_Idli_with_Sambar.jpg",
+    "image_path": "C:/Users/rinit/.gemini/antigravity/playground/shadow-ionosphere/telugu-food-scanner/tests/benchmark_100/images/088_Idli_with_Sambar.jpg",
+    "expected_dish_name": "Idli with Sambar (Steamed Rice-Lentil Cakes with Lentil Stew)",
+    "expected_dish_te": "ఇడ్లీ & సాంబార్",
+    "expected_cluster": "Tiffins & Breads",
+    "macro_category": "Tiffins/Rice",
+    "is_raw_salad": false,
+    "expected_cal_min": 80,
+    "expected_cal_max": 375,
+    "expected_protein_min": 3.1,
+    "expected_protein_max": 14.8,
+    "key_ingredients": [
+      "idli",
+      "sambar",
+      "steamed cakes",
+      "breakfast"
+    ]
+  },
+  {
+    "test_id": "TEST-089",
+    "filename": "089_Medu_Vada_Minapa_Garelu.jpg",
+    "image_path": "C:/Users/rinit/.gemini/antigravity/playground/shadow-ionosphere/telugu-food-scanner/tests/benchmark_100/images/089_Medu_Vada_Minapa_Garelu.jpg",
+    "expected_dish_name": "Medu Vada (Crispy Minapa Garelu / Lentil Fritters)",
+    "expected_dish_te": "మినప గారెలు / వడ",
+    "expected_cluster": "Tiffins & Breads",
+    "macro_category": "Tiffins/Rice",
+    "is_raw_salad": false,
+    "expected_cal_min": 185,
+    "expected_cal_max": 385,
+    "expected_protein_min": 6.4,
+    "expected_protein_max": 13.7,
+    "key_ingredients": [
+      "medu vada",
+      "garelu",
+      "minapa garelu",
+      "urad dal fritter"
+    ]
+  },
+  {
+    "test_id": "TEST-090",
+    "filename": "090_Rava_Upma.jpg",
+    "image_path": "C:/Users/rinit/.gemini/antigravity/playground/shadow-ionosphere/telugu-food-scanner/tests/benchmark_100/images/090_Rava_Upma.jpg",
+    "expected_dish_name": "Rava Upma (Tempered Semolina Porridge)",
+    "expected_dish_te": "రవ్వ ఉప్మా",
+    "expected_cluster": "Tiffins & Breads",
+    "macro_category": "Tiffins/Rice",
+    "is_raw_salad": false,
+    "expected_cal_min": 105,
+    "expected_cal_max": 350,
+    "expected_protein_min": 2.9,
+    "expected_protein_max": 9.9,
+    "key_ingredients": [
+      "upma",
+      "rava upma",
+      "suji upma",
+      "bansi rava"
+    ]
+  },
+  {
+    "test_id": "TEST-091",
+    "filename": "091_Poori_with_Potato_Curry.jpg",
+    "image_path": "C:/Users/rinit/.gemini/antigravity/playground/shadow-ionosphere/telugu-food-scanner/tests/benchmark_100/images/091_Poori_with_Potato_Curry.jpg",
+    "expected_dish_name": "Poori with Potato Curry (Puri Masala / Kura)",
+    "expected_dish_te": "పూరి & బంగాళాదుంప కూర",
+    "expected_cluster": "Tiffins & Breads",
+    "macro_category": "Tiffins/Rice",
+    "is_raw_salad": false,
+    "expected_cal_min": 155,
+    "expected_cal_max": 650,
+    "expected_protein_min": 3.6,
+    "expected_protein_max": 15.7,
+    "key_ingredients": [
+      "poori",
+      "puri",
+      "potato masala",
+      "aloo kura"
+    ]
+  },
+  {
+    "test_id": "TEST-092",
+    "filename": "092_Chapati_with_Dal.jpg",
+    "image_path": "C:/Users/rinit/.gemini/antigravity/playground/shadow-ionosphere/telugu-food-scanner/tests/benchmark_100/images/092_Chapati_with_Dal.jpg",
+    "expected_dish_name": "Chapati with Dal (Whole Wheat Flatbread with Lentil Curry)",
+    "expected_dish_te": "చపాతీ & పప్పు",
+    "expected_cluster": "Tiffins & Breads",
+    "macro_category": "Tiffins/Rice",
+    "is_raw_salad": false,
+    "expected_cal_min": 130,
+    "expected_cal_max": 430,
+    "expected_protein_min": 4.7,
+    "expected_protein_max": 16.1,
+    "key_ingredients": [
+      "chapati",
+      "pulka",
+      "roti",
+      "dal",
+      "wheat bread"
+    ]
+  },
+  {
+    "test_id": "TEST-093",
+    "filename": "093_Samosa.jpg",
+    "image_path": "C:/Users/rinit/.gemini/antigravity/playground/shadow-ionosphere/telugu-food-scanner/tests/benchmark_100/images/093_Samosa.jpg",
+    "expected_dish_name": "Samosa (Crispy Potato & Pea Savory Pastry)",
+    "expected_dish_te": "సమోసా",
+    "expected_cluster": "Snacks & Sweets",
+    "macro_category": "Salads/Staples",
+    "is_raw_salad": false,
+    "expected_cal_min": 170,
+    "expected_cal_max": 355,
+    "expected_protein_min": 3.1,
+    "expected_protein_max": 6.7,
+    "key_ingredients": [
+      "samosa",
+      "potato pastry",
+      "aloo samosa",
+      "snack"
+    ]
+  },
+  {
+    "test_id": "TEST-094",
+    "filename": "094_Boiled_Sweet_Potato.jpg",
+    "image_path": "C:/Users/rinit/.gemini/antigravity/playground/shadow-ionosphere/telugu-food-scanner/tests/benchmark_100/images/094_Boiled_Sweet_Potato.jpg",
+    "expected_dish_name": "Boiled Sweet Potato (Chilakada Dumpa / Genusu Gadda)",
+    "expected_dish_te": "ఉడకబెట్టిన చిలకడదుంప",
+    "expected_cluster": "Snacks & Sweets",
+    "macro_category": "Salads/Staples",
+    "is_raw_salad": false,
+    "expected_cal_min": 55,
+    "expected_cal_max": 150,
+    "expected_protein_min": 1.0,
+    "expected_protein_max": 2.9,
+    "key_ingredients": [
+      "sweet potato",
+      "chilakadumpa",
+      "genusu gadda",
+      "boiled tuber"
+    ]
+  },
+  {
+    "test_id": "TEST-095",
+    "filename": "095_Cucumber_Slices_Salad.jpg",
+    "image_path": "C:/Users/rinit/.gemini/antigravity/playground/shadow-ionosphere/telugu-food-scanner/tests/benchmark_100/images/095_Cucumber_Slices_Salad.jpg",
+    "expected_dish_name": "Cucumber Slices Salad (Keera Dosakaya)",
+    "expected_dish_te": "కీరా దోసకాయ ముక్కలు",
+    "expected_cluster": "Fruits & Salads",
+    "macro_category": "Salads/Staples",
+    "is_raw_salad": true,
+    "expected_cal_min": 10,
+    "expected_cal_max": 20,
+    "expected_protein_min": 0.5,
+    "expected_protein_max": 1.0,
+    "key_ingredients": [
+      "cucumber",
+      "keera",
+      "dosakaya slices",
+      "raw salad",
+      "hydrating"
+    ]
+  },
+  {
+    "test_id": "TEST-096",
+    "filename": "096_Mixed_Healthy_Bowl.jpg",
+    "image_path": "C:/Users/rinit/.gemini/antigravity/playground/shadow-ionosphere/telugu-food-scanner/tests/benchmark_100/images/096_Mixed_Healthy_Bowl.jpg",
+    "expected_dish_name": "Mixed Healthy Bowl (Sweet Potato, Cucumber, Carrot & Pomegranate)",
+    "expected_dish_te": "మిక్స్‌డ్ హెల్తీ సలాడ్ బౌల్",
+    "expected_cluster": "Fruits & Salads",
+    "macro_category": "Salads/Staples",
+    "is_raw_salad": true,
+    "expected_cal_min": 40,
+    "expected_cal_max": 140,
+    "expected_protein_min": 0.9,
+    "expected_protein_max": 3.5,
+    "key_ingredients": [
+      "salad bowl",
+      "sweet potato",
+      "cucumber",
+      "carrot",
+      "pomegranate",
+      "healthy bowl"
+    ]
+  },
+  {
+    "test_id": "TEST-097",
+    "filename": "097_Boiled_Eggs.jpg",
+    "image_path": "C:/Users/rinit/.gemini/antigravity/playground/shadow-ionosphere/telugu-food-scanner/tests/benchmark_100/images/097_Boiled_Eggs.jpg",
+    "expected_dish_name": "Boiled Eggs (Udakabettina Guddu)",
+    "expected_dish_te": "ఉడకబెట్టిన కోడిగుడ్లు",
+    "expected_cluster": "Eggs, Meat & Fish",
+    "macro_category": "Non-Veg",
+    "is_raw_salad": false,
+    "expected_cal_min": 100,
+    "expected_cal_max": 210,
+    "expected_protein_min": 8.2,
+    "expected_protein_max": 17.6,
+    "key_ingredients": [
+      "boiled eggs",
+      "guddu",
+      "protein egg",
+      "hard boiled"
+    ]
+  },
+  {
+    "test_id": "TEST-098",
+    "filename": "098_Chicken_65_Kodi_Vepudu.jpg",
+    "image_path": "C:/Users/rinit/.gemini/antigravity/playground/shadow-ionosphere/telugu-food-scanner/tests/benchmark_100/images/098_Chicken_65_Kodi_Vepudu.jpg",
+    "expected_dish_name": "Chicken 65 / Kodi Vepudu (Spicy Andhra Chicken Fry)",
+    "expected_dish_te": "చికెన్ 65 / కోడి వేపుడు",
+    "expected_cluster": "Eggs, Meat & Fish",
+    "macro_category": "Non-Veg",
+    "is_raw_salad": false,
+    "expected_cal_min": 140,
+    "expected_cal_max": 410,
+    "expected_protein_min": 13.9,
+    "expected_protein_max": 41.9,
+    "key_ingredients": [
+      "chicken 65",
+      "kodi vepudu",
+      "chicken fry",
+      "crispy chicken"
+    ]
+  },
+  {
+    "test_id": "TEST-099",
+    "filename": "099_Mirchi_Bajji.jpg",
+    "image_path": "C:/Users/rinit/.gemini/antigravity/playground/shadow-ionosphere/telugu-food-scanner/tests/benchmark_100/images/099_Mirchi_Bajji.jpg",
+    "expected_dish_name": "Mirchi Bajji (Andhra Stuffed Chili Fritters)",
+    "expected_dish_te": "మిర్చి బజ్జీ",
+    "expected_cluster": "Snacks & Sweets",
+    "macro_category": "Salads/Staples",
+    "is_raw_salad": false,
+    "expected_cal_min": 155,
+    "expected_cal_max": 360,
+    "expected_protein_min": 3.9,
+    "expected_protein_max": 9.2,
+    "key_ingredients": [
+      "mirchi bajji",
+      "chili fritters",
+      "besan bajji",
+      "street food"
+    ]
+  },
+  {
+    "test_id": "TEST-100",
+    "filename": "100_Gulab_Jamun.jpg",
+    "image_path": "C:/Users/rinit/.gemini/antigravity/playground/shadow-ionosphere/telugu-food-scanner/tests/benchmark_100/images/100_Gulab_Jamun.jpg",
+    "expected_dish_name": "Gulab Jamun (Traditional Milk-Solid Sweet in Saffron Syrup)",
+    "expected_dish_te": "గులాబ్ జామూన్",
+    "expected_cluster": "Snacks & Sweets",
+    "macro_category": "Salads/Staples",
+    "is_raw_salad": false,
+    "expected_cal_min": 165,
+    "expected_cal_max": 430,
+    "expected_protein_min": 2.2,
+    "expected_protein_max": 5.9,
+    "key_ingredients": [
+      "gulab jamun",
+      "sweet",
+      "khoya sweet",
+      "dessert"
+    ]
+  }
+]

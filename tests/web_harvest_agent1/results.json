@@ -1,0 +1,46 @@
+[
+  {
+    "dish_label": "Hyderabadi Chicken Biryani",
+    "search_query": "Hyderabadi Chicken Biryani",
+    "wiki_title": "File:Shrimp Biriyani.JPG",
+    "img_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5f/Shrimp_Biriyani.JPG/960px-Shrimp_Biriyani.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "local_path": "c:\\Users\\rinit\\.gemini\\antigravity\\playground\\shadow-ionosphere\\telugu-food-scanner\\tests\\web_harvest_agent1\\images\\01_Hyderabadi_Chicken_Biryani.jpg",
+    "mime": "image/jpeg",
+    "size_bytes": 179752,
+    "status": "EXCEPTION",
+    "error_text": "[WinError 10054] An existing connection was forcibly closed by the remote host"
+  },
+  {
+    "dish_label": "Masala Dosa",
+    "search_query": "Masala Dosa",
+    "wiki_title": "File:Masala dosa 01.jpg",
+    "img_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/43/Masala_dosa_01.jpg/960px-Masala_dosa_01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "local_path": "c:\\Users\\rinit\\.gemini\\antigravity\\playground\\shadow-ionosphere\\telugu-food-scanner\\tests\\web_harvest_agent1\\images\\02_Masala_Dosa.jpg",
+    "mime": "image/jpeg",
+    "size_bytes": 103467,
+    "status": "EXCEPTION",
+    "error_text": "[WinError 10061] No connection could be made because the target machine actively refused it"
+  },
+  {
+    "dish_label": "Idli Sambar Chutney",
+    "search_query": "Idli Sambar",
+    "wiki_title": "File:Idli Sambar-Noida-UP-SP004.jpg",
+    "img_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/02/Idli_Sambar-Noida-UP-SP004.jpg/960px-Idli_Sambar-Noida-UP-SP004.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "local_path": "c:\\Users\\rinit\\.gemini\\antigravity\\playground\\shadow-ionosphere\\telugu-food-scanner\\tests\\web_harvest_agent1\\images\\03_Idli_Sambar.jpg",
+    "mime": "image/jpeg",
+    "size_bytes": 192997,
+    "status": "EXCEPTION",
+    "error_text": "[WinError 10061] No connection could be made because the target machine actively refused it"
+  },
+  {
+    "dish_label": "Pesarattu (Green Moong Dosa)",
+    "search_query": "Pesarattu dosa",
+    "wiki_title": "File:Pesarattu.jpg",
+    "img_url": "https://upload.wikimedia.org/wikipedia/commons/6/6c/Pesarattu.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+    "local_path": "c:\\Users\\rinit\\.gemini\\antigravity\\playground\\shadow-ionosphere\\telugu-food-scanner\\tests\\web_harvest_agent1\\images\\05_Pesarattu_dosa.jpg",
+    "mime": "image/jpeg",
+    "size_bytes": 33154,
+    "status": "EXCEPTION",
+    "error_text": "[WinError 10061] No connection could be made because the target machine actively refused it"
+  }
+]

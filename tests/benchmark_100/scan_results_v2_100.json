@@ -1,0 +1,4129 @@
+[
+  {
+    "test_id": "TEST-001",
+    "filename": "001_Thotakura_Vepudu.jpg",
+    "expected_dish_name": "Thotakura Vepudu (Amaranth Leaves Stir Fry)",
+    "expected_dish_te": "తోటకూర వేపుడు",
+    "expected_cluster": "Leafy Green Curries",
+    "model_used": "gemini-3.5-flash-lite",
+    "latency_ms": 16402,
+    "tokens_used": 2624,
+    "estimated_cost_inr": 0.2171,
+    "is_food_image": true,
+    "recognized_plate_title_en": "Palakura Kura / Vepudu, Palli Pachadi & Roasted Peanuts",
+    "recognized_plate_title_te": "పాలకూర వేపుడు మరియు పచ్చడి",
+    "recognized_meal_type": "Lunch",
+    "recognized_items": [
+      {
+        "name_en": "Palakura Kura / Vepudu (Spinach)",
+        "name_te": "పాలకూర కూర / వేపుడు",
+        "cluster": "Leafy Green Curries",
+        "estimated_grams": 200,
+        "matched_catalog_id": "JM-02",
+        "matched_in_excel_catalog": true
+      },
+      {
+        "name_en": "Palli Pachadi (Peanut Chutney)",
+        "name_te": "పల్లీ పచ్చడి",
+        "cluster": "Chutneys & Podis",
+        "estimated_grams": 50,
+        "matched_catalog_id": "JM-35",
+        "matched_in_excel_catalog": true
+      },
+      {
+        "name_en": "Roasted Peanuts",
+        "name_te": "వేరుశనగ గుళ్ళు",
+        "cluster": "Snacks & Sweets",
+        "estimated_grams": 30,
+        "matched_catalog_id": "CUSTOM-TE",
+        "matched_in_excel_catalog": false
+      }
+    ],
+    "totals": {
+      "calories": 446,
+      "protein_g": 18.4,
+      "carbs_g": 21.5,
+      "fat_g": 33.3,
+      "fiber_g": 10.8,
+      "iron_mg": 9.25,
+      "calcium_mg": 244.6,
+      "sodium_mg": 672.0
+    },
+    "mddw_score": 4,
+    "http_status": 200,
+    "scan_timestamp": "2026-10-15T17:33:45.318443+00:00"
+  },
+  {
+    "test_id": "TEST-002",
+    "filename": "002_Palakura_Vepudu.jpg",
+    "expected_dish_name": "Palakura Vepudu / Kura (Spinach Stir Fry)",
+    "expected_dish_te": "పాలకూర వేపుడు / కూర",
+    "expected_cluster": "Leafy Green Curries",
+    "model_used": "gemini-3.5-flash-lite",
+    "latency_ms": 21124,
+    "tokens_used": 2152,
+    "estimated_cost_inr": 0.115,
+    "is_food_image": true,
+    "recognized_plate_title_en": "Munagaku Vepudu / Kura (Drumstick Leaves)",
+    "recognized_plate_title_te": "గోంగూర వేపుడు",
+    "recognized_meal_type": "Lunch",
+    "recognized_items": [
+      {
+        "name_en": "Munagaku Vepudu / Kura (Drumstick Leaves)",
+        "name_te": "మునగాకు వేపుడు / కూర",
+        "cluster": "Leafy Green Curries",
+        "estimated_grams": 150,
+        "matched_catalog_id": "JM-05",
+        "matched_in_excel_catalog": true
+      }
+    ],
+    "totals": {
+      "calories": 168,
+      "protein_g": 9.3,
+      "carbs_g": 14.7,
+      "fat_g": 8.1,
+      "fiber_g": 7.2,
+      "iron_mg": 9.75,
+      "calcium_mg": 465.0,
+      "sodium_mg": 330.0
+    },
+    "mddw_score": 1,
+    "http_status": 200,
+    "scan_timestamp": "2026-10-15T17:35:02.583285+00:00"
+  },
+  {
+    "test_id": "TEST-003",
+    "filename": "003_Gongura_Pulusu.jpg",
+    "expected_dish_name": "Gongura Pulusu / Kura (Sorrel Leaves Stew)",
+    "expected_dish_te": "గోంగూర పులుసు / కూర",
+    "expected_cluster": "Leafy Green Curries",
+    "model_used": "gemini-3.5-flash-lite",
+    "latency_ms": 29160,
+    "tokens_used": 2148,
+    "estimated_cost_inr": 0.1142,
+    "is_food_image": true,
+    "recognized_plate_title_en": "Gongura Pappu (Sorrel Leaves Dal)",
+    "recognized_plate_title_te": "గోంగూర పప్పు",
+    "recognized_meal_type": "Lunch",
+    "recognized_items": [
+      {
+        "name_en": "Gongura Pappu (Sorrel Leaves Dal)",
+        "name_te": "గోంగూర పప్పు",
+        "cluster": "Dals & Pappu",
+        "estimated_grams": 200,
+        "matched_catalog_id": "JM-08",
+        "matched_in_excel_catalog": true
+      }
+    ],
+    "totals": {
+      "calories": 252,
+      "protein_g": 13.0,
+      "carbs_g": 30.0,
+      "fat_g": 9.0,
+      "fiber_g": 8.2,
+      "iron_mg": 7.8,
+      "calcium_mg": 190.0,
+      "sodium_mg": 560.0
+    },
+    "mddw_score": 2,
+    "http_status": 200,
+    "scan_timestamp": "2026-10-15T17:35:35.805563+00:00"
+  },
+  {
+    "test_id": "TEST-004",
+    "filename": "004_Menthi_Kura_Vepudu.jpg",
+    "expected_dish_name": "Menthi Kura Vepudu (Fenugreek Leaves Stir Fry)",
+    "expected_dish_te": "మెంతికూర వేపుడు",
+    "expected_cluster": "Leafy Green Curries",
+    "model_used": "gemini-3.5-flash-lite",
+    "latency_ms": 24934,
+    "tokens_used": 2147,
+    "estimated_cost_inr": 0.1139,
+    "is_food_image": true,
+    "recognized_plate_title_en": "Menthi Kura Vepudu / Kura (Fenugreek)",
+    "recognized_plate_title_te": "మెంతి కూర వేపుడు",
+    "recognized_meal_type": "Lunch",
+    "recognized_items": [
+      {
+        "name_en": "Menthi Kura Vepudu / Kura (Fenugreek)",
+        "name_te": "మెంతికూర వేపుడు / కూర",
+        "cluster": "Leafy Green Curries",
+        "estimated_grams": 150,
+        "matched_catalog_id": "JM-04",
+        "matched_in_excel_catalog": true
+      }
+    ],
+    "totals": {
+      "calories": 129,
+      "protein_g": 4.3,
+      "carbs_g": 9.0,
+      "fat_g": 8.2,
+      "fiber_g": 4.8,
+      "iron_mg": 5.25,
+      "calcium_mg": 147.0,
+      "sodium_mg": 375.0
+    },
+    "mddw_score": 1,
+    "http_status": 200,
+    "scan_timestamp": "2026-10-15T17:36:04.801029+00:00"
+  },
+  {
+    "test_id": "TEST-005",
+    "filename": "005_Munagaku_Vepudu.jpg",
+    "expected_dish_name": "Munagaku Vepudu (Moringa / Drumstick Leaves Stir Fry)",
+    "expected_dish_te": "మునగాకు వేపుడు",
+    "expected_cluster": "Leafy Green Curries",
+    "model_used": "gemini-3.5-flash-lite",
+    "latency_ms": 13036,
+    "tokens_used": 2157,
+    "estimated_cost_inr": 0.1161,
+    "is_food_image": true,
+    "recognized_plate_title_en": "Munagaku Vepudu / Kura (Drumstick Leaves)",
+    "recognized_plate_title_te": "మునగాకు వేపుడు",
+    "recognized_meal_type": "Lunch",
+    "recognized_items": [
+      {
+        "name_en": "Munagaku Vepudu / Kura (Drumstick Leaves)",
+        "name_te": "మునగాకు వేపుడు / కూర",
+        "cluster": "Leafy Green Curries",
+        "estimated_grams": 150,
+        "matched_catalog_id": "JM-05",
+        "matched_in_excel_catalog": true
+      }
+    ],
+    "totals": {
+      "calories": 168,
+      "protein_g": 9.3,
+      "carbs_g": 14.7,
+      "fat_g": 8.1,
+      "fiber_g": 7.2,
+      "iron_mg": 9.75,
+      "calcium_mg": 465.0,
+      "sodium_mg": 330.0
+    },
+    "mddw_score": 1,
+    "http_status": 200,
+    "scan_timestamp": "2026-10-15T17:36:21.893490+00:00"
+  },
+  {
+    "test_id": "TEST-006",
+    "filename": "006_Palakura_Pappu.jpg",
+    "expected_dish_name": "Palakura Pappu (Spinach Dal)",
+    "expected_dish_te": "పాలకూర పప్పు",
+    "expected_cluster": "Dals & Pappu",
+    "model_used": "gemini-3.5-flash-lite",
+    "latency_ms": 26047,
+    "tokens_used": 2142,
+    "estimated_cost_inr": 0.1129,
+    "is_food_image": true,
+    "recognized_plate_title_en": "Palakura Pappu (Spinach Dal)",
+    "recognized_plate_title_te": "పాలకూర పప్పు",
+    "recognized_meal_type": "Lunch",
+    "recognized_items": [
+      {
+        "name_en": "Palakura Pappu (Spinach Dal)",
+        "name_te": "పాలకూర పప్పు",
+        "cluster": "Dals & Pappu",
+        "estimated_grams": 250,
+        "matched_catalog_id": "JM-06",
+        "matched_in_excel_catalog": true
+      }
+    ],
+    "totals": {
+      "calories": 295,
+      "protein_g": 16.0,
+      "carbs_g": 35.5,
+      "fat_g": 10.0,
+      "fiber_g": 9.5,
+      "iron_mg": 7.25,
+      "calcium_mg": 170.0,
+      "sodium_mg": 650.0
+    },
+    "mddw_score": 2,
+    "http_status": 200,
+    "scan_timestamp": "2026-10-15T17:37:44.076634+00:00"
+  },
+  {
+    "test_id": "TEST-007",
+    "filename": "007_Thotakura_Pappu.jpg",
+    "expected_dish_name": "Thotakura Pappu (Amaranth Dal)",
+    "expected_dish_te": "తోటకూర పప్పు",
+    "expected_cluster": "Dals & Pappu",
+    "model_used": "gemini-3.5-flash-lite",
+    "latency_ms": 11779,
+    "tokens_used": 2142,
+    "estimated_cost_inr": 0.1129,
+    "is_food_image": true,
+    "recognized_plate_title_en": "Palakura Pappu (Spinach Dal)",
+    "recognized_plate_title_te": "పాలకూర పప్పు",
+    "recognized_meal_type": "Lunch",
+    "recognized_items": [
+      {
+        "name_en": "Palakura Pappu (Spinach Dal)",
+        "name_te": "పాలకూర పప్పు",
+        "cluster": "Dals & Pappu",
+        "estimated_grams": 250,
+        "matched_catalog_id": "JM-06",
+        "matched_in_excel_catalog": true
+      }
+    ],
+    "totals": {
+      "calories": 295,
+      "protein_g": 16.0,
+      "carbs_g": 35.5,
+      "fat_g": 10.0,
+      "fiber_g": 9.5,
+      "iron_mg": 7.25,
+      "calcium_mg": 170.0,
+      "sodium_mg": 650.0
+    },
+    "mddw_score": 2,
+    "http_status": 200,
+    "scan_timestamp": "2026-10-15T17:37:59.931563+00:00"
+  },
+  {
+    "test_id": "TEST-008",
+    "filename": "008_Gongura_Pappu.jpg",
+    "expected_dish_name": "Gongura Pappu (Andhra Sorrel Leaves Dal)",
+    "expected_dish_te": "గోంగూర పప్పు",
+    "expected_cluster": "Dals & Pappu",
+    "model_used": "gemini-3.5-flash-lite",
+    "latency_ms": 21889,
+    "tokens_used": 2148,
+    "estimated_cost_inr": 0.1142,
+    "is_food_image": true,
+    "recognized_plate_title_en": "Gongura Pappu (Sorrel Leaves Dal)",
+    "recognized_plate_title_te": "గోంగూర పప్పు",
+    "recognized_meal_type": "Lunch",
+    "recognized_items": [
+      {
+        "name_en": "Gongura Pappu (Sorrel Leaves Dal)",
+        "name_te": "గోంగూర పప్పు",
+        "cluster": "Dals & Pappu",
+        "estimated_grams": 250,
+        "matched_catalog_id": "JM-08",
+        "matched_in_excel_catalog": true
+      }
+    ],
+    "totals": {
+      "calories": 315,
+      "protein_g": 16.2,
+      "carbs_g": 37.5,
+      "fat_g": 11.2,
+      "fiber_g": 10.2,
+      "iron_mg": 9.75,
+      "calcium_mg": 237.5,
+      "sodium_mg": 700.0
+    },
+    "mddw_score": 2,
+    "http_status": 200,
+    "scan_timestamp": "2026-10-15T17:38:25.874306+00:00"
+  },
+  {
+    "test_id": "TEST-009",
+    "filename": "009_Menthi_Kura_Pappu.jpg",
+    "expected_dish_name": "Menthi Kura Pappu (Fenugreek Leaves Dal)",
+    "expected_dish_te": "మెంతికూర పప్పు",
+    "expected_cluster": "Dals & Pappu",
+    "model_used": "gemini-3.5-flash-lite",
+    "latency_ms": 19328,
+    "tokens_used": 2153,
+    "estimated_cost_inr": 0.1152,
+    "is_food_image": true,
+    "recognized_plate_title_en": "Menthi Kura Pappu (Fenugreek Dal)",
+    "recognized_plate_title_te": "మెంతికూర పప్పు",
+    "recognized_meal_type": "Lunch",
+    "recognized_items": [
+      {
+        "name_en": "Menthi Kura Pappu (Fenugreek Dal)",
+        "name_te": "మెంతికూర పప్పు",
+        "cluster": "Dals & Pappu",
+        "estimated_grams": 250,
+        "matched_catalog_id": "JM-09",
+        "matched_in_excel_catalog": true
+      }
+    ],
+    "totals": {
+      "calories": 302,
+      "protein_g": 17.2,
+      "carbs_g": 36.2,
+      "fat_g": 10.2,
+      "fiber_g": 10.5,
+      "iron_mg": 8.0,
+      "calcium_mg": 230.0,
+      "sodium_mg": 625.0
+    },
+    "mddw_score": 2,
+    "http_status": 200,
+    "scan_timestamp": "2026-10-15T17:38:49.239297+00:00"
+  },
+  {
+    "test_id": "TEST-010",
+    "filename": "010_Chukkakura_Pappu.jpg",
+    "expected_dish_name": "Chukkakura Pappu (Green Sorrel Dal)",
+    "expected_dish_te": "చుక్కకూర పప్పు",
+    "expected_cluster": "Dals & Pappu",
+    "model_used": "gemini-3.5-flash-lite",
+    "latency_ms": 19122,
+    "tokens_used": 2386,
+    "estimated_cost_inr": 0.1656,
+    "is_food_image": true,
+    "recognized_plate_title_en": "Gongura Pappu & Thotakura Vepudu / Kura",
+    "recognized_plate_title_te": "చుక్క కూర పప్పు మరియు కూర",
+    "recognized_meal_type": "Lunch",
+    "recognized_items": [
+      {
+        "name_en": "Gongura Pappu (Sorrel Leaves Dal)",
+        "name_te": "గోంగూర పప్పు",
+        "cluster": "Dals & Pappu",
+        "estimated_grams": 200,
+        "matched_catalog_id": "JM-08",
+        "matched_in_excel_catalog": true
+      },
+      {
+        "name_en": "Thotakura Vepudu / Kura (Amaranth)",
+        "name_te": "తోటకూర వేపుడు / కూర",
+        "cluster": "Leafy Green Curries",
+        "estimated_grams": 100,
+        "matched_catalog_id": "JM-01",
+        "matched_in_excel_catalog": true
+      }
+    ],
+    "totals": {
+      "calories": 344,
+      "protein_g": 16.6,
+      "carbs_g": 37.2,
+      "fat_g": 14.4,
+      "fiber_g": 12.3,
+      "iron_mg": 12.6,
+      "calcium_mg": 405.0,
+      "sodium_mg": 800.0
+    },
+    "mddw_score": 2,
+    "http_status": 200,
+    "scan_timestamp": "2026-10-15T17:39:12.438554+00:00"
+  },
+  {
+    "test_id": "TEST-011",
+    "filename": "011_Dosakaya_Pappu.jpg",
+    "expected_dish_name": "Dosakaya Pappu (Yellow Cucumber Dal)",
+    "expected_dish_te": "దోసకాయ పప్పు",
+    "expected_cluster": "Dals & Pappu",
+    "model_used": "gemini-3.5-flash-lite",
+    "latency_ms": 33817,
+    "tokens_used": 2136,
+    "estimated_cost_inr": 0.1116,
+    "is_food_image": true,
+    "recognized_plate_title_en": "Dosakaya Pappu (Yellow Cucumber Dal)",
+    "recognized_plate_title_te": "గుమ్మడికాయ పప్పు",
+    "recognized_meal_type": "Lunch",
+    "recognized_items": [
+      {
+        "name_en": "Dosakaya Pappu (Yellow Cucumber Dal)",
+        "name_te": "దోసకాయ పప్పు",
+        "cluster": "Dals & Pappu",
+        "estimated_grams": 250,
+        "matched_catalog_id": "JM-11",
+        "matched_in_excel_catalog": true
+      }
+    ],
+    "totals": {
+      "calories": 285,
+      "protein_g": 14.8,
+      "carbs_g": 36.2,
+      "fat_g": 9.2,
+      "fiber_g": 8.5,
+      "iron_mg": 4.75,
+      "calcium_mg": 105.0,
+      "sodium_mg": 650.0
+    },
+    "mddw_score": 2,
+    "http_status": 200,
+    "scan_timestamp": "2026-10-15T17:39:50.300549+00:00"
+  },
+  {
+    "test_id": "TEST-012",
+    "filename": "012_Sorakaya_Pappu.jpg",
+    "expected_dish_name": "Sorakaya Pappu (Bottle Gourd Dal)",
+    "expected_dish_te": "సొరకాయ పప్పు",
+    "expected_cluster": "Dals & Pappu",
+    "model_used": "gemini-3.5-flash-lite",
+    "latency_ms": 37012,
+    "tokens_used": 2140,
+    "estimated_cost_inr": 0.1124,
+    "is_food_image": true,
+    "recognized_plate_title_en": "Sorakaya Pappu (Bottle Gourd Dal)",
+    "recognized_plate_title_te": "సొరకాయ పప్పు",
+    "recognized_meal_type": "Lunch",
+    "recognized_items": [
+      {
+        "name_en": "Sorakaya Pappu (Bottle Gourd Dal)",
+        "name_te": "సొరకాయ పప్పు",
+        "cluster": "Dals & Pappu",
+        "estimated_grams": 250,
+        "matched_catalog_id": "JM-12",
+        "matched_in_excel_catalog": true
+      }
+    ],
+    "totals": {
+      "calories": 270,
+      "protein_g": 14.0,
+      "carbs_g": 34.5,
+      "fat_g": 8.8,
+      "fiber_g": 8.2,
+      "iron_mg": 4.5,
+      "calcium_mg": 95.0,
+      "sodium_mg": 600.0
+    },
+    "mddw_score": 2,
+    "http_status": 200,
+    "scan_timestamp": "2026-10-15T17:40:31.373276+00:00"
+  },
+  {
+    "test_id": "TEST-013",
+    "filename": "013_Mamidikaya_Pappu.jpg",
+    "expected_dish_name": "Mamidikaya Pappu (Raw Mango Dal)",
+    "expected_dish_te": "మామిడికాయ పప్పు",
+    "expected_cluster": "Dals & Pappu",
+    "model_used": "gemini-3.5-flash-lite",
+    "latency_ms": 19106,
+    "tokens_used": 2354,
+    "estimated_cost_inr": 0.1587,
+    "is_food_image": true,
+    "recognized_plate_title_en": "Mamidikaya Pappu & Steamed White Rice",
+    "recognized_plate_title_te": "మామిడికాయ పప్పు మరియు అన్నం",
+    "recognized_meal_type": "Lunch",
+    "recognized_items": [
+      {
+        "name_en": "Mamidikaya Pappu (Raw Mango Dal)",
+        "name_te": "మామిడికాయ పప్పు",
+        "cluster": "Dals & Pappu",
+        "estimated_grams": 200,
+        "matched_catalog_id": "JM-13",
+        "matched_in_excel_catalog": true
+      },
+      {
+        "name_en": "Steamed White Rice (Vandi Annam)",
+        "name_te": "వండిన తెల్ల అన్నం",
+        "cluster": "Rice & Millet Dishes",
+        "estimated_grams": 150,
+        "matched_catalog_id": "JM-101",
+        "matched_in_excel_catalog": true
+      }
+    ],
+    "totals": {
+      "calories": 435,
+      "protein_g": 16.1,
+      "carbs_g": 73.5,
+      "fat_g": 8.0,
+      "fiber_g": 7.6,
+      "iron_mg": 4.6,
+      "calcium_mg": 95.0,
+      "sodium_mg": 548.0
+    },
+    "mddw_score": 3,
+    "http_status": 200,
+    "scan_timestamp": "2026-10-15T17:41:46.586116+00:00"
+  },
+  {
+    "test_id": "TEST-014",
+    "filename": "014_Beerakaya_Pappu.jpg",
+    "expected_dish_name": "Beerakaya Pappu (Ridge Gourd Dal)",
+    "expected_dish_te": "బీరకాయ పప్పు",
+    "expected_cluster": "Dals & Pappu",
+    "model_used": "gemini-3.5-flash-lite",
+    "latency_ms": 18881,
+    "tokens_used": 2138,
+    "estimated_cost_inr": 0.112,
+    "is_food_image": true,
+    "recognized_plate_title_en": "Sorakaya Pappu (Bottle Gourd Dal)",
+    "recognized_plate_title_te": "సొరకాయ పప్పు",
+    "recognized_meal_type": "Lunch",
+    "recognized_items": [
+      {
+        "name_en": "Sorakaya Pappu (Bottle Gourd Dal)",
+        "name_te": "సొరకాయ పప్పు",
+        "cluster": "Dals & Pappu",
+        "estimated_grams": 200,
+        "matched_catalog_id": "JM-12",
+        "matched_in_excel_catalog": true
+      }
+    ],
+    "totals": {
+      "calories": 216,
+      "protein_g": 11.2,
+      "carbs_g": 27.6,
+      "fat_g": 7.0,
+      "fiber_g": 6.6,
+      "iron_mg": 3.6,
+      "calcium_mg": 76.0,
+      "sodium_mg": 480.0
+    },
+    "mddw_score": 2,
+    "http_status": 200,
+    "scan_timestamp": "2026-10-15T17:42:09.540110+00:00"
+  },
+  {
+    "test_id": "TEST-015",
+    "filename": "015_Gutti_Vankaya_Kura.jpg",
+    "expected_dish_name": "Gutti Vankaya Kura (Stuffed Brinjal Curry)",
+    "expected_dish_te": "గుత్తి వంకాయ కూర",
+    "expected_cluster": "Vegetable Curries",
+    "model_used": "gemini-3.5-flash-lite",
+    "latency_ms": 10915,
+    "tokens_used": 2146,
+    "estimated_cost_inr": 0.1137,
+    "is_food_image": true,
+    "recognized_plate_title_en": "Vankaya Kura / Gutti Vankaya (Brinjal)",
+    "recognized_plate_title_te": "గుత్తి వంకాయ కూర",
+    "recognized_meal_type": "Lunch",
+    "recognized_items": [
+      {
+        "name_en": "Vankaya Kura / Gutti Vankaya (Brinjal)",
+        "name_te": "వంకాయ కూర / గుత్తి వంకాయ",
+        "cluster": "Vegetable Curries",
+        "estimated_grams": 250,
+        "matched_catalog_id": "JM-15",
+        "matched_in_excel_catalog": true
+      }
+    ],
+    "totals": {
+      "calories": 419,
+      "protein_g": 9.5,
+      "carbs_g": 24.0,
+      "fat_g": 32.4,
+      "fiber_g": 10.5,
+      "iron_mg": 4.0,
+      "calcium_mg": 120.0,
+      "sodium_mg": 775.0
+    },
+    "mddw_score": 2,
+    "http_status": 200,
+    "scan_timestamp": "2026-10-15T17:42:24.527740+00:00"
+  },
+  {
+    "test_id": "TEST-016",
+    "filename": "016_Bendakaya_Vepudu.jpg",
+    "expected_dish_name": "Bendakaya Vepudu (Okra / Ladies Finger Fry)",
+    "expected_dish_te": "బెండకాయ వేపుడు",
+    "expected_cluster": "Vegetable Curries",
+    "model_used": "gemini-3.5-flash-lite",
+    "latency_ms": 16940,
+    "tokens_used": 2156,
+    "estimated_cost_inr": 0.1159,
+    "is_food_image": true,
+    "recognized_plate_title_en": "Bendakaya Vepudu / Pulusu (Ladies Finger)",
+    "recognized_plate_title_te": "బెండకాయ వేపుడు",
+    "recognized_meal_type": "Lunch",
+    "recognized_items": [
+      {
+        "name_en": "Bendakaya Vepudu / Pulusu (Ladies Finger)",
+        "name_te": "బెండకాయ వేపుడు / పులుసు",
+        "cluster": "Vegetable Curries",
+        "estimated_grams": 180,
+        "matched_catalog_id": "JM-16",
+        "matched_in_excel_catalog": true
+      }
+    ],
+    "totals": {
+      "calories": 202,
+      "protein_g": 4.3,
+      "carbs_g": 15.8,
+      "fat_g": 13.7,
+      "fiber_g": 7.0,
+      "iron_mg": 2.16,
+      "calcium_mg": 140.4,
+      "sodium_mg": 486.0
+    },
+    "mddw_score": 1,
+    "http_status": 200,
+    "scan_timestamp": "2026-10-15T17:42:45.500940+00:00"
+  },
+  {
+    "test_id": "TEST-017",
+    "filename": "017_Bangaladumpa_Aloo_Vepudu.jpg",
+    "expected_dish_name": "Bangaladumpa Vepudu (Spiced Potato Fry)",
+    "expected_dish_te": "బంగాళాదుంప వేపుడు",
+    "expected_cluster": "Vegetable Curries",
+    "model_used": "gemini-3.5-flash-lite",
+    "latency_ms": 19767,
+    "tokens_used": 2139,
+    "estimated_cost_inr": 0.1122,
+    "is_food_image": true,
+    "recognized_plate_title_en": "Bangaladumpa / Aloo Vepudu (Potato Fry)",
+    "recognized_plate_title_te": "ఆలూ ఫ్రై",
+    "recognized_meal_type": "Lunch",
+    "recognized_items": [
+      {
+        "name_en": "Bangaladumpa / Aloo Vepudu (Potato Fry)",
+        "name_te": "బంగాళాదుంప వేపుడు",
+        "cluster": "Vegetable Curries",
+        "estimated_grams": 180,
+        "matched_catalog_id": "JM-17",
+        "matched_in_excel_catalog": true
+      }
+    ],
+    "totals": {
+      "calories": 245,
+      "protein_g": 4.0,
+      "carbs_g": 33.1,
+      "fat_g": 10.8,
+      "fiber_g": 4.3,
+      "iron_mg": 1.62,
+      "calcium_mg": 32.4,
+      "sodium_mg": 504.0
+    },
+    "mddw_score": 2,
+    "http_status": 200,
+    "scan_timestamp": "2026-10-15T17:43:09.326381+00:00"
+  },
+  {
+    "test_id": "TEST-018",
+    "filename": "018_Dondakaya_Vepudu.jpg",
+    "expected_dish_name": "Dondakaya Vepudu (Ivy Gourd Stir Fry)",
+    "expected_dish_te": "దొండకాయ వేపుడు",
+    "expected_cluster": "Vegetable Curries",
+    "model_used": "gemini-3.5-flash-lite",
+    "latency_ms": 18752,
+    "tokens_used": 2153,
+    "estimated_cost_inr": 0.1152,
+    "is_food_image": true,
+    "recognized_plate_title_en": "Dondakaya Vepudu (Ivy Gourd Fry)",
+    "recognized_plate_title_te": "దొండకాయ వేపుడు",
+    "recognized_meal_type": "Lunch",
+    "recognized_items": [
+      {
+        "name_en": "Dondakaya Vepudu (Ivy Gourd Fry)",
+        "name_te": "దొండకాయ వేపుడు",
+        "cluster": "Vegetable Curries",
+        "estimated_grams": 250,
+        "matched_catalog_id": "JM-18",
+        "matched_in_excel_catalog": true
+      }
+    ],
+    "totals": {
+      "calories": 260,
+      "protein_g": 5.2,
+      "carbs_g": 18.0,
+      "fat_g": 18.5,
+      "fiber_g": 8.8,
+      "iron_mg": 3.5,
+      "calcium_mg": 115.0,
+      "sodium_mg": 650.0
+    },
+    "mddw_score": 1,
+    "http_status": 200,
+    "scan_timestamp": "2026-10-15T17:43:32.116698+00:00"
+  },
+  {
+    "test_id": "TEST-019",
+    "filename": "019_Beerakaya_Kura.jpg",
+    "expected_dish_name": "Beerakaya Kura (Ridge Gourd Curry)",
+    "expected_dish_te": "బీరకాయ కూర",
+    "expected_cluster": "Vegetable Curries",
+    "model_used": "gemini-3.5-flash-lite",
+    "latency_ms": 7395,
+    "tokens_used": 2135,
+    "estimated_cost_inr": 0.1114,
+    "is_food_image": true,
+    "recognized_plate_title_en": "Beerakaya Kura (Ridge Gourd Curry)",
+    "recognized_plate_title_te": "బీరకాయ కూర",
+    "recognized_meal_type": "Lunch",
+    "recognized_items": [
+      {
+        "name_en": "Beerakaya Kura (Ridge Gourd Curry)",
+        "name_te": "బీరకాయ కూర",
+        "cluster": "Vegetable Curries",
+        "estimated_grams": 250,
+        "matched_catalog_id": "JM-19",
+        "matched_in_excel_catalog": true
+      }
+    ],
+    "totals": {
+      "calories": 195,
+      "protein_g": 4.5,
+      "carbs_g": 16.0,
+      "fat_g": 12.8,
+      "fiber_g": 6.5,
+      "iron_mg": 2.25,
+      "calcium_mg": 80.0,
+      "sodium_mg": 575.0
+    },
+    "mddw_score": 1,
+    "http_status": 200,
+    "scan_timestamp": "2026-10-15T17:44:35.640654+00:00"
+  },
+  {
+    "test_id": "TEST-020",
+    "filename": "020_Sorakaya_Kura.jpg",
+    "expected_dish_name": "Sorakaya / Anapakaya Kura (Bottle Gourd Curry)",
+    "expected_dish_te": "సొరకాయ కూర",
+    "expected_cluster": "Vegetable Curries",
+    "model_used": "gemini-3.5-flash-lite",
+    "latency_ms": 13206,
+    "tokens_used": 2157,
+    "estimated_cost_inr": 0.1161,
+    "is_food_image": true,
+    "recognized_plate_title_en": "Sorakaya Ava Kura (Bottle Gourd in Mustard Sauce)",
+    "recognized_plate_title_te": "సొరకాయ ఆవా కూర",
+    "recognized_meal_type": "Lunch",
+    "recognized_items": [
+      {
+        "name_en": "Sorakaya Ava Kura (Bottle Gourd in Mustard Sauce)",
+        "name_te": "సొరకాయ ఆవా కూర",
+        "cluster": "Vegetable Curries",
+        "estimated_grams": 200,
+        "matched_catalog_id": "CUSTOM-TE",
+        "matched_in_excel_catalog": false
+      }
+    ],
+    "totals": {
+      "calories": 150,
+      "protein_g": 3.0,
+      "carbs_g": 12.4,
+      "fat_g": 10.0,
+      "fiber_g": 4.2,
+      "iron_mg": 1.0,
+      "calcium_mg": 50.0,
+      "sodium_mg": 640.0
+    },
+    "mddw_score": 2,
+    "http_status": 200,
+    "scan_timestamp": "2026-10-15T17:44:52.887609+00:00"
+  },
+  {
+    "test_id": "TEST-021",
+    "filename": "021_Kakarakaya_Vepudu.jpg",
+    "expected_dish_name": "Kakarakaya Vepudu (Bitter Gourd Stir Fry)",
+    "expected_dish_te": "కాకరకాయ వేపుడు",
+    "expected_cluster": "Vegetable Curries",
+    "model_used": "gemini-3.5-flash-lite",
+    "latency_ms": 13592,
+    "tokens_used": 2150,
+    "estimated_cost_inr": 0.1146,
+    "is_food_image": true,
+    "recognized_plate_title_en": "Kakarakaya Vepudu / Pulusu (Bitter Gourd)",
+    "recognized_plate_title_te": "కాకరకాయ వేపుడు",
+    "recognized_meal_type": "Lunch",
+    "recognized_items": [
+      {
+        "name_en": "Kakarakaya Vepudu / Pulusu (Bitter Gourd)",
+        "name_te": "కాకరకాయ వేపుడు / పులుసు",
+        "cluster": "Vegetable Curries",
+        "estimated_grams": 180,
+        "matched_catalog_id": "JM-21",
+        "matched_in_excel_catalog": true
+      }
+    ],
+    "totals": {
+      "calories": 239,
+      "protein_g": 4.5,
+      "carbs_g": 16.0,
+      "fat_g": 17.5,
+      "fiber_g": 7.4,
+      "iron_mg": 3.42,
+      "calcium_mg": 68.4,
+      "sodium_mg": 513.0
+    },
+    "mddw_score": 1,
+    "http_status": 200,
+    "scan_timestamp": "2026-10-15T17:45:10.550229+00:00"
+  },
+  {
+    "test_id": "TEST-022",
+    "filename": "022_Cabbage_Vepudu.jpg",
+    "expected_dish_name": "Cabbage Vepudu (Cabbage Stir Fry)",
+    "expected_dish_te": "క్యాబేజీ వేపుడు",
+    "expected_cluster": "Vegetable Curries",
+    "model_used": "gemini-3.5-flash-lite",
+    "latency_ms": 16497,
+    "tokens_used": 2160,
+    "estimated_cost_inr": 0.1168,
+    "is_food_image": true,
+    "recognized_plate_title_en": "Cabbage Pesara Pappu Kura (Cabbage with Moong Dal Stir-fry)",
+    "recognized_plate_title_te": "కాబేజీ పెసరపప్పు కూర",
+    "recognized_meal_type": "Lunch",
+    "recognized_items": [
+      {
+        "name_en": "Cabbage Pesara Pappu Kura (Cabbage with Moong Dal Stir-fry)",
+        "name_te": "కాబేజీ పెసరపప్పు కూర",
+        "cluster": "Vegetable Curries",
+        "estimated_grams": 160,
+        "matched_catalog_id": "CUSTOM-TE",
+        "matched_in_excel_catalog": false
+      }
+    ],
+    "totals": {
+      "calories": 120,
+      "protein_g": 6.1,
+      "carbs_g": 16.3,
+      "fat_g": 4.0,
+      "fiber_g": 4.5,
+      "iron_mg": 1.44,
+      "calcium_mg": 51.2,
+      "sodium_mg": 296.0
+    },
+    "mddw_score": 2,
+    "http_status": 200,
+    "scan_timestamp": "2026-10-15T17:46:23.108022+00:00"
+  },
+  {
+    "test_id": "TEST-023",
+    "filename": "023_Cauliflower_Kura.jpg",
+    "expected_dish_name": "Cauliflower Kura (Cauliflower Curry)",
+    "expected_dish_te": "కాలిఫ్లవర్ కూర",
+    "expected_cluster": "Vegetable Curries",
+    "model_used": "gemini-3.5-flash-lite",
+    "latency_ms": 12496,
+    "tokens_used": 2087,
+    "estimated_cost_inr": 0.101,
+    "is_food_image": true,
+    "recognized_plate_title_en": "Cauliflower Kura (Cauliflower Curry)",
+    "recognized_plate_title_te": "కాలీఫ్లవర్ కూర",
+    "recognized_meal_type": "Lunch",
+    "recognized_items": [
+      {
+        "name_en": "Cauliflower Kura (Cauliflower Curry)",
+        "name_te": "కాలిఫ్లవర్ కూర",
+        "cluster": "Vegetable Curries",
+        "estimated_grams": 250,
+        "matched_catalog_id": "JM-23",
+        "matched_in_excel_catalog": true
+      }
+    ],
+    "totals": {
+      "calories": 230,
+      "protein_g": 6.0,
+      "carbs_g": 19.0,
+      "fat_g": 14.8,
+      "fiber_g": 7.5,
+      "iron_mg": 2.5,
+      "calcium_mg": 85.0,
+      "sodium_mg": 638.0
+    },
+    "mddw_score": 1,
+    "http_status": 200,
+    "scan_timestamp": "2026-10-15T17:46:39.670514+00:00"
+  },
+  {
+    "test_id": "TEST-024",
+    "filename": "024_Beans_Vepudu.jpg",
+    "expected_dish_name": "Beans Vepudu (French Beans Stir Fry)",
+    "expected_dish_te": "బీన్స్ వేపుడు",
+    "expected_cluster": "Vegetable Curries",
+    "model_used": "gemini-3.5-flash-lite",
+    "latency_ms": 13105,
+    "tokens_used": 2141,
+    "estimated_cost_inr": 0.1126,
+    "is_food_image": true,
+    "recognized_plate_title_en": "Beans Vepudu (French Beans Stir-Fry)",
+    "recognized_plate_title_te": "బీన్స్ వేపుడు",
+    "recognized_meal_type": "Lunch",
+    "recognized_items": [
+      {
+        "name_en": "Beans Vepudu (French Beans Stir-Fry)",
+        "name_te": "బీన్స్ వేపుడు",
+        "cluster": "Vegetable Curries",
+        "estimated_grams": 150,
+        "matched_catalog_id": "JM-24",
+        "matched_in_excel_catalog": true
+      }
+    ],
+    "totals": {
+      "calories": 132,
+      "protein_g": 3.9,
+      "carbs_g": 12.3,
+      "fat_g": 7.6,
+      "fiber_g": 5.7,
+      "iron_mg": 2.1,
+      "calcium_mg": 72.0,
+      "sodium_mg": 360.0
+    },
+    "mddw_score": 1,
+    "http_status": 200,
+    "scan_timestamp": "2026-10-15T17:46:56.824030+00:00"
+  },
+  {
+    "test_id": "TEST-025",
+    "filename": "025_Chikkudukaya_Kura.jpg",
+    "expected_dish_name": "Chikkudukaya Kura (Broad Beans Curry)",
+    "expected_dish_te": "చిక్కుడుకాయ కూర",
+    "expected_cluster": "Vegetable Curries",
+    "model_used": "gemini-3.5-flash-lite",
+    "latency_ms": 7657,
+    "tokens_used": 2086,
+    "estimated_cost_inr": 0.1008,
+    "is_food_image": true,
+    "recognized_plate_title_en": "Chikkudukaya Kura (Broad Beans Curry)",
+    "recognized_plate_title_te": "చిక్కుడుకాయ కూర",
+    "recognized_meal_type": "Lunch",
+    "recognized_items": [
+      {
+        "name_en": "Chikkudukaya Kura (Broad Beans Curry)",
+        "name_te": "చిక్కుడుకాయ కూర",
+        "cluster": "Vegetable Curries",
+        "estimated_grams": 250,
+        "matched_catalog_id": "JM-25",
+        "matched_in_excel_catalog": true
+      }
+    ],
+    "totals": {
+      "calories": 265,
+      "protein_g": 11.2,
+      "carbs_g": 28.0,
+      "fat_g": 12.2,
+      "fiber_g": 12.0,
+      "iron_mg": 4.5,
+      "calcium_mg": 145.0,
+      "sodium_mg": 625.0
+    },
+    "mddw_score": 2,
+    "http_status": 200,
+    "scan_timestamp": "2026-10-15T17:47:08.525291+00:00"
+  },
+  {
+    "test_id": "TEST-026",
+    "filename": "026_Goruchikkudu_Kura.jpg",
+    "expected_dish_name": "Goruchikkudu Kura (Cluster Beans Curry)",
+    "expected_dish_te": "గోరుచిక్కుడు కూర",
+    "expected_cluster": "Vegetable Curries",
+    "model_used": "gemini-3.5-flash-lite",
+    "latency_ms": 7519,
+    "tokens_used": 2160,
+    "estimated_cost_inr": 0.1168,
+    "is_food_image": true,
+    "recognized_plate_title_en": "Chikkudukaya Kura (Broad Beans Curry)",
+    "recognized_plate_title_te": "గోరుచిక్కుడుకాయ వేపుడు",
+    "recognized_meal_type": "Lunch",
+    "recognized_items": [
+      {
+        "name_en": "Chikkudukaya Kura (Broad Beans Curry)",
+        "name_te": "చిక్కుడుకాయ కూర",
+        "cluster": "Vegetable Curries",
+        "estimated_grams": 180,
+        "matched_catalog_id": "JM-25",
+        "matched_in_excel_catalog": true
+      }
+    ],
+    "totals": {
+      "calories": 191,
+      "protein_g": 8.1,
+      "carbs_g": 20.2,
+      "fat_g": 8.8,
+      "fiber_g": 8.6,
+      "iron_mg": 3.24,
+      "calcium_mg": 104.4,
+      "sodium_mg": 450.0
+    },
+    "mddw_score": 2,
+    "http_status": 200,
+    "scan_timestamp": "2026-10-15T17:47:20.112107+00:00"
+  },
+  {
+    "test_id": "TEST-027",
+    "filename": "027_Dosakaya_Mukkala_Pulusu.jpg",
+    "expected_dish_name": "Dosakaya Mukkala Pulusu (Yellow Cucumber Stew)",
+    "expected_dish_te": "దోసకాయ ముక్కల పులుసు",
+    "expected_cluster": "Vegetable Curries",
+    "model_used": "gemini-3.5-flash-lite",
+    "latency_ms": 25811,
+    "tokens_used": 2150,
+    "estimated_cost_inr": 0.1146,
+    "is_food_image": true,
+    "recognized_plate_title_en": "Sorakaya / Anapakaya Kura (Bottle Gourd)",
+    "recognized_plate_title_te": "సోరకాయ టొమాటో కూర",
+    "recognized_meal_type": "Lunch",
+    "recognized_items": [
+      {
+        "name_en": "Sorakaya / Anapakaya Kura (Bottle Gourd)",
+        "name_te": "సొరకాయ కూర",
+        "cluster": "Vegetable Curries",
+        "estimated_grams": 200,
+        "matched_catalog_id": "JM-20",
+        "matched_in_excel_catalog": true
+      }
+    ],
+    "totals": {
+      "calories": 148,
+      "protein_g": 3.2,
+      "carbs_g": 13.6,
+      "fat_g": 9.2,
+      "fiber_g": 5.0,
+      "iron_mg": 1.6,
+      "calcium_mg": 60.0,
+      "sodium_mg": 470.0
+    },
+    "mddw_score": 1,
+    "http_status": 200,
+    "scan_timestamp": "2026-10-15T17:52:47.899402+00:00"
+  },
+  {
+    "test_id": "TEST-028",
+    "filename": "028_Munakkaya_Pulusu.jpg",
+    "expected_dish_name": "Munakkaya Pulusu / Kura (Drumstick Stew)",
+    "expected_dish_te": "మునక్కాయ పులుసు / కూర",
+    "expected_cluster": "Vegetable Curries",
+    "model_used": "gemini-3.5-flash-lite",
+    "latency_ms": 18346,
+    "tokens_used": 2160,
+    "estimated_cost_inr": 0.1168,
+    "is_food_image": true,
+    "recognized_plate_title_en": "Munakkaya Kura / Pulusu (Drumstick Curry)",
+    "recognized_plate_title_te": "వంకాయ మునక్కాయ పులుసు",
+    "recognized_meal_type": "Lunch",
+    "recognized_items": [
+      {
+        "name_en": "Munakkaya Kura / Pulusu (Drumstick Curry)",
+        "name_te": "మునక్కాయ కూర / పులుసు",
+        "cluster": "Vegetable Curries",
+        "estimated_grams": 300,
+        "matched_catalog_id": "JM-28",
+        "matched_in_excel_catalog": true
+      }
+    ],
+    "totals": {
+      "calories": 270,
+      "protein_g": 7.8,
+      "carbs_g": 26.4,
+      "fat_g": 15.6,
+      "fiber_g": 11.7,
+      "iron_mg": 4.2,
+      "calcium_mg": 168.0,
+      "sodium_mg": 810.0
+    },
+    "mddw_score": 1,
+    "http_status": 200,
+    "scan_timestamp": "2026-10-15T17:53:10.334924+00:00"
+  },
+  {
+    "test_id": "TEST-029",
+    "filename": "029_Aratikaya_Vepudu.jpg",
+    "expected_dish_name": "Aratikaya Vepudu (Raw Plantain Fry)",
+    "expected_dish_te": "అరటికాయ వేపుడు",
+    "expected_cluster": "Vegetable Curries",
+    "model_used": "gemini-3.5-flash-lite",
+    "latency_ms": 11692,
+    "tokens_used": 2153,
+    "estimated_cost_inr": 0.1152,
+    "is_food_image": true,
+    "recognized_plate_title_en": "Aratikaya Vepudu / Kura (Raw Banana)",
+    "recognized_plate_title_te": "అరటికాయ వేపుడు",
+    "recognized_meal_type": "Lunch",
+    "recognized_items": [
+      {
+        "name_en": "Aratikaya Vepudu / Kura (Raw Banana)",
+        "name_te": "అరటికాయ వేపుడు / కూర",
+        "cluster": "Vegetable Curries",
+        "estimated_grams": 150,
+        "matched_catalog_id": "JM-29",
+        "matched_in_excel_catalog": true
+      }
+    ],
+    "totals": {
+      "calories": 198,
+      "protein_g": 2.8,
+      "carbs_g": 28.8,
+      "fat_g": 8.1,
+      "fiber_g": 5.4,
+      "iron_mg": 1.35,
+      "calcium_mg": 33.0,
+      "sodium_mg": 375.0
+    },
+    "mddw_score": 1,
+    "http_status": 200,
+    "scan_timestamp": "2026-10-15T17:53:56.083855+00:00"
+  },
+  {
+    "test_id": "TEST-030",
+    "filename": "030_Chamadumpa_Pulusu.jpg",
+    "expected_dish_name": "Chamadumpa Pulusu (Colocasia / Taro Root Stew)",
+    "expected_dish_te": "చామదుంప పులుసు",
+    "expected_cluster": "Vegetable Curries",
+    "model_used": "gemini-3.5-flash-lite",
+    "latency_ms": 16087,
+    "tokens_used": 2173,
+    "estimated_cost_inr": 0.1196,
+    "is_food_image": true,
+    "recognized_plate_title_en": "Putnala Pulusu with Small Potatoes (Roasted Gram Dal Tamarind Stew)",
+    "recognized_plate_title_te": "పుట్నాల పులుసు / బంగాళాదుంప పులుసు",
+    "recognized_meal_type": "Lunch",
+    "recognized_items": [
+      {
+        "name_en": "Putnala Pulusu with Small Potatoes (Roasted Gram Dal Tamarind Stew)",
+        "name_te": "పుట్నాల పప్పు పులుసు",
+        "cluster": "Vegetable Curries",
+        "estimated_grams": 250,
+        "matched_catalog_id": "CUSTOM-TE",
+        "matched_in_excel_catalog": false
+      }
+    ],
+    "totals": {
+      "calories": 237,
+      "protein_g": 9.5,
+      "carbs_g": 36.2,
+      "fat_g": 6.2,
+      "fiber_g": 5.2,
+      "iron_mg": 2.75,
+      "calcium_mg": 62.5,
+      "sodium_mg": 800.0
+    },
+    "mddw_score": 2,
+    "http_status": 200,
+    "scan_timestamp": "2026-10-15T17:54:16.250315+00:00"
+  },
+  {
+    "test_id": "TEST-031",
+    "filename": "031_Potlakaya_Kura.jpg",
+    "expected_dish_name": "Potlakaya Kura (Snake Gourd Curry)",
+    "expected_dish_te": "పొట్లకాయ కూర",
+    "expected_cluster": "Vegetable Curries",
+    "model_used": "gemini-3.5-flash-lite",
+    "latency_ms": 23121,
+    "tokens_used": 2160,
+    "estimated_cost_inr": 0.1168,
+    "is_food_image": true,
+    "recognized_plate_title_en": "Beerakaya Kura (Ridge Gourd Curry)",
+    "recognized_plate_title_te": "బీరకాయ పెసరపప్పు కూర",
+    "recognized_meal_type": "Lunch",
+    "recognized_items": [
+      {
+        "name_en": "Beerakaya Kura (Ridge Gourd Curry)",
+        "name_te": "బీరకాయ కూర",
+        "cluster": "Vegetable Curries",
+        "estimated_grams": 250,
+        "matched_catalog_id": "JM-19",
+        "matched_in_excel_catalog": true
+      }
+    ],
+    "totals": {
+      "calories": 195,
+      "protein_g": 4.5,
+      "carbs_g": 16.0,
+      "fat_g": 12.8,
+      "fiber_g": 6.5,
+      "iron_mg": 2.25,
+      "calcium_mg": 80.0,
+      "sodium_mg": 575.0
+    },
+    "mddw_score": 1,
+    "http_status": 200,
+    "scan_timestamp": "2026-10-15T17:56:27.485902+00:00"
+  },
+  {
+    "test_id": "TEST-032",
+    "filename": "032_Meal_Maker_Soya_Chunks_Kura.jpg",
+    "expected_dish_name": "Meal Maker Kura (Soya Chunks Curry)",
+    "expected_dish_te": "మీల్ మేకర్ కూర",
+    "expected_cluster": "Vegetable Curries",
+    "model_used": "gemini-3.5-flash-lite",
+    "latency_ms": 31563,
+    "tokens_used": 2605,
+    "estimated_cost_inr": 0.213,
+    "is_food_image": true,
+    "recognized_plate_title_en": "Steamed White Rice, Meal Maker / Soya Chunks Kura & Tomato Slices",
+    "recognized_plate_title_te": "సోయా చంక్స్ కూర మరియు అన్నం",
+    "recognized_meal_type": "Lunch",
+    "recognized_items": [
+      {
+        "name_en": "Steamed White Rice (Vandi Annam)",
+        "name_te": "వండిన తెల్ల అన్నం",
+        "cluster": "Rice & Millet Dishes",
+        "estimated_grams": 200,
+        "matched_catalog_id": "JM-101",
+        "matched_in_excel_catalog": true
+      },
+      {
+        "name_en": "Meal Maker / Soya Chunks Kura",
+        "name_te": "మీల్ మేకర్ / సోయా కూర",
+        "cluster": "Vegetable Curries",
+        "estimated_grams": 180,
+        "matched_catalog_id": "JM-32",
+        "matched_in_excel_catalog": true
+      },
+      {
+        "name_en": "Tomato Slices (Tamata Mukkalu)",
+        "name_te": "టొమాటో ముక్కలు",
+        "cluster": "Other",
+        "estimated_grams": 50,
+        "matched_catalog_id": "CUSTOM-TE",
+        "matched_in_excel_catalog": false
+      }
+    ],
+    "totals": {
+      "calories": 541,
+      "protein_g": 32.5,
+      "carbs_g": 77.4,
+      "fat_g": 11.0,
+      "fiber_g": 9.5,
+      "iron_mg": 7.79,
+      "calcium_mg": 190.6,
+      "sodium_mg": 534.0
+    },
+    "mddw_score": 3,
+    "http_status": 200,
+    "scan_timestamp": "2026-10-15T17:57:03.127040+00:00"
+  },
+  {
+    "test_id": "TEST-033",
+    "filename": "033_Senagala_Kura.jpg",
+    "expected_dish_name": "Senagala Kura (Black Chickpea Curry)",
+    "expected_dish_te": "శనగల కూర",
+    "expected_cluster": "Vegetable Curries",
+    "model_used": "gemini-3.5-flash-lite",
+    "latency_ms": 8575,
+    "tokens_used": 2833,
+    "estimated_cost_inr": 0.2623,
+    "is_food_image": true,
+    "recognized_plate_title_en": "Senagala Kura, Phulka / Roti, Steamed White Rice & Green Salad and Herbs",
+    "recognized_plate_title_te": "శనగ మసాలా, చపాతీ మరియు అన్నం",
+    "recognized_meal_type": "Lunch",
+    "recognized_items": [
+      {
+        "name_en": "Senagala Kura (Brown Chickpea Curry)",
+        "name_te": "శనగల కూర",
+        "cluster": "Vegetable Curries",
+        "estimated_grams": 250,
+        "matched_catalog_id": "JM-33",
+        "matched_in_excel_catalog": true
+      },
+      {
+        "name_en": "Phulka / Roti",
+        "name_te": "పుల్కా / రోటి",
+        "cluster": "Other",
+        "estimated_grams": 90,
+        "matched_catalog_id": "CUSTOM-TE",
+        "matched_in_excel_catalog": false
+      },
+      {
+        "name_en": "Steamed White Rice (Vandi Annam)",
+        "name_te": "వండిన తెల్ల అన్నం",
+        "cluster": "Rice & Millet Dishes",
+        "estimated_grams": 100,
+        "matched_catalog_id": "JM-101",
+        "matched_in_excel_catalog": true
+      },
+      {
+        "name_en": "Green Salad and Herbs",
+        "name_te": "సలాడ్ మరియు ఆకుకూరలు",
+        "cluster": "Other",
+        "estimated_grams": 50,
+        "matched_catalog_id": "CUSTOM-TE",
+        "matched_in_excel_catalog": false
+      }
+    ],
+    "totals": {
+      "calories": 771,
+      "protein_g": 31.4,
+      "carbs_g": 125.7,
+      "fat_g": 16.3,
+      "fiber_g": 21.8,
+      "iron_mg": 10.08,
+      "calcium_mg": 187.7,
+      "sodium_mg": 1058.0
+    },
+    "mddw_score": 3,
+    "http_status": 200,
+    "scan_timestamp": "2026-10-15T17:57:15.763495+00:00"
+  },
+  {
+    "test_id": "TEST-034",
+    "filename": "034_Majjiga_Pulusu.jpg",
+    "expected_dish_name": "Majjiga Pulusu / Majjiga Charu (Seasoned Buttermilk Stew)",
+    "expected_dish_te": "మజ్జిగ పులుసు",
+    "expected_cluster": "Vegetable Curries",
+    "model_used": "gemini-3.5-flash-lite",
+    "latency_ms": 7985,
+    "tokens_used": 2144,
+    "estimated_cost_inr": 0.1133,
+    "is_food_image": true,
+    "recognized_plate_title_en": "Majjiga Pulusu / Majjiga Charu",
+    "recognized_plate_title_te": "మజ్జిగ పులుసు",
+    "recognized_meal_type": "Lunch",
+    "recognized_items": [
+      {
+        "name_en": "Majjiga Pulusu / Majjiga Charu",
+        "name_te": "మజ్జిగ పులుసు",
+        "cluster": "Vegetable Curries",
+        "estimated_grams": 250,
+        "matched_catalog_id": "JM-34",
+        "matched_in_excel_catalog": true
+      }
+    ],
+    "totals": {
+      "calories": 170,
+      "protein_g": 7.0,
+      "carbs_g": 14.0,
+      "fat_g": 9.5,
+      "fiber_g": 3.0,
+      "iron_mg": 1.5,
+      "calcium_mg": 237.5,
+      "sodium_mg": 575.0
+    },
+    "mddw_score": 2,
+    "http_status": 200,
+    "scan_timestamp": "2026-10-15T17:57:27.778405+00:00"
+  },
+  {
+    "test_id": "TEST-035",
+    "filename": "035_Palli_Pachadi.jpg",
+    "expected_dish_name": "Palli Pachadi (Peanut / Groundnut Chutney)",
+    "expected_dish_te": "పల్లీ పచ్చడి",
+    "expected_cluster": "Chutneys & Podis",
+    "model_used": "gemini-3.5-flash-lite",
+    "latency_ms": 10042,
+    "tokens_used": 2149,
+    "estimated_cost_inr": 0.1144,
+    "is_food_image": true,
+    "recognized_plate_title_en": "Palli Pachadi (Peanut Chutney)",
+    "recognized_plate_title_te": "పల్లి పచ్చడి",
+    "recognized_meal_type": "Breakfast",
+    "recognized_items": [
+      {
+        "name_en": "Palli Pachadi (Peanut Chutney)",
+        "name_te": "పల్లీ పచ్చడి",
+        "cluster": "Chutneys & Podis",
+        "estimated_grams": 150,
+        "matched_catalog_id": "JM-35",
+        "matched_in_excel_catalog": true
+      }
+    ],
+    "totals": {
+      "calories": 372,
+      "protein_g": 14.7,
+      "carbs_g": 14.1,
+      "fat_g": 29.4,
+      "fiber_g": 5.7,
+      "iron_mg": 2.7,
+      "calcium_mg": 63.0,
+      "sodium_mg": 510.0
+    },
+    "mddw_score": 1,
+    "http_status": 200,
+    "scan_timestamp": "2026-10-15T17:57:41.885297+00:00"
+  },
+  {
+    "test_id": "TEST-036",
+    "filename": "036_Kobbari_Pachadi.jpg",
+    "expected_dish_name": "Kobbari Pachadi (Coconut Chutney)",
+    "expected_dish_te": "కొబ్బరి పచ్చడి",
+    "expected_cluster": "Chutneys & Podis",
+    "model_used": "gemini-3.5-flash-lite",
+    "latency_ms": 12079,
+    "tokens_used": 2152,
+    "estimated_cost_inr": 0.115,
+    "is_food_image": true,
+    "recognized_plate_title_en": "Palli Pachadi (Peanut Chutney)",
+    "recognized_plate_title_te": "పల్లీ పచ్చడి",
+    "recognized_meal_type": "Breakfast",
+    "recognized_items": [
+      {
+        "name_en": "Palli Pachadi (Peanut Chutney)",
+        "name_te": "పల్లీ పచ్చడి",
+        "cluster": "Chutneys & Podis",
+        "estimated_grams": 150,
+        "matched_catalog_id": "JM-35",
+        "matched_in_excel_catalog": true
+      }
+    ],
+    "totals": {
+      "calories": 372,
+      "protein_g": 14.7,
+      "carbs_g": 14.1,
+      "fat_g": 29.4,
+      "fiber_g": 5.7,
+      "iron_mg": 2.7,
+      "calcium_mg": 63.0,
+      "sodium_mg": 510.0
+    },
+    "mddw_score": 1,
+    "http_status": 200,
+    "scan_timestamp": "2026-10-15T17:57:58.041534+00:00"
+  },
+  {
+    "test_id": "TEST-037",
+    "filename": "037_Allam_Pachadi.jpg",
+    "expected_dish_name": "Allam Pachadi (Ginger Chutney)",
+    "expected_dish_te": "అల్లం పచ్చడి",
+    "expected_cluster": "Chutneys & Podis",
+    "model_used": "gemini-3.5-flash-lite",
+    "latency_ms": 22561,
+    "tokens_used": 2147,
+    "estimated_cost_inr": 0.1139,
+    "is_food_image": true,
+    "recognized_plate_title_en": "Allam Pachadi (Ginger Chutney)",
+    "recognized_plate_title_te": "అల్లం పచ్చడి",
+    "recognized_meal_type": "Breakfast",
+    "recognized_items": [
+      {
+        "name_en": "Allam Pachadi (Ginger Chutney)",
+        "name_te": "అల్లం పచ్చడి",
+        "cluster": "Chutneys & Podis",
+        "estimated_grams": 50,
+        "matched_catalog_id": "CUSTOM-TE",
+        "matched_in_excel_catalog": false
+      }
+    ],
+    "totals": {
+      "calories": 105,
+      "protein_g": 1.6,
+      "carbs_g": 11.0,
+      "fat_g": 6.2,
+      "fiber_g": 1.6,
+      "iron_mg": 0.6,
+      "calcium_mg": 22.5,
+      "sodium_mg": 210.0
+    },
+    "mddw_score": 2,
+    "http_status": 200,
+    "scan_timestamp": "2026-10-15T18:00:08.810953+00:00"
+  },
+  {
+    "test_id": "TEST-038",
+    "filename": "038_Tomato_Pachadi.jpg",
+    "expected_dish_name": "Tomato Pachadi (Roti Pachadi)",
+    "expected_dish_te": "టమాటా పచ్చడి",
+    "expected_cluster": "Chutneys & Podis",
+    "model_used": "gemini-3.5-flash-lite",
+    "latency_ms": 28452,
+    "tokens_used": 2369,
+    "estimated_cost_inr": 0.162,
+    "is_food_image": true,
+    "recognized_plate_title_en": "Tomato Pachadi / Roti Pachadi & Plain / Karam Dosa",
+    "recognized_plate_title_te": "టొమాటో చట్నీ దోసతో",
+    "recognized_meal_type": "Breakfast",
+    "recognized_items": [
+      {
+        "name_en": "Tomato Pachadi / Roti Pachadi",
+        "name_te": "టమాటా పచ్చడి / రోటి పచ్చడి",
+        "cluster": "Chutneys & Podis",
+        "estimated_grams": 120,
+        "matched_catalog_id": "JM-37",
+        "matched_in_excel_catalog": true
+      },
+      {
+        "name_en": "Plain / Karam Dosa (Fermented Rice-Lentil Crepe)",
+        "name_te": "దోస / కారం దోస",
+        "cluster": "Tiffins & Breads",
+        "estimated_grams": 60,
+        "matched_catalog_id": "JM-108",
+        "matched_in_excel_catalog": true
+      }
+    ],
+    "totals": {
+      "calories": 252,
+      "protein_g": 6.0,
+      "carbs_g": 30.1,
+      "fat_g": 12.2,
+      "fiber_g": 4.3,
+      "iron_mg": 2.28,
+      "calcium_mg": 50.4,
+      "sodium_mg": 612.0
+    },
+    "mddw_score": 3,
+    "http_status": 200,
+    "scan_timestamp": "2026-10-15T18:00:41.334799+00:00"
+  },
+  {
+    "test_id": "TEST-039",
+    "filename": "039_Gongura_Pachadi.jpg",
+    "expected_dish_name": "Gongura Pachadi (Spicy Sorrel Leaves Chutney)",
+    "expected_dish_te": "గోంగూర పచ్చడి",
+    "expected_cluster": "Chutneys & Podis",
+    "model_used": "gemini-3.5-flash-lite",
+    "latency_ms": 14420,
+    "tokens_used": 2139,
+    "estimated_cost_inr": 0.1122,
+    "is_food_image": true,
+    "recognized_plate_title_en": "Gongura Pachadi (Sorrel Leaves Chutney)",
+    "recognized_plate_title_te": "గోంగూర పచ్చడి",
+    "recognized_meal_type": "Lunch",
+    "recognized_items": [
+      {
+        "name_en": "Gongura Pachadi (Sorrel Leaves Chutney)",
+        "name_te": "గోంగూర పచ్చడి",
+        "cluster": "Chutneys & Podis",
+        "estimated_grams": 150,
+        "matched_catalog_id": "CUSTOM-TE",
+        "matched_in_excel_catalog": false
+      }
+    ],
+    "totals": {
+      "calories": 142,
+      "protein_g": 4.8,
+      "carbs_g": 12.8,
+      "fat_g": 9.0,
+      "fiber_g": 6.1,
+      "iron_mg": 5.25,
+      "calcium_mg": 165.0,
+      "sodium_mg": 675.0
+    },
+    "mddw_score": 2,
+    "http_status": 200,
+    "scan_timestamp": "2026-10-15T18:00:59.817072+00:00"
+  },
+  {
+    "test_id": "TEST-040",
+    "filename": "040_Dosakaya_Pachadi.jpg",
+    "expected_dish_name": "Dosakaya Pachadi (Yellow Cucumber Chutney)",
+    "expected_dish_te": "దోసకాయ పచ్చడి",
+    "expected_cluster": "Chutneys & Podis",
+    "model_used": "gemini-3.5-flash-lite",
+    "latency_ms": 16836,
+    "tokens_used": 2143,
+    "estimated_cost_inr": 0.1131,
+    "is_food_image": true,
+    "recognized_plate_title_en": "Palli Pachadi (Peanut Chutney)",
+    "recognized_plate_title_te": "ఆపిల్ పచ్చడి",
+    "recognized_meal_type": "Lunch",
+    "recognized_items": [
+      {
+        "name_en": "Palli Pachadi (Peanut Chutney)",
+        "name_te": "పల్లీ పచ్చడి",
+        "cluster": "Chutneys & Podis",
+        "estimated_grams": 150,
+        "matched_catalog_id": "JM-35",
+        "matched_in_excel_catalog": true
+      }
+    ],
+    "totals": {
+      "calories": 372,
+      "protein_g": 14.7,
+      "carbs_g": 14.1,
+      "fat_g": 29.4,
+      "fiber_g": 5.7,
+      "iron_mg": 2.7,
+      "calcium_mg": 63.0,
+      "sodium_mg": 510.0
+    },
+    "mddw_score": 1,
+    "http_status": 200,
+    "scan_timestamp": "2026-10-15T18:01:20.753626+00:00"
+  },
+  {
+    "test_id": "TEST-041",
+    "filename": "041_Kandi_Podi.jpg",
+    "expected_dish_name": "Kandi Podi (Gunpowder / Spiced Dal Powder)",
+    "expected_dish_te": "కంది పొడి",
+    "expected_cluster": "Chutneys & Podis",
+    "model_used": "gemini-3.5-flash-lite",
+    "latency_ms": 19794,
+    "tokens_used": 2150,
+    "estimated_cost_inr": 0.1146,
+    "is_food_image": true,
+    "recognized_plate_title_en": "Kandi Podi (Spiced Roasted Pigeon Pea Powder)",
+    "recognized_plate_title_te": "కంది పొడి",
+    "recognized_meal_type": "Lunch",
+    "recognized_items": [
+      {
+        "name_en": "Kandi Podi (Spiced Roasted Pigeon Pea Powder)",
+        "name_te": "కంది పొడి",
+        "cluster": "Chutneys & Podis",
+        "estimated_grams": 150,
+        "matched_catalog_id": "CUSTOM-TE",
+        "matched_in_excel_catalog": false
+      }
+    ],
+    "totals": {
+      "calories": 588,
+      "protein_g": 33.0,
+      "carbs_g": 87.0,
+      "fat_g": 12.8,
+      "fiber_g": 18.8,
+      "iron_mg": 7.65,
+      "calcium_mg": 112.5,
+      "sodium_mg": 675.0
+    },
+    "mddw_score": 2,
+    "http_status": 200,
+    "scan_timestamp": "2026-10-15T18:01:44.647778+00:00"
+  },
+  {
+    "test_id": "TEST-042",
+    "filename": "042_Karivepaku_Podi.jpg",
+    "expected_dish_name": "Karivepaku Podi (Curry Leaves Powder)",
+    "expected_dish_te": "కరివేపాకు పొడి",
+    "expected_cluster": "Chutneys & Podis",
+    "model_used": "gemini-3.5-flash-lite",
+    "latency_ms": 17521,
+    "tokens_used": 2154,
+    "estimated_cost_inr": 0.1155,
+    "is_food_image": true,
+    "recognized_plate_title_en": "Karivepaku Podi (Curry Leaves Spice Powder)",
+    "recognized_plate_title_te": "కరివేపాకు పొడి",
+    "recognized_meal_type": "Lunch",
+    "recognized_items": [
+      {
+        "name_en": "Karivepaku Podi (Curry Leaves Spice Powder)",
+        "name_te": "కరివేపాకు పొడి",
+        "cluster": "Chutneys & Podis",
+        "estimated_grams": 30,
+        "matched_catalog_id": "CUSTOM-TE",
+        "matched_in_excel_catalog": false
+      }
+    ],
+    "totals": {
+      "calories": 115,
+      "protein_g": 4.3,
+      "carbs_g": 12.6,
+      "fat_g": 5.3,
+      "fiber_g": 3.7,
+      "iron_mg": 4.56,
+      "calcium_mg": 234.0,
+      "sodium_mg": 330.0
+    },
+    "mddw_score": 2,
+    "http_status": 200,
+    "scan_timestamp": "2026-10-15T18:02:06.226444+00:00"
+  },
+  {
+    "test_id": "TEST-043",
+    "filename": "043_Nuvvula_Podi.jpg",
+    "expected_dish_name": "Nuvvula Podi (Sesame Seed Powder)",
+    "expected_dish_te": "నువ్వుల పొడి",
+    "expected_cluster": "Chutneys & Podis",
+    "model_used": "gemini-3.5-flash-lite",
+    "latency_ms": 20844,
+    "tokens_used": 2147,
+    "estimated_cost_inr": 0.1139,
+    "is_food_image": true,
+    "recognized_plate_title_en": "Kandi Podi (Spiced Toor Dal Powder)",
+    "recognized_plate_title_te": "కంది పొడి",
+    "recognized_meal_type": "Lunch",
+    "recognized_items": [
+      {
+        "name_en": "Kandi Podi (Spiced Toor Dal Powder)",
+        "name_te": "కంది పొడి",
+        "cluster": "Chutneys & Podis",
+        "estimated_grams": 50,
+        "matched_catalog_id": "CUSTOM-TE",
+        "matched_in_excel_catalog": false
+      }
+    ],
+    "totals": {
+      "calories": 186,
+      "protein_g": 11.0,
+      "carbs_g": 27.5,
+      "fat_g": 3.8,
+      "fiber_g": 6.0,
+      "iron_mg": 2.6,
+      "calcium_mg": 37.5,
+      "sodium_mg": 325.0
+    },
+    "mddw_score": 2,
+    "http_status": 200,
+    "scan_timestamp": "2026-10-15T18:02:31.166553+00:00"
+  },
+  {
+    "test_id": "TEST-044",
+    "filename": "044_Guddu_Porutu_Egg_Bhurji.jpg",
+    "expected_dish_name": "Guddu Porutu (Spiced Scrambled Egg / Bhurji)",
+    "expected_dish_te": "గుడ్డు పొరుటు / ఎగ్ బుర్జీ",
+    "expected_cluster": "Eggs, Meat & Fish",
+    "model_used": "gemini-3.5-flash-lite",
+    "latency_ms": 14148,
+    "tokens_used": 2155,
+    "estimated_cost_inr": 0.1157,
+    "is_food_image": true,
+    "recognized_plate_title_en": "Paneer Vepudu (Spicy Paneer Fry with Onions)",
+    "recognized_plate_title_te": "పన్నీర్ వేపుడు",
+    "recognized_meal_type": "Lunch",
+    "recognized_items": [
+      {
+        "name_en": "Paneer Vepudu (Spicy Paneer Fry with Onions)",
+        "name_te": "పన్నీర్ వేపుడు",
+        "cluster": "Eggs, Meat & Fish",
+        "estimated_grams": 200,
+        "matched_catalog_id": "CUSTOM-TE",
+        "matched_in_excel_catalog": false
+      }
+    ],
+    "totals": {
+      "calories": 490,
+      "protein_g": 29.0,
+      "carbs_g": 15.6,
+      "fat_g": 35.0,
+      "fiber_g": 2.4,
+      "iron_mg": 2.2,
+      "calcium_mg": 560.0,
+      "sodium_mg": 700.0
+    },
+    "mddw_score": 2,
+    "http_status": 200,
+    "scan_timestamp": "2026-10-15T18:02:49.401674+00:00"
+  },
+  {
+    "test_id": "TEST-045",
+    "filename": "045_Natukodi_Pulusu.jpg",
+    "expected_dish_name": "Natukodi Pulusu (Country Chicken Curry)",
+    "expected_dish_te": "నాటుకోడి పులుసు",
+    "expected_cluster": "Eggs, Meat & Fish",
+    "model_used": "gemini-3.5-flash-lite",
+    "latency_ms": 11548,
+    "tokens_used": 2364,
+    "estimated_cost_inr": 0.1609,
+    "is_food_image": true,
+    "recognized_plate_title_en": "Natukodi Pulusu & Steamed White Rice",
+    "recognized_plate_title_te": "నాటి కోడి పులుసు, అన్నం",
+    "recognized_meal_type": "Lunch",
+    "recognized_items": [
+      {
+        "name_en": "Natukodi Pulusu (Country Chicken Curry)",
+        "name_te": "నాటుకోడి పులుసు",
+        "cluster": "Eggs, Meat & Fish",
+        "estimated_grams": 350,
+        "matched_catalog_id": "JM-41",
+        "matched_in_excel_catalog": true
+      },
+      {
+        "name_en": "Steamed White Rice (Vandi Annam)",
+        "name_te": "వండిన తెల్ల అన్నం",
+        "cluster": "Rice & Millet Dishes",
+        "estimated_grams": 150,
+        "matched_catalog_id": "JM-101",
+        "matched_in_excel_catalog": true
+      }
+    ],
+    "totals": {
+      "calories": 820,
+      "protein_g": 67.8,
+      "carbs_g": 57.7,
+      "fat_g": 34.8,
+      "fiber_g": 4.1,
+      "iron_mg": 7.25,
+      "calcium_mg": 134.0,
+      "sodium_mg": 1233.0
+    },
+    "mddw_score": 3,
+    "http_status": 200,
+    "scan_timestamp": "2026-10-15T18:04:49.142424+00:00"
+  },
+  {
+    "test_id": "TEST-046",
+    "filename": "046_Gongura_Chicken.jpg",
+    "expected_dish_name": "Gongura Chicken (Chicken with Sorrel Leaves)",
+    "expected_dish_te": "గోంగూర చికెన్",
+    "expected_cluster": "Eggs, Meat & Fish",
+    "model_used": "gemini-3.5-flash-lite",
+    "latency_ms": 12027,
+    "tokens_used": 2144,
+    "estimated_cost_inr": 0.1133,
+    "is_food_image": true,
+    "recognized_plate_title_en": "Natukodi Pulusu (Country Chicken Curry)",
+    "recognized_plate_title_te": "కోడి కూర",
+    "recognized_meal_type": "Lunch",
+    "recognized_items": [
+      {
+        "name_en": "Natukodi Pulusu (Country Chicken Curry)",
+        "name_te": "నాటుకోడి పులుసు",
+        "cluster": "Eggs, Meat & Fish",
+        "estimated_grams": 300,
+        "matched_catalog_id": "JM-41",
+        "matched_in_excel_catalog": true
+      }
+    ],
+    "totals": {
+      "calories": 492,
+      "protein_g": 54.6,
+      "carbs_g": 13.2,
+      "fat_g": 24.6,
+      "fiber_g": 3.0,
+      "iron_mg": 5.7,
+      "calcium_mg": 102.0,
+      "sodium_mg": 1050.0
+    },
+    "mddw_score": 2,
+    "http_status": 200,
+    "scan_timestamp": "2026-10-15T18:05:05.262632+00:00"
+  },
+  {
+    "test_id": "TEST-047",
+    "filename": "047_Endu_Chepalu_Kura.jpg",
+    "expected_dish_name": "Endu Chepalu Kura (Dry Fish Curry)",
+    "expected_dish_te": "ఎండు చేపల కూర",
+    "expected_cluster": "Eggs, Meat & Fish",
+    "model_used": "gemini-3.5-flash-lite",
+    "latency_ms": 40603,
+    "tokens_used": 2159,
+    "estimated_cost_inr": 0.1165,
+    "is_food_image": true,
+    "recognized_plate_title_en": "Nethallu Pulusu (Anchovy Fish Tamarind Stew)",
+    "recognized_plate_title_te": "నెత్తాళ్ల పులుసు",
+    "recognized_meal_type": "Lunch",
+    "recognized_items": [
+      {
+        "name_en": "Nethallu Pulusu (Anchovy Fish Tamarind Stew)",
+        "name_te": "నెత్తాళ్ల పులుసు",
+        "cluster": "Eggs, Meat & Fish",
+        "estimated_grams": 250,
+        "matched_catalog_id": "CUSTOM-TE",
+        "matched_in_excel_catalog": false
+      }
+    ],
+    "totals": {
+      "calories": 362,
+      "protein_g": 31.2,
+      "carbs_g": 15.5,
+      "fat_g": 20.0,
+      "fiber_g": 3.0,
+      "iron_mg": 5.25,
+      "calcium_mg": 450.0,
+      "sodium_mg": 1125.0
+    },
+    "mddw_score": 2,
+    "http_status": 200,
+    "scan_timestamp": "2026-10-15T18:06:42.008243+00:00"
+  },
+  {
+    "test_id": "TEST-048",
+    "filename": "048_Ragi_Laddu.jpg",
+    "expected_dish_name": "Ragi Laddu (Finger Millet & Jaggery Sweet)",
+    "expected_dish_te": "రాగి లడ్డూ",
+    "expected_cluster": "Snacks & Sweets",
+    "model_used": "gemini-3.5-flash-lite",
+    "latency_ms": 12888,
+    "tokens_used": 2128,
+    "estimated_cost_inr": 0.1098,
+    "is_food_image": true,
+    "recognized_plate_title_en": "Ragi Laddu (Finger Millet Sweet Balls)",
+    "recognized_plate_title_te": "రాగి లడ్డు",
+    "recognized_meal_type": "Snack",
+    "recognized_items": [
+      {
+        "name_en": "Ragi Laddu (Finger Millet Sweet Balls)",
+        "name_te": "రాగి లడ్డు",
+        "cluster": "Snacks & Sweets",
+        "estimated_grams": 150,
+        "matched_catalog_id": "CUSTOM-TE",
+        "matched_in_excel_catalog": false
+      }
+    ],
+    "totals": {
+      "calories": 623,
+      "protein_g": 10.9,
+      "carbs_g": 102.3,
+      "fat_g": 18.8,
+      "fiber_g": 12.1,
+      "iron_mg": 6.75,
+      "calcium_mg": 480.0,
+      "sodium_mg": 68.0
+    },
+    "mddw_score": 2,
+    "http_status": 200,
+    "scan_timestamp": "2026-10-15T18:06:58.984388+00:00"
+  },
+  {
+    "test_id": "TEST-049",
+    "filename": "049_Guggillu.jpg",
+    "expected_dish_name": "Guggillu (Seasoned Boiled Pulses / Sundal)",
+    "expected_dish_te": "గుగ్గిళ్ళు",
+    "expected_cluster": "Snacks & Sweets",
+    "model_used": "gemini-3.5-flash-lite",
+    "latency_ms": 25762,
+    "tokens_used": 2122,
+    "estimated_cost_inr": 0.1085,
+    "is_food_image": true,
+    "recognized_plate_title_en": "Guggillu (Boiled Seasoned Chickpeas)",
+    "recognized_plate_title_te": "శెనగ గుగ్గిళ్లు (కొబ్బరి వేసిన శెనగలు)",
+    "recognized_meal_type": "Snack",
+    "recognized_items": [
+      {
+        "name_en": "Guggillu (Boiled Seasoned Chickpeas)",
+        "name_te": "గుగ్గిళ్ళు",
+        "cluster": "Snacks & Sweets",
+        "estimated_grams": 200,
+        "matched_catalog_id": "JM-48",
+        "matched_in_excel_catalog": true
+      }
+    ],
+    "totals": {
+      "calories": 304,
+      "protein_g": 17.6,
+      "carbs_g": 47.2,
+      "fat_g": 4.8,
+      "fiber_g": 13.6,
+      "iron_mg": 5.2,
+      "calcium_mg": 104.0,
+      "sodium_mg": 420.0
+    },
+    "mddw_score": 1,
+    "http_status": 200,
+    "scan_timestamp": "2026-10-15T18:07:28.844106+00:00"
+  },
+  {
+    "test_id": "TEST-050",
+    "filename": "050_Coconut_Water.jpg",
+    "expected_dish_name": "Coconut Water (Kobbari Bondam)",
+    "expected_dish_te": "కొబ్బరి బొండం",
+    "expected_cluster": "Fruits & Salads",
+    "model_used": "gemini-3.5-flash-lite",
+    "latency_ms": 13493,
+    "tokens_used": 2127,
+    "estimated_cost_inr": 0.1096,
+    "is_food_image": true,
+    "recognized_plate_title_en": "Coconut Water (Kobbari Bondam)",
+    "recognized_plate_title_te": "తాజా కొబ్బరి నీరు",
+    "recognized_meal_type": "Snack",
+    "recognized_items": [
+      {
+        "name_en": "Coconut Water (Kobbari Bondam)",
+        "name_te": "కొబ్బరి బొండం",
+        "cluster": "Fruits & Nuts",
+        "estimated_grams": 300,
+        "matched_catalog_id": "JM-50",
+        "matched_in_excel_catalog": true
+      }
+    ],
+    "totals": {
+      "calories": 56,
+      "protein_g": 2.1,
+      "carbs_g": 11.1,
+      "fat_g": 0.5,
+      "fiber_g": 3.3,
+      "iron_mg": 0.9,
+      "calcium_mg": 72.0,
+      "sodium_mg": 315.0
+    },
+    "mddw_score": 1,
+    "http_status": 200,
+    "scan_timestamp": "2026-10-15T18:07:46.409710+00:00"
+  },
+  {
+    "test_id": "TEST-051",
+    "filename": "051_Ponaganti_Kura_Vepudu.jpg",
+    "expected_dish_name": "Ponaganti Kura Vepudu (Alternanthera Leaves Stir Fry)",
+    "expected_dish_te": "పొన్నగంటి కూర వేపుడు",
+    "expected_cluster": "Leafy Green Curries",
+    "model_used": "gemini-3.5-flash-lite",
+    "latency_ms": 11750,
+    "tokens_used": 2612,
+    "estimated_cost_inr": 0.2145,
+    "is_food_image": true,
+    "recognized_plate_title_en": "Steamed White Rice, Palakura Pappu & Palakura Kura / Vepudu",
+    "recognized_plate_title_te": "తెల్ల అన్నం, పాలకూర పప్పు & మటన్ కూర",
+    "recognized_meal_type": "Lunch",
+    "recognized_items": [
+      {
+        "name_en": "Steamed White Rice (Vandi Annam)",
+        "name_te": "వండిన తెల్ల అన్నం",
+        "cluster": "Rice & Millet Dishes",
+        "estimated_grams": 150,
+        "matched_catalog_id": "JM-101",
+        "matched_in_excel_catalog": true
+      },
+      {
+        "name_en": "Palakura Pappu (Spinach Dal)",
+        "name_te": "పాలకూర పప్పు",
+        "cluster": "Dals & Pappu",
+        "estimated_grams": 150,
+        "matched_catalog_id": "JM-06",
+        "matched_in_excel_catalog": true
+      },
+      {
+        "name_en": "Palakura Kura / Vepudu (Spinach)",
+        "name_te": "పాలకూర కూర / వేపుడు",
+        "cluster": "Leafy Green Curries",
+        "estimated_grams": 120,
+        "matched_catalog_id": "JM-02",
+        "matched_in_excel_catalog": true
+      }
+    ],
+    "totals": {
+      "calories": 487,
+      "protein_g": 17.2,
+      "carbs_g": 70.8,
+      "fat_g": 14.3,
+      "fiber_g": 10.1,
+      "iron_mg": 9.15,
+      "calcium_mg": 234.6,
+      "sodium_mg": 698.0
+    },
+    "mddw_score": 3,
+    "http_status": 200,
+    "scan_timestamp": "2026-10-15T18:08:02.236073+00:00"
+  },
+  {
+    "test_id": "TEST-052",
+    "filename": "052_Bachali_Kura_Pulusu.jpg",
+    "expected_dish_name": "Bachali Kura Pulusu (Malabar Spinach Stew)",
+    "expected_dish_te": "బచ్చలికూర పులుసు",
+    "expected_cluster": "Leafy Green Curries",
+    "model_used": "gemini-3.5-flash-lite",
+    "latency_ms": 31004,
+    "tokens_used": 2162,
+    "estimated_cost_inr": 0.1172,
+    "is_food_image": true,
+    "recognized_plate_title_en": "Palakura Kura / Vepudu (Spinach)",
+    "recognized_plate_title_te": "బూరుగులూ బంగాళాదుంప ఆకు కూర",
+    "recognized_meal_type": "Lunch",
+    "recognized_items": [
+      {
+        "name_en": "Palakura Kura / Vepudu (Spinach)",
+        "name_te": "పాలకూర కూర / వేపుడు",
+        "cluster": "Leafy Green Curries",
+        "estimated_grams": 200,
+        "matched_catalog_id": "JM-02",
+        "matched_in_excel_catalog": true
+      }
+    ],
+    "totals": {
+      "calories": 172,
+      "protein_g": 5.8,
+      "carbs_g": 12.0,
+      "fat_g": 11.0,
+      "fiber_g": 6.4,
+      "iron_mg": 7.0,
+      "calcium_mg": 196.0,
+      "sodium_mg": 500.0
+    },
+    "mddw_score": 1,
+    "http_status": 200,
+    "scan_timestamp": "2026-10-15T18:08:37.325978+00:00"
+  },
+  {
+    "test_id": "TEST-053",
+    "filename": "053_Chukkakura_Kura.jpg",
+    "expected_dish_name": "Chukkakura Kura (Green Sorrel Leaves Curry)",
+    "expected_dish_te": "చుక్కకూర కూర",
+    "expected_cluster": "Leafy Green Curries",
+    "model_used": "gemini-3.5-flash-lite",
+    "latency_ms": 15825,
+    "tokens_used": 2165,
+    "estimated_cost_inr": 0.1178,
+    "is_food_image": true,
+    "recognized_plate_title_en": "Gongura Pachadi (Sorrel Leaves Chutney)",
+    "recognized_plate_title_te": "ఉల్లిపాయలు మరియు పోపుతో తయారుచేసిన గోంగూర పచ్చడి",
+    "recognized_meal_type": "Lunch",
+    "recognized_items": [
+      {
+        "name_en": "Gongura Pachadi (Sorrel Leaves Chutney)",
+        "name_te": "గోంగూర పచ్చడి",
+        "cluster": "Chutneys & Podis",
+        "estimated_grams": 150,
+        "matched_catalog_id": "CUSTOM-TE",
+        "matched_in_excel_catalog": false
+      }
+    ],
+    "totals": {
+      "calories": 143,
+      "protein_g": 3.8,
+      "carbs_g": 12.0,
+      "fat_g": 9.8,
+      "fiber_g": 4.8,
+      "iron_mg": 3.15,
+      "calcium_mg": 135.0,
+      "sodium_mg": 675.0
+    },
+    "mddw_score": 2,
+    "http_status": 200,
+    "scan_timestamp": "2026-10-15T18:08:57.209834+00:00"
+  },
+  {
+    "test_id": "TEST-054",
+    "filename": "054_Bachali_Kura_Pappu.jpg",
+    "expected_dish_name": "Bachali Kura Pappu (Malabar Spinach Dal)",
+    "expected_dish_te": "బచ్చలికూర పప్పు",
+    "expected_cluster": "Dals & Pappu",
+    "model_used": "gemini-3.5-flash-lite",
+    "latency_ms": 14746,
+    "tokens_used": 2373,
+    "estimated_cost_inr": 0.1628,
+    "is_food_image": true,
+    "recognized_plate_title_en": "Steamed White Rice & Palakura Pappu",
+    "recognized_plate_title_te": "అన్నం మరియు పాలకూర పప్పు",
+    "recognized_meal_type": "Lunch",
+    "recognized_items": [
+      {
+        "name_en": "Steamed White Rice (Vandi Annam)",
+        "name_te": "వండిన తెల్ల అన్నం",
+        "cluster": "Rice & Millet Dishes",
+        "estimated_grams": 150,
+        "matched_catalog_id": "JM-101",
+        "matched_in_excel_catalog": true
+      },
+      {
+        "name_en": "Palakura Pappu (Spinach Dal)",
+        "name_te": "పాలకూర పప్పు",
+        "cluster": "Dals & Pappu",
+        "estimated_grams": 200,
+        "matched_catalog_id": "JM-06",
+        "matched_in_excel_catalog": true
+      }
+    ],
+    "totals": {
+      "calories": 431,
+      "protein_g": 16.9,
+      "carbs_g": 70.7,
+      "fat_g": 8.4,
+      "fiber_g": 8.2,
+      "iron_mg": 6.4,
+      "calcium_mg": 151.0,
+      "sodium_mg": 528.0
+    },
+    "mddw_score": 3,
+    "http_status": 200,
+    "scan_timestamp": "2026-10-15T18:09:16.061139+00:00"
+  },
+  {
+    "test_id": "TEST-055",
+    "filename": "055_Munagaku_Pappu.jpg",
+    "expected_dish_name": "Munagaku Pappu (Moringa / Drumstick Leaves Dal)",
+    "expected_dish_te": "మునగాకు పప్పు",
+    "expected_cluster": "Dals & Pappu",
+    "model_used": "gemini-3.5-flash-lite",
+    "latency_ms": 12486,
+    "tokens_used": 2151,
+    "estimated_cost_inr": 0.1148,
+    "is_food_image": true,
+    "recognized_plate_title_en": "Gongura Pappu (Sorrel Leaves Dal)",
+    "recognized_plate_title_te": "మునగాకు పప్పు",
+    "recognized_meal_type": "Lunch",
+    "recognized_items": [
+      {
+        "name_en": "Gongura Pappu (Sorrel Leaves Dal)",
+        "name_te": "గోంగూర పప్పు",
+        "cluster": "Dals & Pappu",
+        "estimated_grams": 250,
+        "matched_catalog_id": "JM-08",
+        "matched_in_excel_catalog": true
+      }
+    ],
+    "totals": {
+      "calories": 315,
+      "protein_g": 16.2,
+      "carbs_g": 37.5,
+      "fat_g": 11.2,
+      "fiber_g": 10.2,
+      "iron_mg": 9.75,
+      "calcium_mg": 237.5,
+      "sodium_mg": 700.0
+    },
+    "mddw_score": 2,
+    "http_status": 200,
+    "scan_timestamp": "2026-10-15T18:09:32.613520+00:00"
+  },
+  {
+    "test_id": "TEST-056",
+    "filename": "056_Ponaganti_Kura_Pappu.jpg",
+    "expected_dish_name": "Ponaganti Kura Pappu (Alternanthera Dal)",
+    "expected_dish_te": "పొన్నగంటి కూర పప్పు",
+    "expected_cluster": "Dals & Pappu",
+    "model_used": "gemini-3.5-flash-lite",
+    "latency_ms": 7226,
+    "tokens_used": 2134,
+    "estimated_cost_inr": 0.1111,
+    "is_food_image": true,
+    "recognized_plate_title_en": "Palakura Pappu (Spinach Dal)",
+    "recognized_plate_title_te": "పాలకూర పప్పు",
+    "recognized_meal_type": "Lunch",
+    "recognized_items": [
+      {
+        "name_en": "Palakura Pappu (Spinach Dal)",
+        "name_te": "పాలకూర పప్పు",
+        "cluster": "Dals & Pappu",
+        "estimated_grams": 250,
+        "matched_catalog_id": "JM-06",
+        "matched_in_excel_catalog": true
+      }
+    ],
+    "totals": {
+      "calories": 295,
+      "protein_g": 16.0,
+      "carbs_g": 35.5,
+      "fat_g": 10.0,
+      "fiber_g": 9.5,
+      "iron_mg": 7.25,
+      "calcium_mg": 170.0,
+      "sodium_mg": 650.0
+    },
+    "mddw_score": 2,
+    "http_status": 200,
+    "scan_timestamp": "2026-10-15T18:09:43.908588+00:00"
+  },
+  {
+    "test_id": "TEST-057",
+    "filename": "057_Sorakaya_Anapakaya_Pappu.jpg",
+    "expected_dish_name": "Sorakaya Anapakaya Pappu (Bottle Gourd Lentil Dal)",
+    "expected_dish_te": "సొరకాయ / ఆనపకాయ పప్పు",
+    "expected_cluster": "Dals & Pappu",
+    "model_used": "gemini-3.5-flash-lite",
+    "latency_ms": 24822,
+    "tokens_used": 2139,
+    "estimated_cost_inr": 0.1122,
+    "is_food_image": true,
+    "recognized_plate_title_en": "Sorakaya Pappu (Bottle Gourd Dal)",
+    "recognized_plate_title_te": "సొరకాయ పప్పు",
+    "recognized_meal_type": "Lunch",
+    "recognized_items": [
+      {
+        "name_en": "Sorakaya Pappu (Bottle Gourd Dal)",
+        "name_te": "సొరకాయ పప్పు",
+        "cluster": "Dals & Pappu",
+        "estimated_grams": 250,
+        "matched_catalog_id": "JM-12",
+        "matched_in_excel_catalog": true
+      }
+    ],
+    "totals": {
+      "calories": 270,
+      "protein_g": 14.0,
+      "carbs_g": 34.5,
+      "fat_g": 8.8,
+      "fiber_g": 8.2,
+      "iron_mg": 4.5,
+      "calcium_mg": 95.0,
+      "sodium_mg": 600.0
+    },
+    "mddw_score": 2,
+    "http_status": 200,
+    "scan_timestamp": "2026-10-15T18:10:12.798405+00:00"
+  },
+  {
+    "test_id": "TEST-058",
+    "filename": "058_Munakkaya_Pappu.jpg",
+    "expected_dish_name": "Munakkaya Pappu (Drumstick Dal)",
+    "expected_dish_te": "మునక్కాయ పప్పు",
+    "expected_cluster": "Dals & Pappu",
+    "model_used": "gemini-3.5-flash-lite",
+    "latency_ms": 12745,
+    "tokens_used": 2372,
+    "estimated_cost_inr": 0.1626,
+    "is_food_image": true,
+    "recognized_plate_title_en": "Pappu Charu / Sambar & Steamed White Rice",
+    "recognized_plate_title_te": "మునుగకాడ సాంబారు మరియు అన్నం",
+    "recognized_meal_type": "Lunch",
+    "recognized_items": [
+      {
+        "name_en": "Pappu Charu / Sambar (Lentil & Vegetable Stew)",
+        "name_te": "పప్పు చారు / సాంబార్",
+        "cluster": "Dals & Pappu",
+        "estimated_grams": 200,
+        "matched_catalog_id": "JM-116",
+        "matched_in_excel_catalog": true
+      },
+      {
+        "name_en": "Steamed White Rice (Vandi Annam)",
+        "name_te": "వండిన తెల్ల అన్నం",
+        "cluster": "Rice & Millet Dishes",
+        "estimated_grams": 150,
+        "matched_catalog_id": "JM-101",
+        "matched_in_excel_catalog": true
+      }
+    ],
+    "totals": {
+      "calories": 359,
+      "protein_g": 12.3,
+      "carbs_g": 64.7,
+      "fat_g": 5.2,
+      "fiber_g": 6.2,
+      "iron_mg": 3.4,
+      "calcium_mg": 83.0,
+      "sodium_mg": 528.0
+    },
+    "mddw_score": 3,
+    "http_status": 200,
+    "scan_timestamp": "2026-10-15T18:10:29.611890+00:00"
+  },
+  {
+    "test_id": "TEST-059",
+    "filename": "059_Bangaladumpa_Aloo_Kurma.jpg",
+    "expected_dish_name": "Bangaladumpa Aloo Kurma (Potato Gravy Curry)",
+    "expected_dish_te": "బంగాళాదుంప కుర్మా",
+    "expected_cluster": "Vegetable Curries",
+    "model_used": "gemini-3.5-flash-lite",
+    "latency_ms": 13748,
+    "tokens_used": 2081,
+    "estimated_cost_inr": 0.0997,
+    "is_food_image": true,
+    "recognized_plate_title_en": "Bangaladumpa / Aloo Vepudu (Potato Fry)",
+    "recognized_plate_title_te": "ఆలూ ఫ్రై",
+    "recognized_meal_type": "Lunch",
+    "recognized_items": [
+      {
+        "name_en": "Bangaladumpa / Aloo Vepudu (Potato Fry)",
+        "name_te": "బంగాళాదుంప వేపుడు",
+        "cluster": "Vegetable Curries",
+        "estimated_grams": 150,
+        "matched_catalog_id": "JM-17",
+        "matched_in_excel_catalog": true
+      }
+    ],
+    "totals": {
+      "calories": 204,
+      "protein_g": 3.3,
+      "carbs_g": 27.6,
+      "fat_g": 9.0,
+      "fiber_g": 3.6,
+      "iron_mg": 1.35,
+      "calcium_mg": 27.0,
+      "sodium_mg": 420.0
+    },
+    "mddw_score": 2,
+    "http_status": 200,
+    "scan_timestamp": "2026-10-15T18:10:47.394180+00:00"
+  },
+  {
+    "test_id": "TEST-060",
+    "filename": "060_Sorakaya_Pulusu.jpg",
+    "expected_dish_name": "Sorakaya Pulusu (Tamarind Bottle Gourd Stew)",
+    "expected_dish_te": "సొరకాయ పులుసు",
+    "expected_cluster": "Vegetable Curries",
+    "model_used": "gemini-3.5-flash-lite",
+    "latency_ms": 20598,
+    "tokens_used": 2141,
+    "estimated_cost_inr": 0.1126,
+    "is_food_image": true,
+    "recognized_plate_title_en": "Sorakaya / Anapakaya Kura (Bottle Gourd)",
+    "recognized_plate_title_te": "సొరకాయ కూర",
+    "recognized_meal_type": "Lunch",
+    "recognized_items": [
+      {
+        "name_en": "Sorakaya / Anapakaya Kura (Bottle Gourd)",
+        "name_te": "సొరకాయ కూర",
+        "cluster": "Vegetable Curries",
+        "estimated_grams": 250,
+        "matched_catalog_id": "JM-20",
+        "matched_in_excel_catalog": true
+      }
+    ],
+    "totals": {
+      "calories": 185,
+      "protein_g": 4.0,
+      "carbs_g": 17.0,
+      "fat_g": 11.5,
+      "fiber_g": 6.2,
+      "iron_mg": 2.0,
+      "calcium_mg": 75.0,
+      "sodium_mg": 588.0
+    },
+    "mddw_score": 1,
+    "http_status": 200,
+    "scan_timestamp": "2026-10-15T18:11:12.045593+00:00"
+  },
+  {
+    "test_id": "TEST-061",
+    "filename": "061_Kakarakaya_Bellam_Pulusu.jpg",
+    "expected_dish_name": "Kakarakaya Bellam Pulusu (Sweet & Sour Bitter Gourd Stew)",
+    "expected_dish_te": "కాకరకాయ బెల్లం పులుసు",
+    "expected_cluster": "Vegetable Curries",
+    "model_used": "gemini-3.5-flash-lite",
+    "latency_ms": 24574,
+    "tokens_used": 2091,
+    "estimated_cost_inr": 0.1018,
+    "is_food_image": true,
+    "recognized_plate_title_en": "Kakarakaya Vepudu / Pulusu (Bitter Gourd)",
+    "recognized_plate_title_te": "కాకరకాయ వేపుడు",
+    "recognized_meal_type": "Lunch",
+    "recognized_items": [
+      {
+        "name_en": "Kakarakaya Vepudu / Pulusu (Bitter Gourd)",
+        "name_te": "కాకరకాయ వేపుడు / పులుసు",
+        "cluster": "Vegetable Curries",
+        "estimated_grams": 150,
+        "matched_catalog_id": "JM-21",
+        "matched_in_excel_catalog": true
+      }
+    ],
+    "totals": {
+      "calories": 199,
+      "protein_g": 3.8,
+      "carbs_g": 13.4,
+      "fat_g": 14.6,
+      "fiber_g": 6.1,
+      "iron_mg": 2.85,
+      "calcium_mg": 57.0,
+      "sodium_mg": 428.0
+    },
+    "mddw_score": 1,
+    "http_status": 200,
+    "scan_timestamp": "2026-10-15T18:13:24.808747+00:00"
+  },
+  {
+    "test_id": "TEST-062",
+    "filename": "062_Cauliflower_Gobi_Kura.jpg",
+    "expected_dish_name": "Cauliflower Gobi Tomato Kura (Cauliflower Tomato Curry)",
+    "expected_dish_te": "కాలిఫ్లవర్ టమాటా కూర",
+    "expected_cluster": "Vegetable Curries",
+    "model_used": "gemini-3.5-flash-lite",
+    "latency_ms": 10870,
+    "tokens_used": 2148,
+    "estimated_cost_inr": 0.1142,
+    "is_food_image": true,
+    "recognized_plate_title_en": "Cauliflower Kura (Cauliflower Curry)",
+    "recognized_plate_title_te": "కాలీఫ్లవర్ కర్రీ",
+    "recognized_meal_type": "Lunch",
+    "recognized_items": [
+      {
+        "name_en": "Cauliflower Kura (Cauliflower Curry)",
+        "name_te": "కాలిఫ్లవర్ కూర",
+        "cluster": "Vegetable Curries",
+        "estimated_grams": 250,
+        "matched_catalog_id": "JM-23",
+        "matched_in_excel_catalog": true
+      }
+    ],
+    "totals": {
+      "calories": 230,
+      "protein_g": 6.0,
+      "carbs_g": 19.0,
+      "fat_g": 14.8,
+      "fiber_g": 7.5,
+      "iron_mg": 2.5,
+      "calcium_mg": 85.0,
+      "sodium_mg": 638.0
+    },
+    "mddw_score": 1,
+    "http_status": 200,
+    "scan_timestamp": "2026-10-15T18:14:31.798915+00:00"
+  },
+  {
+    "test_id": "TEST-063",
+    "filename": "063_Goruchikkudu_Vepudu.jpg",
+    "expected_dish_name": "Goruchikkudu Vepudu (Cluster Beans Stir Fry)",
+    "expected_dish_te": "గోరుచిక్కుడు వేపుడు",
+    "expected_cluster": "Vegetable Curries",
+    "model_used": "gemini-3.5-flash-lite",
+    "latency_ms": 40887,
+    "tokens_used": 2150,
+    "estimated_cost_inr": 0.1146,
+    "is_food_image": true,
+    "recognized_plate_title_en": "Chikkudukaya Kura (Broad Beans Curry)",
+    "recognized_plate_title_te": "చిక్కుడుకాయ కూర",
+    "recognized_meal_type": "Lunch",
+    "recognized_items": [
+      {
+        "name_en": "Chikkudukaya Kura (Broad Beans Curry)",
+        "name_te": "చిక్కుడుకాయ కూర",
+        "cluster": "Vegetable Curries",
+        "estimated_grams": 150,
+        "matched_catalog_id": "JM-25",
+        "matched_in_excel_catalog": true
+      }
+    ],
+    "totals": {
+      "calories": 159,
+      "protein_g": 6.8,
+      "carbs_g": 16.8,
+      "fat_g": 7.4,
+      "fiber_g": 7.2,
+      "iron_mg": 2.7,
+      "calcium_mg": 87.0,
+      "sodium_mg": 375.0
+    },
+    "mddw_score": 2,
+    "http_status": 200,
+    "scan_timestamp": "2026-10-15T18:16:08.799896+00:00"
+  },
+  {
+    "test_id": "TEST-064",
+    "filename": "064_Potlakaya_Perugu_Kura.jpg",
+    "expected_dish_name": "Potlakaya Perugu Kura (Snake Gourd Curd Curry)",
+    "expected_dish_te": "పొట్లకాయ పెరుగు కూర",
+    "expected_cluster": "Vegetable Curries",
+    "model_used": "gemini-3.5-flash-lite",
+    "latency_ms": 8033,
+    "tokens_used": 2148,
+    "estimated_cost_inr": 0.1142,
+    "is_food_image": true,
+    "recognized_plate_title_en": "Perugu / Gatti Perugu (Curd / Yogurt)",
+    "recognized_plate_title_te": "సొరకాయ పెరుగు పచ్చడి",
+    "recognized_meal_type": "Lunch",
+    "recognized_items": [
+      {
+        "name_en": "Perugu / Gatti Perugu (Curd / Yogurt)",
+        "name_te": "పెరుగు",
+        "cluster": "Dairy",
+        "estimated_grams": 150,
+        "matched_catalog_id": "JM-119",
+        "matched_in_excel_catalog": true
+      }
+    ],
+    "totals": {
+      "calories": 86,
+      "protein_g": 5.1,
+      "carbs_g": 6.9,
+      "fat_g": 4.2,
+      "fiber_g": 0.0,
+      "iron_mg": 0.3,
+      "calcium_mg": 187.5,
+      "sodium_mg": 72.0
+    },
+    "mddw_score": 1,
+    "http_status": 200,
+    "scan_timestamp": "2026-10-15T18:16:20.870406+00:00"
+  },
+  {
+    "test_id": "TEST-065",
+    "filename": "065_Dosakaya_Mukkala_Pulusu.jpg",
+    "expected_dish_name": "Dosakaya Mukkala Pulusu (Yellow Cucumber Tangy Stew)",
+    "expected_dish_te": "దోసకాయ ముక్కల పులుసు",
+    "expected_cluster": "Vegetable Curries",
+    "model_used": "gemini-3.5-flash-lite",
+    "latency_ms": 7433,
+    "tokens_used": 2146,
+    "estimated_cost_inr": 0.1137,
+    "is_food_image": true,
+    "recognized_plate_title_en": "Sorakaya / Anapakaya Kura (Bottle Gourd)",
+    "recognized_plate_title_te": "సొరకాయ కూర",
+    "recognized_meal_type": "Lunch",
+    "recognized_items": [
+      {
+        "name_en": "Sorakaya / Anapakaya Kura (Bottle Gourd)",
+        "name_te": "సొరకాయ కూర",
+        "cluster": "Vegetable Curries",
+        "estimated_grams": 250,
+        "matched_catalog_id": "JM-20",
+        "matched_in_excel_catalog": true
+      }
+    ],
+    "totals": {
+      "calories": 185,
+      "protein_g": 4.0,
+      "carbs_g": 17.0,
+      "fat_g": 11.5,
+      "fiber_g": 6.2,
+      "iron_mg": 2.0,
+      "calcium_mg": 75.0,
+      "sodium_mg": 588.0
+    },
+    "mddw_score": 1,
+    "http_status": 200,
+    "scan_timestamp": "2026-10-15T18:16:32.374769+00:00"
+  },
+  {
+    "test_id": "TEST-066",
+    "filename": "066_Beetroot_Vepudu.jpg",
+    "expected_dish_name": "Beetroot Vepudu (Beetroot Stir Fry)",
+    "expected_dish_te": "బీట్‌రూట్ వేపుడు",
+    "expected_cluster": "Vegetable Curries",
+    "model_used": "gemini-3.5-flash-lite",
+    "latency_ms": 24815,
+    "tokens_used": 2154,
+    "estimated_cost_inr": 0.1155,
+    "is_food_image": true,
+    "recognized_plate_title_en": "Beetroot Curry with Coconut (Beetroot Kura)",
+    "recognized_plate_title_te": "కొబ్బరి తురుముతో బీట్ రూట్ కూర",
+    "recognized_meal_type": "Lunch",
+    "recognized_items": [
+      {
+        "name_en": "Beetroot Curry with Coconut (Beetroot Kura)",
+        "name_te": "కొబ్బరి బీట్‌రూట్ కూర",
+        "cluster": "Vegetable Curries",
+        "estimated_grams": 200,
+        "matched_catalog_id": "CUSTOM-TE",
+        "matched_in_excel_catalog": false
+      }
+    ],
+    "totals": {
+      "calories": 150,
+      "protein_g": 4.0,
+      "carbs_g": 19.0,
+      "fat_g": 7.6,
+      "fiber_g": 5.0,
+      "iron_mg": 1.6,
+      "calcium_mg": 50.0,
+      "sodium_mg": 300.0
+    },
+    "mddw_score": 2,
+    "http_status": 200,
+    "scan_timestamp": "2026-10-15T18:17:01.252282+00:00"
+  },
+  {
+    "test_id": "TEST-067",
+    "filename": "067_Aratikaya_Kura.jpg",
+    "expected_dish_name": "Aratikaya Kura (Raw Plantain Mustard Curry / Ava Pettina Kura)",
+    "expected_dish_te": "అరటికాయ కూర",
+    "expected_cluster": "Vegetable Curries",
+    "model_used": "gemini-3.5-flash-lite",
+    "latency_ms": 10287,
+    "tokens_used": 2143,
+    "estimated_cost_inr": 0.1131,
+    "is_food_image": true,
+    "recognized_plate_title_en": "Aratikaya Vepudu / Kura (Raw Banana)",
+    "recognized_plate_title_te": "అరటికాయ వేపుడు",
+    "recognized_meal_type": "Lunch",
+    "recognized_items": [
+      {
+        "name_en": "Aratikaya Vepudu / Kura (Raw Banana)",
+        "name_te": "అరటికాయ వేపుడు / కూర",
+        "cluster": "Vegetable Curries",
+        "estimated_grams": 150,
+        "matched_catalog_id": "JM-29",
+        "matched_in_excel_catalog": true
+      }
+    ],
+    "totals": {
+      "calories": 198,
+      "protein_g": 2.8,
+      "carbs_g": 28.8,
+      "fat_g": 8.1,
+      "fiber_g": 5.4,
+      "iron_mg": 1.35,
+      "calcium_mg": 33.0,
+      "sodium_mg": 375.0
+    },
+    "mddw_score": 1,
+    "http_status": 200,
+    "scan_timestamp": "2026-10-15T18:17:15.615124+00:00"
+  },
+  {
+    "test_id": "TEST-068",
+    "filename": "068_Chamadumpa_Vepudu.jpg",
+    "expected_dish_name": "Chamadumpa Vepudu (Crispy Taro Root / Arbi Fry)",
+    "expected_dish_te": "చామదుంప వేపుడు",
+    "expected_cluster": "Vegetable Curries",
+    "model_used": "gemini-3.5-flash-lite",
+    "latency_ms": 10955,
+    "tokens_used": 2401,
+    "estimated_cost_inr": 0.1689,
+    "is_food_image": true,
+    "recognized_plate_title_en": "Steamed White Rice & Appadam / Pappadam",
+    "recognized_plate_title_te": "మామిడికాయ పులుసు ఇడ్లీ మరియు పాపడ్",
+    "recognized_meal_type": "Lunch",
+    "recognized_items": [
+      {
+        "name_en": "Steamed White Rice (Vandi Annam)",
+        "name_te": "వండిన తెల్ల అన్నం",
+        "cluster": "Rice & Millet Dishes",
+        "estimated_grams": 250,
+        "matched_catalog_id": "JM-101",
+        "matched_in_excel_catalog": true
+      },
+      {
+        "name_en": "Appadam / Pappadam (Thin Fried Lentil Crisp)",
+        "name_te": "అప్పడం",
+        "cluster": "Snacks & Sweets",
+        "estimated_grams": 15,
+        "matched_catalog_id": "CUSTOM-TE",
+        "matched_in_excel_catalog": false
+      }
+    ],
+    "totals": {
+      "calories": 379,
+      "protein_g": 10.1,
+      "carbs_g": 78.3,
+      "fat_g": 1.8,
+      "fiber_g": 1.7,
+      "iron_mg": 1.63,
+      "calcium_mg": 34.8,
+      "sodium_mg": 154.0
+    },
+    "mddw_score": 2,
+    "http_status": 200,
+    "scan_timestamp": "2026-10-15T18:17:30.606425+00:00"
+  },
+  {
+    "test_id": "TEST-069",
+    "filename": "069_Kanda_Kura_Pulusu.jpg",
+    "expected_dish_name": "Kanda Pulusu / Kura (Elephant Foot Yam Curry)",
+    "expected_dish_te": "కంద కూర / పులుసు",
+    "expected_cluster": "Vegetable Curries",
+    "model_used": "gemini-3.5-flash-lite",
+    "latency_ms": 10665,
+    "tokens_used": 2163,
+    "estimated_cost_inr": 0.1174,
+    "is_food_image": true,
+    "recognized_plate_title_en": "Aratikaya Vepudu / Kura (Raw Banana)",
+    "recognized_plate_title_te": "పిండి వడియాల వేపుడు",
+    "recognized_meal_type": "Lunch",
+    "recognized_items": [
+      {
+        "name_en": "Aratikaya Vepudu / Kura (Raw Banana)",
+        "name_te": "అరటికాయ వేపుడు / కూర",
+        "cluster": "Vegetable Curries",
+        "estimated_grams": 150,
+        "matched_catalog_id": "JM-29",
+        "matched_in_excel_catalog": true
+      }
+    ],
+    "totals": {
+      "calories": 198,
+      "protein_g": 2.8,
+      "carbs_g": 28.8,
+      "fat_g": 8.1,
+      "fiber_g": 5.4,
+      "iron_mg": 1.35,
+      "calcium_mg": 33.0,
+      "sodium_mg": 375.0
+    },
+    "mddw_score": 1,
+    "http_status": 200,
+    "scan_timestamp": "2026-10-15T18:17:45.323274+00:00"
+  },
+  {
+    "test_id": "TEST-070",
+    "filename": "070_Bobbarlu_Alasandalu_Kura.jpg",
+    "expected_dish_name": "Bobbarlu / Alasandalu Kura (Cowpea / Black Eyed Peas Curry)",
+    "expected_dish_te": "బొబ్బర్లు / అలసందల కూర",
+    "expected_cluster": "Vegetable Curries",
+    "model_used": "gemini-3.5-flash-lite",
+    "latency_ms": 7779,
+    "tokens_used": 2154,
+    "estimated_cost_inr": 0.1155,
+    "is_food_image": true,
+    "recognized_plate_title_en": "Alasanda Vathala Kura (Black-Eyed Peas Curry)",
+    "recognized_plate_title_te": "అలసంద వాతల కూర",
+    "recognized_meal_type": "Lunch",
+    "recognized_items": [
+      {
+        "name_en": "Alasanda Vathala Kura (Black-Eyed Peas Curry)",
+        "name_te": "అలసంద వాతల కూర",
+        "cluster": "Vegetable Curries",
+        "estimated_grams": 250,
+        "matched_catalog_id": "CUSTOM-TE",
+        "matched_in_excel_catalog": false
+      }
+    ],
+    "totals": {
+      "calories": 288,
+      "protein_g": 17.0,
+      "carbs_g": 41.2,
+      "fat_g": 8.0,
+      "fiber_g": 12.8,
+      "iron_mg": 5.25,
+      "calcium_mg": 105.0,
+      "sodium_mg": 725.0
+    },
+    "mddw_score": 2,
+    "http_status": 200,
+    "scan_timestamp": "2026-10-15T18:17:57.164653+00:00"
+  },
+  {
+    "test_id": "TEST-071",
+    "filename": "071_Munagaku_Podi.jpg",
+    "expected_dish_name": "Munagaku Podi (Moringa / Drumstick Leaf Spice Powder)",
+    "expected_dish_te": "మునగాకు పొడి",
+    "expected_cluster": "Chutneys & Podis",
+    "model_used": "gemini-3.5-flash-lite",
+    "latency_ms": 10850,
+    "tokens_used": 2157,
+    "estimated_cost_inr": 0.1161,
+    "is_food_image": true,
+    "recognized_plate_title_en": "Karam Podi - Karivepaku Podi (Curry Leaf Powder)",
+    "recognized_plate_title_te": "కరివేపాకు పొడి",
+    "recognized_meal_type": "Snack",
+    "recognized_items": [
+      {
+        "name_en": "Karam Podi - Karivepaku Podi (Curry Leaf Powder)",
+        "name_te": "కరివేపాకు పొడి",
+        "cluster": "Chutneys & Podis",
+        "estimated_grams": 50,
+        "matched_catalog_id": "CUSTOM-TE",
+        "matched_in_excel_catalog": false
+      }
+    ],
+    "totals": {
+      "calories": 196,
+      "protein_g": 7.2,
+      "carbs_g": 24.0,
+      "fat_g": 8.5,
+      "fiber_g": 6.0,
+      "iron_mg": 4.25,
+      "calcium_mg": 225.0,
+      "sodium_mg": 425.0
+    },
+    "mddw_score": 2,
+    "http_status": 200,
+    "scan_timestamp": "2026-10-15T18:18:12.113544+00:00"
+  },
+  {
+    "test_id": "TEST-072",
+    "filename": "072_Natukodi_Kura.jpg",
+    "expected_dish_name": "Natukodi Kura (Spicy Andhra Country Chicken Curry)",
+    "expected_dish_te": "నాటుకోడి కూర",
+    "expected_cluster": "Eggs, Meat & Fish",
+    "model_used": "gemini-3.5-flash-lite",
+    "latency_ms": 9158,
+    "tokens_used": 2140,
+    "estimated_cost_inr": 0.1124,
+    "is_food_image": true,
+    "recognized_plate_title_en": "Mamsam Kura (Spicy Andhra Mutton Curry)",
+    "recognized_plate_title_te": "మాంసం కూర",
+    "recognized_meal_type": "Lunch",
+    "recognized_items": [
+      {
+        "name_en": "Mamsam Kura (Spicy Andhra Mutton Curry)",
+        "name_te": "మాంసం కూర",
+        "cluster": "Eggs, Meat & Fish",
+        "estimated_grams": 250,
+        "matched_catalog_id": "CUSTOM-TE",
+        "matched_in_excel_catalog": false
+      }
+    ],
+    "totals": {
+      "calories": 605,
+      "protein_g": 41.2,
+      "carbs_g": 10.5,
+      "fat_g": 45.3,
+      "fiber_g": 3.0,
+      "iron_mg": 6.25,
+      "calcium_mg": 45.0,
+      "sodium_mg": 1025.0
+    },
+    "mddw_score": 2,
+    "http_status": 200,
+    "scan_timestamp": "2026-10-15T18:18:25.326721+00:00"
+  },
+  {
+    "test_id": "TEST-073",
+    "filename": "073_Chicken_Liver_Fry.jpg",
+    "expected_dish_name": "Chicken Liver Fry (Kodi Liver Vepudu)",
+    "expected_dish_te": "చికెన్ లివర్ వేపుడు",
+    "expected_cluster": "Eggs, Meat & Fish",
+    "model_used": "gemini-3.5-flash-lite",
+    "latency_ms": 13038,
+    "tokens_used": 2152,
+    "estimated_cost_inr": 0.115,
+    "is_food_image": true,
+    "recognized_plate_title_en": "Andhra Kodi Vepudu (Spicy Chicken Fry)",
+    "recognized_plate_title_te": "ఆంధ్ర కోడి వేపుడు",
+    "recognized_meal_type": "Lunch",
+    "recognized_items": [
+      {
+        "name_en": "Andhra Kodi Vepudu (Spicy Chicken Fry)",
+        "name_te": "ఆంధ్ర కోడి వేపుడు",
+        "cluster": "Eggs, Meat & Fish",
+        "estimated_grams": 250,
+        "matched_catalog_id": "CUSTOM-TE",
+        "matched_in_excel_catalog": false
+      }
+    ],
+    "totals": {
+      "calories": 612,
+      "protein_g": 61.2,
+      "carbs_g": 9.5,
+      "fat_g": 35.5,
+      "fiber_g": 3.0,
+      "iron_mg": 4.5,
+      "calcium_mg": 70.0,
+      "sodium_mg": 1125.0
+    },
+    "mddw_score": 2,
+    "http_status": 200,
+    "scan_timestamp": "2026-10-15T18:18:42.405579+00:00"
+  },
+  {
+    "test_id": "TEST-074",
+    "filename": "074_Mutton_Liver_Kaleji_Fry.jpg",
+    "expected_dish_name": "Mutton Liver Fry (Kaleji Vepudu)",
+    "expected_dish_te": "మటన్ లివర్ / కలేజీ వేపుడు",
+    "expected_cluster": "Eggs, Meat & Fish",
+    "model_used": "gemini-3.5-flash-lite",
+    "latency_ms": 9233,
+    "tokens_used": 2363,
+    "estimated_cost_inr": 0.1607,
+    "is_food_image": true,
+    "recognized_plate_title_en": "Mamsam Vepudu & Appadam",
+    "recognized_plate_title_te": "మాంసం వేపుడు మరియు అప్పడం",
+    "recognized_meal_type": "Lunch",
+    "recognized_items": [
+      {
+        "name_en": "Mamsam Vepudu (Mutton Fry)",
+        "name_te": "మాంసం వేపుడు",
+        "cluster": "Eggs, Meat & Fish",
+        "estimated_grams": 250,
+        "matched_catalog_id": "CUSTOM-TE",
+        "matched_in_excel_catalog": false
+      },
+      {
+        "name_en": "Appadam (Papad)",
+        "name_te": "అప్పడం",
+        "cluster": "Snacks & Sweets",
+        "estimated_grams": 20,
+        "matched_catalog_id": "CUSTOM-TE",
+        "matched_in_excel_catalog": false
+      }
+    ],
+    "totals": {
+      "calories": 875,
+      "protein_g": 59.7,
+      "carbs_g": 21.2,
+      "fat_g": 61.5,
+      "fiber_g": 3.4,
+      "iron_mg": 7.84,
+      "calcium_mg": 56.0,
+      "sodium_mg": 1190.0
+    },
+    "mddw_score": 2,
+    "http_status": 200,
+    "scan_timestamp": "2026-10-15T18:18:55.684904+00:00"
+  },
+  {
+    "test_id": "TEST-075",
+    "filename": "075_Gongura_Mutton.jpg",
+    "expected_dish_name": "Gongura Mutton (Spicy Sorrel Leaves Lamb Curry)",
+    "expected_dish_te": "గోంగూర మటన్",
+    "expected_cluster": "Eggs, Meat & Fish",
+    "model_used": "gemini-3.5-flash-lite",
+    "latency_ms": 9754,
+    "tokens_used": 2404,
+    "estimated_cost_inr": 0.1695,
+    "is_food_image": true,
+    "recognized_plate_title_en": "Palakura Kura / Vepudu & Raw Onion Rings and Lemon Garnish",
+    "recognized_plate_title_te": "మాంసం పాలకూర కూర (మటన్ పాలకూర)",
+    "recognized_meal_type": "Lunch",
+    "recognized_items": [
+      {
+        "name_en": "Palakura Kura / Vepudu (Spinach)",
+        "name_te": "పాలకూర కూర / వేపుడు",
+        "cluster": "Leafy Green Curries",
+        "estimated_grams": 350,
+        "matched_catalog_id": "JM-02",
+        "matched_in_excel_catalog": true
+      },
+      {
+        "name_en": "Raw Onion Rings and Lemon Garnish",
+        "name_te": "ఉల్లిపాయ ముక్కలు మరియు నిమ్మకాయ",
+        "cluster": "Other",
+        "estimated_grams": 40,
+        "matched_catalog_id": "CUSTOM-TE",
+        "matched_in_excel_catalog": false
+      }
+    ],
+    "totals": {
+      "calories": 315,
+      "protein_g": 10.6,
+      "carbs_g": 24.2,
+      "fat_g": 19.2,
+      "fiber_g": 11.8,
+      "iron_mg": 12.33,
+      "calcium_mg": 351.0,
+      "sodium_mg": 877.0
+    },
+    "mddw_score": 3,
+    "http_status": 200,
+    "scan_timestamp": "2026-10-15T18:19:09.484255+00:00"
+  },
+  {
+    "test_id": "TEST-076",
+    "filename": "076_Endu_Royyalu_Kura.jpg",
+    "expected_dish_name": "Endu Royyalu Kura (Dried Prawns Curry / Royyala Iguru)",
+    "expected_dish_te": "ఎండు రొయ్యల కూర",
+    "expected_cluster": "Eggs, Meat & Fish",
+    "model_used": "gemini-3.5-flash-lite",
+    "latency_ms": 9053,
+    "tokens_used": 2141,
+    "estimated_cost_inr": 0.1126,
+    "is_food_image": true,
+    "recognized_plate_title_en": "Royyala Vepudu (Prawns Fry)",
+    "recognized_plate_title_te": "రొయ్యల వేపుడు",
+    "recognized_meal_type": "Lunch",
+    "recognized_items": [
+      {
+        "name_en": "Royyala Vepudu (Prawns Fry)",
+        "name_te": "రొయ్యల వేపుడు",
+        "cluster": "Eggs, Meat & Fish",
+        "estimated_grams": 180,
+        "matched_catalog_id": "CUSTOM-TE",
+        "matched_in_excel_catalog": false
+      }
+    ],
+    "totals": {
+      "calories": 297,
+      "protein_g": 33.3,
+      "carbs_g": 8.1,
+      "fat_g": 14.8,
+      "fiber_g": 1.8,
+      "iron_mg": 3.96,
+      "calcium_mg": 108.0,
+      "sodium_mg": 738.0
+    },
+    "mddw_score": 2,
+    "http_status": 200,
+    "scan_timestamp": "2026-10-15T18:19:22.607758+00:00"
+  },
+  {
+    "test_id": "TEST-077",
+    "filename": "077_Balamrutham.jpg",
+    "expected_dish_name": "Balamrutham (Nutrient-Dense Anganwadi THR Weaning Porridge)",
+    "expected_dish_te": "బాలామృతం (అంగన్‌వాడీ)",
+    "expected_cluster": "Snacks & Sweets",
+    "model_used": "gemini-3.5-flash-lite",
+    "latency_ms": 8926,
+    "tokens_used": 2149,
+    "estimated_cost_inr": 0.1144,
+    "is_food_image": true,
+    "recognized_plate_title_en": "Daliya Kheer with Almonds (Broken Wheat Porridge)",
+    "recognized_plate_title_te": "డలియా ఖీర్ బాదామ్‌తో",
+    "recognized_meal_type": "Breakfast",
+    "recognized_items": [
+      {
+        "name_en": "Daliya Kheer with Almonds (Broken Wheat Porridge)",
+        "name_te": "డలియా ఖీర్",
+        "cluster": "Snacks & Sweets",
+        "estimated_grams": 250,
+        "matched_catalog_id": "CUSTOM-TE",
+        "matched_in_excel_catalog": false
+      }
+    ],
+    "totals": {
+      "calories": 288,
+      "protein_g": 8.8,
+      "carbs_g": 45.0,
+      "fat_g": 8.0,
+      "fiber_g": 5.2,
+      "iron_mg": 2.75,
+      "calcium_mg": 237.5,
+      "sodium_mg": 125.0
+    },
+    "mddw_score": 2,
+    "http_status": 200,
+    "scan_timestamp": "2026-10-15T18:19:35.595450+00:00"
+  },
+  {
+    "test_id": "TEST-078",
+    "filename": "078_Palli_Chikki.jpg",
+    "expected_dish_name": "Palli Chikki (Peanut & Jaggery Brittle)",
+    "expected_dish_te": "పల్లీ చిక్కీ / పల్లీ పట్టీ",
+    "expected_cluster": "Snacks & Sweets",
+    "model_used": "gemini-3.5-flash-lite",
+    "latency_ms": 8645,
+    "tokens_used": 2149,
+    "estimated_cost_inr": 0.1144,
+    "is_food_image": true,
+    "recognized_plate_title_en": "Palli Chikki (Peanut Jaggery Bar)",
+    "recognized_plate_title_te": "పల్లీ చిక్కి",
+    "recognized_meal_type": "Snack",
+    "recognized_items": [
+      {
+        "name_en": "Palli Chikki (Peanut Jaggery Bar)",
+        "name_te": "పల్లీ చిక్కి",
+        "cluster": "Snacks & Sweets",
+        "estimated_grams": 80,
+        "matched_catalog_id": "CUSTOM-TE",
+        "matched_in_excel_catalog": false
+      }
+    ],
+    "totals": {
+      "calories": 362,
+      "protein_g": 14.8,
+      "carbs_g": 41.6,
+      "fat_g": 16.3,
+      "fiber_g": 5.2,
+      "iron_mg": 3.04,
+      "calcium_mg": 60.0,
+      "sodium_mg": 20.0
+    },
+    "mddw_score": 2,
+    "http_status": 200,
+    "scan_timestamp": "2026-10-15T18:19:48.314660+00:00"
+  },
+  {
+    "test_id": "TEST-079",
+    "filename": "079_Dry_Fruit_Laddu.jpg",
+    "expected_dish_name": "Dry Fruit Laddu (Dates & Nuts Energy Laddu)",
+    "expected_dish_te": "డ్రై ఫ్రూట్ లడ్డూ",
+    "expected_cluster": "Snacks & Sweets",
+    "model_used": "gemini-3.5-flash-lite",
+    "latency_ms": 7980,
+    "tokens_used": 2154,
+    "estimated_cost_inr": 0.1155,
+    "is_food_image": true,
+    "recognized_plate_title_en": "Dry Fruit Laddu (Dates & Nuts Laddu)",
+    "recognized_plate_title_te": "డ్రై ఫ్రూట్ లడ్డు",
+    "recognized_meal_type": "Snack",
+    "recognized_items": [
+      {
+        "name_en": "Dry Fruit Laddu (Dates & Nuts Laddu)",
+        "name_te": "డ్రై ఫ్రూట్ లడ్డూ (ఖర్జూరం లడ్డూ)",
+        "cluster": "Snacks & Sweets",
+        "estimated_grams": 160,
+        "matched_catalog_id": "JM-47",
+        "matched_in_excel_catalog": true
+      }
+    ],
+    "totals": {
+      "calories": 686,
+      "protein_g": 17.9,
+      "carbs_g": 71.7,
+      "fat_g": 36.4,
+      "fiber_g": 10.9,
+      "iron_mg": 6.08,
+      "calcium_mg": 192.0,
+      "sodium_mg": 35.0
+    },
+    "mddw_score": 2,
+    "http_status": 200,
+    "scan_timestamp": "2026-10-15T18:20:00.358584+00:00"
+  },
+  {
+    "test_id": "TEST-080",
+    "filename": "080_Boiled_Sweet_Corn.jpg",
+    "expected_dish_name": "Boiled Sweet Corn (Mokkajonna Kanki)",
+    "expected_dish_te": "ఉడకబెట్టిన మొక్కజొన్న",
+    "expected_cluster": "Snacks & Sweets",
+    "model_used": "gemini-3.5-flash-lite",
+    "latency_ms": 9561,
+    "tokens_used": 2091,
+    "estimated_cost_inr": 0.1018,
+    "is_food_image": true,
+    "recognized_plate_title_en": "Mokka Jonna (Boiled Sweet Corn)",
+    "recognized_plate_title_te": "ఉడికించిన మొక్కజొన్న కంకులు",
+    "recognized_meal_type": "Snack",
+    "recognized_items": [
+      {
+        "name_en": "Mokka Jonna (Boiled Sweet Corn)",
+        "name_te": "మొక్కజొన్న కంకులు",
+        "cluster": "Snacks & Sweets",
+        "estimated_grams": 250,
+        "matched_catalog_id": "CUSTOM-TE",
+        "matched_in_excel_catalog": false
+      }
+    ],
+    "totals": {
+      "calories": 235,
+      "protein_g": 8.5,
+      "carbs_g": 52.5,
+      "fat_g": 3.2,
+      "fiber_g": 6.0,
+      "iron_mg": 1.25,
+      "calcium_mg": 5.0,
+      "sodium_mg": 550.0
+    },
+    "mddw_score": 2,
+    "http_status": 200,
+    "scan_timestamp": "2026-10-15T18:21:06.053344+00:00"
+  },
+  {
+    "test_id": "TEST-081",
+    "filename": "081_Hyderabadi_Chicken_Biryani.jpg",
+    "expected_dish_name": "Hyderabadi Chicken Biryani (Spicy Dum Biryani)",
+    "expected_dish_te": "హైదరాబాదీ చికెన్ బిర్యానీ",
+    "expected_cluster": "Eggs, Meat & Fish",
+    "model_used": "gemini-3.5-flash-lite",
+    "latency_ms": 13987,
+    "tokens_used": 2410,
+    "estimated_cost_inr": 0.1674,
+    "is_food_image": true,
+    "recognized_plate_title_en": "Prawns Biryani & Boiled Egg",
+    "recognized_plate_title_te": "రొయ్యల బిర్యానీ మరియు ఉడికించిన గుడ్డు",
+    "recognized_meal_type": "Lunch",
+    "recognized_items": [
+      {
+        "name_en": "Prawns Biryani (Royyala Biryani)",
+        "name_te": "రొయ్యల బిర్యానీ",
+        "cluster": "Rice & Biryani",
+        "estimated_grams": 350,
+        "matched_catalog_id": "CUSTOM-TE",
+        "matched_in_excel_catalog": false
+      },
+      {
+        "name_en": "Boiled Egg (Udakabettina Guddu)",
+        "name_te": "ఉడకబెట్టిన కోడిగుడ్డు",
+        "cluster": "Eggs, Meat & Fish",
+        "estimated_grams": 50,
+        "matched_catalog_id": "JM-133",
+        "matched_in_excel_catalog": true
+      }
+    ],
+    "totals": {
+      "calories": 682,
+      "protein_g": 38.5,
+      "carbs_g": 79.4,
+      "fat_g": 24.8,
+      "fiber_g": 4.2,
+      "iron_mg": 7.2,
+      "calcium_mg": 123.0,
+      "sodium_mg": 1392.0
+    },
+    "mddw_score": 3,
+    "http_status": 200,
+    "scan_timestamp": "2026-10-15T18:21:24.132576+00:00"
+  },
+  {
+    "test_id": "TEST-082",
+    "filename": "082_Pesarattu.jpg",
+    "expected_dish_name": "Pesarattu (Andhra Green Moong Dal Crepe)",
+    "expected_dish_te": "పెసరట్టు",
+    "expected_cluster": "Tiffins & Breads",
+    "model_used": "gemini-3.5-flash-lite",
+    "latency_ms": 9490,
+    "tokens_used": 1864,
+    "estimated_cost_inr": 0.0575,
+    "is_food_image": false,
+    "recognized_plate_title_en": "Telugu Meal",
+    "recognized_plate_title_te": "ఆంధ్ర భోజనం",
+    "recognized_meal_type": "Meals",
+    "recognized_items": [],
+    "totals": {
+      "calories": 0,
+      "protein_g": 0.0,
+      "carbs_g": 0.0,
+      "fat_g": 0.0,
+      "fiber_g": 0.0,
+      "iron_mg": 0.0,
+      "calcium_mg": 0.0,
+      "sodium_mg": 0.0
+    },
+    "mddw_score": 0,
+    "http_status": 200,
+    "scan_timestamp": "2026-10-15T18:21:37.711625+00:00"
+  },
+  {
+    "test_id": "TEST-083",
+    "filename": "083_Ragi_Sangati.jpg",
+    "expected_dish_name": "Ragi Sangati (Rayalaseema Finger Millet Ball)",
+    "expected_dish_te": "రాగి సంగటి / రాగి ముద్ద",
+    "expected_cluster": "Rice & Millet Dishes",
+    "model_used": "gemini-3.5-flash-lite",
+    "latency_ms": 15570,
+    "tokens_used": 2561,
+    "estimated_cost_inr": 0.2052,
+    "is_food_image": true,
+    "recognized_plate_title_en": "Ragi Sangati / Ragi Mudda, Natukodi Pulusu & Perugu / Gatti Perugu",
+    "recognized_plate_title_te": "రాగి సంగటి నాటుకోడి కూర పెరుగు",
+    "recognized_meal_type": "Lunch",
+    "recognized_items": [
+      {
+        "name_en": "Ragi Sangati / Ragi Mudda (Finger Millet Ball)",
+        "name_te": "రాగి సంగటి / రాగి ముద్ద",
+        "cluster": "Rice & Millet Dishes",
+        "estimated_grams": 400,
+        "matched_catalog_id": "JM-102",
+        "matched_in_excel_catalog": true
+      },
+      {
+        "name_en": "Natukodi Pulusu (Country Chicken Curry)",
+        "name_te": "నాటుకోడి పులుసు",
+        "cluster": "Eggs, Meat & Fish",
+        "estimated_grams": 250,
+        "matched_catalog_id": "JM-41",
+        "matched_in_excel_catalog": true
+      },
+      {
+        "name_en": "Perugu / Gatti Perugu (Curd / Yogurt)",
+        "name_te": "పెరుగు",
+        "cluster": "Dairy",
+        "estimated_grams": 80,
+        "matched_catalog_id": "JM-119",
+        "matched_in_excel_catalog": true
+      }
+    ],
+    "totals": {
+      "calories": 1039,
+      "protein_g": 62.6,
+      "carbs_g": 128.3,
+      "fat_g": 30.9,
+      "fiber_g": 19.3,
+      "iron_mg": 13.31,
+      "calcium_mg": 833.0,
+      "sodium_mg": 1093.0
+    },
+    "mddw_score": 4,
+    "http_status": 200,
+    "scan_timestamp": "2026-10-15T18:21:57.370846+00:00"
+  },
+  {
+    "test_id": "TEST-084",
+    "filename": "084_Pulihora.jpg",
+    "expected_dish_name": "Pulihora (Andhra Tamarind Spiced Rice)",
+    "expected_dish_te": "చింతపండు పులిహోర",
+    "expected_cluster": "Rice & Millet Dishes",
+    "model_used": "gemini-3.5-flash-lite",
+    "latency_ms": 20650,
+    "tokens_used": 2145,
+    "estimated_cost_inr": 0.1152,
+    "is_food_image": true,
+    "recognized_plate_title_en": "Pulihora / Chintapandu Pulihora (Tamarind Rice)",
+    "recognized_plate_title_te": "శెనగ పులిహోర",
+    "recognized_meal_type": "Lunch",
+    "recognized_items": [
+      {
+        "name_en": "Pulihora / Chintapandu Pulihora (Tamarind Rice)",
+        "name_te": "చింతపండు పులిహోర",
+        "cluster": "Rice & Millet Dishes",
+        "estimated_grams": 250,
+        "matched_catalog_id": "JM-103",
+        "matched_in_excel_catalog": true
+      }
+    ],
+    "totals": {
+      "calories": 445,
+      "protein_g": 10.2,
+      "carbs_g": 69.0,
+      "fat_g": 14.5,
+      "fiber_g": 5.2,
+      "iron_mg": 3.25,
+      "calcium_mg": 60.0,
+      "sodium_mg": 775.0
+    },
+    "mddw_score": 2,
+    "http_status": 200,
+    "scan_timestamp": "2026-10-15T18:22:22.115529+00:00"
+  },
+  {
+    "test_id": "TEST-085",
+    "filename": "085_Perugu_Annam.jpg",
+    "expected_dish_name": "Perugu Annam (Tempered Curd Rice / Daddojanam)",
+    "expected_dish_te": "పెరుగు అన్నం / దద్దోజనం",
+    "expected_cluster": "Rice & Millet Dishes",
+    "model_used": "gemini-3.5-flash-lite",
+    "latency_ms": 26570,
+    "tokens_used": 2348,
+    "estimated_cost_inr": 0.1622,
+    "is_food_image": true,
+    "recognized_plate_title_en": "Perugu Annam / Daddojanam & Pomegranate Seeds",
+    "recognized_plate_title_te": "దద్దోజనం",
+    "recognized_meal_type": "Lunch",
+    "recognized_items": [
+      {
+        "name_en": "Perugu Annam / Daddojanam (Curd Rice)",
+        "name_te": "పెరుగు అన్నం / దద్దోజనం",
+        "cluster": "Rice & Millet Dishes",
+        "estimated_grams": 250,
+        "matched_catalog_id": "JM-104",
+        "matched_in_excel_catalog": true
+      },
+      {
+        "name_en": "Pomegranate Seeds (Danimma Ginjalu)",
+        "name_te": "దానిమ్మ గింజలు",
+        "cluster": "Fruits & Salads",
+        "estimated_grams": 25,
+        "matched_catalog_id": "JM-132",
+        "matched_in_excel_catalog": true
+      }
+    ],
+    "totals": {
+      "calories": 311,
+      "protein_g": 9.2,
+      "carbs_g": 50.7,
+      "fat_g": 8.1,
+      "fiber_g": 2.2,
+      "iron_mg": 1.07,
+      "calcium_mg": 217.5,
+      "sodium_mg": 451.0
+    },
+    "mddw_score": 3,
+    "http_status": 200,
+    "scan_timestamp": "2026-10-15T18:22:52.778369+00:00"
+  },
+  {
+    "test_id": "TEST-086",
+    "filename": "086_Steamed_Rice_with_Pappu.jpg",
+    "expected_dish_name": "Steamed White Rice with Pappu (Vandi Annam & Dal)",
+    "expected_dish_te": "తెల్ల అన్నం & పప్పు",
+    "expected_cluster": "Rice & Millet Dishes",
+    "model_used": "gemini-3.5-flash-lite",
+    "latency_ms": 21198,
+    "tokens_used": 3080,
+    "estimated_cost_inr": 0.3205,
+    "is_food_image": true,
+    "recognized_plate_title_en": "Pulihora / Chintapandu Pulihora, Mutton Curry, Onion Fry, Palakura Pappu & Cabbage Vepudu",
+    "recognized_plate_title_te": "నిమ్మకాయ అన్నం, మటన్ కూర, ఉల్లిపాయ ఫ్రై, పప్పు మరియు క్యాబేజీ పోరియల్",
+    "recognized_meal_type": "Lunch",
+    "recognized_items": [
+      {
+        "name_en": "Pulihora / Chintapandu Pulihora (Tamarind Rice)",
+        "name_te": "చింతపండు పులిహోర",
+        "cluster": "Rice & Millet Dishes",
+        "estimated_grams": 200,
+        "matched_catalog_id": "JM-103",
+        "matched_in_excel_catalog": true
+      },
+      {
+        "name_en": "Mutton Curry (Mamsam Kura)",
+        "name_te": "మటన్ కూర",
+        "cluster": "Eggs, Meat & Fish",
+        "estimated_grams": 90,
+        "matched_catalog_id": "CUSTOM-TE",
+        "matched_in_excel_catalog": false
+      },
+      {
+        "name_en": "Onion Fry (Ullipaya Vepudu)",
+        "name_te": "ఉల్లిపాయ ఫ్రై",
+        "cluster": "Vegetable Curries",
+        "estimated_grams": 80,
+        "matched_catalog_id": "CUSTOM-TE",
+        "matched_in_excel_catalog": false
+      },
+      {
+        "name_en": "Palakura Pappu (Spinach Dal)",
+        "name_te": "పాలకూర పప్పు",
+        "cluster": "Dals & Pappu",
+        "estimated_grams": 120,
+        "matched_catalog_id": "JM-06",
+        "matched_in_excel_catalog": true
+      },
+      {
+        "name_en": "Cabbage Vepudu (Cabbage Stir-Fry)",
+        "name_te": "క్యాబేజీ వేపుడు",
+        "cluster": "Vegetable Curries",
+        "estimated_grams": 100,
+        "matched_catalog_id": "JM-22",
+        "matched_in_excel_catalog": true
+      }
+    ],
+    "totals": {
+      "calories": 968,
+      "protein_g": 36.4,
+      "carbs_g": 92.6,
+      "fat_g": 51.8,
+      "fiber_g": 14.3,
+      "iron_mg": 9.63,
+      "calcium_mg": 205.7,
+      "sodium_mg": 1881.0
+    },
+    "mddw_score": 5,
+    "http_status": 200,
+    "scan_timestamp": "2026-10-15T18:23:18.088820+00:00"
+  },
+  {
+    "test_id": "TEST-087",
+    "filename": "087_Plain_Dosa_with_Chutney.jpg",
+    "expected_dish_name": "Plain Dosa with Chutney (Crispy Fermented Rice Crepe)",
+    "expected_dish_te": "దోస & చట్నీ",
+    "expected_cluster": "Tiffins & Breads",
+    "model_used": "gemini-3.5-flash-lite",
+    "latency_ms": 14353,
+    "tokens_used": 2604,
+    "estimated_cost_inr": 0.2122,
+    "is_food_image": true,
+    "recognized_plate_title_en": "Plain / Karam Dosa, Kobbari Pachadi & Palli Pachadi",
+    "recognized_plate_title_te": "ప్లెయిన్ దోశ కొబ్బరి పచ్చడి మరియు వేరుశనగ పచ్చడి",
+    "recognized_meal_type": "Breakfast",
+    "recognized_items": [
+      {
+        "name_en": "Plain / Karam Dosa (Fermented Rice-Lentil Crepe)",
+        "name_te": "దోస / కారం దోస",
+        "cluster": "Tiffins & Breads",
+        "estimated_grams": 120,
+        "matched_catalog_id": "JM-108",
+        "matched_in_excel_catalog": true
+      },
+      {
+        "name_en": "Kobbari Pachadi (Coconut Chutney)",
+        "name_te": "కొబ్బరి పచ్చడి",
+        "cluster": "Chutneys & Podis",
+        "estimated_grams": 50,
+        "matched_catalog_id": "JM-36",
+        "matched_in_excel_catalog": true
+      },
+      {
+        "name_en": "Palli Pachadi (Peanut Chutney)",
+        "name_te": "పల్లీ పచ్చడి",
+        "cluster": "Chutneys & Podis",
+        "estimated_grams": 50,
+        "matched_catalog_id": "JM-35",
+        "matched_in_excel_catalog": true
+      }
+    ],
+    "totals": {
+      "calories": 475,
+      "protein_g": 12.8,
+      "carbs_g": 47.2,
+      "fat_g": 26.7,
+      "fiber_g": 6.5,
+      "iron_mg": 3.28,
+      "calcium_mg": 66.6,
+      "sodium_mg": 642.0
+    },
+    "mddw_score": 3,
+    "http_status": 200,
+    "scan_timestamp": "2026-10-15T18:23:36.518618+00:00"
+  },
+  {
+    "test_id": "TEST-088",
+    "filename": "088_Idli_with_Sambar.jpg",
+    "expected_dish_name": "Idli with Sambar (Steamed Rice-Lentil Cakes with Lentil Stew)",
+    "expected_dish_te": "ఇడ్లీ & సాంబార్",
+    "expected_cluster": "Tiffins & Breads",
+    "model_used": "gemini-3.5-flash-lite",
+    "latency_ms": 12463,
+    "tokens_used": 2601,
+    "estimated_cost_inr": 0.2138,
+    "is_food_image": true,
+    "recognized_plate_title_en": "Idli, Pappu Charu / Sambar & Kobbari Pachadi",
+    "recognized_plate_title_te": "ఇడ్లీ సాంబార్ మరియు కొబ్బరి పచ్చడి",
+    "recognized_meal_type": "Breakfast",
+    "recognized_items": [
+      {
+        "name_en": "Idli (Steamed Rice & Urad Dal Cakes)",
+        "name_te": "ఇడ్లీ",
+        "cluster": "Tiffins & Breads",
+        "estimated_grams": 250,
+        "matched_catalog_id": "JM-107",
+        "matched_in_excel_catalog": true
+      },
+      {
+        "name_en": "Pappu Charu / Sambar (Lentil & Vegetable Stew)",
+        "name_te": "పప్పు చారు / సాంబార్",
+        "cluster": "Dals & Pappu",
+        "estimated_grams": 180,
+        "matched_catalog_id": "JM-116",
+        "matched_in_excel_catalog": true
+      },
+      {
+        "name_en": "Kobbari Pachadi (Coconut Chutney)",
+        "name_te": "కొబ్బరి పచ్చడి",
+        "cluster": "Chutneys & Podis",
+        "estimated_grams": 60,
+        "matched_catalog_id": "JM-36",
+        "matched_in_excel_catalog": true
+      }
+    ],
+    "totals": {
+      "calories": 648,
+      "protein_g": 20.9,
+      "carbs_g": 99.9,
+      "fat_g": 18.5,
+      "fiber_g": 12.1,
+      "iron_mg": 6.11,
+      "calcium_mg": 135.6,
+      "sodium_mg": 1148.0
+    },
+    "mddw_score": 4,
+    "http_status": 200,
+    "scan_timestamp": "2026-10-15T18:23:53.050955+00:00"
+  },
+  {
+    "test_id": "TEST-089",
+    "filename": "089_Medu_Vada_Minapa_Garelu.jpg",
+    "expected_dish_name": "Medu Vada (Crispy Minapa Garelu / Lentil Fritters)",
+    "expected_dish_te": "మినప గారెలు / వడ",
+    "expected_cluster": "Tiffins & Breads",
+    "model_used": "gemini-3.5-flash-lite",
+    "latency_ms": 13024,
+    "tokens_used": 2127,
+    "estimated_cost_inr": 0.1144,
+    "is_food_image": true,
+    "recognized_plate_title_en": "Garelu / Minapa Garelu (Urad Dal Medu Vada)",
+    "recognized_plate_title_te": "అల్లం గారెలు / మినప వడలు",
+    "recognized_meal_type": "Breakfast",
+    "recognized_items": [
+      {
+        "name_en": "Garelu / Minapa Garelu (Urad Dal Medu Vada)",
+        "name_te": "మినప గారెలు / వడ",
+        "cluster": "Tiffins & Breads",
+        "estimated_grams": 250,
+        "matched_catalog_id": "JM-110",
+        "matched_in_excel_catalog": true
+      }
+    ],
+    "totals": {
+      "calories": 776,
+      "protein_g": 24.5,
+      "carbs_g": 71.0,
+      "fat_g": 43.8,
+      "fiber_g": 12.0,
+      "iron_mg": 6.0,
+      "calcium_mg": 130.0,
+      "sodium_mg": 775.0
+    },
+    "mddw_score": 1,
+    "http_status": 200,
+    "scan_timestamp": "2026-10-15T18:24:10.128719+00:00"
+  },
+  {
+    "test_id": "TEST-090",
+    "filename": "090_Rava_Upma.jpg",
+    "expected_dish_name": "Rava Upma (Tempered Semolina Porridge)",
+    "expected_dish_te": "రవ్వ ఉప్మా",
+    "expected_cluster": "Tiffins & Breads",
+    "model_used": "gemini-3.5-flash-lite",
+    "latency_ms": 9662,
+    "tokens_used": 2373,
+    "estimated_cost_inr": 0.1628,
+    "is_food_image": true,
+    "recognized_plate_title_en": "Perugu Annam / Daddojanam & Pappu Charu / Sambar",
+    "recognized_plate_title_te": "దద్దోజనం మరియు సాంబార్",
+    "recognized_meal_type": "Breakfast",
+    "recognized_items": [
+      {
+        "name_en": "Perugu Annam / Daddojanam (Curd Rice)",
+        "name_te": "పెరుగు అన్నం / దద్దోజనం",
+        "cluster": "Rice & Millet Dishes",
+        "estimated_grams": 250,
+        "matched_catalog_id": "JM-104",
+        "matched_in_excel_catalog": true
+      },
+      {
+        "name_en": "Pappu Charu / Sambar (Lentil & Vegetable Stew)",
+        "name_te": "పప్పు చారు / సాంబార్",
+        "cluster": "Dals & Pappu",
+        "estimated_grams": 150,
+        "matched_catalog_id": "JM-116",
+        "matched_in_excel_catalog": true
+      }
+    ],
+    "totals": {
+      "calories": 413,
+      "protein_g": 14.9,
+      "carbs_g": 62.8,
+      "fat_g": 11.4,
+      "fiber_g": 5.4,
+      "iron_mg": 3.1,
+      "calcium_mg": 266.0,
+      "sodium_mg": 840.0
+    },
+    "mddw_score": 4,
+    "http_status": 200,
+    "scan_timestamp": "2026-10-15T18:24:23.879657+00:00"
+  },
+  {
+    "test_id": "TEST-091",
+    "filename": "091_Poori_with_Potato_Curry.jpg",
+    "expected_dish_name": "Poori with Potato Curry (Puri Masala / Kura)",
+    "expected_dish_te": "పూరి & బంగాళాదుంప కూర",
+    "expected_cluster": "Tiffins & Breads",
+    "model_used": "gemini-3.5-flash-lite",
+    "latency_ms": 13848,
+    "tokens_used": 2346,
+    "estimated_cost_inr": 0.157,
+    "is_food_image": true,
+    "recognized_plate_title_en": "Poori & Bangaladumpa / Aloo Vepudu",
+    "recognized_plate_title_te": "పూరీ మరియు ఆలుగడ్డ ఫ్రై",
+    "recognized_meal_type": "Breakfast",
+    "recognized_items": [
+      {
+        "name_en": "Poori (Fried Indian Bread)",
+        "name_te": "పూరీ",
+        "cluster": "Breakfast",
+        "estimated_grams": 70,
+        "matched_catalog_id": "CUSTOM-TE",
+        "matched_in_excel_catalog": false
+      },
+      {
+        "name_en": "Bangaladumpa / Aloo Vepudu (Potato Fry)",
+        "name_te": "బంగాళాదుంప వేపుడు",
+        "cluster": "Vegetable Curries",
+        "estimated_grams": 100,
+        "matched_catalog_id": "JM-17",
+        "matched_in_excel_catalog": true
+      }
+    ],
+    "totals": {
+      "calories": 367,
+      "protein_g": 7.0,
+      "carbs_g": 52.3,
+      "fat_g": 14.8,
+      "fiber_g": 3.9,
+      "iron_mg": 1.95,
+      "calcium_mg": 32.0,
+      "sodium_mg": 504.0
+    },
+    "mddw_score": 2,
+    "http_status": 200,
+    "scan_timestamp": "2026-10-15T18:24:41.836384+00:00"
+  },
+  {
+    "test_id": "TEST-092",
+    "filename": "092_Chapati_with_Dal.jpg",
+    "expected_dish_name": "Chapati with Dal (Whole Wheat Flatbread with Lentil Curry)",
+    "expected_dish_te": "చపాతీ & పప్పు",
+    "expected_cluster": "Tiffins & Breads",
+    "model_used": "gemini-3.5-flash-lite",
+    "latency_ms": 12885,
+    "tokens_used": 2072,
+    "estimated_cost_inr": 0.0994,
+    "is_food_image": true,
+    "recognized_plate_title_en": "Chapati / Pulka (Whole Wheat Flatbread)",
+    "recognized_plate_title_te": "చపాతి తయారీ",
+    "recognized_meal_type": "Breakfast",
+    "recognized_items": [
+      {
+        "name_en": "Chapati / Pulka (Whole Wheat Flatbread)",
+        "name_te": "చపాతీ / పుల్కా",
+        "cluster": "Tiffins & Breads",
+        "estimated_grams": 40,
+        "matched_catalog_id": "JM-115",
+        "matched_in_excel_catalog": true
+      }
+    ],
+    "totals": {
+      "calories": 103,
+      "protein_g": 3.4,
+      "carbs_g": 19.3,
+      "fat_g": 1.4,
+      "fiber_g": 2.6,
+      "iron_mg": 1.12,
+      "calcium_mg": 12.8,
+      "sodium_mg": 76.0
+    },
+    "mddw_score": 1,
+    "http_status": 200,
+    "scan_timestamp": "2026-10-15T18:24:58.828100+00:00"
+  },
+  {
+    "test_id": "TEST-093",
+    "filename": "093_Samosa.jpg",
+    "expected_dish_name": "Samosa (Crispy Potato & Pea Savory Pastry)",
+    "expected_dish_te": "సమోసా",
+    "expected_cluster": "Snacks & Sweets",
+    "model_used": "gemini-3.5-flash-lite",
+    "latency_ms": 11222,
+    "tokens_used": 2281,
+    "estimated_cost_inr": 0.1408,
+    "is_food_image": true,
+    "recognized_plate_title_en": "Samosa & Senagala Kura",
+    "recognized_plate_title_te": "సమోసా మరియు ఛోలే",
+    "recognized_meal_type": "Snack",
+    "recognized_items": [
+      {
+        "name_en": "Samosa (Fried Potato Pastry)",
+        "name_te": "సమోసా",
+        "cluster": "Snacks & Sweets",
+        "estimated_grams": 100,
+        "matched_catalog_id": "CUSTOM-TE",
+        "matched_in_excel_catalog": false
+      },
+      {
+        "name_en": "Senagala Kura (Brown Chickpea Curry)",
+        "name_te": "శనగల కూర",
+        "cluster": "Vegetable Curries",
+        "estimated_grams": 120,
+        "matched_catalog_id": "JM-33",
+        "matched_in_excel_catalog": true
+      }
+    ],
+    "totals": {
+      "calories": 474,
+      "protein_g": 13.9,
+      "carbs_g": 54.8,
+      "fat_g": 22.5,
+      "fiber_g": 9.1,
+      "iron_mg": 4.74,
+      "calcium_mg": 84.8,
+      "sodium_mg": 592.0
+    },
+    "mddw_score": 3,
+    "http_status": 200,
+    "scan_timestamp": "2026-10-15T18:25:14.148361+00:00"
+  },
+  {
+    "test_id": "TEST-094",
+    "filename": "094_Boiled_Sweet_Potato.jpg",
+    "expected_dish_name": "Boiled Sweet Potato (Chilakada Dumpa / Genusu Gadda)",
+    "expected_dish_te": "ఉడకబెట్టిన చిలకడదుంప",
+    "expected_cluster": "Snacks & Sweets",
+    "model_used": "gemini-3.5-flash-lite",
+    "latency_ms": 27831,
+    "tokens_used": 3253,
+    "estimated_cost_inr": 0.3558,
+    "is_food_image": true,
+    "recognized_plate_title_en": "Boiled Sweet Potato, Cabbage Salad, Cucumber Slices, Baked Beans in Tomato Sauce, Beans Vepudu & Pan-Fried Spiced Meat",
+    "recognized_plate_title_te": "స్వీట్ పొటాటో, క్యాబేజీ సలాడ్, బేక్డ్ బీన్స్, గ్రీన్ బీన్స్ & వేయించిన మాంసం",
+    "recognized_meal_type": "Lunch",
+    "recognized_items": [
+      {
+        "name_en": "Boiled Sweet Potato (Chilakada Dumpa)",
+        "name_te": "ఉడకబెట్టిన చిలకడదుంప",
+        "cluster": "Snacks & Sweets",
+        "estimated_grams": 150,
+        "matched_catalog_id": "JM-129",
+        "matched_in_excel_catalog": true
+      },
+      {
+        "name_en": "Cabbage Salad (Cabbage Salad)",
+        "name_te": "క్యాబేజీ సలాడ్",
+        "cluster": "Other",
+        "estimated_grams": 80,
+        "matched_catalog_id": "CUSTOM-TE",
+        "matched_in_excel_catalog": false
+      },
+      {
+        "name_en": "Cucumber Slices (Keera)",
+        "name_te": "కీరా దోసకాయ ముక్కలు",
+        "cluster": "Fruits & Salads",
+        "estimated_grams": 40,
+        "matched_catalog_id": "JM-130",
+        "matched_in_excel_catalog": true
+      },
+      {
+        "name_en": "Baked Beans in Tomato Sauce (Baked Beans)",
+        "name_te": "బేక్డ్ బీన్స్",
+        "cluster": "Other",
+        "estimated_grams": 100,
+        "matched_catalog_id": "CUSTOM-TE",
+        "matched_in_excel_catalog": false
+      },
+      {
+        "name_en": "Beans Vepudu (French Beans Stir-Fry)",
+        "name_te": "బీన్స్ వేపుడు",
+        "cluster": "Vegetable Curries",
+        "estimated_grams": 70,
+        "matched_catalog_id": "JM-24",
+        "matched_in_excel_catalog": true
+      },
+      {
+        "name_en": "Pan-Fried Spiced Meat (Mamsam Vepudu)",
+        "name_te": "మాంసం వేపుడు",
+        "cluster": "Eggs, Meat & Fish",
+        "estimated_grams": 100,
+        "matched_catalog_id": "CUSTOM-TE",
+        "matched_in_excel_catalog": false
+      }
+    ],
+    "totals": {
+      "calories": 578,
+      "protein_g": 36.3,
+      "carbs_g": 59.4,
+      "fat_g": 22.2,
+      "fiber_g": 13.1,
+      "iron_mg": 6.35,
+      "calcium_mg": 167.0,
+      "sodium_mg": 987.0
+    },
+    "mddw_score": 3,
+    "http_status": 200,
+    "scan_timestamp": "2026-10-15T18:25:46.105967+00:00"
+  },
+  {
+    "test_id": "TEST-095",
+    "filename": "095_Cucumber_Slices_Salad.jpg",
+    "expected_dish_name": "Cucumber Slices Salad (Keera Dosakaya)",
+    "expected_dish_te": "కీరా దోసకాయ ముక్కలు",
+    "expected_cluster": "Fruits & Salads",
+    "model_used": "gemini-3.5-flash-lite",
+    "latency_ms": 10712,
+    "tokens_used": 2141,
+    "estimated_cost_inr": 0.1126,
+    "is_food_image": true,
+    "recognized_plate_title_en": "Cucumber Slices (Keera)",
+    "recognized_plate_title_te": "నూనె మరియు నువ్వుల దోసకాయ సలాడ్",
+    "recognized_meal_type": "Snack",
+    "recognized_items": [
+      {
+        "name_en": "Cucumber Slices (Keera)",
+        "name_te": "కీరా దోసకాయ ముక్కలు",
+        "cluster": "Fruits & Salads",
+        "estimated_grams": 150,
+        "matched_catalog_id": "JM-130",
+        "matched_in_excel_catalog": true
+      }
+    ],
+    "totals": {
+      "calories": 22,
+      "protein_g": 1.0,
+      "carbs_g": 5.4,
+      "fat_g": 0.1,
+      "fiber_g": 0.8,
+      "iron_mg": 0.45,
+      "calcium_mg": 24.0,
+      "sodium_mg": 3.0
+    },
+    "mddw_score": 1,
+    "http_status": 200,
+    "scan_timestamp": "2026-10-15T18:26:00.884640+00:00"
+  },
+  {
+    "test_id": "TEST-096",
+    "filename": "096_Mixed_Healthy_Bowl.jpg",
+    "expected_dish_name": "Mixed Healthy Bowl (Sweet Potato, Cucumber, Carrot & Pomegranate)",
+    "expected_dish_te": "మిక్స్‌డ్ హెల్తీ సలాడ్ బౌల్",
+    "expected_cluster": "Fruits & Salads",
+    "model_used": "gemini-3.5-flash-lite",
+    "latency_ms": 31695,
+    "tokens_used": 2126,
+    "estimated_cost_inr": 0.1142,
+    "is_food_image": true,
+    "recognized_plate_title_en": "Mixed Vegetable Salad (Lettuce, Bell Peppers, Tomato, Cucumber)",
+    "recognized_plate_title_te": "మిక్స్డ్ వెజిటేబుల్ సలాడ్",
+    "recognized_meal_type": "Snack",
+    "recognized_items": [
+      {
+        "name_en": "Mixed Vegetable Salad (Lettuce, Bell Peppers, Tomato, Cucumber)",
+        "name_te": "మిక్స్డ్ వెజిటేబుల్ సలాడ్",
+        "cluster": "Other",
+        "estimated_grams": 200,
+        "matched_catalog_id": "CUSTOM-TE",
+        "matched_in_excel_catalog": false
+      }
+    ],
+    "totals": {
+      "calories": 68,
+      "protein_g": 2.4,
+      "carbs_g": 13.0,
+      "fat_g": 0.8,
+      "fiber_g": 4.4,
+      "iron_mg": 1.6,
+      "calcium_mg": 50.0,
+      "sodium_mg": 20.0
+    },
+    "mddw_score": 2,
+    "http_status": 200,
+    "scan_timestamp": "2026-10-15T18:26:36.648677+00:00"
+  },
+  {
+    "test_id": "TEST-097",
+    "filename": "097_Boiled_Eggs.jpg",
+    "expected_dish_name": "Boiled Eggs (Udakabettina Guddu)",
+    "expected_dish_te": "ఉడకబెట్టిన కోడిగుడ్లు",
+    "expected_cluster": "Eggs, Meat & Fish",
+    "model_used": "gemini-3.5-flash-lite",
+    "latency_ms": 18591,
+    "tokens_used": 3114,
+    "estimated_cost_inr": 0.3278,
+    "is_food_image": true,
+    "recognized_plate_title_en": "Sliced Ham & Pork Cold Cuts, Sliced Cheese, Boiled Egg, Multigrain Brown Bread Slices & Roasted Red Pepper Relish / Chutney",
+    "recognized_plate_title_te": "కోల్డ్ కట్స్ ప్లాటర్, చీజ్, ఉడికించిన గుడ్లు మరియు బ్రెడ్",
+    "recognized_meal_type": "Lunch",
+    "recognized_items": [
+      {
+        "name_en": "Sliced Ham & Pork Cold Cuts (మాంసం ముక్కలు)",
+        "name_te": "మాంసం ముక్కలు",
+        "cluster": "Eggs, Meat & Fish",
+        "estimated_grams": 250,
+        "matched_catalog_id": "CUSTOM-TE",
+        "matched_in_excel_catalog": false
+      },
+      {
+        "name_en": "Sliced Cheese (చీజ్ ముక్కలు)",
+        "name_te": "చీజ్ ముక్కలు",
+        "cluster": "Other",
+        "estimated_grams": 180,
+        "matched_catalog_id": "CUSTOM-TE",
+        "matched_in_excel_catalog": false
+      },
+      {
+        "name_en": "Boiled Egg (Udakabettina Guddu)",
+        "name_te": "ఉడకబెట్టిన కోడిగుడ్డు",
+        "cluster": "Eggs, Meat & Fish",
+        "estimated_grams": 100,
+        "matched_catalog_id": "JM-133",
+        "matched_in_excel_catalog": true
+      },
+      {
+        "name_en": "Multigrain Brown Bread Slices (బ్రెడ్ ముక్కలు)",
+        "name_te": "బ్రెడ్ ముక్కలు",
+        "cluster": "Other",
+        "estimated_grams": 150,
+        "matched_catalog_id": "CUSTOM-TE",
+        "matched_in_excel_catalog": false
+      },
+      {
+        "name_en": "Roasted Red Pepper Relish / Chutney (ఎర్ర మిరపకాయ పచ్చడి)",
+        "name_te": "ఎర్ర మిరపకాయ పచ్చడి",
+        "cluster": "Chutneys & Podis",
+        "estimated_grams": 100,
+        "matched_catalog_id": "CUSTOM-TE",
+        "matched_in_excel_catalog": false
+      }
+    ],
+    "totals": {
+      "calories": 2030,
+      "protein_g": 117.6,
+      "carbs_g": 81.7,
+      "fat_g": 132.6,
+      "fiber_g": 13.0,
+      "iron_mg": 10.36,
+      "calcium_mg": 1531.0,
+      "sodium_mg": 4265.0
+    },
+    "mddw_score": 3,
+    "http_status": 200,
+    "scan_timestamp": "2026-10-15T18:26:59.297382+00:00"
+  },
+  {
+    "test_id": "TEST-098",
+    "filename": "098_Chicken_65_Kodi_Vepudu.jpg",
+    "expected_dish_name": "Chicken 65 / Kodi Vepudu (Spicy Andhra Chicken Fry)",
+    "expected_dish_te": "చికెన్ 65 / కోడి వేపుడు",
+    "expected_cluster": "Eggs, Meat & Fish",
+    "model_used": "gemini-3.5-flash-lite",
+    "latency_ms": 29805,
+    "tokens_used": 2147,
+    "estimated_cost_inr": 0.1134,
+    "is_food_image": true,
+    "recognized_plate_title_en": "Chilli Chicken (Spicy Chicken Stir Fry)",
+    "recognized_plate_title_te": "చిల్లీ చికెన్",
+    "recognized_meal_type": "Snack",
+    "recognized_items": [
+      {
+        "name_en": "Chilli Chicken (Spicy Chicken Stir Fry)",
+        "name_te": "చిల్లీ చికెన్",
+        "cluster": "Eggs, Meat & Fish",
+        "estimated_grams": 250,
+        "matched_catalog_id": "CUSTOM-TE",
+        "matched_in_excel_catalog": false
+      }
+    ],
+    "totals": {
+      "calories": 525,
+      "protein_g": 46.2,
+      "carbs_g": 15.5,
+      "fat_g": 30.0,
+      "fiber_g": 2.8,
+      "iron_mg": 3.0,
+      "calcium_mg": 62.5,
+      "sodium_mg": 1200.0
+    },
+    "mddw_score": 2,
+    "http_status": 200,
+    "scan_timestamp": "2026-10-15T18:27:33.196248+00:00"
+  },
+  {
+    "test_id": "TEST-099",
+    "filename": "099_Mirchi_Bajji.jpg",
+    "expected_dish_name": "Mirchi Bajji (Andhra Stuffed Chili Fritters)",
+    "expected_dish_te": "మిర్చి బజ్జీ",
+    "expected_cluster": "Snacks & Sweets",
+    "model_used": "gemini-3.5-flash-lite",
+    "latency_ms": 25464,
+    "tokens_used": 2160,
+    "estimated_cost_inr": 0.1147,
+    "is_food_image": true,
+    "recognized_plate_title_en": "Mirchi Bajji / Aratikaya Bajji (Gram Flour Fritters)",
+    "recognized_plate_title_te": "మిర్చి బజ్జి",
+    "recognized_meal_type": "Snack",
+    "recognized_items": [
+      {
+        "name_en": "Mirchi Bajji / Aratikaya Bajji (Gram Flour Fritters)",
+        "name_te": "మిర్చి బజ్జీ / అరటికాయ బజ్జీ",
+        "cluster": "Snacks & Sweets",
+        "estimated_grams": 250,
+        "matched_catalog_id": "JM-127",
+        "matched_in_excel_catalog": true
+      }
+    ],
+    "totals": {
+      "calories": 737,
+      "protein_g": 16.5,
+      "carbs_g": 67.0,
+      "fat_g": 44.4,
+      "fiber_g": 9.0,
+      "iron_mg": 4.5,
+      "calcium_mg": 95.0,
+      "sodium_mg": 825.0
+    },
+    "mddw_score": 2,
+    "http_status": 200,
+    "scan_timestamp": "2026-10-16T17:19:07.626643+00:00"
+  },
+  {
+    "test_id": "TEST-100",
+    "filename": "100_Gulab_Jamun.jpg",
+    "expected_dish_name": "Gulab Jamun (Traditional Milk-Solid Sweet in Saffron Syrup)",
+    "expected_dish_te": "గులాబ్ జామూన్",
+    "expected_cluster": "Snacks & Sweets",
+    "model_used": "gemini-3.5-flash-lite",
+    "latency_ms": 5,
+    "tokens_used": 0,
+    "estimated_cost_inr": 0.0,
+    "is_food_image": true,
+    "recognized_plate_title_en": "Gulab Jamun",
+    "recognized_plate_title_te": "గులాబ్ జామున్",
+    "recognized_meal_type": "Snack",
+    "recognized_items": [
+      {
+        "name_en": "Gulab Jamun",
+        "name_te": "గులాబ్ జామున్",
+        "cluster": "Snacks & Sweets",
+        "estimated_grams": 250,
+        "matched_catalog_id": "CUSTOM-TE",
+        "matched_in_excel_catalog": false
+      }
+    ],
+    "totals": {
+      "calories": 795,
+      "protein_g": 13.8,
+      "carbs_g": 125.0,
+      "fat_g": 30.0,
+      "fiber_g": 1.2,
+      "iron_mg": 2.0,
+      "calcium_mg": 300.0,
+      "sodium_mg": 125.0
+    },
+    "mddw_score": 2,
+    "http_status": 200,
+    "scan_timestamp": "2026-10-16T17:20:03.763258+00:00"
+  }
+]

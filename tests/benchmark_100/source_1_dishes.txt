@@ -1,0 +1,51 @@
+=== Source 1 (Final 50 AP Dishes) ===
+01 | Thotakura Vepudu / Kura (Amaranth) | తోటకూర వేపుడు / కూర | Leafy Green Curries
+02 | Palakura Kura / Vepudu (Spinach) | పాలకూర కూర / వేపుడు | Leafy Green Curries
+03 | Gongura Kura / Pulusu (Sorrel Leaves) | గోంగూర కూర / పులుసు | Leafy Green Curries
+04 | Menthi Kura Vepudu / Kura (Fenugreek) | మెంతికూర వేపుడు / కూర | Leafy Green Curries
+05 | Munagaku Vepudu / Kura (Drumstick Leaves) | మునగాకు వేపుడు / కూర | Leafy Green Curries
+06 | Palakura Pappu (Spinach Dal) | పాలకూర పప్పు | Dals & Pappu
+07 | Thotakura Pappu (Amaranth Dal) | తోటకూర పప్పు | Dals & Pappu
+08 | Gongura Pappu (Sorrel Leaves Dal) | గోంగూర పప్పు | Dals & Pappu
+09 | Menthi Kura Pappu (Fenugreek Dal) | మెంతికూర పప్పు | Dals & Pappu
+10 | Chukkakura Pappu (Green Sorrel Dal) | చుక్కకూర పప్పు | Dals & Pappu
+11 | Dosakaya Pappu (Yellow Cucumber Dal) | దోసకాయ పప్పు | Dals & Pappu
+12 | Sorakaya Pappu (Bottle Gourd Dal) | సొరకాయ పప్పు | Dals & Pappu
+13 | Mamidikaya Pappu (Raw Mango Dal) | మామిడికాయ పప్పు | Dals & Pappu
+14 | Beerakaya Pappu (Ridge Gourd Dal) | బీరకాయ పప్పు | Dals & Pappu
+15 | Vankaya Kura / Gutti Vankaya (Brinjal) | వంకాయ కూర / గుత్తి వంకాయ | Vegetable Curries
+16 | Bendakaya Vepudu / Pulusu (Ladies Finger) | బెండకాయ వేపుడు / పులుసు | Vegetable Curries
+17 | Bangaladumpa / Aloo Vepudu (Potato Fry) | బంగాళాదుంప వేపుడు | Vegetable Curries
+18 | Dondakaya Vepudu (Ivy Gourd Fry) | దొండకాయ వేపుడు | Vegetable Curries
+19 | Beerakaya Kura (Ridge Gourd Curry) | బీరకాయ కూర | Vegetable Curries
+20 | Sorakaya / Anapakaya Kura (Bottle Gourd) | సొరకాయ కూర | Vegetable Curries
+21 | Kakarakaya Vepudu / Pulusu (Bitter Gourd) | కాకరకాయ వేపుడు / పులుసు | Vegetable Curries
+22 | Cabbage Vepudu (Cabbage Stir-Fry) | క్యాబేజీ వేపుడు | Vegetable Curries
+23 | Cauliflower Kura (Cauliflower Curry) | కాలిఫ్లవర్ కూర | Vegetable Curries
+24 | Beans Vepudu (French Beans Stir-Fry) | బీన్స్ వేపుడు | Vegetable Curries
+25 | Chikkudukaya Kura (Broad Beans Curry) | చిక్కుడుకాయ కూర | Vegetable Curries
+26 | Goruchikkudu Kura (Cluster Beans Curry) | గోరుచిక్కుడు కూర | Vegetable Curries
+27 | Dosakaya Kura / Mukkala Pulusu | దోసకాయ కూర / పులుసు | Vegetable Curries
+28 | Munakkaya Kura / Pulusu (Drumstick Curry) | మునక్కాయ కూర / పులుసు | Vegetable Curries
+29 | Aratikaya Vepudu / Kura (Raw Banana) | అరటికాయ వేపుడు / కూర | Vegetable Curries
+30 | Chamadumpa Pulusu / Vepudu (Colocasia) | చామదుంప పులుసు / వేపుడు | Vegetable Curries
+31 | Potlakaya Kura (Snake Gourd Curry) | పొట్లకాయ కూర | Vegetable Curries
+32 | Meal Maker / Soya Chunks Kura | మీల్ మేకర్ / సోయా కూర | Vegetable Curries
+33 | Senagala Kura (Brown Chickpea Curry) | శనగల కూర | Vegetable Curries
+34 | Majjiga Pulusu / Majjiga Charu | మజ్జిగ పులుసు | Vegetable Curries
+35 | Palli Pachadi (Peanut Chutney) | పల్లీ పచ్చడి | Chutneys & Podis
+36 | Kobbari Pachadi (Coconut Chutney) | కొబ్బరి పచ్చడి | Chutneys & Podis
+37 | Allam Pachadi (Ginger Chutney) | అల్లం పచ్చడి | Chutneys & Podis
+38 | Tomato Pachadi / Roti Pachadi | టమాటా పచ్చడి / రోటి పచ్చడి | Chutneys & Podis
+39 | Gongura Pachadi (Sorrel Leaves Chutney) | గోంగూర పచ్చడి | Chutneys & Podis
+40 | Dosakaya Pachadi (Yellow Cucumber) | దోసకాయ పచ్చడి | Chutneys & Podis
+41 | Kandi Podi (Spiced Dal Powder) | కంది పొడి | Chutneys & Podis
+42 | Karivepaku Podi (Curry Leaves Powder) | కరివేపాకు పొడి | Chutneys & Podis
+43 | Nuvvula Podi (Sesame Seed Powder) | నువ్వుల పొడి | Chutneys & Podis
+44 | Guddu Porutu / Egg Bhurji (Scrambled Egg) | గుడ్డు పొరుటు / ఎగ్ బుర్జీ | Eggs, Meat & Fish
+45 | Natukodi Pulusu (Country Chicken Curry) | నాటుకోడి పులుసు | Eggs, Meat & Fish
+46 | Gongura Chicken | గోంగూర చికెన్ | Eggs, Meat & Fish
+47 | Endu Chepalu Kura (Dry Fish Curry) | ఎండు చేపల కూర | Eggs, Meat & Fish
+48 | Ragi Laddu | రాగి లడ్డూ | Snacks & Sweets
+49 | Guggillu (Boiled Seasoned Chickpeas) | గుగ్గిళ్ళు | Snacks & Sweets
+50 | Coconut Water (Kobbari Bondam) | కొబ్బరి బొండం | Fruits & Nuts

@@ -1,0 +1,11 @@
+.venv/
+tests/
+MONITORING_REPORT.md
+__pycache__/
+*.pyc
+*.pyo
+.pytest_cache/
+.git/
+.gitignore
+*.log
+*.tmp

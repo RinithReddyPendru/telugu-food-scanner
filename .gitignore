@@ -1,0 +1,31 @@
+# Python virtual environment
+.venv/
+venv/
+ENV/
+env/
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyo
+
+# Caches
+.pytest_cache/
+.coverage
+htmlcov/
+.mypy_cache/
+
+# Vercel deployment cache
+.vercel/
+
+# Environment files with private secrets
+.env
+.env.local
+.env.*.local
+
+# Logs and temp files
+*.log
+*.tmp
+.DS_Store
+Thumbs.db
