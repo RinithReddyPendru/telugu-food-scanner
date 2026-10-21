@@ -7,6 +7,9 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <!-- Google Firebase Compat SDKs (App + Firestore) -->
+  <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore-compat.js"></script>
   <style>
     * {
       box-sizing: border-box;
@@ -268,6 +271,33 @@
       font-weight: 400;
       color: #8A94A6;
       margin-top: 2px;
+    }
+
+    .sync-badge {
+      font-size: 10.5px;
+      font-weight: 700;
+      padding: 2.5px 8px;
+      border-radius: 999px;
+      background: rgba(255, 179, 0, 0.14);
+      color: #FFB300;
+      border: 1px solid rgba(255, 179, 0, 0.32);
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      letter-spacing: 0.2px;
+      transition: all 0.2s ease;
+    }
+
+    .sync-badge.online {
+      background: rgba(34, 197, 94, 0.14);
+      color: #4ADE80;
+      border-color: rgba(34, 197, 94, 0.35);
+    }
+
+    .sync-badge.local {
+      background: rgba(148, 163, 184, 0.12);
+      color: #94A3B8;
+      border-color: rgba(148, 163, 184, 0.25);
     }
 
     .view-all-link {
@@ -884,7 +914,10 @@
       <!-- Previous Scans Section -->
       <div class="prev-scans-header">
         <div>
-          <h2 class="prev-scans-title">Previous Scans</h2>
+          <div style="display: flex; align-items: center; gap: 8px;">
+            <h2 class="prev-scans-title">Previous Scans</h2>
+            <span id="firebaseSyncBadge" class="sync-badge" title="Firebase Firestore Status">☁️ Connecting...</span>
+          </div>
           <p class="prev-scans-subtitle">Foods logged recently</p>
         </div>
         <button class="view-all-link" type="button" onclick="scrollToHistory()">
@@ -1126,6 +1159,134 @@
         clearTimeout(dismissTimer);
         toast.remove();
       };
+    }
+
+    // ==========================================
+    // FIREBASE FIRESTORE SYNC (mddw-app)
+    // Section: annapurna_food_scans
+    // ==========================================
+    const firebaseConfig = {
+      apiKey: "AIzaSyD_qFQ3sfYueqZ8SLHNnn0ZieugAAjvl10",
+      authDomain: "mddw-app.firebaseapp.com",
+      projectId: "mddw-app",
+      storageBucket: "mddw-app.firebasestorage.app",
+      messagingSenderId: "553099343991",
+      appId: "1:553099343991:web:6f5cbef598fc40c410ee72",
+      measurementId: "G-9CRVLHRFEF"
+    };
+
+    const FIRESTORE_COLLECTION = "annapurna_food_scans";
+    let firestoreDb = null;
+    let isFirestoreActive = false;
+
+    function initFirebase() {
+      try {
+        if (typeof firebase !== 'undefined') {
+          if (!firebase.apps.length) {
+            firebase.initializeApp(firebaseConfig);
+          }
+          firestoreDb = firebase.firestore();
+          setupFirestoreRealtimeSync();
+        } else {
+          updateSyncBadge(false, 'Local Storage');
+        }
+      } catch (err) {
+        console.warn('Firebase init error:', err);
+        updateSyncBadge(false, 'Local Storage');
+      }
+    }
+
+    function updateSyncBadge(online, text) {
+      const badge = document.getElementById('firebaseSyncBadge');
+      if (!badge) return;
+      if (online) {
+        badge.className = 'sync-badge online';
+        badge.textContent = '☁️ ' + (text || 'Firebase Synced');
+      } else {
+        badge.className = 'sync-badge local';
+        badge.textContent = '📱 ' + (text || 'Local Storage');
+      }
+    }
+
+    function setupFirestoreRealtimeSync() {
+      if (!firestoreDb) return;
+      try {
+        firestoreDb.collection(FIRESTORE_COLLECTION)
+          .orderBy('timestamp', 'desc')
+          .limit(25)
+          .onSnapshot((snapshot) => {
+            if (!snapshot.empty) {
+              const cloudScans = [];
+              snapshot.forEach((doc) => {
+                const data = doc.data();
+                cloudScans.push({
+                  ...data,
+                  firestoreId: doc.id
+                });
+              });
+              previousScans = cloudScans;
+              saveScansToStorage(); // mirror to localStorage
+              renderPreviousScans();
+              isFirestoreActive = true;
+              updateSyncBadge(true, 'Firebase Synced');
+            } else {
+              isFirestoreActive = true;
+              updateSyncBadge(true, 'Firebase Ready');
+            }
+          }, (err) => {
+            console.warn('Firestore sync fallback (rules/offline):', err.message);
+            isFirestoreActive = false;
+            updateSyncBadge(false, 'Local Storage');
+          });
+      } catch (err) {
+        console.warn('Firestore setup error:', err);
+        isFirestoreActive = false;
+        updateSyncBadge(false, 'Local Storage');
+      }
+    }
+
+    async function pushScanToFirestore(entry) {
+      if (!firestoreDb) return;
+      try {
+        const payload = {
+          id: entry.id,
+          name: entry.name,
+          category: entry.category || 'OTHER',
+          timeLabel: entry.timeLabel,
+          mealLabel: entry.mealLabel || 'Meal',
+          status: entry.status || 'Scanned',
+          imageUrl: entry.imageUrl, // Base64 compressed image thumbnail
+          calories: entry.calories || 0,
+          protein_g: entry.protein_g || 0,
+          carbs_g: entry.carbs_g || 0,
+          fiber_g: entry.fiber_g || 0,
+          iron_mg: entry.iron_mg || 0,
+          calcium_mg: entry.calcium_mg || 0,
+          items: entry.items || [],
+          timestamp: entry.timestamp || Date.now(),
+          created_at_iso: new Date().toISOString(),
+          source: 'Annapurna Telugu Food Scanner'
+        };
+        const docRef = await firestoreDb.collection(FIRESTORE_COLLECTION).add(payload);
+        entry.firestoreId = docRef.id;
+        isFirestoreActive = true;
+        updateSyncBadge(true, 'Firebase Synced');
+      } catch (err) {
+        console.warn('Firestore write warning:', err.message);
+      }
+    }
+
+    async function updateScanStatusInFirestore(activeId, status) {
+      if (!firestoreDb) return;
+      const entry = previousScans.find((x) => x.id === activeId);
+      if (!entry || !entry.firestoreId) return;
+      try {
+        await firestoreDb.collection(FIRESTORE_COLLECTION).doc(entry.firestoreId).update({
+          status: status
+        });
+      } catch (err) {
+        console.warn('Firestore status update warning:', err.message);
+      }
     }
 
     // LocalStorage Management
@@ -1622,6 +1783,7 @@
       previousScans.unshift(newEntry);
       saveScansToStorage();
       renderPreviousScans();
+      pushScanToFirestore(newEntry);
     }
 
     function handleAddLog() {
@@ -1631,6 +1793,7 @@
           entry.status = 'Logged';
           saveScansToStorage();
           renderPreviousScans();
+          updateScanStatusInFirestore(activeScanId, 'Logged');
           resetLogButton(true);
           showToast(`${entry.name} added to today's log!`, 'success');
           return;
@@ -1751,6 +1914,7 @@
     // Initialize: load persisted scans from localStorage on boot
     loadScansFromStorage();
     renderPreviousScans();
+    initFirebase();
   </script>
 </body>
 </html>
