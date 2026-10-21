@@ -839,6 +839,10 @@
         <h1 class="header-title">Scan Food</h1>
       </div>
       <div style="display: flex; align-items: center; gap: 8px;">
+        <a href="/admin" class="admin-dashboard-link" style="color: #60A5FA; text-decoration: none; font-size: 11px; font-weight: 700; background: rgba(96,165,250,0.15); border: 1px solid rgba(96,165,250,0.35); padding: 5px 10px; border-radius: 999px; display: inline-flex; align-items: center; gap: 4px; transition: all 0.2s;" title="Open Admin Scan Inspector">
+          <span>🛡️</span>
+          <span>Admin</span>
+        </a>
         <a href="https://mdwd-learn-play.vercel.app" class="training-portal-link" style="color: #FBBF24; text-decoration: none; font-size: 11px; font-weight: 700; background: rgba(251,191,36,0.15); border: 1px solid rgba(251,191,36,0.35); padding: 5px 10px; border-radius: 999px; display: inline-flex; align-items: center; gap: 4px; transition: all 0.2s;" title="Open MDD-W Training Portal">
           <span>🎓</span>
           <span>MDD-W Portal</span>
@@ -920,12 +924,20 @@
           </div>
           <p class="prev-scans-subtitle">Foods logged recently</p>
         </div>
-        <button class="view-all-link" type="button" onclick="scrollToHistory()">
-          <span>View All</span>
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
-            <polyline points="9 18 15 12 9 6"></polyline>
-          </svg>
-        </button>
+        <div style="display: flex; align-items: center; gap: 6px;">
+          <a href="/admin" class="view-all-link" style="text-decoration: none; color: #60A5FA; background: rgba(96,165,250,0.12); padding: 4px 8px; border-radius: 6px; font-size: 12px;" title="Open Admin Page to inspect all scans">
+            <span>Admin</span>
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+          </a>
+          <button class="view-all-link" type="button" onclick="scrollToHistory()">
+            <span>Recent</span>
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+          </button>
+        </div>
       </div>
 
       <div id="prevScansList" class="prev-scans-list"></div>

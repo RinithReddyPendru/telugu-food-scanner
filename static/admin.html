@@ -1,0 +1,1600 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin Dashboard — Annapurna Food Scans</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <!-- Google Firebase Compat SDKs (App + Firestore) -->
+  <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore-compat.js"></script>
+  <style>
+    :root {
+      --bg-dark: #0B1320;
+      --card-bg: #131D2E;
+      --card-hover: #172338;
+      --border-color: rgba(255, 255, 255, 0.08);
+      --border-hover: rgba(255, 255, 255, 0.18);
+      --text-primary: #F8FAFC;
+      --text-secondary: #94A3B8;
+      --text-muted: #64748B;
+      --accent-gold: #F59E0B;
+      --accent-emerald: #10B981;
+      --accent-sky: #38BDF8;
+      --accent-rose: #F43F5E;
+      --accent-indigo: #818CF8;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg-dark);
+      color: var(--text-primary);
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Container */
+    .container {
+      width: 100%;
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 20px 24px 60px;
+    }
+
+    /* Top Navigation Bar */
+    .top-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 16px;
+      padding: 16px 0;
+      border-bottom: 1px solid var(--border-color);
+      margin-bottom: 24px;
+    }
+
+    .brand-section {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .back-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      color: var(--text-secondary);
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 600;
+      padding: 6px 12px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      transition: all 0.15s ease;
+    }
+    .back-btn:hover {
+      color: #FFF;
+      background: rgba(255, 255, 255, 0.1);
+      border-color: var(--border-hover);
+    }
+
+    .brand-title {
+      font-size: 20px;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      color: #FFF;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .admin-pill {
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      background: linear-gradient(135deg, rgba(245, 158, 11, 0.2), rgba(239, 68, 68, 0.2));
+      color: var(--accent-gold);
+      border: 1px solid rgba(245, 158, 11, 0.4);
+      padding: 3px 8px;
+      border-radius: 6px;
+    }
+
+    .top-actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .status-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 12px;
+      font-weight: 600;
+      padding: 6px 12px;
+      border-radius: 999px;
+      background: rgba(16, 185, 129, 0.12);
+      color: #34D399;
+      border: 1px solid rgba(16, 185, 129, 0.3);
+    }
+    .status-badge .dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #10B981;
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.4; transform: scale(0.85); }
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 13px;
+      font-weight: 600;
+      padding: 7px 14px;
+      border-radius: 8px;
+      border: 1px solid var(--border-color);
+      background: rgba(255, 255, 255, 0.05);
+      color: var(--text-primary);
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+    .btn:hover {
+      background: rgba(255, 255, 255, 0.1);
+      border-color: var(--border-hover);
+    }
+    .btn-gold {
+      background: rgba(245, 158, 11, 0.15);
+      border-color: rgba(245, 158, 11, 0.4);
+      color: var(--accent-gold);
+    }
+    .btn-gold:hover {
+      background: rgba(245, 158, 11, 0.25);
+    }
+
+    /* Stats Grid */
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 14px;
+      margin-bottom: 24px;
+    }
+
+    .stat-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: 14px;
+      padding: 16px 18px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      position: relative;
+      overflow: hidden;
+    }
+    .stat-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 4px;
+      height: 100%;
+      background: var(--stat-accent, var(--accent-gold));
+    }
+    .stat-label {
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--text-secondary);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+    .stat-value {
+      font-size: 26px;
+      font-weight: 800;
+      color: #FFF;
+      letter-spacing: -0.02em;
+    }
+    .stat-sub {
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+
+    /* Controls Bar: Search, Filters, View Modes */
+    .controls-bar {
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: 14px;
+      padding: 14px 18px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-bottom: 22px;
+    }
+
+    .search-box {
+      flex: 1;
+      min-width: 240px;
+      position: relative;
+      display: flex;
+      align-items: center;
+    }
+    .search-icon {
+      position: absolute;
+      left: 12px;
+      color: var(--text-muted);
+      pointer-events: none;
+    }
+    .search-input {
+      width: 100%;
+      background: rgba(11, 19, 32, 0.7);
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      padding: 9px 12px 9px 36px;
+      color: #FFF;
+      font-size: 13px;
+      font-family: inherit;
+      outline: none;
+      transition: border-color 0.15s ease;
+    }
+    .search-input:focus {
+      border-color: var(--accent-gold);
+    }
+    .search-input::placeholder {
+      color: var(--text-muted);
+    }
+
+    .filters-group {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .select-input {
+      background: rgba(11, 19, 32, 0.7);
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      padding: 8px 12px;
+      color: #FFF;
+      font-size: 13px;
+      font-family: inherit;
+      outline: none;
+      cursor: pointer;
+    }
+    .select-input:focus {
+      border-color: var(--accent-gold);
+    }
+
+    .view-toggle {
+      display: flex;
+      background: rgba(11, 19, 32, 0.7);
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      padding: 3px;
+      gap: 2px;
+    }
+    .view-btn {
+      background: none;
+      border: none;
+      color: var(--text-secondary);
+      padding: 6px 10px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 12px;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      transition: all 0.15s ease;
+    }
+    .view-btn.active {
+      background: rgba(245, 158, 11, 0.2);
+      color: var(--accent-gold);
+      font-weight: 600;
+    }
+
+    /* Grid of Scans */
+    .scans-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+      gap: 18px;
+    }
+
+    /* Scan Card */
+    .scan-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: 16px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.18s ease, border-color 0.18s ease, box-shadow 0.18s ease;
+      cursor: pointer;
+      position: relative;
+    }
+    .scan-card:hover {
+      transform: translateY(-3px);
+      border-color: var(--border-hover);
+      box-shadow: 0 10px 24px -6px rgba(0, 0, 0, 0.5);
+    }
+
+    /* Image Container */
+    .card-img-wrap {
+      position: relative;
+      width: 100%;
+      height: 190px;
+      background: #000;
+      overflow: hidden;
+    }
+    .card-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.25s ease;
+    }
+    .scan-card:hover .card-img {
+      transform: scale(1.04);
+    }
+    .card-img-placeholder {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background: #0F172A;
+      color: var(--text-muted);
+      font-size: 12px;
+      gap: 6px;
+    }
+
+    /* Status Pill on Image */
+    .status-pill {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      font-size: 11px;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: 999px;
+      backdrop-filter: blur(8px);
+      box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+    }
+    .status-pill.logged {
+      background: rgba(16, 185, 129, 0.9);
+      color: #FFF;
+    }
+    .status-pill.scanned {
+      background: rgba(245, 158, 11, 0.9);
+      color: #FFF;
+    }
+
+    .time-pill {
+      position: absolute;
+      bottom: 10px;
+      left: 10px;
+      font-size: 11px;
+      font-weight: 600;
+      padding: 3px 8px;
+      border-radius: 6px;
+      background: rgba(11, 19, 32, 0.85);
+      color: #CBD5E1;
+      backdrop-filter: blur(4px);
+    }
+
+    /* Card Content */
+    .card-body {
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      flex: 1;
+    }
+
+    .dish-info {
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+    }
+    .dish-title {
+      font-size: 16px;
+      font-weight: 700;
+      color: #FFF;
+      line-height: 1.3;
+    }
+    .dish-meta {
+      font-size: 12px;
+      color: var(--text-secondary);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .meta-tag {
+      background: rgba(255, 255, 255, 0.06);
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-size: 11px;
+      color: #CBD5E1;
+    }
+
+    /* 2x2 Nutrition Matrix */
+    .nutrition-mini-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+      background: rgba(11, 19, 32, 0.5);
+      border: 1px solid var(--border-color);
+      border-radius: 10px;
+      padding: 10px 12px;
+    }
+    .nutri-col {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+    .nutri-label {
+      font-size: 10px;
+      font-weight: 700;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+    }
+    .nutri-val {
+      font-size: 14px;
+      font-weight: 700;
+      color: #FFF;
+    }
+    .nutri-val.cal { color: #F59E0B; }
+    .nutri-val.prot { color: #38BDF8; }
+    .nutri-val.iron { color: #F43F5E; }
+    .nutri-val.calc { color: #A78BFA; }
+
+    /* Card Footer Actions */
+    .card-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: 10px;
+      border-top: 1px solid var(--border-color);
+      margin-top: auto;
+    }
+    .items-count {
+      font-size: 11px;
+      color: var(--text-muted);
+    }
+    .inspect-btn {
+      background: rgba(245, 158, 11, 0.12);
+      border: 1px solid rgba(245, 158, 11, 0.3);
+      color: var(--accent-gold);
+      padding: 5px 10px;
+      border-radius: 6px;
+      font-size: 12px;
+      font-weight: 600;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      transition: all 0.15s ease;
+    }
+    .inspect-btn:hover {
+      background: rgba(245, 158, 11, 0.25);
+    }
+
+    /* Table View */
+    .scans-table-wrap {
+      display: none;
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: 14px;
+      overflow-x: auto;
+    }
+    .scans-table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+      font-size: 13px;
+    }
+    .scans-table th {
+      background: rgba(11, 19, 32, 0.8);
+      color: var(--text-secondary);
+      font-weight: 700;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      padding: 12px 16px;
+      border-bottom: 1px solid var(--border-color);
+      white-space: nowrap;
+    }
+    .scans-table td {
+      padding: 12px 16px;
+      border-bottom: 1px solid var(--border-color);
+      color: var(--text-primary);
+      vertical-align: middle;
+      white-space: nowrap;
+    }
+    .scans-table tr:hover td {
+      background: rgba(255, 255, 255, 0.02);
+      cursor: pointer;
+    }
+    .table-thumb {
+      width: 44px;
+      height: 44px;
+      border-radius: 8px;
+      object-fit: cover;
+      border: 1px solid var(--border-color);
+      background: #000;
+    }
+
+    /* Empty State */
+    .empty-state {
+      display: none;
+      text-align: center;
+      padding: 60px 20px;
+      background: var(--card-bg);
+      border: 1px dashed var(--border-color);
+      border-radius: 16px;
+      margin-top: 10px;
+    }
+    .empty-icon {
+      font-size: 42px;
+      margin-bottom: 12px;
+    }
+    .empty-title {
+      font-size: 18px;
+      font-weight: 700;
+      color: #FFF;
+      margin-bottom: 6px;
+    }
+    .empty-desc {
+      font-size: 13px;
+      color: var(--text-muted);
+      max-width: 420px;
+      margin: 0 auto 18px;
+    }
+
+    /* ==========================================
+       INSPECTION MODAL
+       ========================================== */
+    .modal-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(7, 12, 22, 0.85);
+      backdrop-filter: blur(8px);
+      z-index: 1000;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      opacity: 0;
+      transition: opacity 0.2s ease;
+    }
+    .modal-overlay.open {
+      display: flex;
+      opacity: 1;
+    }
+
+    .modal-box {
+      background: #111A2C;
+      border: 1px solid var(--border-hover);
+      border-radius: 20px;
+      width: 100%;
+      max-width: 860px;
+      max-height: 92vh;
+      overflow-y: auto;
+      box-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.8);
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+
+    .modal-header {
+      padding: 18px 24px;
+      border-bottom: 1px solid var(--border-color);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      background: #111A2C;
+      z-index: 20;
+    }
+    .modal-title {
+      font-size: 18px;
+      font-weight: 800;
+      color: #FFF;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .close-btn {
+      background: rgba(255, 255, 255, 0.08);
+      border: none;
+      color: #FFF;
+      width: 32px;
+      height: 32px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      font-size: 16px;
+      transition: background 0.15s ease;
+    }
+    .close-btn:hover {
+      background: rgba(255, 255, 255, 0.2);
+    }
+
+    .modal-body {
+      padding: 24px;
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 24px;
+    }
+    @media (max-width: 768px) {
+      .modal-body {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .modal-img-col {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .modal-img-wrap {
+      width: 100%;
+      height: 320px;
+      border-radius: 14px;
+      overflow: hidden;
+      background: #000;
+      border: 1px solid var(--border-color);
+      position: relative;
+    }
+    .modal-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .modal-img-actions {
+      display: flex;
+      gap: 8px;
+    }
+
+    .modal-details-col {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+
+    .doc-meta-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 8px;
+      font-size: 12px;
+      color: var(--text-secondary);
+      background: rgba(11, 19, 32, 0.6);
+      padding: 8px 12px;
+      border-radius: 8px;
+      border: 1px solid var(--border-color);
+    }
+    .doc-id-pill {
+      font-family: 'JetBrains Mono', monospace;
+      color: var(--accent-gold);
+      background: rgba(245, 158, 11, 0.12);
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-size: 11px;
+    }
+
+    /* Full Nutrient Grid */
+    .nutri-full-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+    }
+    .nutri-box {
+      background: rgba(11, 19, 32, 0.6);
+      border: 1px solid var(--border-color);
+      border-radius: 10px;
+      padding: 10px;
+      text-align: center;
+    }
+    .nutri-box-lbl {
+      font-size: 10px;
+      font-weight: 700;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      margin-bottom: 2px;
+    }
+    .nutri-box-val {
+      font-size: 16px;
+      font-weight: 800;
+      color: #FFF;
+    }
+
+    /* Detected Items in Modal */
+    .detected-section-title {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--text-secondary);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      margin-bottom: 8px;
+    }
+    .detected-items-list {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .detected-item-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: rgba(11, 19, 32, 0.6);
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      padding: 8px 12px;
+      font-size: 13px;
+    }
+
+    /* Raw JSON Section */
+    .raw-json-details {
+      margin-top: 6px;
+      border: 1px solid var(--border-color);
+      border-radius: 10px;
+      overflow: hidden;
+      background: #080D17;
+    }
+    .raw-json-summary {
+      padding: 10px 14px;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--text-secondary);
+      cursor: pointer;
+      user-select: none;
+      background: rgba(255, 255, 255, 0.02);
+    }
+    .raw-json-content {
+      padding: 14px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      color: #94A3B8;
+      max-height: 220px;
+      overflow-y: auto;
+      white-space: pre-wrap;
+      word-break: break-all;
+    }
+
+    .modal-footer {
+      padding: 16px 24px;
+      border-top: 1px solid var(--border-color);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: #111A2C;
+    }
+    .btn-danger {
+      background: rgba(244, 63, 94, 0.15);
+      border: 1px solid rgba(244, 63, 94, 0.35);
+      color: var(--accent-rose);
+    }
+    .btn-danger:hover {
+      background: rgba(244, 63, 94, 0.25);
+    }
+
+    /* Toast Notification */
+    .toast {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      background: #1E293B;
+      color: #FFF;
+      padding: 12px 18px;
+      border-radius: 10px;
+      border: 1px solid var(--border-hover);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+      font-size: 13px;
+      font-weight: 600;
+      z-index: 2000;
+      opacity: 0;
+      transform: translateY(10px);
+      transition: all 0.2s ease;
+      pointer-events: none;
+    }
+    .toast.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <!-- Top Navigation Bar -->
+    <header class="top-bar">
+      <div class="brand-section">
+        <a href="/" class="back-btn" title="Back to Scanner UI">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="15 18 9 12 15 6"></polyline>
+          </svg>
+          <span>Scanner</span>
+        </a>
+        <div class="brand-title">
+          <span>🍛 Annapurna</span>
+          <span class="admin-pill">Admin Dashboard</span>
+        </div>
+      </div>
+
+      <div class="top-actions">
+        <div id="liveSyncBadge" class="status-badge">
+          <span class="dot"></span>
+          <span>Live Firestore Sync</span>
+        </div>
+        <button class="btn" onclick="exportToCSV()" title="Download CSV spreadsheet of all scans">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+            <polyline points="7 10 12 15 17 10"></polyline>
+            <line x1="12" y1="15" x2="12" y2="3"></line>
+          </svg>
+          <span>Export CSV</span>
+        </button>
+        <button class="btn" onclick="exportToJSON()" title="Download full JSON dataset">
+          <span>JSON</span>
+        </button>
+      </div>
+    </header>
+
+    <!-- Key Metrics / Stats Grid -->
+    <section class="stats-grid">
+      <div class="stat-card" style="--stat-accent: var(--accent-gold);">
+        <span class="stat-label">Total Scans Recorded</span>
+        <div id="statTotalScans" class="stat-value">--</div>
+        <span class="stat-sub">Across all users & devices</span>
+      </div>
+      <div class="stat-card" style="--stat-accent: var(--accent-emerald);">
+        <span class="stat-label">Logged Scans</span>
+        <div id="statLoggedScans" class="stat-value">--</div>
+        <span class="stat-sub" id="statLoggedPct">Confirmed by user</span>
+      </div>
+      <div class="stat-card" style="--stat-accent: var(--accent-sky);">
+        <span class="stat-label">Avg Calories / Meal</span>
+        <div id="statAvgCalories" class="stat-value">--</div>
+        <span class="stat-sub">Based on recognized portions</span>
+      </div>
+      <div class="stat-card" style="--stat-accent: var(--accent-rose);">
+        <span class="stat-label">Unique Dishes Identified</span>
+        <div id="statUniqueDishes" class="stat-value">--</div>
+        <span class="stat-sub">Telugu & South Indian catalog</span>
+      </div>
+    </section>
+
+    <!-- Controls: Search, Filter, Sort, View Modes -->
+    <section class="controls-bar">
+      <div class="search-box">
+        <svg class="search-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="11" cy="11" r="8"></circle>
+          <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+        </svg>
+        <input 
+          id="searchInput" 
+          type="text" 
+          class="search-input" 
+          placeholder="Search by dish name (English or తెలుగు), category, or ID..." 
+          oninput="applyFilters()"
+        />
+      </div>
+
+      <div class="filters-group">
+        <select id="statusFilter" class="select-input" onchange="applyFilters()">
+          <option value="ALL">All Statuses</option>
+          <option value="Logged">Logged Only</option>
+          <option value="Scanned">Scanned Only</option>
+        </select>
+
+        <select id="sortBy" class="select-input" onchange="applyFilters()">
+          <option value="newest">Sort: Newest First</option>
+          <option value="oldest">Sort: Oldest First</option>
+          <option value="highest_cal">Highest Calories</option>
+          <option value="highest_protein">Highest Protein</option>
+        </select>
+
+        <div class="view-toggle">
+          <button id="viewGridBtn" class="view-btn active" onclick="switchView('grid')">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="3" y="3" width="7" height="7"></rect>
+              <rect x="14" y="3" width="7" height="7"></rect>
+              <rect x="14" y="14" width="7" height="7"></rect>
+              <rect x="3" y="14" width="7" height="7"></rect>
+            </svg>
+            <span>Grid</span>
+          </button>
+          <button id="viewTableBtn" class="view-btn" onclick="switchView('table')">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="8" y1="6" x2="21" y2="6"></line>
+              <line x1="8" y1="12" x2="21" y2="12"></line>
+              <line x1="8" y1="18" x2="21" y2="18"></line>
+              <line x1="3" y1="6" x2="3.01" y2="6"></line>
+              <line x1="3" y1="12" x2="3.01" y2="12"></line>
+              <line x1="3" y1="18" x2="3.01" y2="18"></line>
+            </svg>
+            <span>Table</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Empty State -->
+    <div id="emptyState" class="empty-state">
+      <div class="empty-icon">🍽️</div>
+      <h3 class="empty-title">No Scans Found</h3>
+      <p class="empty-desc">No scans match your current search or filter query. When users scan dishes on the scanner, they will appear here in real time.</p>
+    </div>
+
+    <!-- Scans Grid View -->
+    <main id="scansGrid" class="scans-grid"></main>
+
+    <!-- Scans Table View -->
+    <div id="scansTableWrap" class="scans-table-wrap">
+      <table class="scans-table">
+        <thead>
+          <tr>
+            <th>Photo</th>
+            <th>Dish Name</th>
+            <th>Status</th>
+            <th>Meal</th>
+            <th>Calories</th>
+            <th>Protein</th>
+            <th>Iron</th>
+            <th>Calcium</th>
+            <th>Date & Time</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody id="scansTableBody"></tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Detailed Scan Inspection Modal -->
+  <div id="inspectModal" class="modal-overlay" onclick="handleModalOverlayClick(event)">
+    <div class="modal-box">
+      <div class="modal-header">
+        <div class="modal-title">
+          <span>🔍 Scan Dossier & Nutrition Values</span>
+        </div>
+        <button class="close-btn" onclick="closeModal()" aria-label="Close">✕</button>
+      </div>
+
+      <div class="modal-body">
+        <!-- Column 1: Image & Download -->
+        <div class="modal-img-col">
+          <div class="modal-img-wrap">
+            <img id="modalImg" class="modal-img" src="" alt="Captured Food" />
+          </div>
+          <div class="modal-img-actions">
+            <button class="btn btn-gold" style="flex:1;" onclick="downloadModalImage()">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                <polyline points="7 10 12 15 17 10"></polyline>
+                <line x1="12" y1="15" x2="12" y2="3"></line>
+              </svg>
+              <span>Download Image</span>
+            </button>
+            <button class="btn" onclick="openImageInNewTab()">
+              <span>Full Size ↗</span>
+            </button>
+          </div>
+
+          <div class="doc-meta-bar">
+            <span>Doc ID: <span id="modalDocId" class="doc-id-pill">--</span></span>
+            <span id="modalSourceBadge" style="color:var(--text-muted);">Annapurna Scanner</span>
+          </div>
+        </div>
+
+        <!-- Column 2: Detailed Values -->
+        <div class="modal-details-col">
+          <div>
+            <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 6px;">
+              <span id="modalStatusBadge" class="status-pill scanned" style="position:static;">Scanned</span>
+              <span id="modalMealLabel" class="meta-tag">Meal</span>
+              <span id="modalTimeLabel" style="font-size: 12px; color: var(--text-secondary);">Today</span>
+            </div>
+            <h2 id="modalDishTitle" style="font-size: 22px; font-weight: 800; color: #FFF; margin-bottom: 4px;">--</h2>
+            <p id="modalCategory" style="font-size: 13px; color: var(--text-secondary);">Category</p>
+          </div>
+
+          <!-- Nutritional Values Grid -->
+          <div>
+            <div class="detected-section-title">Complete Nutritional Output</div>
+            <div class="nutri-full-grid">
+              <div class="nutri-box">
+                <div class="nutri-box-lbl">Calories</div>
+                <div id="modalCal" class="nutri-box-val" style="color:#F59E0B;">--</div>
+              </div>
+              <div class="nutri-box">
+                <div class="nutri-box-lbl">Protein</div>
+                <div id="modalProtein" class="nutri-box-val" style="color:#38BDF8;">--</div>
+              </div>
+              <div class="nutri-box">
+                <div class="nutri-box-lbl">Carbs</div>
+                <div id="modalCarbs" class="nutri-box-val" style="color:#34D399;">--</div>
+              </div>
+              <div class="nutri-box">
+                <div class="nutri-box-lbl">Fiber</div>
+                <div id="modalFiber" class="nutri-box-val" style="color:#A78BFA;">--</div>
+              </div>
+              <div class="nutri-box">
+                <div class="nutri-box-lbl">Iron</div>
+                <div id="modalIron" class="nutri-box-val" style="color:#F43F5E;">--</div>
+              </div>
+              <div class="nutri-box">
+                <div class="nutri-box-lbl">Calcium</div>
+                <div id="modalCalcium" class="nutri-box-val" style="color:#FB923C;">--</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Individual Items Breakdown -->
+          <div>
+            <div class="detected-section-title">Detected Items on Plate</div>
+            <div id="modalItemsList" class="detected-items-list">
+              <!-- Item rows injected here -->
+            </div>
+          </div>
+
+          <!-- Collapsible Raw JSON Data -->
+          <details class="raw-json-details">
+            <summary class="raw-json-summary">Inspect Raw Document JSON</summary>
+            <div id="modalRawJson" class="raw-json-content"></div>
+          </details>
+        </div>
+      </div>
+
+      <div class="modal-footer">
+        <button id="modalDeleteBtn" class="btn btn-danger" onclick="deleteActiveScan()">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="3 6 5 6 21 6"></polyline>
+            <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
+          </svg>
+          <span>Delete Scan from Firestore</span>
+        </button>
+        <button class="btn" onclick="closeModal()">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast -->
+  <div id="toast" class="toast"></div>
+
+  <script>
+    // ==========================================
+    // FIREBASE FIRESTORE SYNC (mddw-app)
+    // Section: food_scanner
+    // ==========================================
+    const firebaseConfig = {
+      apiKey: "AIzaSyD_qFQ3sfYueqZ8SLHNnn0ZieugAAjvl10",
+      authDomain: "mddw-app.firebaseapp.com",
+      projectId: "mddw-app",
+      storageBucket: "mddw-app.firebasestorage.app",
+      messagingSenderId: "553099343991",
+      appId: "1:553099343991:web:6f5cbef598fc40c410ee72",
+      measurementId: "G-9CRVLHRFEF"
+    };
+
+    const FIRESTORE_COLLECTION = "food_scanner";
+    let firestoreDb = null;
+    let allScans = [];
+    let filteredScans = [];
+    let activeModalScan = null;
+    let currentView = 'grid';
+
+    function initFirebase() {
+      try {
+        if (!firebase.apps || !firebase.apps.length) {
+          firebase.initializeApp(firebaseConfig);
+        }
+        firestoreDb = firebase.firestore();
+        console.log("Admin Firestore connected to collection:", FIRESTORE_COLLECTION);
+        setupRealtimeListener();
+      } catch (err) {
+        console.error("Firebase init failed:", err);
+        updateStatusBadge(false, "Sync Error");
+        showToast("Error connecting to Firebase Firestore", "error");
+      }
+    }
+
+    function setupRealtimeListener() {
+      if (!firestoreDb) return;
+      updateStatusBadge(true, "Connecting...");
+
+      firestoreDb.collection(FIRESTORE_COLLECTION)
+        .orderBy("timestamp", "desc")
+        .limit(200)
+        .onSnapshot((snapshot) => {
+          updateStatusBadge(true, "Live Firestore Sync");
+          const docs = [];
+          snapshot.forEach((doc) => {
+            const data = doc.data();
+            data.firestoreId = doc.id;
+            docs.push(data);
+          });
+          allScans = docs;
+          calculateStats();
+          applyFilters();
+        }, (err) => {
+          console.error("Firestore listener error:", err);
+          updateStatusBadge(false, "Permission / Network Denied");
+          showToast("Firestore access error: " + err.message, "error");
+        });
+    }
+
+    function updateStatusBadge(isOnline, text) {
+      const badge = document.getElementById("liveSyncBadge");
+      if (!badge) return;
+      if (isOnline) {
+        badge.style.background = "rgba(16, 185, 129, 0.12)";
+        badge.style.color = "#34D399";
+        badge.style.borderColor = "rgba(16, 185, 129, 0.3)";
+        badge.innerHTML = `<span class="dot"></span><span>${text}</span>`;
+      } else {
+        badge.style.background = "rgba(244, 63, 94, 0.12)";
+        badge.style.color = "#F43F5E";
+        badge.style.borderColor = "rgba(244, 63, 94, 0.3)";
+        badge.innerHTML = `<span style="font-size:12px;">⚠️</span><span>${text}</span>`;
+      }
+    }
+
+    // ==========================================
+    // STATS & FILTERING
+    // ==========================================
+    function calculateStats() {
+      const total = allScans.length;
+      document.getElementById("statTotalScans").textContent = total;
+
+      const loggedCount = allScans.filter(s => (s.status || '').toLowerCase() === 'logged').length;
+      document.getElementById("statLoggedScans").textContent = loggedCount;
+      const pct = total > 0 ? Math.round((loggedCount / total) * 100) : 0;
+      document.getElementById("statLoggedPct").textContent = `${pct}% logged to diary`;
+
+      const totalCal = allScans.reduce((sum, s) => sum + (Number(s.calories) || 0), 0);
+      const avgCal = total > 0 ? Math.round(totalCal / total) : 0;
+      document.getElementById("statAvgCalories").textContent = avgCal ? `${avgCal} kcal` : '--';
+
+      const uniqueDishes = new Set(allScans.map(s => (s.name || '').trim().toLowerCase()).filter(Boolean));
+      document.getElementById("statUniqueDishes").textContent = uniqueDishes.size;
+    }
+
+    function applyFilters() {
+      const query = (document.getElementById("searchInput").value || '').trim().toLowerCase();
+      const status = document.getElementById("statusFilter").value;
+      const sort = document.getElementById("sortBy").value;
+
+      filteredScans = allScans.filter((scan) => {
+        // Status filter
+        if (status !== 'ALL') {
+          if ((scan.status || '').toLowerCase() !== status.toLowerCase()) return false;
+        }
+
+        // Search query
+        if (query) {
+          const name = (scan.name || '').toLowerCase();
+          const category = (scan.category || '').toLowerCase();
+          const docId = (scan.firestoreId || '').toLowerCase();
+          const meal = (scan.mealLabel || '').toLowerCase();
+          const matches = name.includes(query) || category.includes(query) || docId.includes(query) || meal.includes(query);
+          if (!matches) return false;
+        }
+
+        return true;
+      });
+
+      // Sort
+      if (sort === 'newest') {
+        filteredScans.sort((a, b) => (b.timestamp || 0) - (a.timestamp || 0));
+      } else if (sort === 'oldest') {
+        filteredScans.sort((a, b) => (a.timestamp || 0) - (b.timestamp || 0));
+      } else if (sort === 'highest_cal') {
+        filteredScans.sort((a, b) => (Number(b.calories) || 0) - (Number(a.calories) || 0));
+      } else if (sort === 'highest_protein') {
+        filteredScans.sort((a, b) => (Number(b.protein_g) || 0) - (Number(a.protein_g) || 0));
+      }
+
+      render();
+    }
+
+    function render() {
+      const emptyState = document.getElementById("emptyState");
+      const scansGrid = document.getElementById("scansGrid");
+      const scansTableWrap = document.getElementById("scansTableWrap");
+      const tbody = document.getElementById("scansTableBody");
+
+      if (filteredScans.length === 0) {
+        emptyState.style.display = "block";
+        scansGrid.style.display = "none";
+        scansTableWrap.style.display = "none";
+        return;
+      }
+
+      emptyState.style.display = "none";
+
+      if (currentView === 'grid') {
+        scansGrid.style.display = "grid";
+        scansTableWrap.style.display = "none";
+        renderGrid();
+      } else {
+        scansGrid.style.display = "none";
+        scansTableWrap.style.display = "block";
+        renderTable();
+      }
+    }
+
+    function renderGrid() {
+      const scansGrid = document.getElementById("scansGrid");
+      scansGrid.innerHTML = filteredScans.map((scan) => {
+        const isLogged = (scan.status || '').toLowerCase() === 'logged';
+        const statusClass = isLogged ? 'logged' : 'scanned';
+        const statusText = isLogged ? '✓ Logged' : 'Scanned';
+        const timeDisplay = formatScanTime(scan);
+        const cal = scan.calories ? `${Math.round(scan.calories)} kcal` : '0 kcal';
+        const prot = scan.protein_g ? `${Number(scan.protein_g).toFixed(1)}g` : '0g';
+        const iron = scan.iron_mg ? `${Number(scan.iron_mg).toFixed(1)}mg` : '0mg';
+        const calc = scan.calcium_mg ? `${Math.round(scan.calcium_mg)}mg` : '0mg';
+        const itemsCount = (scan.items && scan.items.length) ? `${scan.items.length} item${scan.items.length > 1 ? 's' : ''}` : 'Single dish';
+
+        const imageHtml = scan.imageUrl 
+          ? `<img class="card-img" src="${scan.imageUrl}" alt="${escapeHtml(scan.name || 'Food')}" loading="lazy" />`
+          : `<div class="card-img-placeholder"><span>🍲</span><span>No image recorded</span></div>`;
+
+        return `
+          <div class="scan-card" onclick="openModal('${scan.firestoreId}')">
+            <div class="card-img-wrap">
+              ${imageHtml}
+              <span class="status-pill ${statusClass}">${statusText}</span>
+              <span class="time-pill">${timeDisplay}</span>
+            </div>
+            <div class="card-body">
+              <div class="dish-info">
+                <h3 class="dish-title">${escapeHtml(scan.name || 'Unnamed Dish')}</h3>
+                <div class="dish-meta">
+                  <span class="meta-tag">${escapeHtml(scan.mealLabel || 'Meal')}</span>
+                  <span>${escapeHtml(scan.category || 'Food')}</span>
+                </div>
+              </div>
+
+              <div class="nutrition-mini-grid">
+                <div class="nutri-col">
+                  <span class="nutri-label">Calories</span>
+                  <span class="nutri-val cal">${cal}</span>
+                </div>
+                <div class="nutri-col">
+                  <span class="nutri-label">Protein</span>
+                  <span class="nutri-val prot">${prot}</span>
+                </div>
+                <div class="nutri-col">
+                  <span class="nutri-label">Iron</span>
+                  <span class="nutri-val iron">${iron}</span>
+                </div>
+                <div class="nutri-col">
+                  <span class="nutri-label">Calcium</span>
+                  <span class="nutri-val calc">${calc}</span>
+                </div>
+              </div>
+
+              <div class="card-footer">
+                <span class="items-count">${itemsCount}</span>
+                <button class="inspect-btn" onclick="event.stopPropagation(); openModal('${scan.firestoreId}')">
+                  <span>Inspect</span>
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <polyline points="9 18 15 12 9 6"></polyline>
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+        `;
+      }).join('');
+    }
+
+    function renderTable() {
+      const tbody = document.getElementById("scansTableBody");
+      tbody.innerHTML = filteredScans.map((scan) => {
+        const isLogged = (scan.status || '').toLowerCase() === 'logged';
+        const statusBadge = isLogged 
+          ? `<span class="status-pill logged" style="position:static;">Logged</span>` 
+          : `<span class="status-pill scanned" style="position:static;">Scanned</span>`;
+
+        const thumb = scan.imageUrl 
+          ? `<img class="table-thumb" src="${scan.imageUrl}" alt="" />`
+          : `<div class="table-thumb" style="display:flex;align-items:center;justify-content:center;">🍲</div>`;
+
+        return `
+          <tr onclick="openModal('${scan.firestoreId}')">
+            <td>${thumb}</td>
+            <td>
+              <strong style="color:#FFF;">${escapeHtml(scan.name || 'Unnamed Dish')}</strong>
+              <div style="font-size:11px;color:var(--text-muted);">${escapeHtml(scan.category || '')}</div>
+            </td>
+            <td>${statusBadge}</td>
+            <td><span class="meta-tag">${escapeHtml(scan.mealLabel || 'Meal')}</span></td>
+            <td style="color:#F59E0B;font-weight:700;">${Math.round(scan.calories || 0)} kcal</td>
+            <td style="color:#38BDF8;font-weight:700;">${Number(scan.protein_g || 0).toFixed(1)} g</td>
+            <td style="color:#F43F5E;">${Number(scan.iron_mg || 0).toFixed(1)} mg</td>
+            <td style="color:#FB923C;">${Math.round(scan.calcium_mg || 0)} mg</td>
+            <td style="font-size:12px;color:var(--text-secondary);">${formatScanDateFull(scan)}</td>
+            <td>
+              <button class="inspect-btn" onclick="event.stopPropagation(); openModal('${scan.firestoreId}')">Inspect</button>
+            </td>
+          </tr>
+        `;
+      }).join('');
+    }
+
+    function switchView(view) {
+      currentView = view;
+      document.getElementById("viewGridBtn").classList.toggle("active", view === 'grid');
+      document.getElementById("viewTableBtn").classList.toggle("active", view === 'table');
+      render();
+    }
+
+    // ==========================================
+    // INSPECTION MODAL
+    // ==========================================
+    function openModal(firestoreId) {
+      const scan = allScans.find(s => s.firestoreId === firestoreId);
+      if (!scan) return;
+      activeModalScan = scan;
+
+      // Image
+      const img = document.getElementById("modalImg");
+      if (scan.imageUrl) {
+        img.src = scan.imageUrl;
+        img.style.display = "block";
+      } else {
+        img.src = "";
+        img.style.display = "none";
+      }
+
+      // Metadata
+      document.getElementById("modalDocId").textContent = scan.firestoreId;
+      document.getElementById("modalDishTitle").textContent = scan.name || "Unnamed Dish";
+      document.getElementById("modalCategory").textContent = (scan.category || 'OTHER') + " • " + (scan.source || 'Annapurna Scanner');
+      document.getElementById("modalMealLabel").textContent = scan.mealLabel || "Meal";
+      document.getElementById("modalTimeLabel").textContent = formatScanDateFull(scan);
+
+      // Status
+      const statusBadge = document.getElementById("modalStatusBadge");
+      const isLogged = (scan.status || '').toLowerCase() === 'logged';
+      statusBadge.className = `status-pill ${isLogged ? 'logged' : 'scanned'}`;
+      statusBadge.textContent = isLogged ? '✓ Logged' : 'Scanned';
+
+      // Full Nutritional Output
+      document.getElementById("modalCal").textContent = (scan.calories ? Math.round(scan.calories) : 0) + " kcal";
+      document.getElementById("modalProtein").textContent = (scan.protein_g ? Number(scan.protein_g).toFixed(1) : 0) + " g";
+      document.getElementById("modalCarbs").textContent = (scan.carbs_g ? Number(scan.carbs_g).toFixed(1) : 0) + " g";
+      document.getElementById("modalFiber").textContent = (scan.fiber_g ? Number(scan.fiber_g).toFixed(1) : 0) + " g";
+      document.getElementById("modalIron").textContent = (scan.iron_mg ? Number(scan.iron_mg).toFixed(2) : 0) + " mg";
+      document.getElementById("modalCalcium").textContent = (scan.calcium_mg ? Math.round(scan.calcium_mg) : 0) + " mg";
+
+      // Items Breakdown
+      const itemsList = document.getElementById("modalItemsList");
+      if (scan.items && scan.items.length > 0) {
+        itemsList.innerHTML = scan.items.map(item => `
+          <div class="detected-item-row">
+            <div>
+              <strong style="color:#FFF;">${escapeHtml(item.name_en || item.name || 'Item')}</strong>
+              ${item.name_te ? `<span style="color:var(--accent-gold);margin-left:6px;">${escapeHtml(item.name_te)}</span>` : ''}
+              <div style="font-size:11px;color:var(--text-muted);">${escapeHtml(item.cluster || item.portion_label || '')}</div>
+            </div>
+            <div style="text-align:right;">
+              <span style="color:#FFF;font-weight:700;">${item.grams ? item.grams + 'g' : ''}</span>
+              ${item.calories ? `<div style="font-size:11px;color:#F59E0B;">${Math.round(item.calories)} kcal</div>` : ''}
+            </div>
+          </div>
+        `).join('');
+      } else {
+        itemsList.innerHTML = `
+          <div class="detected-item-row" style="color:var(--text-muted);">
+            <span>Single item dish (standard portion)</span>
+          </div>
+        `;
+      }
+
+      // Raw Document JSON
+      const jsonClean = { ...scan };
+      // Truncate long base64 string in raw preview for readability
+      if (jsonClean.imageUrl && jsonClean.imageUrl.length > 120) {
+        jsonClean.imageUrl = jsonClean.imageUrl.substring(0, 100) + '... [Base64 Image Data]';
+      }
+      document.getElementById("modalRawJson").textContent = JSON.stringify(jsonClean, null, 2);
+
+      // Open Modal
+      const modal = document.getElementById("inspectModal");
+      modal.classList.add("open");
+    }
+
+    function closeModal() {
+      const modal = document.getElementById("inspectModal");
+      modal.classList.remove("open");
+      activeModalScan = null;
+    }
+
+    function handleModalOverlayClick(e) {
+      if (e.target.id === 'inspectModal') {
+        closeModal();
+      }
+    }
+
+    function downloadModalImage() {
+      if (!activeModalScan || !activeModalScan.imageUrl) {
+        showToast("No image available to download", "error");
+        return;
+      }
+      const link = document.createElement("a");
+      link.href = activeModalScan.imageUrl;
+      const cleanName = (activeModalScan.name || 'scan').toLowerCase().replace(/[^a-z0-9]/g, '_');
+      link.download = `food_scan_${cleanName}_${activeModalScan.firestoreId}.jpg`;
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+      showToast("Food image downloaded", "success");
+    }
+
+    function openImageInNewTab() {
+      if (!activeModalScan || !activeModalScan.imageUrl) return;
+      const w = window.open("");
+      w.document.write(`<img src="${activeModalScan.imageUrl}" style="max-width:100%;height:auto;background:#000;" />`);
+    }
+
+    async function deleteActiveScan() {
+      if (!activeModalScan || !activeModalScan.firestoreId) return;
+      const confirmed = confirm(`Are you sure you want to delete "${activeModalScan.name || 'this scan'}" from Firestore?\nThis cannot be undone.`);
+      if (!confirmed) return;
+
+      try {
+        await firestoreDb.collection(FIRESTORE_COLLECTION).doc(activeModalScan.firestoreId).delete();
+        showToast("Scan deleted from Firestore", "success");
+        closeModal();
+      } catch (err) {
+        console.error("Delete failed:", err);
+        showToast("Delete failed: " + err.message, "error");
+      }
+    }
+
+    // ==========================================
+    // EXPORT UTILITIES (CSV & JSON)
+    // ==========================================
+    function exportToCSV() {
+      if (allScans.length === 0) {
+        showToast("No scans to export", "error");
+        return;
+      }
+      const headers = ["DocID", "Dish Name", "Category", "Meal", "Status", "Calories (kcal)", "Protein (g)", "Carbs (g)", "Fiber (g)", "Iron (mg)", "Calcium (mg)", "Timestamp", "ISO Date"];
+      const rows = allScans.map(s => [
+        `"${s.firestoreId || ''}"`,
+        `"${(s.name || '').replace(/"/g, '""')}"`,
+        `"${(s.category || '').replace(/"/g, '""')}"`,
+        `"${(s.mealLabel || '').replace(/"/g, '""')}"`,
+        `"${s.status || 'Scanned'}"`,
+        s.calories || 0,
+        s.protein_g || 0,
+        s.carbs_g || 0,
+        s.fiber_g || 0,
+        s.iron_mg || 0,
+        s.calcium_mg || 0,
+        s.timestamp || '',
+        `"${s.created_at_iso || ''}"`
+      ]);
+
+      const csvContent = "data:text/csv;charset=utf-8," + [headers.join(','), ...rows.map(r => r.join(','))].join('\n');
+      const encodedUri = encodeURI(csvContent);
+      const link = document.createElement("a");
+      link.setAttribute("href", encodedUri);
+      link.setAttribute("download", `annapurna_food_scans_${new Date().toISOString().split('T')[0]}.csv`);
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+      showToast("CSV export downloaded successfully", "success");
+    }
+
+    function exportToJSON() {
+      if (allScans.length === 0) {
+        showToast("No scans to export", "error");
+        return;
+      }
+      const blob = new Blob([JSON.stringify(allScans, null, 2)], { type: "application/json" });
+      const url = URL.createObjectURL(blob);
+      const link = document.createElement("a");
+      link.href = url;
+      link.download = `annapurna_food_scans_backup_${new Date().toISOString().split('T')[0]}.json`;
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+      URL.revokeObjectURL(url);
+      showToast("JSON export downloaded successfully", "success");
+    }
+
+    // ==========================================
+    // HELPERS
+    // ==========================================
+    function formatScanTime(scan) {
+      if (scan.timeLabel) return scan.timeLabel;
+      if (scan.timestamp) {
+        const d = new Date(scan.timestamp);
+        return d.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+      }
+      return 'Recently';
+    }
+
+    function formatScanDateFull(scan) {
+      if (scan.timestamp) {
+        const d = new Date(scan.timestamp);
+        return d.toLocaleDateString([], { month: 'short', day: 'numeric', year: 'numeric' }) + ' at ' + d.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+      }
+      if (scan.created_at_iso) {
+        const d = new Date(scan.created_at_iso);
+        return d.toLocaleString();
+      }
+      return scan.timeLabel || 'Recent';
+    }
+
+    function escapeHtml(str) {
+      if (!str) return '';
+      return String(str)
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#039;');
+    }
+
+    function showToast(message, type = 'normal') {
+      const toast = document.getElementById("toast");
+      toast.textContent = message;
+      if (type === 'error') {
+        toast.style.borderColor = "#F43F5E";
+      } else if (type === 'success') {
+        toast.style.borderColor = "#10B981";
+      } else {
+        toast.style.borderColor = "var(--border-hover)";
+      }
+      toast.classList.add("show");
+      setTimeout(() => {
+        toast.classList.remove("show");
+      }, 3000);
+    }
+
+    // Escape key closes modal
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && activeModalScan) {
+        closeModal();
+      }
+    });
+
+    // Start on load
+    window.addEventListener("DOMContentLoaded", initFirebase);
+  </script>
+</body>
+</html>

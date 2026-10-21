@@ -356,3 +356,13 @@ def serve_ui():
     if not index_file.exists():
         return HTMLResponse("<h1>UI loading...</h1>")
     return HTMLResponse(index_file.read_text(encoding="utf-8"))
+
+
+@app.get("/admin", response_class=HTMLResponse)
+@app.get("/admin.html", response_class=HTMLResponse)
+def serve_admin():
+    admin_file = STATIC_DIR / "admin.html"
+    if not admin_file.exists():
+        return HTMLResponse("<h1>Admin UI not found</h1>", status_code=404)
+    return HTMLResponse(admin_file.read_text(encoding="utf-8"))
+
