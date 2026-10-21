@@ -11,11 +11,16 @@ Provides:
 """
 
 from __future__ import annotations
+import asyncio
 import base64
 import binascii
+import io
+import json
 import pathlib
+import time
+import urllib.request
 from typing import Any, Dict, List, Optional
-from PIL import UnidentifiedImageError
+from PIL import Image, UnidentifiedImageError
 from fastapi import FastAPI, File, Form, Header, HTTPException, Query, UploadFile
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import FileResponse, HTMLResponse, JSONResponse
@@ -41,7 +46,7 @@ STATIC_DIR = APP_DIR / "static"
 STATIC_DIR.mkdir(exist_ok=True)
 
 app = FastAPI(
-    title="Annapurna — Telugu Food Scanner & ICMR-NIN Nutrition API",
+    title="AIM FOOD SCANNER — Telugu Food Scanner & ICMR-NIN Nutrition API",
     description=(
         "High-accuracy Andhra & Telangana dish recognition and macro/micronutrient engine "
         "powered by Gemini 3.8 Flash Vision + ICMR-NIN (Hyderabad) IFCT & Janani Mitra 93-Dish Catalog. "
@@ -208,7 +213,85 @@ def get_sample_image(dish_id: str):
     return FileResponse(str(img_path), media_type="image/jpeg")
 
 
-import asyncio
+def _generate_thumbnail_data_url(image_bytes: bytes, max_dim: int = 800) -> str:
+    """Generate a crisp, high-definition JPEG base64 data URL for admin dashboard & UI viewing (~70-95KB)."""
+    try:
+        with Image.open(io.BytesIO(image_bytes)) as img:
+            img = img.convert("RGB")
+            img.thumbnail((max_dim, max_dim), Image.Resampling.LANCZOS)
+            buf = io.BytesIO()
+            img.save(buf, format="JPEG", quality=85, optimize=True)
+            b64_str = base64.b64encode(buf.getvalue()).decode("ascii")
+            return f"data:image/jpeg;base64,{b64_str}"
+    except Exception:
+        return ""
+
+
+def sync_scan_to_firestore_server(result: Dict[str, Any], image_bytes: Optional[bytes] = None) -> Optional[str]:
+    """
+    Directly persists scan results and food photo thumbnail into Firestore collection `food_scanner`
+    using the Firebase REST API. Returns the created document ID.
+    """
+    firebase_api_key = os.environ.get("FIREBASE_API_KEY", "").strip()
+    if not firebase_api_key:
+        # If no FIREBASE_API_KEY environment variable is configured, graceful bypass (client-side will persist)
+        return None
+
+    try:
+        url = (
+            "https://firestore.googleapis.com/v1/projects/mddw-app/databases/(default)/documents/food_scanner"
+            f"?key={firebase_api_key}"
+        )
+        totals = result.get("totals") or {}
+        items = result.get("items") or []
+        dish_name = result.get("plate_title_en") or (items[0].get("name_en") if items else "Recognized Dish")
+
+        img_data_url = _generate_thumbnail_data_url(image_bytes) if image_bytes else ""
+
+        items_val = []
+        for it in items:
+            it_fields = {
+                "name_en": {"stringValue": str(it.get("name_en") or "")},
+                "name_te": {"stringValue": str(it.get("name_te") or "")},
+                "cluster": {"stringValue": str(it.get("cluster") or "")},
+                "grams": {"integerValue": str(int(it.get("estimated_grams") or it.get("grams") or 0))},
+            }
+            if it.get("nutrition"):
+                it_fields["calories"] = {"doubleValue": float(it["nutrition"].get("calories", 0))}
+            items_val.append({"mapValue": {"fields": it_fields}})
+
+        fields = {
+            "name": {"stringValue": str(dish_name)},
+            "category": {"stringValue": str(result.get("meal_type") or "Food")},
+            "mealLabel": {"stringValue": str(result.get("meal_type") or "Meal")},
+            "status": {"stringValue": "Scanned"},
+            "calories": {"doubleValue": float(totals.get("calories", 0))},
+            "protein_g": {"doubleValue": float(totals.get("protein_g", 0))},
+            "carbs_g": {"doubleValue": float(totals.get("carbs_g", 0))},
+            "fiber_g": {"doubleValue": float(totals.get("fiber_g", 0))},
+            "iron_mg": {"doubleValue": float(totals.get("iron_mg", 0))},
+            "calcium_mg": {"doubleValue": float(totals.get("calcium_mg", 0))},
+            "timestamp": {"integerValue": str(int(time.time() * 1000))},
+            "source": {"stringValue": "AIM FOOD SCANNER (Direct Server Sync)"},
+            "items": {"arrayValue": {"values": items_val}},
+        }
+        if img_data_url:
+            fields["imageUrl"] = {"stringValue": img_data_url}
+
+        body_bytes = json.dumps({"fields": fields}).encode("utf-8")
+        req = urllib.request.Request(
+            url,
+            data=body_bytes,
+            headers={"Content-Type": "application/json"},
+            method="POST",
+        )
+        with urllib.request.urlopen(req, timeout=4) as resp:
+            data = json.loads(resp.read().decode())
+            doc_name = data.get("name", "")
+            return doc_name.split("/")[-1] if doc_name else None
+    except Exception as exc:
+        print(f"[Firestore Server Sync Warning]: {exc}")
+        return None
 
 
 @app.post("/api/v1/scan")
@@ -235,6 +318,13 @@ async def scan_food_upload(
             api_key_override=key_override,
             preferred_model=preferred_model,
         )
+        # Instantly guarantee Firestore persistence from server
+        try:
+            doc_id = await asyncio.to_thread(sync_scan_to_firestore_server, result, image_bytes)
+            if doc_id:
+                result["firestore_id"] = doc_id
+        except Exception:
+            pass
         return JSONResponse(content=result)
     except HTTPException:
         raise
@@ -269,6 +359,13 @@ async def scan_food_base64(
             api_key_override=key_override,
             preferred_model=payload.preferred_model,
         )
+        # Instantly guarantee Firestore persistence from server
+        try:
+            doc_id = await asyncio.to_thread(sync_scan_to_firestore_server, result, image_bytes)
+            if doc_id:
+                result["firestore_id"] = doc_id
+        except Exception:
+            pass
         return JSONResponse(content=result)
     except HTTPException:
         raise
@@ -303,6 +400,12 @@ async def scan_sample_dish(
             api_key_override=key_override,
             preferred_model=preferred_model,
         )
+        try:
+            doc_id = await asyncio.to_thread(sync_scan_to_firestore_server, result, image_bytes)
+            if doc_id:
+                result["firestore_id"] = doc_id
+        except Exception:
+            pass
         return JSONResponse(content=result)
     except HTTPException:
         raise

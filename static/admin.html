@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Admin Dashboard — Annapurna Food Scans</title>
+  <title>Admin Dashboard — AIM FOOD SCANNER</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -843,7 +843,7 @@
           <span>Scanner</span>
         </a>
         <div class="brand-title">
-          <span>🍛 Annapurna</span>
+          <span>🍛 AIM FOOD SCANNER</span>
           <span class="admin-pill">Admin Dashboard</span>
         </div>
       </div>
@@ -1010,7 +1010,7 @@
 
           <div class="doc-meta-bar">
             <span>Doc ID: <span id="modalDocId" class="doc-id-pill">--</span></span>
-            <span id="modalSourceBadge" style="color:var(--text-muted);">Annapurna Scanner</span>
+            <span id="modalSourceBadge" style="color:var(--text-muted);">AIM FOOD SCANNER</span>
           </div>
         </div>
 
@@ -1130,9 +1130,9 @@
       if (!firestoreDb) return;
       updateStatusBadge(true, "Connecting...");
 
+      // Listen to the entire food_scanner collection without strict orderBy
+      // so NO document is ever omitted even if timestamp field format differs
       firestoreDb.collection(FIRESTORE_COLLECTION)
-        .orderBy("timestamp", "desc")
-        .limit(200)
         .onSnapshot((snapshot) => {
           updateStatusBadge(true, "Live Firestore Sync");
           const docs = [];
@@ -1140,6 +1140,12 @@
             const data = doc.data();
             data.firestoreId = doc.id;
             docs.push(data);
+          });
+          // Client-side sort by timestamp descending
+          docs.sort((a, b) => {
+            const ta = a.timestamp || (a.created_at_iso ? new Date(a.created_at_iso).getTime() : 0);
+            const tb = b.timestamp || (b.created_at_iso ? new Date(b.created_at_iso).getTime() : 0);
+            return tb - ta;
           });
           allScans = docs;
           calculateStats();
@@ -1380,7 +1386,7 @@
       // Metadata
       document.getElementById("modalDocId").textContent = scan.firestoreId;
       document.getElementById("modalDishTitle").textContent = scan.name || "Unnamed Dish";
-      document.getElementById("modalCategory").textContent = (scan.category || 'OTHER') + " • " + (scan.source || 'Annapurna Scanner');
+      document.getElementById("modalCategory").textContent = (scan.category || 'OTHER') + " • " + (scan.source || 'AIM FOOD SCANNER');
       document.getElementById("modalMealLabel").textContent = scan.mealLabel || "Meal";
       document.getElementById("modalTimeLabel").textContent = formatScanDateFull(scan);
 
@@ -1512,7 +1518,7 @@
       const encodedUri = encodeURI(csvContent);
       const link = document.createElement("a");
       link.setAttribute("href", encodedUri);
-      link.setAttribute("download", `annapurna_food_scans_${new Date().toISOString().split('T')[0]}.csv`);
+      link.setAttribute("download", `aim_food_scans_${new Date().toISOString().split('T')[0]}.csv`);
       document.body.appendChild(link);
       link.click();
       document.body.removeChild(link);
@@ -1528,7 +1534,7 @@
       const url = URL.createObjectURL(blob);
       const link = document.createElement("a");
       link.href = url;
-      link.download = `annapurna_food_scans_backup_${new Date().toISOString().split('T')[0]}.json`;
+      link.download = `aim_food_scans_backup_${new Date().toISOString().split('T')[0]}.json`;
       document.body.appendChild(link);
       link.click();
       document.body.removeChild(link);

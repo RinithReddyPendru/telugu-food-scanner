@@ -1224,8 +1224,6 @@
       if (!firestoreDb) return;
       try {
         firestoreDb.collection(FIRESTORE_COLLECTION)
-          .orderBy('timestamp', 'desc')
-          .limit(25)
           .onSnapshot((snapshot) => {
             if (!snapshot.empty) {
               const cloudScans = [];
@@ -1235,6 +1233,11 @@
                   ...data,
                   firestoreId: doc.id
                 });
+              });
+              cloudScans.sort((a, b) => {
+                const ta = a.timestamp || (a.created_at_iso ? new Date(a.created_at_iso).getTime() : 0);
+                const tb = b.timestamp || (b.created_at_iso ? new Date(b.created_at_iso).getTime() : 0);
+                return tb - ta;
               });
               previousScans = cloudScans;
               saveScansToStorage(); // mirror to localStorage
@@ -1258,8 +1261,26 @@
     }
 
     async function pushScanToFirestore(entry) {
+      if (entry.firestoreId) {
+        // Already persisted to Firestore by server
+        isFirestoreActive = true;
+        updateSyncBadge(true, 'Firebase Synced');
+        return;
+      }
+      if (!firestoreDb) {
+        initFirebase();
+      }
       if (!firestoreDb) return;
       try {
+        const cleanItems = (entry.items || []).map(it => ({
+          name_en: it.name_en || '',
+          name_te: it.name_te || '',
+          cluster: it.cluster || '',
+          grams: it.grams || it.estimated_grams || 0,
+          calories: it.calories || (it.nutrition ? it.nutrition.calories : 0) || 0,
+          protein_g: it.protein_g || (it.nutrition ? it.nutrition.protein_g : 0) || 0
+        }));
+
         const payload = {
           id: entry.id,
           name: entry.name,
@@ -1267,17 +1288,17 @@
           timeLabel: entry.timeLabel,
           mealLabel: entry.mealLabel || 'Meal',
           status: entry.status || 'Scanned',
-          imageUrl: entry.imageUrl, // Base64 compressed image thumbnail
+          imageUrl: entry.imageUrl || '', // Base64 compressed image thumbnail
           calories: entry.calories || 0,
           protein_g: entry.protein_g || 0,
           carbs_g: entry.carbs_g || 0,
           fiber_g: entry.fiber_g || 0,
           iron_mg: entry.iron_mg || 0,
           calcium_mg: entry.calcium_mg || 0,
-          items: entry.items || [],
+          items: cleanItems,
           timestamp: entry.timestamp || Date.now(),
           created_at_iso: new Date().toISOString(),
-          source: 'Annapurna Telugu Food Scanner'
+          source: 'AIM FOOD SCANNER'
         };
         const docRef = await firestoreDb.collection(FIRESTORE_COLLECTION).add(payload);
         entry.firestoreId = docRef.id;
@@ -1289,9 +1310,15 @@
     }
 
     async function updateScanStatusInFirestore(activeId, status) {
-      if (!firestoreDb) return;
+      if (!firestoreDb) initFirebase();
       const entry = previousScans.find((x) => x.id === activeId);
-      if (!entry || !entry.firestoreId) return;
+      if (!entry) return;
+      if (!entry.firestoreId) {
+        entry.status = status;
+        await pushScanToFirestore(entry);
+        return;
+      }
+      if (!firestoreDb) return;
       try {
         await firestoreDb.collection(FIRESTORE_COLLECTION).doc(entry.firestoreId).update({
           status: status
@@ -1505,7 +1532,7 @@
      * - JPEG quality 0.82 produces a payload of ~90KB - 160KB (target ~100-200KB).
      * - Creates lightweight 280px thumbnail (~15-25KB) specifically for persistent localStorage.
      */
-    async function compressImageFile(file, maxDim = 900, quality = 0.82) {
+    async function compressImageFile(file, maxDim = 1200, quality = 0.88) {
       if (!file || !file.type || !file.type.startsWith('image/')) {
         throw new Error('Please select an image file (JPG, PNG, WebP).');
       }
@@ -1570,16 +1597,18 @@
       ctx.imageSmoothingQuality = 'high';
       ctx.drawImage(imgSource, 0, 0, targetWidth, targetHeight);
 
-      // 5. Generate lightweight thumbnail (280px max) for localStorage
-      const thumbMax = 280;
+      // 5. Generate crisp, high-definition thumbnail (800px max, 85% quality) for Firestore & UI
+      const thumbMax = 800;
       let thumbW = width;
       let thumbH = height;
-      if (width >= height) {
-        thumbW = thumbMax;
-        thumbH = Math.round((height * thumbMax) / width);
-      } else {
-        thumbH = thumbMax;
-        thumbW = Math.round((width * thumbMax) / height);
+      if (width > thumbMax || height > thumbMax) {
+        if (width >= height) {
+          thumbW = thumbMax;
+          thumbH = Math.round((height * thumbMax) / width);
+        } else {
+          thumbH = thumbMax;
+          thumbW = Math.round((width * thumbMax) / height);
+        }
       }
 
       const thumbCanvas = document.createElement('canvas');
@@ -1589,7 +1618,7 @@
       thumbCtx.imageSmoothingEnabled = true;
       thumbCtx.imageSmoothingQuality = 'high';
       thumbCtx.drawImage(canvas, 0, 0, thumbW, thumbH);
-      const thumbDataUrl = thumbCanvas.toDataURL('image/jpeg', 0.72);
+      const thumbDataUrl = thumbCanvas.toDataURL('image/jpeg', 0.85);
 
       // 6. Convert main canvas to JPEG blob (~90KB - 160KB)
       const compressedBlob = await new Promise((resolve) => {
@@ -1792,6 +1821,11 @@
         timestamp: Date.now()
       };
       activeScanId = newEntry.id;
+      if (data && data.firestore_id) {
+        newEntry.firestoreId = data.firestore_id;
+        isFirestoreActive = true;
+        updateSyncBadge(true, 'Firebase Synced');
+      }
       previousScans.unshift(newEntry);
       saveScansToStorage();
       renderPreviousScans();
