@@ -567,6 +567,114 @@
       font-weight: 500;
     }
 
+    /* MDD-W 10 Food Groups Diversity Card */
+    .mddw-box {
+      background: linear-gradient(135deg, #F8FAFC 0%, #F1F5F9 100%);
+      border: 1.5px solid #E2E8F0;
+      border-radius: 16px;
+      padding: 14px 14px;
+      margin-bottom: 16px;
+    }
+    .mddw-box-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 10px;
+    }
+    .mddw-title-wrap {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .mddw-title {
+      font-size: 13px;
+      font-weight: 800;
+      color: #0F172A;
+      letter-spacing: -0.01em;
+      text-transform: uppercase;
+    }
+    .mddw-score-badge {
+      font-size: 11px;
+      font-weight: 800;
+      padding: 3px 9px;
+      border-radius: 999px;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+    }
+    .mddw-score-badge.met {
+      background: #DCFCE7;
+      color: #15803D;
+      border: 1px solid #86EFAC;
+    }
+    .mddw-score-badge.unmet {
+      background: #FEF3C7;
+      color: #B45309;
+      border: 1px solid #FCD34D;
+    }
+    .mddw-groups-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6px;
+      margin-bottom: 10px;
+    }
+    .mddw-group-pill {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 9px;
+      border-radius: 10px;
+      font-size: 11px;
+      font-weight: 600;
+      transition: all 0.15s ease;
+      background: #FFFFFF;
+      border: 1px solid #E2E8F0;
+      color: #94A3B8;
+    }
+    .mddw-group-pill.covered {
+      background: #FFFFFF;
+      border: 1.5px solid #10B981;
+      color: #0F172A;
+      box-shadow: 0 1px 3px rgba(16, 185, 129, 0.12);
+    }
+    .mddw-group-pill .group-ico {
+      font-size: 14px;
+      flex-shrink: 0;
+    }
+    .mddw-group-pill .group-txt {
+      flex: 1;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .mddw-group-pill .group-check {
+      font-size: 11px;
+      font-weight: 800;
+      color: #10B981;
+      margin-left: auto;
+    }
+    .mddw-group-pill:not(.covered) .group-check {
+      display: none;
+    }
+    .mddw-tip {
+      font-size: 11px;
+      line-height: 1.4;
+      color: #475569;
+      background: #FFFFFF;
+      border: 1px dashed #CBD5E1;
+      border-radius: 8px;
+      padding: 7px 10px;
+      display: flex;
+      align-items: flex-start;
+      gap: 6px;
+    }
+    .mddw-tip-icon {
+      font-size: 13px;
+      flex-shrink: 0;
+    }
+
     /* 2x2 Nutrient Grid */
     .nutrient-grid {
       display: grid;
@@ -972,6 +1080,29 @@
 
         <div id="detectedItemsRow" class="detected-items-row" style="display: none;"></div>
 
+        <!-- MDD-W 10 Food Groups Diversity Card -->
+        <div id="mddwContainer" class="mddw-box" style="display: none;">
+          <div class="mddw-box-header">
+            <div class="mddw-title-wrap">
+              <span style="font-size: 16px;">🥗</span>
+              <div>
+                <div class="mddw-title">MDD-W Food Groups</div>
+                <div style="font-size: 10.5px; color: #64748B; font-weight: 500;">Minimum Dietary Diversity for Women</div>
+              </div>
+            </div>
+            <span id="mddwScoreBadge" class="mddw-score-badge unmet">0 / 10 Groups</span>
+          </div>
+
+          <!-- 10 Groups Pill Grid -->
+          <div id="mddwGroupsGrid" class="mddw-groups-grid"></div>
+
+          <!-- Guidance / Tip -->
+          <div class="mddw-tip">
+            <span class="mddw-tip-icon">💡</span>
+            <span id="mddwTipText">Checking dietary diversity...</span>
+          </div>
+        </div>
+
         <div class="nutrient-grid">
           <!-- CALORIES -->
           <div class="nutrient-item calories">
@@ -1276,6 +1407,7 @@
           name_en: it.name_en || '',
           name_te: it.name_te || '',
           cluster: it.cluster || '',
+          food_groups: it.food_groups || [],
           grams: it.grams || it.estimated_grams || 0,
           calories: it.calories || (it.nutrition ? it.nutrition.calories : 0) || 0,
           protein_g: it.protein_g || (it.nutrition ? it.nutrition.protein_g : 0) || 0
@@ -1295,6 +1427,9 @@
           fiber_g: entry.fiber_g || 0,
           iron_mg: entry.iron_mg || 0,
           calcium_mg: entry.calcium_mg || 0,
+          mddw_score: entry.mddw_score || (entry.mddw_diversity ? entry.mddw_diversity.score : 0) || 0,
+          meets_mddw_threshold: entry.meets_mddw_threshold || (entry.mddw_diversity ? entry.mddw_diversity.meets_minimum_diversity : false) || false,
+          mddw_groups_covered: entry.mddw_groups_covered || (entry.mddw_diversity ? entry.mddw_diversity.groups_covered : []) || [],
           items: cleanItems,
           timestamp: entry.timestamp || Date.now(),
           created_at_iso: new Date().toISOString(),
@@ -1383,7 +1518,7 @@
                 </svg>
               </div>
             </div>
-            <div class="history-meta">${item.timeLabel} &nbsp;•&nbsp; ${item.mealLabel}</div>
+            <div class="history-meta">${item.timeLabel} &nbsp;•&nbsp; ${item.mealLabel}${item.mddw_score ? ` &nbsp;•&nbsp; <span style="font-weight:700; color:${item.mddw_score >= 5 ? '#10B981' : '#F59E0B'};">🥗 ${item.mddw_score}/10 MDD-W</span>` : ''}</div>
             <div class="history-macros">
               <!-- kcal -->
               <div class="macro-col">
@@ -1461,8 +1596,82 @@
         const cleanName = (it.name_en || '').replace(/\s*\([^)]*\)/g, '').trim() || it.name_en || 'Food Item';
         const grams = it.estimated_grams ? `${Math.round(it.estimated_grams)}g` : '';
         const kcal = it.nutrition && it.nutrition.calories != null ? ` · ${Math.round(it.nutrition.calories)} kcal` : '';
-        return `<span class="detected-item-chip">${cleanName}${grams || kcal ? ` <span class="detected-item-grams">(${grams}${kcal})</span>` : ''}</span>`;
+        const fgs = (it.food_groups || []).join(', ');
+        const fgTag = fgs ? `<span style="background:rgba(16,185,129,0.14); color:#047857; font-size:10px; font-weight:700; padding:1px 6px; border-radius:4px; margin-left:5px;">${fgs}</span>` : '';
+        return `<span class="detected-item-chip">${cleanName}${grams || kcal ? ` <span class="detected-item-grams">(${grams}${kcal})</span>` : ''}${fgTag}</span>`;
       }).join('');
+    }
+
+    const MDDW_FALLBACK_10 = [
+      { code: "G1", emoji: "🌾", name_en: "Grains & Tubers" },
+      { code: "G2", emoji: "🌱", name_en: "Pulses & Dal" },
+      { code: "G3", emoji: "🌰", name_en: "Nuts & Seeds" },
+      { code: "G4", emoji: "🥛", name_en: "Dairy" },
+      { code: "G5", emoji: "🍗", name_en: "Meat & Fish" },
+      { code: "G6", emoji: "🍳", name_en: "Eggs" },
+      { code: "G7", emoji: "🌿", name_en: "Dark Green Leafy Veg" },
+      { code: "G8", emoji: "🎃", name_en: "Vitamin-A Rich" },
+      { code: "G9", emoji: "🥦", name_en: "Other Vegetables" },
+      { code: "G10", emoji: "🍎", name_en: "Other Fruits" },
+    ];
+
+    function renderMddwDiversity(mddw, items) {
+      const container = document.getElementById('mddwContainer');
+      if (!container) return;
+
+      const coveredSet = new Set((mddw && mddw.groups_covered) || []);
+      // If mddw object is missing, calculate from items
+      if (coveredSet.size === 0 && Array.isArray(items)) {
+        items.forEach(it => (it.food_groups || []).forEach(g => coveredSet.add(g)));
+      }
+
+      if (coveredSet.size === 0 && (!mddw || !mddw.all_10_groups)) {
+        container.style.display = 'none';
+        return;
+      }
+      container.style.display = 'block';
+
+      const score = mddw && mddw.score != null ? mddw.score : coveredSet.size;
+      const meetsTarget = score >= 5;
+      const scoreBadge = document.getElementById('mddwScoreBadge');
+      if (scoreBadge) {
+        scoreBadge.className = `mddw-score-badge ${meetsTarget ? 'met' : 'unmet'}`;
+        scoreBadge.innerHTML = meetsTarget
+          ? `<span>✓</span> ${score}/10 Groups (Target Met)`
+          : `<span>⚠️</span> ${score}/10 Groups (Need ${Math.max(1, 5 - score)} for Target)`;
+      }
+
+      const groupsList = (mddw && mddw.all_10_groups) ? mddw.all_10_groups : MDDW_FALLBACK_10.map(def => ({
+        code: def.code,
+        emoji: def.emoji,
+        name_en: def.name_en,
+        covered: coveredSet.has(def.code)
+      }));
+
+      const grid = document.getElementById('mddwGroupsGrid');
+      if (grid) {
+        grid.innerHTML = groupsList.map(g => {
+          const isCov = g.covered || coveredSet.has(g.code);
+          const contrib = (g.contributing_items || []).join(', ');
+          const titleText = isCov ? `${g.code}: ${g.name_en} (${contrib || 'Covered in meal'})` : `${g.code}: ${g.name_en} (Missing)`;
+          return `
+            <div class="mddw-group-pill ${isCov ? 'covered' : ''}" title="${titleText}">
+              <span class="group-ico">${g.emoji}</span>
+              <span class="group-txt"><strong>${g.code}</strong> ${g.name_en}</span>
+              ${isCov ? '<span class="group-check">✓</span>' : '<span style="color:#CBD5E1; font-size:10px;">—</span>'}
+            </div>
+          `;
+        }).join('');
+      }
+
+      const tipEl = document.getElementById('mddwTipText');
+      if (tipEl) {
+        tipEl.textContent = (mddw && mddw.recommendation_en)
+          ? mddw.recommendation_en
+          : (meetsTarget
+              ? "Great diversity! Meets the FAO/WHO standard (≥ 5 groups) for women's micronutrient adequacy."
+              : "To reach the recommended ≥ 5 diversity threshold, consider adding curd, green leafy veg, or fruit.");
+      }
     }
 
     function openHistoryItem(id) {
@@ -1473,6 +1682,7 @@
       document.getElementById('categoryText').textContent = item.category || 'OTHER';
       document.getElementById('dishTitle').textContent = item.name;
       renderDetectedItemsChips(item.items || []);
+      renderMddwDiversity(item.mddw_diversity, item.items || []);
       document.getElementById('valCalories').textContent = formatNumber(item.calories, 0);
       document.getElementById('valProtein').textContent = formatNumber(item.protein_g, 1);
       document.getElementById('valIron').textContent = formatNumber(item.iron_mg, 1);
@@ -1788,6 +1998,7 @@
       document.getElementById('dishTitle').textContent = dishName;
       document.getElementById('categoryText').textContent = catLabel;
       renderDetectedItemsChips(itemsList);
+      renderMddwDiversity(data.mddw_diversity, itemsList);
 
       const cal = totals.calories ?? 0;
       const prot = totals.protein_g ?? 0;
@@ -1818,6 +2029,10 @@
         fiber_g: fiber,
         iron_mg: iron,
         calcium_mg: calcium,
+        mddw_score: (data.mddw_diversity && data.mddw_diversity.score) || 0,
+        meets_mddw_threshold: (data.mddw_diversity && data.mddw_diversity.meets_minimum_diversity) || false,
+        mddw_groups_covered: (data.mddw_diversity && data.mddw_diversity.groups_covered) || [],
+        mddw_diversity: data.mddw_diversity || null,
         timestamp: Date.now()
       };
       activeScanId = newEntry.id;

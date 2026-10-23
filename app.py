@@ -34,6 +34,7 @@ from dishes_catalog import (
 )
 from scanner_engine import (
     MDDW_LABELS,
+    MDDW_GROUPS_DEFINITIONS,
     MODEL_FAILOVER_POOL,
     MODEL_PRICING_PER_1M,
     _SCAN_CACHE,
@@ -163,6 +164,18 @@ def list_dishes(
     }
 
 
+@app.get("/api/v1/mddw-groups")
+def get_mddw_groups_reference():
+    """Returns the FAO/WHO & ICMR-NIN 10 MDD-W Food Groups standard."""
+    return {
+        "status": "ok",
+        "standard": "FAO/WHO Minimum Dietary Diversity for Women (MDD-W) 10 Food Groups",
+        "minimum_target": 5,
+        "count": len(MDDW_GROUPS_DEFINITIONS),
+        "groups": MDDW_GROUPS_DEFINITIONS,
+    }
+
+
 @app.get("/api/v1/samples")
 def get_featured_samples():
     """Returns curated sample Telugu dishes that have local images on disk for 1-click testing."""
@@ -256,9 +269,17 @@ def sync_scan_to_firestore_server(result: Dict[str, Any], image_bytes: Optional[
                 "cluster": {"stringValue": str(it.get("cluster") or "")},
                 "grams": {"integerValue": str(int(it.get("estimated_grams") or it.get("grams") or 0))},
             }
+            if it.get("food_groups"):
+                it_fields["food_groups"] = {"arrayValue": {"values": [{"stringValue": str(g)} for g in it["food_groups"]]}}
             if it.get("nutrition"):
                 it_fields["calories"] = {"doubleValue": float(it["nutrition"].get("calories", 0))}
             items_val.append({"mapValue": {"fields": it_fields}})
+
+        mddw_info = result.get("mddw_diversity") or {}
+        groups_cov = mddw_info.get("groups_covered") or []
+        groups_cov_labels = mddw_info.get("groups_covered_labels") or []
+        mddw_score = int(mddw_info.get("score") or len(groups_cov))
+        meets_mddw = bool(mddw_info.get("meets_minimum_diversity", False))
 
         fields = {
             "name": {"stringValue": str(dish_name)},
@@ -271,6 +292,10 @@ def sync_scan_to_firestore_server(result: Dict[str, Any], image_bytes: Optional[
             "fiber_g": {"doubleValue": float(totals.get("fiber_g", 0))},
             "iron_mg": {"doubleValue": float(totals.get("iron_mg", 0))},
             "calcium_mg": {"doubleValue": float(totals.get("calcium_mg", 0))},
+            "mddw_score": {"integerValue": str(mddw_score)},
+            "meets_mddw_threshold": {"booleanValue": meets_mddw},
+            "mddw_groups_covered": {"arrayValue": {"values": [{"stringValue": str(g)} for g in groups_cov]}},
+            "mddw_groups_labels": {"arrayValue": {"values": [{"stringValue": str(l)} for l in groups_cov_labels]}},
             "timestamp": {"integerValue": str(int(time.time() * 1000))},
             "source": {"stringValue": "AIM FOOD SCANNER (Direct Server Sync)"},
             "items": {"arrayValue": {"values": items_val}},

@@ -965,6 +965,7 @@
             <th>Dish Name</th>
             <th>Status</th>
             <th>Meal</th>
+            <th>MDD-W Diversity</th>
             <th>Calories</th>
             <th>Protein</th>
             <th>Iron</th>
@@ -1054,6 +1055,20 @@
                 <div class="nutri-box-lbl">Calcium</div>
                 <div id="modalCalcium" class="nutri-box-val" style="color:#FB923C;">--</div>
               </div>
+            </div>
+          </div>
+
+          <!-- MDD-W 10 Food Groups Diversity Breakdown -->
+          <div>
+            <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:8px;">
+              <span class="detected-section-title" style="margin-bottom:0;">MDD-W 10 Food Groups Diversity</span>
+              <span id="modalMddwBadge" class="status-pill scanned" style="position:static;">-- / 10 Groups</span>
+            </div>
+            <div id="modalMddwGrid" style="display:grid; grid-template-columns:1fr 1fr; gap:6px; margin-bottom:8px;">
+              <!-- 10 groups pills -->
+            </div>
+            <div id="modalMddwTip" style="font-size:11.5px; color:var(--text-secondary); background:rgba(255,255,255,0.03); border:1px dashed var(--border-color); padding:8px 12px; border-radius:8px;">
+              --
             </div>
           </div>
 
@@ -1257,6 +1272,19 @@
       }
     }
 
+    const MDDW_GROUPS_STATIC = [
+      { code: "G1", emoji: "🌾", name: "Grains & Roots" },
+      { code: "G2", emoji: "🌱", name: "Pulses & Dal" },
+      { code: "G3", emoji: "🌰", name: "Nuts & Seeds" },
+      { code: "G4", emoji: "🥛", name: "Dairy" },
+      { code: "G5", emoji: "🍗", name: "Meat & Fish" },
+      { code: "G6", emoji: "🍳", name: "Eggs" },
+      { code: "G7", emoji: "🌿", name: "Dark Green Leafy Veg" },
+      { code: "G8", emoji: "🎃", name: "Vitamin-A Rich" },
+      { code: "G9", emoji: "🥦", name: "Other Vegetables" },
+      { code: "G10", emoji: "🍎", name: "Other Fruits" },
+    ];
+
     function renderGrid() {
       const scansGrid = document.getElementById("scansGrid");
       scansGrid.innerHTML = filteredScans.map((scan) => {
@@ -1269,6 +1297,10 @@
         const iron = scan.iron_mg ? `${Number(scan.iron_mg).toFixed(1)}mg` : '0mg';
         const calc = scan.calcium_mg ? `${Math.round(scan.calcium_mg)}mg` : '0mg';
         const itemsCount = (scan.items && scan.items.length) ? `${scan.items.length} item${scan.items.length > 1 ? 's' : ''}` : 'Single dish';
+        const mddwScore = scan.mddw_score != null ? scan.mddw_score : ((scan.mddw_groups_covered && scan.mddw_groups_covered.length) || 0);
+        const mddwBadge = mddwScore > 0 
+          ? `<span style="font-size:10px; font-weight:700; background:${mddwScore >= 5 ? 'rgba(16,185,129,0.15)' : 'rgba(245,158,11,0.15)'}; color:${mddwScore >= 5 ? '#34D399' : '#F59E0B'}; border:1px solid ${mddwScore >= 5 ? 'rgba(16,185,129,0.35)' : 'rgba(245,158,11,0.35)'}; padding:2px 7px; border-radius:6px;">🥗 ${mddwScore}/10 MDD-W</span>` 
+          : '';
 
         const imageHtml = scan.imageUrl 
           ? `<img class="card-img" src="${scan.imageUrl}" alt="${escapeHtml(scan.name || 'Food')}" loading="lazy" />`
@@ -1287,6 +1319,7 @@
                 <div class="dish-meta">
                   <span class="meta-tag">${escapeHtml(scan.mealLabel || 'Meal')}</span>
                   <span>${escapeHtml(scan.category || 'Food')}</span>
+                  ${mddwBadge}
                 </div>
               </div>
 
@@ -1336,6 +1369,11 @@
           ? `<img class="table-thumb" src="${scan.imageUrl}" alt="" />`
           : `<div class="table-thumb" style="display:flex;align-items:center;justify-content:center;">🍲</div>`;
 
+        const mddwScore = scan.mddw_score != null ? scan.mddw_score : ((scan.mddw_groups_covered && scan.mddw_groups_covered.length) || 0);
+        const mddwCell = mddwScore > 0 
+          ? `<span style="font-size:11px;font-weight:700;color:${mddwScore >= 5 ? '#34D399' : '#F59E0B'};">🥗 ${mddwScore}/10</span>`
+          : `<span style="font-size:11px;color:var(--text-muted);">--</span>`;
+
         return `
           <tr onclick="openModal('${scan.firestoreId}')">
             <td>${thumb}</td>
@@ -1345,6 +1383,7 @@
             </td>
             <td>${statusBadge}</td>
             <td><span class="meta-tag">${escapeHtml(scan.mealLabel || 'Meal')}</span></td>
+            <td>${mddwCell}</td>
             <td style="color:#F59E0B;font-weight:700;">${Math.round(scan.calories || 0)} kcal</td>
             <td style="color:#38BDF8;font-weight:700;">${Number(scan.protein_g || 0).toFixed(1)} g</td>
             <td style="color:#F43F5E;">${Number(scan.iron_mg || 0).toFixed(1)} mg</td>
@@ -1403,6 +1442,42 @@
       document.getElementById("modalFiber").textContent = (scan.fiber_g ? Number(scan.fiber_g).toFixed(1) : 0) + " g";
       document.getElementById("modalIron").textContent = (scan.iron_mg ? Number(scan.iron_mg).toFixed(2) : 0) + " mg";
       document.getElementById("modalCalcium").textContent = (scan.calcium_mg ? Math.round(scan.calcium_mg) : 0) + " mg";
+
+      // MDD-W 10 Groups
+      const coveredGroups = new Set(scan.mddw_groups_covered || []);
+      if (coveredGroups.size === 0 && Array.isArray(scan.items)) {
+        scan.items.forEach(it => (it.food_groups || []).forEach(g => coveredGroups.add(g)));
+      }
+      const mddwScore = scan.mddw_score != null ? scan.mddw_score : coveredGroups.size;
+      const meetsMddw = mddwScore >= 5;
+      const mddwBadge = document.getElementById("modalMddwBadge");
+      if (mddwBadge) {
+        mddwBadge.className = `status-pill ${meetsMddw ? 'logged' : 'scanned'}`;
+        mddwBadge.textContent = meetsMddw ? `✓ ${mddwScore}/10 Groups (Target Met)` : `${mddwScore}/10 Groups (Need 5)`;
+      }
+
+      const mddwGrid = document.getElementById("modalMddwGrid");
+      if (mddwGrid) {
+        mddwGrid.innerHTML = MDDW_GROUPS_STATIC.map(g => {
+          const isCov = coveredGroups.has(g.code);
+          const contItems = (scan.items || []).filter(it => (it.food_groups || []).includes(g.code)).map(it => it.name_en || it.name || '');
+          const sub = contItems.length ? `(${contItems.join(', ')})` : '';
+          return `
+            <div style="display:flex; align-items:center; gap:6px; padding:6px 10px; border-radius:8px; font-size:11px; background:${isCov ? 'rgba(16,185,129,0.1)' : 'rgba(11,19,32,0.5)'}; border:1px solid ${isCov ? 'rgba(16,185,129,0.35)' : 'var(--border-color)'}; color:${isCov ? '#34D399' : 'var(--text-muted)'};">
+              <span style="font-size:13px;">${g.emoji}</span>
+              <span style="flex:1; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;"><strong>${g.code}</strong> ${g.name} ${sub}</span>
+              <span>${isCov ? '✓' : '—'}</span>
+            </div>
+          `;
+        }).join('');
+      }
+
+      const mddwTip = document.getElementById("modalMddwTip");
+      if (mddwTip) {
+        mddwTip.textContent = meetsMddw
+          ? "✓ Meets the Minimum Dietary Diversity for Women (MDD-W) standard of ≥ 5 food groups in this meal."
+          : `Below the MDD-W target (${mddwScore}/10 groups). Recommended to add curd (G4), leafy greens (G7), or fresh fruit (G10).`;
+      }
 
       // Items Breakdown
       const itemsList = document.getElementById("modalItemsList");
@@ -1497,13 +1572,15 @@
         showToast("No scans to export", "error");
         return;
       }
-      const headers = ["DocID", "Dish Name", "Category", "Meal", "Status", "Calories (kcal)", "Protein (g)", "Carbs (g)", "Fiber (g)", "Iron (mg)", "Calcium (mg)", "Timestamp", "ISO Date"];
+      const headers = ["DocID", "Dish Name", "Category", "Meal", "Status", "MDD-W Score", "MDD-W Groups", "Calories (kcal)", "Protein (g)", "Carbs (g)", "Fiber (g)", "Iron (mg)", "Calcium (mg)", "Timestamp", "ISO Date"];
       const rows = allScans.map(s => [
         `"${s.firestoreId || ''}"`,
         `"${(s.name || '').replace(/"/g, '""')}"`,
         `"${(s.category || '').replace(/"/g, '""')}"`,
         `"${(s.mealLabel || '').replace(/"/g, '""')}"`,
         `"${s.status || 'Scanned'}"`,
+        s.mddw_score || 0,
+        `"${(s.mddw_groups_covered || []).join('; ')}"`,
         s.calories || 0,
         s.protein_g || 0,
         s.carbs_g || 0,

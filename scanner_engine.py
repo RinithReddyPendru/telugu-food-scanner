@@ -75,6 +75,10 @@ class DetectedDishVisionItem(BaseModel):
     cluster: str = Field(description="Category: 'Breakfast', 'Rice & Biryani', 'Dals & Pappu', 'Vegetable Curries', 'Eggs, Meat & Fish', 'Snacks & Sweets', 'Chutneys & Podis', or 'Other'")
     estimated_grams: float = Field(description="Estimated weight of this item in the photo in grams (e.g. 150 for 1 bowl curry/dal, 200 for plate of rice/biryani/noodles, 120 for banana)")
     oil_ghee_level: str = Field(default="moderate", description="'low', 'moderate', or 'high'")
+    mddw_food_groups: List[str] = Field(
+        default_factory=list,
+        description="MDD-W 10 food group codes fulfilled by this item from: 'G1' (Grains, white roots, tubers), 'G2' (Pulses/dal/beans), 'G3' (Nuts & seeds), 'G4' (Dairy), 'G5' (Meat/poultry/fish), 'G6' (Eggs), 'G7' (Dark green leafy veg), 'G8' (Vitamin-A rich fruits & veg), 'G9' (Other veg), 'G10' (Other fruits). Example: Sambar: ['G2', 'G9'], Idli: ['G1'], Palak Pappu: ['G2', 'G7']."
+    )
     fallback_per_100g: Per100gEstimate = Field(
         description="ICMR-NIN per-100g nutrient estimate for this dish"
     )
@@ -102,6 +106,176 @@ MDDW_LABELS: Dict[str, str] = {
     "G9": "G9 Other Vegetables",
     "G10": "G10 Other Fruits",
 }
+
+# Complete FAO/WHO & ICMR-NIN 10 MDD-W Food Groups Specification
+MDDW_GROUPS_DEFINITIONS: List[Dict[str, Any]] = [
+    {
+        "code": "G1",
+        "id": "grains",
+        "name_en": "Grains, White Roots & Tubers",
+        "name_te": "ధాన్యాలు & దుంపలు",
+        "emoji": "🌾",
+        "color": "#F59E0B",
+        "examples_en": "Rice, Roti, Chapati, Idli, Dosa, Upma, Poha, Potato",
+        "examples_te": "బియ్యం, రోటీ, చపాతీ, ఇడ్లీ, దోశ, ఉప్మా, అటుకులు, బంగాళదుంప",
+    },
+    {
+        "code": "G2",
+        "id": "pulses",
+        "name_en": "Pulses, Beans & Lentils",
+        "name_te": "పప్పులు & చిక్కుళ్లు",
+        "emoji": "🌱",
+        "color": "#10B981",
+        "examples_en": "Toor Dal, Moong Dal, Chana, Rajma, Sambar, Soya",
+        "examples_te": "కంది పప్పు, పెసర పప్పు, శనగలు, రాజ్మా, సాంబారు, సోయా",
+    },
+    {
+        "code": "G3",
+        "id": "nuts",
+        "name_en": "Nuts & Seeds",
+        "name_te": "గింజలు & విత్తనాలు",
+        "emoji": "🌰",
+        "color": "#D97706",
+        "examples_en": "Groundnut/Palli Chutney, Sesame, Coconut",
+        "examples_te": "వేరుశెనగలు/పల్లీలు, కొబ్బరి, నువ్వులు, జీడిపప్పు",
+    },
+    {
+        "code": "G4",
+        "id": "dairy",
+        "name_en": "Dairy",
+        "name_te": "పాలు & పాల పదార్థాలు",
+        "emoji": "🥛",
+        "color": "#38BDF8",
+        "examples_en": "Curd/Dahi, Milk, Paneer, Buttermilk, Ghee",
+        "examples_te": "పెరుగు, పాలు, పనీర్, మజ్జిగ, నెయ్యి",
+    },
+    {
+        "code": "G5",
+        "id": "meat",
+        "name_en": "Meat, Poultry & Fish",
+        "name_te": "మాంసం & చేపలు",
+        "emoji": "🍗",
+        "color": "#EF4444",
+        "examples_en": "Chicken, Mutton, Fish, Prawns/Shrimp",
+        "examples_te": "కోడి మాంసం, మేక మాంసం, చేపలు, రొయ్యలు",
+    },
+    {
+        "code": "G6",
+        "id": "eggs",
+        "name_en": "Eggs",
+        "name_te": "గుడ్లు",
+        "emoji": "🍳",
+        "color": "#FBBF24",
+        "examples_en": "Boiled Egg, Omelette, Egg Curry, Egg Porutu",
+        "examples_te": "ఉడికించిన గుడ్డు, ఆమ్లెట్, గుడ్డు కూర, గుడ్డు పొరుటు",
+    },
+    {
+        "code": "G7",
+        "id": "dglv",
+        "name_en": "Dark Green Leafy Vegetables",
+        "name_te": "ఆకుకూరలు",
+        "emoji": "🌿",
+        "color": "#059669",
+        "examples_en": "Gongura, Palakura (Spinach), Thotakura, Methi, Moringa",
+        "examples_te": "గోంగూర, పాలకూర, తోటకూర, మెంతి కూర, మునగాకు",
+    },
+    {
+        "code": "G8",
+        "id": "vitaminA",
+        "name_en": "Vitamin A-Rich Fruits & Veg",
+        "name_te": "విటమిన్-ఎ పండ్లు & కూరగాయలు",
+        "emoji": "🎃",
+        "color": "#F97316",
+        "examples_en": "Carrot, Pumpkin, Ripe Papaya, Ripe Mango",
+        "examples_te": "క్యారెట్, గుమ్మడికాయ, బొప్పాయి, మామిడి పండు",
+    },
+    {
+        "code": "G9",
+        "id": "otherVeg",
+        "name_en": "Other Vegetables",
+        "name_te": "ఇతర కూరగాయలు",
+        "emoji": "🥦",
+        "color": "#14B8A6",
+        "examples_en": "Tomato, Onion, Brinjal, Okra, Cucumber, Ridge Gourd",
+        "examples_te": "టమాటా, ఉల్లిపాయ, వంకాయ, బెండకాయ, దోసకాయ, బీరకాయ",
+    },
+    {
+        "code": "G10",
+        "id": "otherFruit",
+        "name_en": "Other Fruits",
+        "name_te": "ఇతర పండ్లు",
+        "emoji": "🍎",
+        "color": "#EC4899",
+        "examples_en": "Banana, Guava, Apple, Orange, Pomegranate",
+        "examples_te": "అరటి పండు, జామ పండు, ఆపిల్, నారింజ, దానిమ్మ",
+    },
+]
+
+
+def infer_mddw_groups_from_text(name_en: str, name_te: str = "", cluster: str = "") -> List[str]:
+    """
+    Intelligently maps unrecognized dishes or food items to their correct MDD-W (G1..G10) food groups.
+    """
+    txt = f"{name_en} {name_te} {cluster}".lower()
+    groups = set()
+
+    # G7 Dark Green Leafy Veg (check first to avoid plain veg)
+    if any(k in txt for k in ["gongura", "pala", "palak", "palakura", "thota", "thotakura", "methi", "menthi", "moringa", "munagaku", "drumstick leave", "bachali", "spinach", "amaranth", "greens", "leafy"]):
+        groups.add("G7")
+
+    # G8 Vitamin A Rich
+    if any(k in txt for k in ["carrot", "gummadi", "pumpkin", "papaya", "boppayi", "ripe mango", "mamidi pandu", "sweet potato", "chilakada"]):
+        groups.add("G8")
+
+    # G6 Eggs
+    if any(k in txt for k in ["egg", "guddu", "omelette", "bhurji", "porutu"]):
+        groups.add("G6")
+
+    # G5 Meat, Poultry & Fish
+    if any(k in txt for k in ["chicken", "kodi", "mutton", "mamsam", "goat", "meat", "fish", "chepa", "prawn", "royya", "shrimp", "crab", "keema"]):
+        groups.add("G5")
+
+    # G4 Dairy
+    if any(k in txt for k in ["curd", "perugu", "yogurt", "dahi", "milk", "paalu", "paneer", "buttermilk", "majjiga", "cheese", "ghee", "neyyi"]):
+        groups.add("G4")
+
+    # G2 Pulses & Lentils
+    if any(k in txt for k in ["pappu", "dal", "dhal", "sambar", "rasam", "chana", "rajma", "moong", "toor", "urad", "pesara", "senaga", "kandi", "lentil", "bean", "sprouts", "soy", "vada", "garelu", "pesarattu"]):
+        groups.add("G2")
+
+    # G3 Nuts & Seeds
+    if any(k in txt for k in ["peanut", "groundnut", "palli", "coconut", "kobbari", "sesame", "til", "nuvvula", "almond", "badam", "cashew", "jeedipappu", "walnut", "seeds", "chutney", "pachadi", "podi"]):
+        groups.add("G3")
+
+    # G1 Grains & Tubers
+    if any(k in txt for k in ["rice", "annam", "biryani", "pulao", "pulav", "pulihora", "roti", "rotti", "chapati", "pulka", "paratha", "idli", "dosa", "upma", "poha", "atukulu", "potato", "aloo", "bangaladumpa", "tapioca", "chamadumpa", "taro", "noodle", "pasta", "semolina", "rava", "bread", "millet", "ragi", "jowar", "jonnalu", "sajjalu"]):
+        groups.add("G1")
+
+    # G10 Other Fruits
+    if any(k in txt for k in ["banana", "arati", "apple", "guava", "jama", "orange", "narinja", "grapes", "draksha", "pomegranate", "danimma", "watermelon", "melon", "fruit"]):
+        groups.add("G10")
+
+    # G9 Other Vegetables
+    if any(k in txt for k in ["tomato", "tamata", "onion", "ulli", "brinjal", "vankaya", "okra", "bhendi", "bendakaya", "cucumber", "keera", "dosakaya", "gourd", "beerakaya", "potlakaya", "sorakaya", "kakarakaya", "dondakaya", "cauliflower", "cabbage", "radish", "mullangi", "curry", "kura", "vepudu", "pulusu"]):
+        groups.add("G9")
+
+    # Fallbacks based on cluster
+    c_low = cluster.lower()
+    if not groups:
+        if "breakfast" in c_low or "bread" in c_low or "rice" in c_low:
+            groups.add("G1")
+        elif "dal" in c_low:
+            groups.add("G2")
+        elif "veg" in c_low:
+            groups.add("G9")
+        elif "meat" in c_low or "fish" in c_low:
+            groups.add("G5")
+        elif "egg" in c_low:
+            groups.add("G6")
+        else:
+            groups.update(["G1", "G9"])
+
+    return sorted(list(groups), key=lambda x: int(x[1:]) if x[1:].isdigit() else 99)
 
 
 COOKED_PREP_TOKENS = {
@@ -543,7 +717,12 @@ def scan_telugu_food_image(
             name_te = cat_entry["name_te"]
             cluster = cat_entry["cluster"]
             emoji = cat_entry["emoji"]
-            food_groups = cat_entry["food_groups"]
+            # Merge catalog food groups with vision detected groups if any
+            cat_fg = set(cat_entry["food_groups"])
+            for g in (getattr(item, "mddw_food_groups", None) or []):
+                if g in MDDW_LABELS:
+                    cat_fg.add(g)
+            food_groups = sorted(list(cat_fg), key=lambda x: int(x[1:]) if x[1:].isdigit() else 99)
             vegetarian = cat_entry["vegetarian"]
             contains_egg = cat_entry["contains_egg"]
             gi_tier = cat_entry["gi_tier"]
@@ -558,9 +737,16 @@ def scan_telugu_food_image(
             name_te = item.name_te
             cluster = item.cluster
             emoji = "🍲"
-            food_groups = ["G1", "G9"]
+            # Prefer vision detected groups if valid, or infer from text
+            detected_fg = [g for g in (getattr(item, "mddw_food_groups", None) or []) if g in MDDW_LABELS]
+            if detected_fg:
+                food_groups = detected_fg
+            else:
+                food_groups = infer_mddw_groups_from_text(name_en, name_te, cluster)
             vegetarian = True
-            contains_egg = False
+            contains_egg = "G6" in food_groups
+            if "G5" in food_groups:
+                vegetarian = False
             gi_tier = "Medium"
             std_serving_unit = f"{int(grams)}g serving"
             std_serving_grams = int(grams)
@@ -629,6 +815,46 @@ def scan_telugu_food_image(
     elif len(reconciled_items) == 1:
         final_title_en = reconciled_items[0]["name_en"]
 
+    # Build full 10 MDD-W Food Groups detailed audit
+    all_10_status = []
+    for g_def in MDDW_GROUPS_DEFINITIONS:
+        code = g_def["code"]
+        is_cov = code in all_food_groups_set
+        contributing = [
+            (it.get("name_en") or "").strip()
+            for it in reconciled_items
+            if code in it.get("food_groups", [])
+        ]
+        all_10_status.append({
+            "code": code,
+            "id": g_def["id"],
+            "name_en": g_def["name_en"],
+            "name_te": g_def["name_te"],
+            "emoji": g_def["emoji"],
+            "color": g_def["color"],
+            "examples_en": g_def["examples_en"],
+            "examples_te": g_def["examples_te"],
+            "covered": is_cov,
+            "contributing_items": contributing,
+        })
+
+    mddw_score = len(all_food_groups_set)
+    meets_target = mddw_score >= 5
+    missing_codes = [g["code"] for g in MDDW_GROUPS_DEFINITIONS if g["code"] not in all_food_groups_set]
+
+    # Contextual practical suggestions to reach >= 5 diversity target
+    missing_suggestions = []
+    if "G4" in missing_codes:
+        missing_suggestions.append("Curd/Buttermilk (G4 Dairy)")
+    if "G7" in missing_codes:
+        missing_suggestions.append("Leafy Greens (G7 Dark Green Leafy Veg)")
+    if "G10" in missing_codes:
+        missing_suggestions.append("Fresh Fruit (G10 Fruits)")
+    if "G6" in missing_codes:
+        missing_suggestions.append("Boiled Egg (G6 Eggs)")
+    if not missing_suggestions and missing_codes:
+        missing_suggestions.append(MDDW_LABELS.get(missing_codes[0], missing_codes[0]))
+
     result_payload = {
         "status": "success",
         "engine": f"{used_model} + ICMR-NIN (Hyderabad) Hybrid",
@@ -649,11 +875,28 @@ def scan_telugu_food_image(
             "fat_pct": round((fat_cal / macro_cal_sum) * 100, 1),
         },
         "mddw_diversity": {
-            "groups_covered": sorted_groups,
-            "groups_covered_labels": [MDDW_LABELS[g] for g in sorted_groups],
-            "score": len(sorted_groups),
+            "score": mddw_score,
             "max_score": 10,
-            "meets_minimum_diversity": len(sorted_groups) >= 5,
+            "target_score": 5,
+            "meets_minimum_diversity": meets_target,
+            "groups_covered": sorted_groups,
+            "groups_covered_labels": [MDDW_LABELS[g] for g in sorted_groups if g in MDDW_LABELS],
+            "groups_missing": missing_codes,
+            "all_10_groups": all_10_status,
+            "headline_en": f"{mddw_score}/10 MDD-W Groups Covered",
+            "headline_te": f"10 లో {mddw_score} ఆహార సమూహాలు ఉన్నాయి",
+            "status_badge_en": "Target Met (≥ 5 groups)" if meets_target else f"Need {max(1, 5 - mddw_score)} more to reach Target (≥ 5)",
+            "status_badge_te": "లక్ష్యం నెరవేరింది (≥ 5 సమూహాలు)" if meets_target else f"లక్ష్యం కోసం ఇంకా {max(1, 5 - mddw_score)} సమూహాలు చేర్చండి",
+            "recommendation_en": (
+                "Excellent dietary diversity! This meal meets the FAO/WHO recommended standard (≥ 5 groups) for women's micronutrient adequacy."
+                if meets_target else
+                f"To achieve adequate dietary diversity (≥ 5 groups), consider adding: {', '.join(missing_suggestions[:2])}."
+            ),
+            "recommendation_te": (
+                "అద్భుతమైన ఆహార వైవిధ్యం! ఈ భోజనం మహిళల పోషకాహార సమృద్ధికి సిఫార్సు చేసిన FAO/WHO ప్రమాణాలను (≥ 5 గ్రూపులు) అందుకుంది."
+                if meets_target else
+                "కనీస ఆహార వైవిధ్యం (5 సమూహాలు) సాధించడానికి భోజనంలో పెరుగు, ఆకుకూరలు లేదా ఒక పండును చేర్చండి."
+            ),
         },
         "items": reconciled_items,
     }
