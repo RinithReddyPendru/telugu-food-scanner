@@ -571,21 +571,19 @@
     }
 
     /* ==========================================
-       INSPECTION MODAL
+       INSPECTION MODAL (Single-Screen Dashboard)
        ========================================== */
     .modal-overlay {
       position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: rgba(7, 12, 22, 0.85);
+      inset: 0;
+      background: rgba(7, 12, 22, 0.88);
       backdrop-filter: blur(8px);
       z-index: 1000;
       display: none;
       align-items: center;
       justify-content: center;
-      padding: 20px;
+      padding: 16px;
+      overflow: hidden; /* No scrollbars on overlay */
       opacity: 0;
       transition: opacity 0.2s ease;
     }
@@ -597,75 +595,104 @@
     .modal-box {
       background: #111A2C;
       border: 1px solid var(--border-hover);
-      border-radius: 20px;
+      border-radius: 16px;
       width: 100%;
-      max-width: 860px;
-      max-height: 92vh;
-      overflow-y: auto;
-      box-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.8);
+      max-width: 1100px;
+      max-height: calc(100vh - 28px);
+      box-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.85);
       display: flex;
       flex-direction: column;
       position: relative;
+      overflow: hidden; /* Guaranteed NO scrollbar on modal */
+      box-sizing: border-box;
     }
 
     .modal-header {
-      padding: 18px 24px;
+      padding: 12px 20px;
       border-bottom: 1px solid var(--border-color);
       display: flex;
       align-items: center;
       justify-content: space-between;
-      position: sticky;
-      top: 0;
+      gap: 16px;
       background: #111A2C;
-      z-index: 20;
+      flex-shrink: 0;
     }
-    .modal-title {
+    .modal-header-left {
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+      min-width: 0;
+      flex: 1;
+    }
+    .modal-meta-row {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 6px;
+      font-size: 11.5px;
+    }
+    .modal-dish-title {
       font-size: 18px;
       font-weight: 800;
       color: #FFF;
+      line-height: 1.25;
+      margin: 0;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .modal-dish-sub {
+      font-size: 11px;
+      color: var(--text-secondary);
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+    }
+    .modal-header-right {
       display: flex;
       align-items: center;
-      gap: 10px;
+      gap: 8px;
+      flex-shrink: 0;
     }
+
     .close-btn {
       background: rgba(255, 255, 255, 0.08);
       border: none;
       color: #FFF;
-      width: 32px;
-      height: 32px;
+      width: 30px;
+      height: 30px;
       border-radius: 8px;
       display: flex;
       align-items: center;
       justify-content: center;
       cursor: pointer;
-      font-size: 16px;
+      font-size: 15px;
       transition: background 0.15s ease;
+      flex-shrink: 0;
     }
     .close-btn:hover {
       background: rgba(255, 255, 255, 0.2);
     }
 
     .modal-body {
-      padding: 24px;
+      padding: 14px 20px 16px;
       display: grid;
-      grid-template-columns: 1fr 1.2fr;
-      gap: 24px;
-    }
-    @media (max-width: 768px) {
-      .modal-body {
-        grid-template-columns: 1fr;
-      }
+      grid-template-columns: 280px 1fr;
+      gap: 18px;
+      align-items: start;
+      min-height: 0;
+      box-sizing: border-box;
     }
 
-    .modal-img-col {
+    .modal-col-left {
       display: flex;
       flex-direction: column;
-      gap: 12px;
+      gap: 10px;
+      min-width: 0;
     }
     .modal-img-wrap {
       width: 100%;
-      height: 320px;
-      border-radius: 14px;
+      height: 175px;
+      border-radius: 10px;
       overflow: hidden;
       background: #000;
       border: 1px solid var(--border-color);
@@ -676,101 +703,153 @@
       height: 100%;
       object-fit: cover;
     }
-    .modal-img-actions {
-      display: flex;
-      gap: 8px;
-    }
 
-    .modal-details-col {
+    .detected-items-wrap {
       display: flex;
       flex-direction: column;
-      gap: 18px;
+      gap: 4px;
+      min-height: 0;
     }
-
-    .doc-meta-bar {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 8px;
-      font-size: 12px;
-      color: var(--text-secondary);
-      background: rgba(11, 19, 32, 0.6);
-      padding: 8px 12px;
-      border-radius: 8px;
-      border: 1px solid var(--border-color);
-    }
-    .doc-id-pill {
-      font-family: 'JetBrains Mono', monospace;
-      color: var(--accent-gold);
-      background: rgba(245, 158, 11, 0.12);
-      padding: 2px 6px;
-      border-radius: 4px;
-      font-size: 11px;
-    }
-
-    /* Full Nutrient Grid */
-    .nutri-full-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 10px;
-    }
-    .nutri-box {
-      background: rgba(11, 19, 32, 0.6);
-      border: 1px solid var(--border-color);
-      border-radius: 10px;
-      padding: 10px;
-      text-align: center;
-    }
-    .nutri-box-lbl {
-      font-size: 10px;
-      font-weight: 700;
-      color: var(--text-muted);
-      text-transform: uppercase;
-      margin-bottom: 2px;
-    }
-    .nutri-box-val {
-      font-size: 16px;
-      font-weight: 800;
-      color: #FFF;
-    }
-
-    /* Detected Items in Modal */
     .detected-section-title {
-      font-size: 13px;
+      font-size: 11px;
       font-weight: 700;
       color: var(--text-secondary);
       text-transform: uppercase;
       letter-spacing: 0.04em;
-      margin-bottom: 8px;
+      margin-bottom: 2px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
     }
     .detected-items-list {
       display: flex;
       flex-direction: column;
-      gap: 8px;
+      gap: 4px;
+      max-height: 130px;
+      overflow-y: auto;
     }
     .detected-item-row {
       display: flex;
       align-items: center;
       justify-content: space-between;
+      gap: 8px;
+      background: rgba(11, 19, 32, 0.6);
+      border: 1px solid var(--border-color);
+      border-radius: 6px;
+      padding: 4px 8px;
+      font-size: 11.5px;
+      min-width: 0;
+    }
+    .detected-item-name {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      min-width: 0;
+      flex: 1;
+    }
+
+    .modal-col-right {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      min-width: 0;
+    }
+
+    /* Complete Nutritional Output (1 Horizontal Row of 6) */
+    .nutri-full-grid {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 6px;
+    }
+    .nutri-box {
       background: rgba(11, 19, 32, 0.6);
       border: 1px solid var(--border-color);
       border-radius: 8px;
-      padding: 8px 12px;
-      font-size: 13px;
+      padding: 6px 4px;
+      text-align: center;
+      min-width: 0;
+    }
+    .nutri-box-lbl {
+      font-size: 9.5px;
+      font-weight: 700;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.02em;
+      margin-bottom: 2px;
+    }
+    .nutri-box-val {
+      font-size: 14.5px;
+      font-weight: 800;
+      color: #FFF;
+      line-height: 1.1;
+      white-space: nowrap;
+    }
+
+    /* MDD-W 10 Food Groups (2 columns of 5 compact rows) */
+    .modal-mddw-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4px;
+    }
+    .mddw-pill-compact {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      padding: 3px 8px;
+      border-radius: 6px;
+      font-size: 11px;
+      background: rgba(11, 19, 32, 0.5);
+      border: 1px solid var(--border-color);
+      color: var(--text-muted);
+      min-width: 0;
+      height: 25px;
+      box-sizing: border-box;
+    }
+    .mddw-pill-compact.covered {
+      background: rgba(16, 185, 129, 0.12);
+      border: 1px solid rgba(16, 185, 129, 0.4);
+      color: #34D399;
+    }
+    .mddw-pill-ico {
+      font-size: 12px;
+      flex-shrink: 0;
+    }
+    .mddw-pill-txt {
+      flex: 1;
+      min-width: 0;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+    .mddw-pill-chk {
+      font-size: 10px;
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+
+    .modal-mddw-tip {
+      font-size: 11px;
+      line-height: 1.35;
+      color: var(--text-secondary);
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px dashed var(--border-color);
+      padding: 5px 10px;
+      border-radius: 6px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
 
     /* Raw JSON Section */
     .raw-json-details {
-      margin-top: 6px;
       border: 1px solid var(--border-color);
-      border-radius: 10px;
+      border-radius: 6px;
       overflow: hidden;
       background: #080D17;
     }
     .raw-json-summary {
-      padding: 10px 14px;
-      font-size: 12px;
+      padding: 4px 10px;
+      font-size: 10.5px;
       font-weight: 600;
       color: var(--text-secondary);
       cursor: pointer;
@@ -778,21 +857,30 @@
       background: rgba(255, 255, 255, 0.02);
     }
     .raw-json-content {
-      padding: 14px;
+      padding: 8px 10px;
       font-family: 'JetBrains Mono', monospace;
-      font-size: 11px;
+      font-size: 10.5px;
       color: #94A3B8;
-      max-height: 220px;
+      max-height: 120px;
       overflow-y: auto;
       white-space: pre-wrap;
       word-break: break-all;
     }
 
-    .modal-footer {
-      padding: 16px 24px;
-      border-top: 1px solid var(--border-color);
-      display: flex;
-      align-items: center;
+    @media (max-width: 768px) {
+      .modal-box {
+        max-height: 94vh;
+        overflow-y: auto;
+      }
+      .modal-body {
+        grid-template-columns: 1fr;
+        padding: 12px;
+        gap: 12px;
+      }
+      .nutri-full-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
       justify-content: space-between;
       background: #111A2C;
     }
@@ -979,55 +1067,67 @@
     </div>
   </div>
 
-  <!-- Detailed Scan Inspection Modal -->
+  <!-- Detailed Scan Inspection Modal (Single-Screen Dashboard) -->
   <div id="inspectModal" class="modal-overlay" onclick="handleModalOverlayClick(event)">
     <div class="modal-box">
+      <!-- Modal Header (Compact All-in-One Bar) -->
       <div class="modal-header">
-        <div class="modal-title">
-          <span>🔍 Scan Dossier & Nutrition Values</span>
+        <div class="modal-header-left">
+          <div class="modal-meta-row">
+            <span id="modalStatusBadge" class="status-pill scanned">Scanned</span>
+            <span id="modalMealLabel" class="meta-tag">Meal</span>
+            <span id="modalTimeLabel" class="meta-tag" style="color:var(--text-secondary);">Today</span>
+            <span class="meta-tag" style="font-family:'JetBrains Mono', monospace; color:var(--accent-gold);">ID: <span id="modalDocId">--</span></span>
+            <span id="modalSourceBadge" style="font-size:11px; color:var(--text-muted);">AIM FOOD SCANNER</span>
+          </div>
+          <h2 id="modalDishTitle" class="modal-dish-title">--</h2>
+          <div id="modalCategory" class="modal-dish-sub">Category</div>
         </div>
-        <button class="close-btn" onclick="closeModal()" aria-label="Close">✕</button>
+
+        <div class="modal-header-right">
+          <button class="btn btn-sm btn-gold" onclick="downloadModalImage()" title="Download captured image">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+              <polyline points="7 10 12 15 17 10"></polyline>
+              <line x1="12" y1="15" x2="12" y2="3"></line>
+            </svg>
+            <span>Download</span>
+          </button>
+          <button class="btn btn-sm" onclick="openImageInNewTab()" title="View full size image">
+            <span>Full Size ↗</span>
+          </button>
+          <button id="modalDeleteBtn" class="btn btn-sm btn-danger" onclick="deleteActiveScan()" title="Delete scan from Firestore">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="3 6 5 6 21 6"></polyline>
+              <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
+            </svg>
+            <span>Delete</span>
+          </button>
+          <button class="close-btn" onclick="closeModal()" aria-label="Close" title="Close modal (Esc)">✕</button>
+        </div>
       </div>
 
+      <!-- Modal Body (2 Columns: Left is Image & Detected Items, Right is Nutrients & MDD-W) -->
       <div class="modal-body">
-        <!-- Column 1: Image & Download -->
-        <div class="modal-img-col">
+        <!-- Left Column: Image + Detected Items -->
+        <div class="modal-col-left">
           <div class="modal-img-wrap">
             <img id="modalImg" class="modal-img" src="" alt="Captured Food" />
           </div>
-          <div class="modal-img-actions">
-            <button class="btn btn-gold" style="flex:1;" onclick="downloadModalImage()">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-                <polyline points="7 10 12 15 17 10"></polyline>
-                <line x1="12" y1="15" x2="12" y2="3"></line>
-              </svg>
-              <span>Download Image</span>
-            </button>
-            <button class="btn" onclick="openImageInNewTab()">
-              <span>Full Size ↗</span>
-            </button>
-          </div>
 
-          <div class="doc-meta-bar">
-            <span>Doc ID: <span id="modalDocId" class="doc-id-pill">--</span></span>
-            <span id="modalSourceBadge" style="color:var(--text-muted);">AIM FOOD SCANNER</span>
+          <div class="detected-items-wrap">
+            <div class="detected-section-title">
+              <span>Detected Items on Plate</span>
+            </div>
+            <div id="modalItemsList" class="detected-items-list">
+              <!-- Item rows injected here -->
+            </div>
           </div>
         </div>
 
-        <!-- Column 2: Detailed Values -->
-        <div class="modal-details-col">
-          <div>
-            <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 6px;">
-              <span id="modalStatusBadge" class="status-pill scanned" style="position:static;">Scanned</span>
-              <span id="modalMealLabel" class="meta-tag">Meal</span>
-              <span id="modalTimeLabel" style="font-size: 12px; color: var(--text-secondary);">Today</span>
-            </div>
-            <h2 id="modalDishTitle" style="font-size: 22px; font-weight: 800; color: #FFF; margin-bottom: 4px;">--</h2>
-            <p id="modalCategory" style="font-size: 13px; color: var(--text-secondary);">Category</p>
-          </div>
-
-          <!-- Nutritional Values Grid -->
+        <!-- Right Column: Complete Nutritional Output & MDD-W Diversity -->
+        <div class="modal-col-right">
+          <!-- Row 1: Complete Nutritional Output (6 stats in 1 horizontal row) -->
           <div>
             <div class="detected-section-title">Complete Nutritional Output</div>
             <div class="nutri-full-grid">
@@ -1058,45 +1158,26 @@
             </div>
           </div>
 
-          <!-- MDD-W 10 Food Groups Diversity Breakdown -->
+          <!-- Row 2: MDD-W 10 Food Groups Diversity (10 pills in 2 columns of 5 compact rows) -->
           <div>
-            <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:8px;">
+            <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:4px;">
               <span class="detected-section-title" style="margin-bottom:0;">MDD-W 10 Food Groups Diversity</span>
               <span id="modalMddwBadge" class="status-pill scanned" style="position:static;">-- / 10 Groups</span>
             </div>
-            <div id="modalMddwGrid" style="display:grid; grid-template-columns:1fr 1fr; gap:6px; margin-bottom:8px;">
-              <!-- 10 groups pills -->
+            <div id="modalMddwGrid" class="modal-mddw-grid">
+              <!-- 10 pills -->
             </div>
-            <div id="modalMddwTip" style="font-size:11.5px; color:var(--text-secondary); background:rgba(255,255,255,0.03); border:1px dashed var(--border-color); padding:8px 12px; border-radius:8px;">
+            <div id="modalMddwTip" class="modal-mddw-tip">
               --
             </div>
           </div>
 
-          <!-- Individual Items Breakdown -->
-          <div>
-            <div class="detected-section-title">Detected Items on Plate</div>
-            <div id="modalItemsList" class="detected-items-list">
-              <!-- Item rows injected here -->
-            </div>
-          </div>
-
-          <!-- Collapsible Raw JSON Data -->
+          <!-- Row 3: Collapsible Raw JSON Data -->
           <details class="raw-json-details">
             <summary class="raw-json-summary">Inspect Raw Document JSON</summary>
             <div id="modalRawJson" class="raw-json-content"></div>
           </details>
         </div>
-      </div>
-
-      <div class="modal-footer">
-        <button id="modalDeleteBtn" class="btn btn-danger" onclick="deleteActiveScan()">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <polyline points="3 6 5 6 21 6"></polyline>
-            <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
-          </svg>
-          <span>Delete Scan from Firestore</span>
-        </button>
-        <button class="btn" onclick="closeModal()">Close</button>
       </div>
     </div>
   </div>
@@ -1460,13 +1541,17 @@
       if (mddwGrid) {
         mddwGrid.innerHTML = MDDW_GROUPS_STATIC.map(g => {
           const isCov = coveredGroups.has(g.code);
-          const contItems = (scan.items || []).filter(it => (it.food_groups || []).includes(g.code)).map(it => it.name_en || it.name || '');
+          const contItems = (scan.items || []).filter(it => (it.food_groups || []).includes(g.code)).map(it => {
+            const raw = it.name_en || it.name || '';
+            return raw.replace(/\s*\([^)]*\)/g, '').trim() || raw;
+          });
           const sub = contItems.length ? `(${contItems.join(', ')})` : '';
+          const tooltip = isCov ? `${g.code}: ${g.name} ${sub}` : `${g.code}: ${g.name} (Missing)`;
           return `
-            <div style="display:flex; align-items:center; gap:6px; padding:6px 10px; border-radius:8px; font-size:11px; background:${isCov ? 'rgba(16,185,129,0.1)' : 'rgba(11,19,32,0.5)'}; border:1px solid ${isCov ? 'rgba(16,185,129,0.35)' : 'var(--border-color)'}; color:${isCov ? '#34D399' : 'var(--text-muted)'};">
-              <span style="font-size:13px;">${g.emoji}</span>
-              <span style="flex:1; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;"><strong>${g.code}</strong> ${g.name} ${sub}</span>
-              <span>${isCov ? '✓' : '—'}</span>
+            <div class="mddw-pill-compact ${isCov ? 'covered' : ''}" title="${escapeHtml(tooltip)}">
+              <span class="mddw-pill-ico">${g.emoji}</span>
+              <span class="mddw-pill-txt"><strong>${g.code}</strong> ${g.name} ${sub}</span>
+              <span class="mddw-pill-chk">${isCov ? '✓' : '—'}</span>
             </div>
           `;
         }).join('');
@@ -1484,14 +1569,14 @@
       if (scan.items && scan.items.length > 0) {
         itemsList.innerHTML = scan.items.map(item => `
           <div class="detected-item-row">
-            <div>
+            <div class="detected-item-name">
               <strong style="color:#FFF;">${escapeHtml(item.name_en || item.name || 'Item')}</strong>
-              ${item.name_te ? `<span style="color:var(--accent-gold);margin-left:6px;">${escapeHtml(item.name_te)}</span>` : ''}
-              <div style="font-size:11px;color:var(--text-muted);">${escapeHtml(item.cluster || item.portion_label || '')}</div>
+              ${item.name_te ? `<span style="color:var(--accent-gold);margin-left:4px;font-size:10.5px;">${escapeHtml(item.name_te)}</span>` : ''}
+              ${(item.cluster || item.portion_label) ? `<span style="font-size:10px;color:var(--text-muted);margin-left:4px;">(${escapeHtml(item.cluster || item.portion_label)})</span>` : ''}
             </div>
-            <div style="text-align:right;">
+            <div style="text-align:right;flex-shrink:0;">
               <span style="color:#FFF;font-weight:700;">${item.grams ? item.grams + 'g' : ''}</span>
-              ${item.calories ? `<div style="font-size:11px;color:#F59E0B;">${Math.round(item.calories)} kcal</div>` : ''}
+              ${item.calories ? `<span style="font-size:10.5px;color:#F59E0B;margin-left:4px;">${Math.round(item.calories)} kcal</span>` : ''}
             </div>
           </div>
         `).join('');
@@ -1513,11 +1598,13 @@
 
       // Open Modal
       const modal = document.getElementById("inspectModal");
+      document.body.style.overflow = "hidden";
       modal.classList.add("open");
     }
 
     function closeModal() {
       const modal = document.getElementById("inspectModal");
+      document.body.style.overflow = "";
       modal.classList.remove("open");
       activeModalScan = null;
     }
